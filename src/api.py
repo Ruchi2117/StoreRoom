@@ -5,11 +5,13 @@ import re
 from typing import Annotated
 from fastapi import FastAPI, File, UploadFile, HTTPException, Request
 from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from starlette.concurrency import run_in_threadpool
 from src.inference import Detector
 from src.inference.config import ROOT
 from src.inference.images import ImageInputError, MAX_BYTES
 from src.inference.results import Prediction
+from src.review import ReviewRequest, ConfirmedReview
 
 
 def create_app(*, detector_factory=Detector, output_dir=None):
@@ -23,7 +25,17 @@ def create_app(*, detector_factory=Detector, output_dir=None):
         finally:
             del app.state.detector
 
-    app = FastAPI(title='StoreRoom', version='0.2', lifespan=lifespan)
+    app = FastAPI(title='StoreRoom', version='0.3', lifespan=lifespan)
+    app.mount('/static', StaticFiles(directory=ROOT / 'src/web'), name='static')
+
+    @app.get('/', include_in_schema=False)
+    def shopkeeper():
+        return FileResponse(ROOT / 'src/web/index.html', headers={'Cache-Control': 'no-cache'})
+
+    @app.post('/inventory/confirm', response_model=ConfirmedReview)
+    def confirm(review: ReviewRequest):
+        # Stateless acknowledgement, not a stock update or verified prediction record.
+        return ConfirmedReview(items=review.items)
 
     @app.get('/health')
     def health():

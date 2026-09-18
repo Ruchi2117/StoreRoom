@@ -1,0 +1,9 @@
+{
+  "historical_protected_files_verified": 921,
+  "additional_tracked_files_compared_to_v0_2": 135,
+  "frozen_dataset_hashes_verified": true,
+  "v0_2_inference_and_configuration_unchanged": true,
+  "checkpoint_sha256": "099b96ecd3cb440991b56c69cd243770ca499b8e246fee994ced3e24b93ec1c4",
+  "no_retraining": true,
+  "no_test_set_evaluation": true
+}

@@ -31,14 +31,15 @@ Do not use it for independent validation or further tuning.
 
 ## Verification and reproducibility
 
-On the existing artifact-complete checkout:
+On the existing artifact-complete checkout (install `requirements-ui-test.txt` and
+run `python -m playwright install chromium` in the virtual environment first):
 
 ```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 .\.venv\Scripts\python.exe -c "from src.independent_validation_001_audit import verify_protected; print(verify_protected())"
 ```
 
-Expected: 48 passing tests and 921 protected files verified, plus frozen dataset
+Expected: 62 passing tests and 921 protected files verified, plus frozen dataset
 hash checks. These commands perform no new model inference or training.
 A fresh Git clone lacks the ignored dataset, checkpoints, run files and rendered
 visuals; full artifact tests require restoring them. Read
@@ -66,8 +67,30 @@ See [setup, Python usage and HTTP examples](docs/INFERENCE_PIPELINE.md) and
 [v0.2 implementation and verification](reports/V0_2_RESULTS.md).
 
 This remains a local demonstration with a provisional five-class model;
-independent-scene generalization remains unverified. Next product milestone:
-a shopkeeper scan-and-review interface for inspecting and correcting visible counts.
+independent-scene generalization remains unverified. The scan-and-review workflow
+is now available in v0.3 below.
+
+## V0.3: shopkeeper scan and review
+
+StoreRoom is an **AI-assisted retail shelf inventory** project:
+
+- **v0.1:** reproducible CV model pipeline.
+- **v0.2:** reusable inference API.
+- **v0.3:** photo upload → review → count correction → confirmation.
+
+Run the same backend command above, then open [StoreRoom](http://127.0.0.1:8000/).
+The mobile-friendly interface previews the photo, shows annotated detections,
+keeps **AI detected** counts separate from editable **Your count** values, and
+returns a confirmed review. Missed products from the five supported classes can
+be added manually. No frontend build or separate server is required.
+
+Confirmation describes visible packages in this photo only. **It is not persisted**;
+refreshing or starting a new scan clears it. Hidden stock remains unknown.
+See the [workflow and setup guide](docs/V0_3_SHOPKEEPER_WORKFLOW.md) and
+[v0.3 results](reports/V0_3_RESULTS.md).
+
+Next product milestone: durable scan-and-review history with original predictions,
+human corrections, photo/model references and timestamps. It is not implemented yet.
 
 The remaining sections document the earlier data/runtime milestones. Their rebuild
 commands are historical, not instructions to reopen model experimentation.
@@ -86,7 +109,7 @@ On this existing checkout, run:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-The runtime milestone had 17 tests; the current suite has 48. To regenerate only the smoke export and visual checks:
+The runtime milestone had 17 tests; the current suite has 62. To regenerate only the smoke export and visual checks:
 
 ```powershell
 .\.venv\Scripts\python.exe -m src.convert_smoke
