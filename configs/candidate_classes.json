@@ -1,0 +1,11 @@
+{
+  "status": "provisional_until_scene_and_label_gates_pass",
+  "identity_note": "Source product classes, not verified catalog SKUs. GTINs are retained as unverified source metadata. Red Bull mixes can sizes; do not use these classes directly for price, ingredients, stock sales, or pack-size claims.",
+  "products": [
+    {"product_id": "hs_redbull_regular", "name": "Red Bull (source class)", "source_label": "redbull___33__90162909", "source_gtin": "90162909"},
+    {"product_id": "hs_knoppers", "name": "Knoppers (source class)", "source_label": "knoppers_riegel____4035800488808", "source_gtin": "4035800488808"},
+    {"product_id": "hs_valser_classic", "name": "Valser Classic (source class)", "source_label": "valser_classic__50__76404160", "source_gtin": "76404160"},
+    {"product_id": "hs_valser_still", "name": "Valser Still (source class)", "source_label": "valser_still__50__7610335002575", "source_gtin": "7610335002575"},
+    {"product_id": "hs_caprisun_multivitamin", "name": "Capri-Sun Multivitamin (source class)", "source_label": "caprisun_multivitamin__20__4000177605004", "source_gtin": "4000177605004"}
+  ]
+}

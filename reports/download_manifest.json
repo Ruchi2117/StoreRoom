@@ -1,0 +1,22 @@
+{
+  "source": "https://data.mendeley.com/datasets/gz39ggf35n/1",
+  "doi": "10.17632/gz39ggf35n.1",
+  "license": "CC BY 4.0",
+  "retrieved_at": "2026-09-16T07:43:14.3333129Z",
+  "files": [
+    {
+      "filename": "HoloSelecta-FinalDataset-20200127T164214Z-001.zip",
+      "bytes": 2122992435,
+      "sha256": "4492e5f544a035cf4884626187ebf39ab5e703f71a3ff05733b6c11baf926afb",
+      "url": "https://data.mendeley.com/public-files/datasets/gz39ggf35n/files/43897fdb-6d8b-42f7-9331-584bb66f05c1/file_downloaded",
+      "verified": true
+    },
+    {
+      "filename": "Datainbrief_HoloSelecta_v3mendeley.pdf",
+      "bytes": 243939,
+      "sha256": "e3dbfce17cc31c72fc125ecd1fb0e99beb50b2ad867aed812e4e7ad70528ba7e",
+      "url": "https://data.mendeley.com/public-files/datasets/gz39ggf35n/files/a9c5b626-d0ad-406a-9f9e-467cacf4bb5d/file_downloaded",
+      "verified": true
+    }
+  ]
+}

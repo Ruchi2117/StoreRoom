@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "controlled_changes": {
+    "epochs": [
+      10,
+      30
+    ]
+  },
+  "protected_artifacts_unchanged": 34,
+  "test_evaluation_run": false,
+  "tests_passed": 27,
+  "raw_csv_copy_identical": true
+}

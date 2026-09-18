@@ -1,0 +1,11 @@
+# Eight-image conversion check only; do not train this subset.
+path: C:\Users\Lenovo\Documents\ChatGPT\StoreRoom\data\yolo_smoke
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: Red Bull
+  1: Knoppers
+  2: Valser Classic
+  3: Valser Still
+  4: Capri-Sun Multivitamin

@@ -1,0 +1,11 @@
+# Verified full export of frozen configs/splits.json (123/26/26).
+path: C:\Users\Lenovo\Documents\ChatGPT\StoreRoom\data\yolo_v01
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: Red Bull
+  1: Knoppers
+  2: Valser Classic
+  3: Valser Still
+  4: Capri-Sun Multivitamin

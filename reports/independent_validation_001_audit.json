@@ -1,0 +1,1675 @@
+{
+  "status": "blocked_no_verified_independent_groups",
+  "inference_performed": false,
+  "selection_frozen": false,
+  "selected_group_ids": [],
+  "selected_images": [],
+  "selected_annotations": 0,
+  "selected_class_counts": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "class_names": [
+    "Red Bull (source class)",
+    "Knoppers (source class)",
+    "Valser Classic (source class)",
+    "Valser Still (source class)",
+    "Capri-Sun Multivitamin (source class)"
+  ],
+  "source_images": 277,
+  "source_xml_files": 295,
+  "archive_image_inventory_matches": true,
+  "source_image_hashes_match": true,
+  "verified_group_count": 33,
+  "split_group_ids": {
+    "val": [
+      "machine_a9608332afdb",
+      "machine_009154991598",
+      "machine_bb3e4ae22b1d",
+      "machine_bf445d25f803",
+      "machine_4456752f715b"
+    ],
+    "test": [
+      "machine_89a4eeedccc7",
+      "machine_7a18e7d150bd",
+      "machine_3e8d6eb2ede6",
+      "machine_f37708d55f06",
+      "machine_28f06f073c6a"
+    ],
+    "train": [
+      "machine_b9dd5ca784c4",
+      "machine_0afdf2e120a1",
+      "machine_65d0be958c17",
+      "machine_39b4eccd47a2",
+      "machine_0808846669be",
+      "machine_555048df54d8",
+      "machine_cad58c8878fc",
+      "machine_c6004947c1d2",
+      "machine_6102f9410102",
+      "machine_4d293f534e70",
+      "machine_e1be96cf78b1",
+      "machine_e1e2930ccd46",
+      "machine_643b0aa1da5e",
+      "machine_c8f4eb3df42d",
+      "machine_a41778b7de32",
+      "machine_ef9ec98a5e0d",
+      "machine_f75228c14f5f",
+      "machine_934574a6522d",
+      "machine_2d60d7ebba2a",
+      "machine_897e4fa6ce47",
+      "machine_82d607ddcaca",
+      "machine_2d99255acb57",
+      "machine_7520467cbe23"
+    ]
+  },
+  "split_image_counts": {
+    "val": 26,
+    "test": 26,
+    "train": 123
+  },
+  "unused_verified_group_ids": [],
+  "unresolved_component_ids": [
+    "unresolved_000",
+    "unresolved_042",
+    "unresolved_058",
+    "unresolved_063",
+    "unresolved_064",
+    "unresolved_074",
+    "unresolved_146",
+    "unresolved_149",
+    "unresolved_175",
+    "unresolved_216",
+    "unresolved_218",
+    "unresolved_220",
+    "unresolved_223",
+    "unresolved_225",
+    "unresolved_227",
+    "unresolved_230",
+    "unresolved_232",
+    "unresolved_235",
+    "unresolved_238",
+    "unresolved_245",
+    "unresolved_256",
+    "unresolved_259",
+    "unresolved_260",
+    "unresolved_261",
+    "unresolved_274"
+  ],
+  "unresolved_component_images": 102,
+  "quarantined_images": 102,
+  "explicit_exclusions": {
+    "20190125_114246.jpg": "Quarantine: XML 1960x4032 versus decoded 1959x4031. Preserve raw data; do not silently rescale boxes.",
+    "IMG_20190306_104622.jpg": "Product icons on a vending-machine screen, not physical packages.",
+    "IMG_20190430_111230.jpg": "Product icons on a vending-machine screen, not physical packages.",
+    "IMG_20190430_111456.jpg": "Product icons on a vending-machine screen, not physical packages."
+  },
+  "unresolved_only_images": 98,
+  "quarantine_annotation_count_all_classes": 2862,
+  "quarantine_selected_class_counts": [
+    252,
+    90,
+    145,
+    98,
+    44
+  ],
+  "groups": [
+    {
+      "scene_group": "unresolved_000",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "20190103_103704.jpg",
+        "20190111_111600_HoloLens.jpg",
+        "20190111_111611_HoloLens.jpg",
+        "20190111_111616_HoloLens.jpg",
+        "20190111_111623_HoloLens.jpg",
+        "20190111_111631_HoloLens.jpg",
+        "20190111_111641_HoloLens.jpg",
+        "20190111_111648_HoloLens.jpg",
+        "20190111_111656_HoloLens.jpg",
+        "20190111_111703_HoloLens.jpg",
+        "20190111_111715_HoloLens.jpg",
+        "20190111_111725_HoloLens.jpg",
+        "20190111_111731_HoloLens.jpg",
+        "20190111_115003_HoloLens.jpg",
+        "20190111_115010_HoloLens.jpg",
+        "20190111_115017_HoloLens.jpg",
+        "20190111_115028_HoloLens.jpg",
+        "20190111_115042_HoloLens.jpg",
+        "20190111_115050_HoloLens.jpg",
+        "20190111_115057_HoloLens.jpg",
+        "20190111_115106_HoloLens.jpg",
+        "20190111_115116_HoloLens.jpg",
+        "20190111_115122_HoloLens.jpg",
+        "20190111_115129_HoloLens.jpg",
+        "20190111_115136_HoloLens.jpg",
+        "20190111_115143_HoloLens.jpg",
+        "20190111_115150_HoloLens.jpg",
+        "20190111_115157_HoloLens.jpg",
+        "20190111_115203_HoloLens.jpg",
+        "20190111_115218_HoloLens.jpg",
+        "20190111_115234_HoloLens.jpg",
+        "20190125_113909.jpg",
+        "20190125_113923.jpg",
+        "20190125_113928.jpg",
+        "20190125_113931.jpg",
+        "20190125_114244.jpg",
+        "20190125_114246.jpg",
+        "DSC01627.png",
+        "DSC01628.png",
+        "DSC01629.png",
+        "DSC01630.png",
+        "DSC01631.png",
+        "IMG_20181218_125954.jpg",
+        "IMG_20181218_130002.jpg",
+        "IMG_20181218_130005.jpg",
+        "IMG_20181218_130011.jpg",
+        "IMG_20190125_113823.jpg",
+        "IMG_20190125_113830.jpg",
+        "IMG_20190125_113835.jpg",
+        "IMG_20190125_133951.jpg",
+        "IMG_20190306_110658.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 1100,
+      "selected_class_counts": [
+        102,
+        35,
+        68,
+        34,
+        0
+      ],
+      "quarantined_images": [
+        "20190103_103704.jpg",
+        "20190111_111600_HoloLens.jpg",
+        "20190111_111611_HoloLens.jpg",
+        "20190111_111616_HoloLens.jpg",
+        "20190111_111623_HoloLens.jpg",
+        "20190111_111631_HoloLens.jpg",
+        "20190111_111641_HoloLens.jpg",
+        "20190111_111648_HoloLens.jpg",
+        "20190111_111656_HoloLens.jpg",
+        "20190111_111703_HoloLens.jpg",
+        "20190111_111715_HoloLens.jpg",
+        "20190111_111725_HoloLens.jpg",
+        "20190111_111731_HoloLens.jpg",
+        "20190111_115003_HoloLens.jpg",
+        "20190111_115010_HoloLens.jpg",
+        "20190111_115017_HoloLens.jpg",
+        "20190111_115028_HoloLens.jpg",
+        "20190111_115042_HoloLens.jpg",
+        "20190111_115050_HoloLens.jpg",
+        "20190111_115057_HoloLens.jpg",
+        "20190111_115106_HoloLens.jpg",
+        "20190111_115116_HoloLens.jpg",
+        "20190111_115122_HoloLens.jpg",
+        "20190111_115129_HoloLens.jpg",
+        "20190111_115136_HoloLens.jpg",
+        "20190111_115143_HoloLens.jpg",
+        "20190111_115150_HoloLens.jpg",
+        "20190111_115157_HoloLens.jpg",
+        "20190111_115203_HoloLens.jpg",
+        "20190111_115218_HoloLens.jpg",
+        "20190111_115234_HoloLens.jpg",
+        "20190125_113909.jpg",
+        "20190125_113923.jpg",
+        "20190125_113928.jpg",
+        "20190125_113931.jpg",
+        "20190125_114244.jpg",
+        "20190125_114246.jpg",
+        "DSC01627.png",
+        "DSC01628.png",
+        "DSC01629.png",
+        "DSC01630.png",
+        "DSC01631.png",
+        "IMG_20181218_125954.jpg",
+        "IMG_20181218_130002.jpg",
+        "IMG_20181218_130005.jpg",
+        "IMG_20181218_130011.jpg",
+        "IMG_20190125_113823.jpg",
+        "IMG_20190125_113830.jpg",
+        "IMG_20190125_113835.jpg",
+        "IMG_20190125_133951.jpg",
+        "IMG_20190306_110658.jpg"
+      ]
+    },
+    {
+      "scene_group": "unresolved_042",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "DSC01638.png"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 39,
+      "selected_class_counts": [
+        1,
+        3,
+        0,
+        0,
+        2
+      ],
+      "quarantined_images": [
+        "DSC01638.png"
+      ]
+    },
+    {
+      "scene_group": "machine_3e8d6eb2ede6",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "DSC01639.png",
+        "DSC01640.png",
+        "DSC01641.png",
+        "DSC01642.png"
+      ],
+      "images": [
+        "DSC01639.png",
+        "DSC01640.png",
+        "DSC01641.png",
+        "DSC01642.png",
+        "DSC01643.png"
+      ],
+      "existing_split": "test",
+      "annotation_count_all_classes": 93,
+      "selected_class_counts": [
+        22,
+        0,
+        8,
+        16,
+        0
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_28f06f073c6a",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "DSC01644.png",
+        "DSC01645.png",
+        "DSC01646.png",
+        "IMG_20181218_165753.jpg",
+        "IMG_20190206_170619.jpg"
+      ],
+      "images": [
+        "DSC01644.png",
+        "DSC01645.png",
+        "DSC01646.png",
+        "DSC01647.png",
+        "IMG_20181218_165753.jpg",
+        "IMG_20181218_165757.jpg",
+        "IMG_20181218_165800.jpg",
+        "IMG_20181218_165804.jpg",
+        "IMG_20190206_170619.jpg"
+      ],
+      "existing_split": "test",
+      "annotation_count_all_classes": 316,
+      "selected_class_counts": [
+        22,
+        19,
+        6,
+        7,
+        14
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_0afdf2e120a1",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "DSC01651.png",
+        "IMG_20181218_170040.jpg",
+        "IMG_20181218_170046.jpg",
+        "IMG_20190206_175853.jpg",
+        "IMG_20190206_175857.jpg",
+        "IMG_20190206_175859.jpg"
+      ],
+      "images": [
+        "DSC01651.png",
+        "DSC01652.png",
+        "DSC01653.png",
+        "IMG_20181218_170040.jpg",
+        "IMG_20181218_170043.jpg",
+        "IMG_20181218_170046.jpg",
+        "IMG_20181218_170049.jpg",
+        "IMG_20190206_175853.jpg",
+        "IMG_20190206_175857.jpg",
+        "IMG_20190206_175859.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 398,
+      "selected_class_counts": [
+        21,
+        19,
+        8,
+        8,
+        20
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_4456752f715b",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "DSC01657.png",
+        "DSC01658.png",
+        "IMG_20181218_170238.jpg",
+        "IMG_20181218_170243.jpg",
+        "IMG_20190402_110254.jpg"
+      ],
+      "images": [
+        "DSC01657.png",
+        "DSC01658.png",
+        "DSC01659.png",
+        "IMG_20181218_170238.jpg",
+        "IMG_20181218_170243.jpg",
+        "IMG_20181218_170247.jpg",
+        "IMG_20190402_110254.jpg"
+      ],
+      "existing_split": "val",
+      "annotation_count_all_classes": 271,
+      "selected_class_counts": [
+        15,
+        16,
+        5,
+        5,
+        11
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "unresolved_058",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "DSC01660.png",
+        "DSC01661.png",
+        "DSC01665.png"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 114,
+      "selected_class_counts": [
+        8,
+        6,
+        3,
+        3,
+        5
+      ],
+      "quarantined_images": [
+        "DSC01660.png",
+        "DSC01661.png",
+        "DSC01665.png"
+      ]
+    },
+    {
+      "scene_group": "machine_65d0be958c17",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "DSC01666.png",
+        "IMG_20181218_170649.jpg",
+        "IMG_20190206_170434.jpg",
+        "IMG_20190206_170436.jpg",
+        "IMG_20190430_105808.jpg"
+      ],
+      "images": [
+        "DSC01666.png",
+        "DSC01668.png",
+        "IMG_20181218_170633.jpg",
+        "IMG_20181218_170635.jpg",
+        "IMG_20181218_170645.jpg",
+        "IMG_20181218_170648.jpg",
+        "IMG_20181218_170649.jpg",
+        "IMG_20181218_170655.jpg",
+        "IMG_20181218_170657.jpg",
+        "IMG_20190206_170434.jpg",
+        "IMG_20190206_170436.jpg",
+        "IMG_20190430_105805.jpg",
+        "IMG_20190430_105808.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 471,
+      "selected_class_counts": [
+        36,
+        25,
+        10,
+        7,
+        20
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "unresolved_063",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "DSC01673.png"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 17,
+      "selected_class_counts": [
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "quarantined_images": [
+        "DSC01673.png"
+      ]
+    },
+    {
+      "scene_group": "unresolved_064",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "DSC01676.png"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 29,
+      "selected_class_counts": [
+        4,
+        0,
+        1,
+        0,
+        2
+      ],
+      "quarantined_images": [
+        "DSC01676.png"
+      ]
+    },
+    {
+      "scene_group": "machine_c8f4eb3df42d",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "DSC01677.png",
+        "IMG_20181218_173657.jpg",
+        "IMG_20181218_173705.jpg",
+        "IMG_20190206_174446.jpg",
+        "IMG_20190206_175511.jpg"
+      ],
+      "images": [
+        "DSC01677.png",
+        "DSC01680.png",
+        "DSC01681.png",
+        "IMG_20181218_173652.jpg",
+        "IMG_20181218_173655.jpg",
+        "IMG_20181218_173657.jpg",
+        "IMG_20181218_173700.jpg",
+        "IMG_20181218_173702.jpg",
+        "IMG_20181218_173705.jpg",
+        "IMG_20190206_174446.jpg",
+        "IMG_20190206_175511.jpg",
+        "IMG_20190206_175516.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 445,
+      "selected_class_counts": [
+        43,
+        19,
+        8,
+        8,
+        22
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_e1be96cf78b1",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20181218_164608.jpg"
+      ],
+      "images": [
+        "IMG_20181218_164606.jpg",
+        "IMG_20181218_164608.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 91,
+      "selected_class_counts": [
+        5,
+        6,
+        2,
+        2,
+        4
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "unresolved_074",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20181218_165501.jpg",
+        "IMG_20181218_165504.jpg",
+        "IMG_20181218_165508.jpg",
+        "IMG_20181218_165513.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 106,
+      "selected_class_counts": [
+        16,
+        0,
+        6,
+        12,
+        0
+      ],
+      "quarantined_images": [
+        "IMG_20181218_165501.jpg",
+        "IMG_20181218_165504.jpg",
+        "IMG_20181218_165508.jpg",
+        "IMG_20181218_165513.jpg"
+      ]
+    },
+    {
+      "scene_group": "machine_009154991598",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20181218_165652.jpg",
+        "IMG_20190206_170714.jpg"
+      ],
+      "images": [
+        "IMG_20181218_165646.jpg",
+        "IMG_20181218_165648.jpg",
+        "IMG_20181218_165652.jpg",
+        "IMG_20181218_165657.jpg",
+        "IMG_20190206_170714.jpg",
+        "IMG_20190206_170716.jpg"
+      ],
+      "existing_split": "val",
+      "annotation_count_all_classes": 129,
+      "selected_class_counts": [
+        21,
+        0,
+        4,
+        16,
+        0
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_c6004947c1d2",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20181218_165922.jpg",
+        "IMG_20181218_165931.jpg",
+        "IMG_20190206_170606.jpg",
+        "IMG_20190430_105959.jpg"
+      ],
+      "images": [
+        "IMG_20181218_165922.jpg",
+        "IMG_20181218_165931.jpg",
+        "IMG_20181218_165934.jpg",
+        "IMG_20190206_170606.jpg",
+        "IMG_20190430_105959.jpg",
+        "IMG_20190430_110010.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 242,
+      "selected_class_counts": [
+        19,
+        9,
+        5,
+        2,
+        12
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_7520467cbe23",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20181218_170459.jpg",
+        "IMG_20181218_170508.jpg",
+        "IMG_20190206_170446.jpg",
+        "IMG_20190206_170448.jpg",
+        "IMG_20190430_105750.jpg",
+        "IMG_20190430_105754.jpg",
+        "IMG_20190502_180150.jpg"
+      ],
+      "images": [
+        "IMG_20181218_170459.jpg",
+        "IMG_20181218_170502.jpg",
+        "IMG_20181218_170508.jpg",
+        "IMG_20181218_170510.jpg",
+        "IMG_20181218_170513.jpg",
+        "IMG_20190206_170446.jpg",
+        "IMG_20190206_170448.jpg",
+        "IMG_20190430_105750.jpg",
+        "IMG_20190430_105754.jpg",
+        "IMG_20190502_180150.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 419,
+      "selected_class_counts": [
+        37,
+        15,
+        8,
+        6,
+        20
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_bb3e4ae22b1d",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20181218_171555.jpg",
+        "IMG_20181218_171604.jpg",
+        "IMG_20190430_111818.jpg"
+      ],
+      "images": [
+        "IMG_20181218_171555.jpg",
+        "IMG_20181218_171604.jpg",
+        "IMG_20181218_171607.jpg",
+        "IMG_20190430_111818.jpg"
+      ],
+      "existing_split": "val",
+      "annotation_count_all_classes": 152,
+      "selected_class_counts": [
+        13,
+        7,
+        3,
+        3,
+        8
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_cad58c8878fc",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20181218_171737.jpg",
+        "IMG_20181218_171740.jpg",
+        "IMG_20190430_111942.jpg"
+      ],
+      "images": [
+        "IMG_20181218_171737.jpg",
+        "IMG_20181218_171740.jpg",
+        "IMG_20181218_171743.jpg",
+        "IMG_20190430_111942.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 150,
+      "selected_class_counts": [
+        11,
+        7,
+        3,
+        2,
+        8
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_a9608332afdb",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20181218_171755.jpg",
+        "IMG_20190430_111949.jpg"
+      ],
+      "images": [
+        "IMG_20181218_171749.jpg",
+        "IMG_20181218_171753.jpg",
+        "IMG_20181218_171755.jpg",
+        "IMG_20181218_171800.jpg",
+        "IMG_20181218_171802.jpg",
+        "IMG_20181218_171805.jpg",
+        "IMG_20190430_111949.jpg"
+      ],
+      "existing_split": "val",
+      "annotation_count_all_classes": 246,
+      "selected_class_counts": [
+        28,
+        13,
+        5,
+        5,
+        10
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_7a18e7d150bd",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20181218_172430.jpg",
+        "IMG_20181218_172438.jpg",
+        "IMG_20190502_093212.jpg"
+      ],
+      "images": [
+        "IMG_20181218_172430.jpg",
+        "IMG_20181218_172432.jpg",
+        "IMG_20181218_172433.jpg",
+        "IMG_20181218_172438.jpg",
+        "IMG_20181218_172440.jpg",
+        "IMG_20181218_172442.jpg",
+        "IMG_20190502_093212.jpg"
+      ],
+      "existing_split": "test",
+      "annotation_count_all_classes": 283,
+      "selected_class_counts": [
+        24,
+        14,
+        6,
+        5,
+        14
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_0808846669be",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20181218_172839.jpg",
+        "IMG_20181218_172844.jpg",
+        "IMG_20181218_172854.jpg",
+        "IMG_20181218_172856.jpg",
+        "IMG_20181218_172857.jpg",
+        "IMG_20190502_093643.jpg"
+      ],
+      "images": [
+        "IMG_20181218_172839.jpg",
+        "IMG_20181218_172841.jpg",
+        "IMG_20181218_172844.jpg",
+        "IMG_20181218_172846.jpg",
+        "IMG_20181218_172849.jpg",
+        "IMG_20181218_172854.jpg",
+        "IMG_20181218_172856.jpg",
+        "IMG_20181218_172857.jpg",
+        "IMG_20181218_172859.jpg",
+        "IMG_20190502_093643.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 332,
+      "selected_class_counts": [
+        30,
+        17,
+        5,
+        4,
+        16
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_934574a6522d",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20181218_173033.jpg",
+        "IMG_20181218_173035.jpg",
+        "IMG_20190206_175717.jpg",
+        "IMG_20190206_175720.jpg",
+        "IMG_20190206_175724.jpg",
+        "IMG_20190502_093957.jpg"
+      ],
+      "images": [
+        "IMG_20181218_173028.jpg",
+        "IMG_20181218_173031.jpg",
+        "IMG_20181218_173033.jpg",
+        "IMG_20181218_173035.jpg",
+        "IMG_20181218_173039.jpg",
+        "IMG_20190206_175715.jpg",
+        "IMG_20190206_175717.jpg",
+        "IMG_20190206_175720.jpg",
+        "IMG_20190206_175724.jpg",
+        "IMG_20190502_093957.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 400,
+      "selected_class_counts": [
+        40,
+        15,
+        7,
+        4,
+        19
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "unresolved_146",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20181218_174501.jpg",
+        "IMG_20181218_174507.jpg",
+        "IMG_20181218_174511.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 124,
+      "selected_class_counts": [
+        8,
+        9,
+        2,
+        2,
+        6
+      ],
+      "quarantined_images": [
+        "IMG_20181218_174501.jpg",
+        "IMG_20181218_174507.jpg",
+        "IMG_20181218_174511.jpg"
+      ]
+    },
+    {
+      "scene_group": "unresolved_149",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20181218_174557.jpg",
+        "IMG_20181218_174559.jpg",
+        "IMG_20181218_174601.jpg",
+        "IMG_20181218_174603.jpg",
+        "IMG_20181218_174605.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 215,
+      "selected_class_counts": [
+        25,
+        11,
+        5,
+        5,
+        10
+      ],
+      "quarantined_images": [
+        "IMG_20181218_174557.jpg",
+        "IMG_20181218_174559.jpg",
+        "IMG_20181218_174601.jpg",
+        "IMG_20181218_174603.jpg",
+        "IMG_20181218_174605.jpg"
+      ]
+    },
+    {
+      "scene_group": "machine_2d99255acb57",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20181218_175301.jpg",
+        "IMG_20181218_175311.jpg"
+      ],
+      "images": [
+        "IMG_20181218_175259.jpg",
+        "IMG_20181218_175301.jpg",
+        "IMG_20181218_175304.jpg",
+        "IMG_20181218_175308.jpg",
+        "IMG_20181218_175311.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 196,
+      "selected_class_counts": [
+        25,
+        8,
+        10,
+        15,
+        9
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_6102f9410102",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20181218_175338.jpg",
+        "IMG_20190430_111611.jpg"
+      ],
+      "images": [
+        "IMG_20181218_175334.jpg",
+        "IMG_20181218_175338.jpg",
+        "IMG_20181218_175340.jpg",
+        "IMG_20190430_111611.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 161,
+      "selected_class_counts": [
+        18,
+        7,
+        3,
+        2,
+        8
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_4d293f534e70",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20181218_175416.jpg",
+        "IMG_20181218_175423.jpg"
+      ],
+      "images": [
+        "IMG_20181218_175416.jpg",
+        "IMG_20181218_175420.jpg",
+        "IMG_20181218_175423.jpg",
+        "IMG_20181218_175425.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 165,
+      "selected_class_counts": [
+        19,
+        9,
+        3,
+        3,
+        8
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_f75228c14f5f",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20181218_175457.jpg"
+      ],
+      "images": [
+        "IMG_20181218_175457.jpg",
+        "IMG_20181218_175501.jpg",
+        "IMG_20181218_175503.jpg",
+        "IMG_20181218_175504.jpg",
+        "IMG_20181218_175507.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 170,
+      "selected_class_counts": [
+        13,
+        12,
+        2,
+        2,
+        9
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "unresolved_175",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190206_120945.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 18,
+      "selected_class_counts": [
+        0,
+        0,
+        1,
+        4,
+        0
+      ],
+      "quarantined_images": [
+        "IMG_20190206_120945.jpg"
+      ]
+    },
+    {
+      "scene_group": "machine_82d607ddcaca",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20190206_170138.jpg",
+        "IMG_20190206_170142.jpg"
+      ],
+      "images": [
+        "IMG_20190206_170138.jpg",
+        "IMG_20190206_170142.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 88,
+      "selected_class_counts": [
+        10,
+        2,
+        4,
+        6,
+        4
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_555048df54d8",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20190206_170217.jpg"
+      ],
+      "images": [
+        "IMG_20190206_170217.jpg",
+        "IMG_20190206_170222.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 74,
+      "selected_class_counts": [
+        10,
+        0,
+        4,
+        6,
+        6
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_e1e2930ccd46",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20190206_170257.jpg"
+      ],
+      "images": [
+        "IMG_20190206_170257.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 30,
+      "selected_class_counts": [
+        6,
+        0,
+        2,
+        4,
+        0
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_a41778b7de32",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20190206_170337.jpg"
+      ],
+      "images": [
+        "IMG_20190206_170337.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 28,
+      "selected_class_counts": [
+        6,
+        0,
+        2,
+        4,
+        0
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_89a4eeedccc7",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20190206_174702.jpg",
+        "IMG_20190206_174705.jpg"
+      ],
+      "images": [
+        "IMG_20190206_174702.jpg",
+        "IMG_20190206_174705.jpg"
+      ],
+      "existing_split": "test",
+      "annotation_count_all_classes": 89,
+      "selected_class_counts": [
+        7,
+        2,
+        2,
+        2,
+        4
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_b9dd5ca784c4",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20190206_174757.jpg",
+        "IMG_20190206_174800.jpg",
+        "IMG_20190430_110329.jpg"
+      ],
+      "images": [
+        "IMG_20190206_174757.jpg",
+        "IMG_20190206_174800.jpg",
+        "IMG_20190430_110329.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 135,
+      "selected_class_counts": [
+        11,
+        3,
+        3,
+        2,
+        6
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_2d60d7ebba2a",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20190206_174819.jpg",
+        "IMG_20190206_174822.jpg",
+        "IMG_20190430_110417.jpg"
+      ],
+      "images": [
+        "IMG_20190206_174819.jpg",
+        "IMG_20190206_174822.jpg",
+        "IMG_20190430_110417.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 134,
+      "selected_class_counts": [
+        10,
+        3,
+        3,
+        3,
+        6
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_bf445d25f803",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20190206_174855.jpg"
+      ],
+      "images": [
+        "IMG_20190206_174852.jpg",
+        "IMG_20190206_174855.jpg"
+      ],
+      "existing_split": "val",
+      "annotation_count_all_classes": 91,
+      "selected_class_counts": [
+        7,
+        2,
+        2,
+        2,
+        4
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_f37708d55f06",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20190206_175054.jpg"
+      ],
+      "images": [
+        "IMG_20190206_175054.jpg",
+        "IMG_20190206_175058.jpg",
+        "IMG_20190206_175100.jpg"
+      ],
+      "existing_split": "test",
+      "annotation_count_all_classes": 132,
+      "selected_class_counts": [
+        11,
+        3,
+        3,
+        3,
+        6
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_ef9ec98a5e0d",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20190206_175751.jpg",
+        "IMG_20190206_175755.jpg",
+        "IMG_20190430_110149.jpg",
+        "IMG_20190430_110153.jpg",
+        "IMG_20190502_093933.jpg"
+      ],
+      "images": [
+        "IMG_20190206_175751.jpg",
+        "IMG_20190206_175755.jpg",
+        "IMG_20190430_110149.jpg",
+        "IMG_20190430_110153.jpg",
+        "IMG_20190502_093933.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 224,
+      "selected_class_counts": [
+        22,
+        5,
+        5,
+        2,
+        10
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "machine_643b0aa1da5e",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20190206_175758.jpg",
+        "IMG_20190206_175803.jpg",
+        "IMG_20190409_112103.jpg",
+        "IMG_20190430_110145.jpg",
+        "IMG_20190430_110157.jpg",
+        "IMG_20190502_093929.jpg"
+      ],
+      "images": [
+        "IMG_20190206_175758.jpg",
+        "IMG_20190206_175803.jpg",
+        "IMG_20190206_175805.jpg",
+        "IMG_20190409_112103.jpg",
+        "IMG_20190430_110145.jpg",
+        "IMG_20190430_110157.jpg",
+        "IMG_20190502_093929.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 314,
+      "selected_class_counts": [
+        25,
+        7,
+        7,
+        7,
+        14
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "unresolved_216",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190306_104622.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 32,
+      "selected_class_counts": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "quarantined_images": [
+        "IMG_20190306_104622.jpg"
+      ]
+    },
+    {
+      "scene_group": "unresolved_218",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190306_164958.jpg",
+        "IMG_20190306_165020.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 38,
+      "selected_class_counts": [
+        4,
+        2,
+        4,
+        0,
+        0
+      ],
+      "quarantined_images": [
+        "IMG_20190306_164958.jpg",
+        "IMG_20190306_165020.jpg"
+      ]
+    },
+    {
+      "scene_group": "unresolved_220",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190306_170619.jpg",
+        "IMG_20190306_170622.jpg",
+        "IMG_20190306_170625.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 99,
+      "selected_class_counts": [
+        9,
+        3,
+        6,
+        3,
+        0
+      ],
+      "quarantined_images": [
+        "IMG_20190306_170619.jpg",
+        "IMG_20190306_170622.jpg",
+        "IMG_20190306_170625.jpg"
+      ]
+    },
+    {
+      "scene_group": "unresolved_223",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190306_171253.jpg",
+        "IMG_20190306_171256.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 60,
+      "selected_class_counts": [
+        6,
+        2,
+        4,
+        2,
+        0
+      ],
+      "quarantined_images": [
+        "IMG_20190306_171253.jpg",
+        "IMG_20190306_171256.jpg"
+      ]
+    },
+    {
+      "scene_group": "unresolved_225",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190306_171808.jpg",
+        "IMG_20190306_171814.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 90,
+      "selected_class_counts": [
+        0,
+        0,
+        14,
+        14,
+        2
+      ],
+      "quarantined_images": [
+        "IMG_20190306_171808.jpg",
+        "IMG_20190306_171814.jpg"
+      ]
+    },
+    {
+      "scene_group": "unresolved_227",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190306_171957.jpg",
+        "IMG_20190306_172001.jpg",
+        "IMG_20190306_172008.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 135,
+      "selected_class_counts": [
+        12,
+        3,
+        0,
+        0,
+        0
+      ],
+      "quarantined_images": [
+        "IMG_20190306_171957.jpg",
+        "IMG_20190306_172001.jpg",
+        "IMG_20190306_172008.jpg"
+      ]
+    },
+    {
+      "scene_group": "unresolved_230",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190306_172403.jpg",
+        "IMG_20190306_172410.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 73,
+      "selected_class_counts": [
+        6,
+        2,
+        4,
+        2,
+        0
+      ],
+      "quarantined_images": [
+        "IMG_20190306_172403.jpg",
+        "IMG_20190306_172410.jpg"
+      ]
+    },
+    {
+      "scene_group": "unresolved_232",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190306_172745.jpg",
+        "IMG_20190306_172748.jpg",
+        "IMG_20190306_172751.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 108,
+      "selected_class_counts": [
+        9,
+        3,
+        6,
+        3,
+        0
+      ],
+      "quarantined_images": [
+        "IMG_20190306_172745.jpg",
+        "IMG_20190306_172748.jpg",
+        "IMG_20190306_172751.jpg"
+      ]
+    },
+    {
+      "scene_group": "unresolved_235",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190306_173145.jpg",
+        "IMG_20190306_173147.jpg",
+        "IMG_20190306_173149.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 72,
+      "selected_class_counts": [
+        9,
+        0,
+        9,
+        9,
+        0
+      ],
+      "quarantined_images": [
+        "IMG_20190306_173145.jpg",
+        "IMG_20190306_173147.jpg",
+        "IMG_20190306_173149.jpg"
+      ]
+    },
+    {
+      "scene_group": "unresolved_238",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190306_173403.jpg",
+        "IMG_20190306_173405.jpg",
+        "IMG_20190306_173408.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 110,
+      "selected_class_counts": [
+        9,
+        3,
+        6,
+        3,
+        0
+      ],
+      "quarantined_images": [
+        "IMG_20190306_173403.jpg",
+        "IMG_20190306_173405.jpg",
+        "IMG_20190306_173408.jpg"
+      ]
+    },
+    {
+      "scene_group": "machine_897e4fa6ce47",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20190307_152732.jpg",
+        "IMG_20190307_152734.jpg"
+      ],
+      "images": [
+        "IMG_20190307_152732.jpg",
+        "IMG_20190307_152734.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 77,
+      "selected_class_counts": [
+        4,
+        2,
+        2,
+        2,
+        4
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "unresolved_245",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190409_121733.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 39,
+      "selected_class_counts": [
+        5,
+        1,
+        2,
+        1,
+        2
+      ],
+      "quarantined_images": [
+        "IMG_20190409_121733.jpg"
+      ]
+    },
+    {
+      "scene_group": "unresolved_256",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190430_110231.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 43,
+      "selected_class_counts": [
+        3,
+        1,
+        0,
+        0,
+        2
+      ],
+      "quarantined_images": [
+        "IMG_20190430_110231.jpg"
+      ]
+    },
+    {
+      "scene_group": "unresolved_259",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190430_111230.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 32,
+      "selected_class_counts": [
+        2,
+        1,
+        0,
+        0,
+        1
+      ],
+      "quarantined_images": [
+        "IMG_20190430_111230.jpg"
+      ]
+    },
+    {
+      "scene_group": "unresolved_260",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190430_111456.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 31,
+      "selected_class_counts": [
+        2,
+        1,
+        0,
+        0,
+        1
+      ],
+      "quarantined_images": [
+        "IMG_20190430_111456.jpg"
+      ]
+    },
+    {
+      "scene_group": "unresolved_261",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190430_111521.jpg",
+        "IMG_20190430_111555.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 83,
+      "selected_class_counts": [
+        8,
+        2,
+        2,
+        0,
+        4
+      ],
+      "quarantined_images": [
+        "IMG_20190430_111521.jpg",
+        "IMG_20190430_111555.jpg"
+      ]
+    },
+    {
+      "scene_group": "machine_39b4eccd47a2",
+      "status": "sticker_supported",
+      "readable_sticker_images": [
+        "IMG_20190502_094330.jpg",
+        "IMG_20190502_094333.jpg"
+      ],
+      "images": [
+        "IMG_20190502_094330.jpg",
+        "IMG_20190502_094333.jpg"
+      ],
+      "existing_split": "train",
+      "annotation_count_all_classes": 78,
+      "selected_class_counts": [
+        6,
+        2,
+        0,
+        0,
+        4
+      ],
+      "quarantined_images": []
+    },
+    {
+      "scene_group": "unresolved_274",
+      "status": "unresolved",
+      "readable_sticker_images": [],
+      "images": [
+        "IMG_20190502_171330.jpg",
+        "IMG_20190502_171332.jpg"
+      ],
+      "existing_split": null,
+      "annotation_count_all_classes": 55,
+      "selected_class_counts": [
+        1,
+        1,
+        0,
+        0,
+        4
+      ],
+      "quarantined_images": [
+        "IMG_20190502_171330.jpg",
+        "IMG_20190502_171332.jpg"
+      ]
+    }
+  ],
+  "models": {
+    "A": "C:\\Users\\Lenovo\\Documents\\ChatGPT\\StoreRoom\\runs\\baseline_002\\weights\\best.pt",
+    "B": "C:\\Users\\Lenovo\\Documents\\ChatGPT\\StoreRoom\\runs\\augmentation_001\\weights\\best.pt"
+  },
+  "model_hashes": {
+    "A": "7e048d48a3b80cf5cab1aafb30dfb63f7f20c94e12b26ded8aac35de5ecd0cbd",
+    "B": "099b96ecd3cb440991b56c69cd243770ca499b8e246fee994ced3e24b93ec1c4"
+  },
+  "common_arguments": {
+    "imgsz": 320,
+    "device": "cpu",
+    "max_det": 300,
+    "agnostic_nms": false,
+    "augment": false,
+    "verbose": false,
+    "rect": true,
+    "batch": 1,
+    "iou": 0.5
+  },
+  "class_thresholds": [
+    0.15,
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ],
+  "protected_artifacts": 921,
+  "reason": "All 33 supported groups are assigned to train/val/test. Remaining components lack verified cross-visit identity; test groups cannot be repurposed."
+}

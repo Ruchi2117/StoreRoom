@@ -1,0 +1,82 @@
+{
+  "dataset_manifest_sha256": "878424031a9ab66bb64a89ac4dfbb5bebc889d67ef5e295d5e3ee494edae5513",
+  "split": "val",
+  "images": [
+    "DSC01657.png",
+    "DSC01658.png",
+    "DSC01659.png",
+    "IMG_20181218_165646.jpg",
+    "IMG_20181218_165648.jpg",
+    "IMG_20181218_165652.jpg",
+    "IMG_20181218_165657.jpg",
+    "IMG_20181218_170238.jpg",
+    "IMG_20181218_170243.jpg",
+    "IMG_20181218_170247.jpg",
+    "IMG_20181218_171555.jpg",
+    "IMG_20181218_171604.jpg",
+    "IMG_20181218_171607.jpg",
+    "IMG_20181218_171749.jpg",
+    "IMG_20181218_171753.jpg",
+    "IMG_20181218_171755.jpg",
+    "IMG_20181218_171800.jpg",
+    "IMG_20181218_171802.jpg",
+    "IMG_20181218_171805.jpg",
+    "IMG_20190206_170714.jpg",
+    "IMG_20190206_170716.jpg",
+    "IMG_20190206_174852.jpg",
+    "IMG_20190206_174855.jpg",
+    "IMG_20190402_110254.jpg",
+    "IMG_20190430_111818.jpg",
+    "IMG_20190430_111949.jpg"
+  ],
+  "names": [
+    "Red Bull",
+    "Knoppers",
+    "Valser Classic",
+    "Valser Still",
+    "Capri-Sun Multivitamin"
+  ],
+  "ultralytics": "8.4.154",
+  "torch": "2.14.0+cpu",
+  "common_arguments": {
+    "imgsz": 320,
+    "device": "cpu",
+    "max_det": 300,
+    "agnostic_nms": false,
+    "augment": false,
+    "verbose": false,
+    "rect": true,
+    "batch": 1,
+    "iou": 0.5
+  },
+  "runs": {
+    "A": [
+      0.15,
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "B": [
+      0.15,
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ]
+  },
+  "standard_ultralytics_validation_run": false,
+  "metric_protocol": "Unchanged class-specific inference at 320, NMS .50, Red Bull .15 / others .25; NMS_001 counting/matching.",
+  "evaluation_source_sha256": {
+    "src/nms_experiment.py": "ff016b1b03eb1475f88df4143890c82b0b53ac44c0d7a748cf44d6a342edb7bd",
+    "src/counting.py": "1f70996c414e12e43ee0716eeca6cf7a437cc244d9a31e8b10033259f23a63e7"
+  },
+  "checkpoints": {
+    "A": "C:\\Users\\Lenovo\\Documents\\ChatGPT\\StoreRoom\\runs\\baseline_002\\weights\\best.pt",
+    "B": "C:\\Users\\Lenovo\\Documents\\ChatGPT\\StoreRoom\\runs\\augmentation_001\\weights\\best.pt"
+  },
+  "checkpoint_hashes": {
+    "A": "7e048d48a3b80cf5cab1aafb30dfb63f7f20c94e12b26ded8aac35de5ecd0cbd",
+    "B": "099b96ecd3cb440991b56c69cd243770ca499b8e246fee994ced3e24b93ec1c4"
+  }
+}

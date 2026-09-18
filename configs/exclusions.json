@@ -1,0 +1,10 @@
+{
+  "images": {
+    "20190125_114246.jpg": "Quarantine: XML 1960x4032 versus decoded 1959x4031. Preserve raw data; do not silently rescale boxes.",
+    "IMG_20190306_104622.jpg": "Product icons on a vending-machine screen, not physical packages.",
+    "IMG_20190430_111230.jpg": "Product icons on a vending-machine screen, not physical packages.",
+    "IMG_20190430_111456.jpg": "Product icons on a vending-machine screen, not physical packages."
+  },
+  "missing_images": "All 18 orphan XMLs are excluded automatically by requiring a matching source image.",
+  "raw_data_modified": false
+}

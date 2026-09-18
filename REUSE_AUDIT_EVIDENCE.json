@@ -1,0 +1,35 @@
+{
+  "audit_date": "2026-09-16",
+  "scope": "Metadata and bounded archive inspection; no full dataset download or training",
+  "grocer_help": {
+    "record": "https://zenodo.org/records/10464054",
+    "metadata_api": "https://zenodo.org/api/records/10464054",
+    "archive_url": "https://zenodo.org/records/10464054/files/Grocer-Help.zip?download=1",
+    "archive_size_bytes": 4202584064,
+    "record_license_id": "cc-by-4.0",
+    "record_image_count": 7371,
+    "archive_yaml": "Grocer-Help/data.yaml",
+    "yaml_nc": 647,
+    "train": {
+      "image_stems": 6751,
+      "label_stems": 6741,
+      "images_without_same_split_labels": ["216_train", "218_train", "231_train", "249_train", "251_train", "255_train", "260_train", "267_train", "272_train", "278_train", "5208_train"],
+      "labels_without_same_split_images": ["5209_train"]
+    },
+    "valid": {
+      "image_stems": 689,
+      "label_stems": 689,
+      "images_without_same_split_labels": ["5209_train"],
+      "labels_without_same_split_images": ["5208_train"]
+    },
+    "sampled_labels": ["Grocer-Help/train/labels/0_train.txt", "Grocer-Help/train/labels/1_train.txt", "Grocer-Help/train/labels/10_train.txt"],
+    "sample_observation": "0_train.txt and 1_train.txt contain both five-value detection rows and longer polygon-style rows; full label corpus not validated",
+    "duplicate_name_examples": [["Maggi", "MAggi"], ["CocaCola", "Cocacola"], ["ToothPaste", "Toothpaste"]],
+    "other_file": "Grocer-Help/valid/labels.cache"
+  },
+  "package_metadata_observed_not_installed_or_tested": {
+    "supervision": "0.30.3",
+    "ultralytics": "8.4.153"
+  },
+  "remaining_checks": ["HoloSelecta download and actual importer compatibility", "Five-class instance and independent-scene support", "Visual label quality", "Duplicate and group-aware split audit", "Runtime and GPU compatibility", "Model performance"]
+}

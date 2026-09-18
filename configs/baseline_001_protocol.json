@@ -1,0 +1,17 @@
+{
+  "experiment": "baseline_001",
+  "dataset_version": "holoselecta-five-v0.1",
+  "model": "yolo11n.pt",
+  "checkpoint_selection": "Ultralytics best.pt selected using validation fitness only",
+  "counting_confidence": 0.25,
+  "nms_iou": 0.70,
+  "class_agnostic_nms": false,
+  "max_detections": 300,
+  "ap_confidence_floor": 0.001,
+  "counting_mae_definition": "mean absolute error across image-class cells (N times 5); also report sum-count MAE",
+  "exact_count_accuracy_definition": "fraction of images whose entire five-class count vector matches",
+  "threshold_search": false,
+  "test_gate": "Only after configuration and selected checkpoint SHA-256 are frozen; validation mAP50 must be nonzero and cell counting MAE must beat always-zero. Otherwise leave test untouched.",
+  "test_policy": "One final evaluation of the frozen checkpoint. No changes or second experiment based on test results.",
+  "size_claims": "Red Bull sizes are not separate labels, so size accuracy cannot be measured."
+}

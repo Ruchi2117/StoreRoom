@@ -1,0 +1,11 @@
+{
+  "baseline_frozen": true,
+  "checkpoint_sha256": "028251faf221362ac14d09f6e9150966678270b32d8b71b9152e9e1897850b3a",
+  "frozen_at_utc": "2026-09-17T15:44:53.498381+00:00",
+  "configuration_sha256": "05098abdd584719cb716a087ec62e4c5522229277000966fd2002eaa7e3717f2",
+  "protocol_sha256": "703cfbaabcd9e325231b358717a829bde83f773a1ce7b0e23d927b4266ded1cd",
+  "dataset_manifest_sha256": "878424031a9ab66bb64a89ac4dfbb5bebc889d67ef5e295d5e3ee494edae5513",
+  "validation_report_sha256": "ecfaada749965700e74667024b44dd43bc9ac23e2ebda7fdb3f6d2a2b428075d",
+  "confidence": 0.25,
+  "iou": 0.7
+}

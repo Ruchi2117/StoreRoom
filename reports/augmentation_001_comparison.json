@@ -1,0 +1,6815 @@
+{
+  "a_reproduces_class_confidence_001_b": true,
+  "images": [
+    {
+      "image": "DSC01657.png",
+      "truth": [
+        2,
+        3,
+        1,
+        1,
+        2
+      ],
+      "a_counts": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "b_counts": [
+        4,
+        3,
+        1,
+        1,
+        2
+      ],
+      "a_sum_absolute_error": 3,
+      "b_sum_absolute_error": 2,
+      "count_error_delta": -1,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.9856808185577393,
+            "xyxy": [
+              1351.249755859375,
+              2560.41552734375,
+              1629.4971923828125,
+              3059.3544921875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8468458986394668
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.9403812289237976,
+            "xyxy": [
+              2540.587158203125,
+              3132.168212890625,
+              2831.4765625,
+              3712.282958984375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.8094643851965125
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.9273058176040649,
+            "xyxy": [
+              2247.390625,
+              1119.048583984375,
+              2528.648193359375,
+              1642.72021484375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8488620046178507
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.9047204852104187,
+            "xyxy": [
+              447.5045471191406,
+              3891.753173828125,
+              747.9942016601562,
+              4497.99365234375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.903675324929635
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.897955060005188,
+            "xyxy": [
+              2827.419189453125,
+              3119.4111328125,
+              3139.789794921875,
+              3707.77685546875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.8568143047961538
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8517520427703857,
+            "xyxy": [
+              1640.2138671875,
+              3861.432861328125,
+              1915.4510498046875,
+              4404.91943359375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8360930681228638,
+            "xyxy": [
+              1054.3466796875,
+              3877.199951171875,
+              1327.52001953125,
+              4427.083984375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.889697044296957
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 7,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.7549668550491333,
+            "xyxy": [
+              2791.49609375,
+              4544.97021484375,
+              3111.760009765625,
+              5294.0302734375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.9112518632695401
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.8910136871528487,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.9251110624632901
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 8,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.6589213609695435,
+            "xyxy": [
+              3098.249267578125,
+              4569.06689453125,
+              3375.827880859375,
+              5298.2578125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 8,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.850527026496385
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 9,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.49843552708625793,
+            "xyxy": [
+              1383.09765625,
+              3885.49658203125,
+              1619.02685546875,
+              4422.81494140625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 9,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "overlapping_b_index": 6,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.9054752766328802
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 10,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.46216750144958496,
+            "xyxy": [
+              2667.486328125,
+              1091.8878173828125,
+              2949.498046875,
+              1653.4578857421875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 10,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.9265623596593351
+          },
+          "overlapping_b_index": 5,
+          "prediction_pair_iou": 0.9768547450479053,
+          "b_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.9219308777080291
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 11,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.1689201444387436,
+            "xyxy": [
+              773.442626953125,
+              3879.79296875,
+              1064.40576171875,
+              4456.07666015625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 11,
+            "kind": "background_or_localization",
+            "gt_index": 1,
+            "best_iou": 0.02904053623504957
+          },
+          "overlapping_b_index": 6,
+          "prediction_pair_iou": 0.012899407318470257,
+          "b_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.9054752766328802
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "DSC01658.png",
+      "truth": [
+        0,
+        3,
+        1,
+        1,
+        2
+      ],
+      "a_counts": [
+        3,
+        3,
+        1,
+        1,
+        2
+      ],
+      "b_counts": [
+        2,
+        3,
+        1,
+        3,
+        2
+      ],
+      "a_sum_absolute_error": 3,
+      "b_sum_absolute_error": 4,
+      "count_error_delta": 1,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.9857439398765564,
+            "xyxy": [
+              2177.255126953125,
+              1040.9217529296875,
+              2381.488037109375,
+              1524.1141357421875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.7435789770464551
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.8731475472450256,
+            "xyxy": [
+              1342.8199462890625,
+              2450.651611328125,
+              1590.2806396484375,
+              2931.84912109375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.9045525644441897
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.7959612491069289
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.8147578239440918,
+            "xyxy": [
+              2528.278564453125,
+              1017.8331298828125,
+              2763.685791015625,
+              1524.95068359375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.7737291040913352
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.9171122857583441,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.7959612491069289
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.7750762104988098,
+            "xyxy": [
+              2387.4599609375,
+              2968.261474609375,
+              2638.442626953125,
+              3466.278564453125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.7309570580720911
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.7111096978187561,
+            "xyxy": [
+              2630.3681640625,
+              2936.106201171875,
+              2918.698486328125,
+              3456.7998046875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.785298133609461
+          },
+          "overlapping_b_index": 5,
+          "prediction_pair_iou": 0.8632202703438289,
+          "b_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.7746732069382241
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.6432017087936401,
+            "xyxy": [
+              966.23779296875,
+              3777.697509765625,
+              1279.7386474609375,
+              4359.57080078125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.6418541073799133,
+            "xyxy": [
+              1503.9581298828125,
+              3722.316162109375,
+              1842.9527587890625,
+              4264.498046875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 7,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.5071430206298828,
+            "xyxy": [
+              2791.054931640625,
+              4224.2060546875,
+              3108.277099609375,
+              4875.2880859375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.8695928670266746
+          },
+          "overlapping_b_index": 6,
+          "prediction_pair_iou": 0.9253621269094531,
+          "b_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.8634218324945618
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 8,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.37844136357307434,
+            "xyxy": [
+              1264.22509765625,
+              3731.59716796875,
+              1534.3663330078125,
+              4277.60400390625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 8,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "overlapping_b_index": 7,
+          "prediction_pair_iou": 0.022210176424974828,
+          "b_match": {
+            "prediction_index": 7,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 9,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.3714340627193451,
+            "xyxy": [
+              2525.139892578125,
+              4247.01806640625,
+              2836.093017578125,
+              4892.66259765625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 9,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.6805968616309602
+          },
+          "overlapping_b_index": 3,
+          "prediction_pair_iou": 0.7906386031044721,
+          "b_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8434959326885653
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [
+        3
+      ],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "DSC01659.png",
+      "truth": [
+        2,
+        3,
+        0,
+        0,
+        2
+      ],
+      "a_counts": [
+        5,
+        1,
+        1,
+        0,
+        2
+      ],
+      "b_counts": [
+        4,
+        2,
+        1,
+        0,
+        2
+      ],
+      "a_sum_absolute_error": 6,
+      "b_sum_absolute_error": 4,
+      "count_error_delta": -2,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.9451385140419006,
+            "xyxy": [
+              1731.8131103515625,
+              2235.17578125,
+              2021.1019287109375,
+              2815.348876953125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8311426919258422
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.9382937550544739,
+            "xyxy": [
+              3381.7060546875,
+              3086.39306640625,
+              3759.803955078125,
+              3824.862060546875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.9749578764597303
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8602623343467712,
+            "xyxy": [
+              2081.418701171875,
+              3766.88134765625,
+              2389.548828125,
+              4369.9033203125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8389962911605835,
+            "xyxy": [
+              1422.2943115234375,
+              3690.343505859375,
+              1788.734130859375,
+              4278.9736328125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.5726839445241687
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.8222714066505432,
+            "xyxy": [
+              3017.03564453125,
+              3047.222900390625,
+              3355.802490234375,
+              3779.9228515625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.7191120014176564
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.8880703303139847,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.7474738470967901
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.8087775111198425,
+            "xyxy": [
+              3362.673095703125,
+              4931.73876953125,
+              3698.361083984375,
+              5871.39697265625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.6897080540657043,
+            "xyxy": [
+              1760.8978271484375,
+              3750.726318359375,
+              2125.173583984375,
+              4335.455078125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "background_or_localization",
+            "gt_index": 1,
+            "best_iou": 0.1337393103489176
+          },
+          "overlapping_b_index": 3,
+          "prediction_pair_iou": 0.06538317129299584,
+          "b_match": {
+            "prediction_index": 3,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 7,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.579944372177124,
+            "xyxy": [
+              961.0140380859375,
+              3601.81005859375,
+              1267.1080322265625,
+              4200.52587890625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.5589683967411229
+          },
+          "overlapping_b_index": 3,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 3,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 8,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.17870919406414032,
+            "xyxy": [
+              1077.975830078125,
+              3624.66943359375,
+              1398.417724609375,
+              4212.69873046875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 8,
+            "kind": "duplicate_candidate",
+            "gt_index": 0,
+            "best_iou": 0.6578772430991876
+          },
+          "overlapping_b_index": 8,
+          "prediction_pair_iou": 0.4754418193284458,
+          "b_match": {
+            "prediction_index": 8,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.6358507373345145
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [
+        3
+      ],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20181218_165646.jpg",
+      "truth": [
+        5,
+        0,
+        2,
+        4,
+        0
+      ],
+      "a_counts": [
+        4,
+        0,
+        0,
+        2,
+        0
+      ],
+      "b_counts": [
+        1,
+        0,
+        6,
+        7,
+        0
+      ],
+      "a_sum_absolute_error": 5,
+      "b_sum_absolute_error": 11,
+      "count_error_delta": 6,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.7036113739013672,
+            "xyxy": [
+              2189.4111328125,
+              556.9570922851562,
+              2453.15625,
+              1382.1802978515625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 10,
+            "best_iou": 0.9185257117377419
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.8600739397987571,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 10,
+            "best_iou": 0.8226723013064344
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.5535884499549866,
+            "xyxy": [
+              1165.220947265625,
+              1853.39501953125,
+              1406.1688232421875,
+              2344.820068359375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.7127013404390589
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": true
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.4212481677532196,
+            "xyxy": [
+              948.6935424804688,
+              1846.5728759765625,
+              1157.7314453125,
+              2322.061279296875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.473949060580193
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.3832952082157135,
+            "xyxy": [
+              1895.8431396484375,
+              571.8900756835938,
+              2178.495849609375,
+              1375.1407470703125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 9,
+            "best_iou": 0.870130062961677
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.852621294786761,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 9,
+            "best_iou": 0.868230822178544
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.2170063555240631,
+            "xyxy": [
+              1434.7279052734375,
+              1885.1287841796875,
+              1637.2701416015625,
+              2352.83251953125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.7666295325657728
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": true
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.16660012304782867,
+            "xyxy": [
+              1637.5267333984375,
+              1876.57958984375,
+              1865.492431640625,
+              2363.1748046875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.7052050732918655
+          },
+          "overlapping_b_index": 13,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 13,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "lost_previously_matched_gt": true
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "lost_gt_indices": [
+        1,
+        2,
+        3
+      ],
+      "gained_gt_indices": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20181218_165648.jpg",
+      "truth": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "a_counts": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "b_counts": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "a_sum_absolute_error": 0,
+      "b_sum_absolute_error": 0,
+      "count_error_delta": 0,
+      "kept_indices": [],
+      "removed": [],
+      "added_b_indices": [],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": true
+    },
+    {
+      "image": "IMG_20181218_165652.jpg",
+      "truth": [
+        6,
+        0,
+        2,
+        4,
+        0
+      ],
+      "a_counts": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "b_counts": [
+        2,
+        0,
+        3,
+        8,
+        0
+      ],
+      "a_sum_absolute_error": 13,
+      "b_sum_absolute_error": 9,
+      "count_error_delta": -4,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.25937819480895996,
+            "xyxy": [
+              1504.9715576171875,
+              2260.667724609375,
+              1809.576416015625,
+              3023.15185546875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "wrong_class_candidate",
+            "gt_index": 1,
+            "best_iou": 0.82211233688794
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [
+        2,
+        9,
+        10,
+        11
+      ],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20181218_165657.jpg",
+      "truth": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "a_counts": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "b_counts": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "a_sum_absolute_error": 0,
+      "b_sum_absolute_error": 0,
+      "count_error_delta": 0,
+      "kept_indices": [],
+      "removed": [],
+      "added_b_indices": [],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": true
+    },
+    {
+      "image": "IMG_20181218_170238.jpg",
+      "truth": [
+        3,
+        3,
+        1,
+        1,
+        2
+      ],
+      "a_counts": [
+        6,
+        3,
+        1,
+        1,
+        2
+      ],
+      "b_counts": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "a_sum_absolute_error": 3,
+      "b_sum_absolute_error": 2,
+      "count_error_delta": -1,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.9858827590942383,
+            "xyxy": [
+              490.92266845703125,
+              3050.762939453125,
+              714.3146362304688,
+              3467.318603515625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.9138536907262388
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.9717357754707336,
+            "xyxy": [
+              2191.63232421875,
+              2484.240478515625,
+              2406.4189453125,
+              2874.385498046875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 9,
+            "best_iou": 0.8275810089888525
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.9474461078643799,
+            "xyxy": [
+              2118.29541015625,
+              3418.194091796875,
+              2353.186279296875,
+              3912.03076171875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.8375789832652912
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.9185324907302856,
+            "xyxy": [
+              2149.9794921875,
+              1043.4251708984375,
+              2312.97216796875,
+              1415.0797119140625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.6426839795017745
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.8982000946998596,
+            "xyxy": [
+              2316.48779296875,
+              3413.929931640625,
+              2521.8720703125,
+              3920.4990234375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.8280464976402425
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.8075581332291084,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.7722469141307909
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8756672143936157,
+            "xyxy": [
+              1349.654541015625,
+              2999.62353515625,
+              1560.1134033203125,
+              3365.0966796875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8324231463499169
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8131615501358205
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.8675315976142883,
+            "xyxy": [
+              1974.54638671875,
+              2479.713134765625,
+              2195.2509765625,
+              2882.348388671875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.8282426342493547
+          },
+          "overlapping_b_index": 5,
+          "prediction_pair_iou": 0.9288100461238373,
+          "b_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.8666134315963313
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 7,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.8252130746841431,
+            "xyxy": [
+              1173.89306640625,
+              2101.931884765625,
+              1343.2149658203125,
+              2434.2265625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.7333929234056766
+          },
+          "overlapping_b_index": 3,
+          "prediction_pair_iou": 0.8621877113807369,
+          "b_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8088894914755322
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 8,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.7695170640945435,
+            "xyxy": [
+              1845.120849609375,
+              1071.388671875,
+              1998.8846435546875,
+              1425.2120361328125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 8,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.8170884002708878
+          },
+          "overlapping_b_index": 4,
+          "prediction_pair_iou": 0.876748063783568,
+          "b_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.7758479714854386
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 9,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.7554376125335693,
+            "xyxy": [
+              1145.0596923828125,
+              3008.727783203125,
+              1333.423828125,
+              3374.8837890625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 9,
+            "kind": "background_or_localization",
+            "gt_index": 2,
+            "best_iou": 0.005520365636260857
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8131615501358205
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 10,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.7248976826667786,
+            "xyxy": [
+              1234.86181640625,
+              3010.298828125,
+              1394.64599609375,
+              3366.074951171875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 10,
+            "kind": "background_or_localization",
+            "gt_index": 2,
+            "best_iou": 0.17892545502211163
+          },
+          "overlapping_b_index": 9,
+          "prediction_pair_iou": 0.14766468820651363,
+          "b_match": {
+            "prediction_index": 9,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8549518348194564
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 11,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.6395003795623779,
+            "xyxy": [
+              939.8715209960938,
+              3018.399169921875,
+              1118.5640869140625,
+              3419.83544921875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 11,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.7819425056880381
+          },
+          "overlapping_b_index": 8,
+          "prediction_pair_iou": 0.9061954646322585,
+          "b_match": {
+            "prediction_index": 8,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.7801729578286484
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 12,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.22847431898117065,
+            "xyxy": [
+              527.1805419921875,
+              3039.744873046875,
+              869.8038330078125,
+              3453.036376953125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 12,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.4561136957777489
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.4954636766319459,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8131615501358205
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20181218_170243.jpg",
+      "truth": [
+        0,
+        3,
+        0,
+        0,
+        2
+      ],
+      "a_counts": [
+        0,
+        3,
+        0,
+        0,
+        2
+      ],
+      "b_counts": [
+        0,
+        3,
+        0,
+        0,
+        2
+      ],
+      "a_sum_absolute_error": 0,
+      "b_sum_absolute_error": 0,
+      "count_error_delta": 0,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.9886244535446167,
+            "xyxy": [
+              1564.1055908203125,
+              2162.1767578125,
+              1883.5362548828125,
+              2740.941162109375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8267479146996688
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.9329113364219666,
+            "xyxy": [
+              3209.27294921875,
+              457.15301513671875,
+              3493.049560546875,
+              1115.834716796875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.7567451550359874
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.9160592276362219,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.7009898515628581
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.9021813869476318,
+            "xyxy": [
+              2673.04248046875,
+              514.7330322265625,
+              2970.60595703125,
+              1115.3426513671875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.7634118865371136
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.7992415959221637
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.7867124676704407,
+            "xyxy": [
+              3302.45263671875,
+              2854.1767578125,
+              3645.62060546875,
+              3477.81591796875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.9056828824026028
+          },
+          "overlapping_b_index": 2,
+          "prediction_pair_iou": 0.0022446016676688535,
+          "b_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8869330857533811
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.33735349774360657,
+            "xyxy": [
+              2986.4892578125,
+              2867.3134765625,
+              3295.546875,
+              3480.0
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.9093410456608525
+          },
+          "overlapping_b_index": 2,
+          "prediction_pair_iou": 0.8655286401507338,
+          "b_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8869330857533811
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20181218_170247.jpg",
+      "truth": [
+        4,
+        0,
+        1,
+        1,
+        0
+      ],
+      "a_counts": [
+        3,
+        0,
+        2,
+        2,
+        0
+      ],
+      "b_counts": [
+        4,
+        0,
+        1,
+        1,
+        0
+      ],
+      "a_sum_absolute_error": 3,
+      "b_sum_absolute_error": 0,
+      "count_error_delta": -3,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.9968875050544739,
+            "xyxy": [
+              3468.0498046875,
+              1762.7098388671875,
+              3925.140380859375,
+              2886.677001953125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.92020553301633
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.8506948947906494,
+            "xyxy": [
+              3901.692138671875,
+              1777.5745849609375,
+              4374.04296875,
+              2859.818603515625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.8134501344208803
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.4153405427932739,
+            "xyxy": [
+              3886.238525390625,
+              1771.0775146484375,
+              4191.09521484375,
+              2902.913818359375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "wrong_class_candidate",
+            "gt_index": 5,
+            "best_iou": 0.6846110171033393
+          },
+          "overlapping_b_index": 3,
+          "prediction_pair_iou": 0.1002983689880136,
+          "b_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.8523262679945578
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.39440983533859253,
+            "xyxy": [
+              4151.11181640625,
+              1949.161865234375,
+              4477.6787109375,
+              2906.468505859375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "background_or_localization",
+            "gt_index": 5,
+            "best_iou": 0.22821453925620017
+          },
+          "overlapping_b_index": 4,
+          "prediction_pair_iou": 0.2841849977199921,
+          "b_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.8759059023373115
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.23230402171611786,
+            "xyxy": [
+              1457.4024658203125,
+              719.1989135742188,
+              1848.3338623046875,
+              1479.189208984375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.9696121873512644
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.8926800704054421,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8655756307557605
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.20416851341724396,
+            "xyxy": [
+              1020.8178100585938,
+              714.8703002929688,
+              1361.13818359375,
+              1480.228759765625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.7853605726006402
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.8495200202551826,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.8146183206489703
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.18855616450309753,
+            "xyxy": [
+              1904.3292236328125,
+              670.867919921875,
+              2316.857666015625,
+              1475.540771484375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8398229494834344
+          },
+          "overlapping_b_index": 2,
+          "prediction_pair_iou": 0.8224881007431122,
+          "b_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8878442333744276
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [
+        0
+      ],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20181218_171555.jpg",
+      "truth": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "a_counts": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "b_counts": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "a_sum_absolute_error": 0,
+      "b_sum_absolute_error": 0,
+      "count_error_delta": 0,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.9786892533302307,
+            "xyxy": [
+              2597.45947265625,
+              2497.81640625,
+              2847.15966796875,
+              2982.9814453125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 11,
+            "best_iou": 0.8692380183344597
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.973648190498352,
+            "xyxy": [
+              2507.68310546875,
+              694.6707153320312,
+              2779.66796875,
+              1175.0113525390625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.7160205871173775
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.9623857140541077,
+            "xyxy": [
+              1317.0423583984375,
+              2007.2738037109375,
+              1510.1395263671875,
+              2413.2294921875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.9154025821091027
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.9558415412902832,
+            "xyxy": [
+              604.1071166992188,
+              3058.02001953125,
+              815.3653564453125,
+              3520.49169921875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8859961025255109
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.9262710035727374
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.9554899334907532,
+            "xyxy": [
+              2450.344970703125,
+              3636.928955078125,
+              2719.694091796875,
+              4257.9970703125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.8533377650567833
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.9122388236183229,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.9118703170013255
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.9531157612800598,
+            "xyxy": [
+              2704.515625,
+              3643.215087890625,
+              2925.944091796875,
+              4240.6376953125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 9,
+            "best_iou": 0.8385680425331589
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.9524352550506592,
+            "xyxy": [
+              1567.583251953125,
+              3072.100830078125,
+              1794.639892578125,
+              3524.521240234375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.9631990944731774
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.9111327731525269,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.9262710035727374
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 7,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.9008239507675171,
+            "xyxy": [
+              2360.871337890625,
+              2520.285400390625,
+              2604.41748046875,
+              2983.715087890625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 10,
+            "best_iou": 0.7441533307854802
+          },
+          "overlapping_b_index": 2,
+          "prediction_pair_iou": 0.8926314409136213,
+          "b_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 10,
+            "best_iou": 0.8021663720175252
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 8,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8417522311210632,
+            "xyxy": [
+              1078.3546142578125,
+              3067.5908203125,
+              1296.7025146484375,
+              3521.79638671875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 8,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.9084437272015805
+          },
+          "overlapping_b_index": 5,
+          "prediction_pair_iou": 0.9466781568463214,
+          "b_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.9158725073809696
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 9,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.7997198700904846,
+            "xyxy": [
+              810.0288696289062,
+              3069.109375,
+              1078.44970703125,
+              3521.245849609375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 9,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.8546043319576849
+          },
+          "overlapping_b_index": 5,
+          "prediction_pair_iou": 0.007020133871910647,
+          "b_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.9158725073809696
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 10,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.6319980621337891,
+            "xyxy": [
+              2139.833251953125,
+              699.3726196289062,
+              2341.5048828125,
+              1175.30908203125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 10,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.7310311501360497
+          },
+          "overlapping_b_index": 6,
+          "prediction_pair_iou": 0.8750049054001251,
+          "b_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.7234254018331328
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 11,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.30212458968162537,
+            "xyxy": [
+              1330.139404296875,
+              3065.922607421875,
+              1548.9912109375,
+              3523.9052734375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 11,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8499325096637602
+          },
+          "overlapping_b_index": 11,
+          "prediction_pair_iou": 0.8932835012345316,
+          "b_match": {
+            "prediction_index": 11,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8484216208430391
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20181218_171604.jpg",
+      "truth": [
+        0,
+        3,
+        0,
+        0,
+        2
+      ],
+      "a_counts": [
+        0,
+        3,
+        0,
+        0,
+        2
+      ],
+      "b_counts": [
+        0,
+        3,
+        0,
+        0,
+        2
+      ],
+      "a_sum_absolute_error": 0,
+      "b_sum_absolute_error": 0,
+      "count_error_delta": 0,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.9927542805671692,
+            "xyxy": [
+              1686.167236328125,
+              2242.83740234375,
+              1945.34326171875,
+              2806.862548828125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8472639597411613
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.984052300453186,
+            "xyxy": [
+              2736.9921875,
+              682.7303466796875,
+              2973.258056640625,
+              1259.531494140625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.8499137880869093
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.8700651526451111,
+            "xyxy": [
+              3082.4658203125,
+              2918.735595703125,
+              3336.23046875,
+              3477.197509765625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.9101576345414468
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.8476889189176832,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8638546965113518
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.8476619720458984,
+            "xyxy": [
+              3197.30859375,
+              669.3990478515625,
+              3512.144775390625,
+              1266.9625244140625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.6357483738412761
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.815732006989694
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.7368962168693542,
+            "xyxy": [
+              3332.798095703125,
+              2910.310546875,
+              3650.0537109375,
+              3478.4814453125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.9222064467401759
+          },
+          "overlapping_b_index": 2,
+          "prediction_pair_iou": 0.934160657865326,
+          "b_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.9206992925469818
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20181218_171607.jpg",
+      "truth": [
+        5,
+        0,
+        1,
+        1,
+        2
+      ],
+      "a_counts": [
+        5,
+        0,
+        1,
+        1,
+        2
+      ],
+      "b_counts": [
+        5,
+        0,
+        1,
+        1,
+        2
+      ],
+      "a_sum_absolute_error": 0,
+      "b_sum_absolute_error": 0,
+      "count_error_delta": 0,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.9901554584503174,
+            "xyxy": [
+              3122.547607421875,
+              2216.818603515625,
+              3486.784912109375,
+              3077.802001953125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.8422206396051675
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.9849427938461304,
+            "xyxy": [
+              630.541259765625,
+              1419.3653564453125,
+              909.3126831054688,
+              2031.2967529296875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8377006479132597
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.9365062713623047,
+            "xyxy": [
+              3479.90087890625,
+              2218.860595703125,
+              3762.016845703125,
+              3090.2412109375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.8007515481586104
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.8996250629425049,
+            "xyxy": [
+              3351.172119140625,
+              533.3058471679688,
+              3721.351806640625,
+              1233.9375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.9666711672745976
+          },
+          "overlapping_b_index": 3,
+          "prediction_pair_iou": 0.8842522150570478,
+          "b_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.8920090301209495
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8953121900558472,
+            "xyxy": [
+              1945.6068115234375,
+              1367.3509521484375,
+              2243.561279296875,
+              2036.685546875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.9339542700275785
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.8704874672974846,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.8625798378107407
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8923414349555969,
+            "xyxy": [
+              1261.6400146484375,
+              1439.2265625,
+              1533.4608154296875,
+              2037.6644287109375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8498473610824344
+          },
+          "overlapping_b_index": 2,
+          "prediction_pair_iou": 0.9025606337172457,
+          "b_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8489769895709077
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8913202285766602,
+            "xyxy": [
+              903.5807495117188,
+              1436.6376953125,
+              1263.447021484375,
+              2045.578857421875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.9035461036246518
+          },
+          "overlapping_b_index": 5,
+          "prediction_pair_iou": 0.019554021756739762,
+          "b_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8684886207815802
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 7,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.8912182450294495,
+            "xyxy": [
+              3011.4931640625,
+              546.490478515625,
+              3348.33056640625,
+              1225.9407958984375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.8928736773216386
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.9421356959737373,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.9241737825514903
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 8,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8695058226585388,
+            "xyxy": [
+              1575.9776611328125,
+              1434.9327392578125,
+              1917.138671875,
+              2048.693603515625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 8,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.9553531663396898
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.8625798378107407
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20181218_171749.jpg",
+      "truth": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "a_counts": [
+        5,
+        2,
+        1,
+        1,
+        2
+      ],
+      "b_counts": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "a_sum_absolute_error": 1,
+      "b_sum_absolute_error": 0,
+      "count_error_delta": -1,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.978101909160614,
+            "xyxy": [
+              1445.6513671875,
+              1894.7713623046875,
+              1600.3643798828125,
+              2196.580078125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.7291051479744557
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.9103895425796509,
+            "xyxy": [
+              2156.532958984375,
+              2233.370361328125,
+              2351.786376953125,
+              2624.88720703125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 10,
+            "best_iou": 0.8674879663126017
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.016052562923072354,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 11,
+            "best_iou": 0.8833378165916891
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.9063657522201538,
+            "xyxy": [
+              1609.576171875,
+              2655.698486328125,
+              1797.38671875,
+              3025.11572265625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.8643790813559074
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.9267614033534762,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.88863901064838
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8913367390632629,
+            "xyxy": [
+              889.0213012695312,
+              2669.533447265625,
+              1054.6448974609375,
+              3029.059326171875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8496567042668446
+          },
+          "overlapping_b_index": 3,
+          "prediction_pair_iou": 0.8517035816830382,
+          "b_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8792249246859731
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8565109372138977,
+            "xyxy": [
+              1056.6661376953125,
+              2697.35009765625,
+              1273.180419921875,
+              3035.440185546875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.7976804368805231
+          },
+          "overlapping_b_index": 3,
+          "prediction_pair_iou": 0.021927604872912634,
+          "b_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8792249246859731
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.8453753590583801,
+            "xyxy": [
+              2349.9453125,
+              2245.973388671875,
+              2561.152587890625,
+              2622.140625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 11,
+            "best_iou": 0.8598023332440293
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.9345010692549452,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 11,
+            "best_iou": 0.8833378165916891
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.6003378033638,
+            "xyxy": [
+              2300.50341796875,
+              3128.12646484375,
+              2478.730712890625,
+              3586.659423828125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.8390028716723136
+          },
+          "overlapping_b_index": 7,
+          "prediction_pair_iou": 0.8942088426453463,
+          "b_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.8904274618351581
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 7,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.5336740016937256,
+            "xyxy": [
+              1259.3538818359375,
+              2694.34619140625,
+              1401.0926513671875,
+              3028.181640625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.7703416456054646
+          },
+          "overlapping_b_index": 6,
+          "prediction_pair_iou": 0.8591302171702423,
+          "b_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8701470282490699
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 8,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.5242395997047424,
+            "xyxy": [
+              2286.3095703125,
+              974.6800537109375,
+              2461.828369140625,
+              1293.0220947265625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 8,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.7085907940436075
+          },
+          "overlapping_b_index": 2,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.6854630517770335
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 9,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.3885038197040558,
+            "xyxy": [
+              2471.604736328125,
+              3121.145751953125,
+              2664.393798828125,
+              3590.863037109375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 9,
+            "kind": "tp",
+            "gt_index": 9,
+            "best_iou": 0.8318180418118806
+          },
+          "overlapping_b_index": 9,
+          "prediction_pair_iou": 0.87260072005006,
+          "b_match": {
+            "prediction_index": 9,
+            "kind": "tp",
+            "gt_index": 9,
+            "best_iou": 0.7916226338650338
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 10,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.36648568511009216,
+            "xyxy": [
+              1431.8536376953125,
+              2666.030029296875,
+              1617.103515625,
+              3021.614501953125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 10,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8849996669365274
+          },
+          "overlapping_b_index": 10,
+          "prediction_pair_iou": 0.9263773854962175,
+          "b_match": {
+            "prediction_index": 10,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8421718422520968
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [
+        6
+      ],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20181218_171753.jpg",
+      "truth": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "a_counts": [
+        5,
+        2,
+        1,
+        1,
+        2
+      ],
+      "b_counts": [
+        5,
+        2,
+        1,
+        2,
+        2
+      ],
+      "a_sum_absolute_error": 1,
+      "b_sum_absolute_error": 2,
+      "count_error_delta": 1,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.9798668622970581,
+            "xyxy": [
+              977.1240234375,
+              3073.963623046875,
+              1239.4637451171875,
+              3594.803466796875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.842019824033249
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.9787679314613342,
+            "xyxy": [
+              2066.630615234375,
+              3052.817626953125,
+              2383.639404296875,
+              3590.097412109375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.9154892865202648
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.9762628674507141,
+            "xyxy": [
+              1521.733154296875,
+              3105.044921875,
+              1798.4234619140625,
+              3593.2001953125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.7945702017402322
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.9751431941986084,
+            "xyxy": [
+              1843.975341796875,
+              1846.795654296875,
+              2053.265625,
+              2312.453857421875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.8919342625511232
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.9748188853263855,
+            "xyxy": [
+              2954.612548828125,
+              2385.08984375,
+              3229.595703125,
+              2904.882080078125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 10,
+            "best_iou": 0.8280046964245132
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.8990030288696289,
+            "xyxy": [
+              3210.775634765625,
+              2374.89111328125,
+              3479.691162109375,
+              2917.12646484375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 11,
+            "best_iou": 0.9245382763171146
+          },
+          "overlapping_b_index": 2,
+          "prediction_pair_iou": 0.04181847880206738,
+          "b_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 10,
+            "best_iou": 0.8024058355837506
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.7431479692459106,
+            "xyxy": [
+              3028.634765625,
+              3645.822265625,
+              3358.120361328125,
+              4293.1220703125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.7955859723511479
+          },
+          "overlapping_b_index": 4,
+          "prediction_pair_iou": 0.9285236195089156,
+          "b_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.7946936423371088
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 7,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.732948899269104,
+            "xyxy": [
+              1808.3758544921875,
+              3057.14501953125,
+              2073.092529296875,
+              3580.916015625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8723883219636841
+          },
+          "overlapping_b_index": 8,
+          "prediction_pair_iou": 0.9792998195557454,
+          "b_match": {
+            "prediction_index": 8,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8547966803278847
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 8,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.7030304670333862,
+            "xyxy": [
+              1263.7745361328125,
+              3102.93212890625,
+              1519.3636474609375,
+              3600.885986328125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 8,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.7567894389322162
+          },
+          "overlapping_b_index": 7,
+          "prediction_pair_iou": 0.8449460755066516,
+          "b_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.8462521246508471
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 9,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.5748255252838135,
+            "xyxy": [
+              3209.86279296875,
+              3648.60400390625,
+              3462.147216796875,
+              4290.72900390625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 9,
+            "kind": "tp",
+            "gt_index": 9,
+            "best_iou": 0.7693370102670577
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 10,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.3500533103942871,
+            "xyxy": [
+              3187.086181640625,
+              146.8391571044922,
+              3477.59814453125,
+              870.5770263671875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 10,
+            "kind": "background_or_localization",
+            "gt_index": 7,
+            "best_iou": 0.40656596897530606
+          },
+          "overlapping_b_index": 5,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.7984041317508744
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [
+        6
+      ],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [
+        3
+      ],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20181218_171755.jpg",
+      "truth": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "a_counts": [
+        5,
+        1,
+        1,
+        1,
+        3
+      ],
+      "b_counts": [
+        5,
+        2,
+        1,
+        1,
+        3
+      ],
+      "a_sum_absolute_error": 3,
+      "b_sum_absolute_error": 2,
+      "count_error_delta": -1,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.9881733059883118,
+            "xyxy": [
+              1725.1287841796875,
+              2292.53369140625,
+              2015.672607421875,
+              2833.665771484375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 10,
+            "best_iou": 0.8550979365323487
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.9852390289306641,
+            "xyxy": [
+              567.1297607421875,
+              1668.2138671875,
+              808.1428833007812,
+              2161.53955078125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.7897572579565049
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.9850633144378662,
+            "xyxy": [
+              932.1324462890625,
+              2903.7197265625,
+              1164.3280029296875,
+              3429.441162109375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.9598452070384343
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.9768170714378357,
+            "xyxy": [
+              1967.4749755859375,
+              3627.2275390625,
+              2244.57373046875,
+              4284.74755859375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.813374234423612
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.9690458178520203,
+            "xyxy": [
+              2025.162109375,
+              2289.506591796875,
+              2299.6103515625,
+              2856.23486328125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 11,
+            "best_iou": 0.9609848857036678
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.9675187468528748,
+            "xyxy": [
+              2243.943603515625,
+              3616.854248046875,
+              2508.857177734375,
+              4295.509765625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 9,
+            "best_iou": 0.8770444840806286
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.9624841809272766,
+            "xyxy": [
+              428.748291015625,
+              2894.328125,
+              660.4445190429688,
+              3391.0634765625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8324828563718402
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.9149866874970877,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.7667594781510363
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 7,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.921711802482605,
+            "xyxy": [
+              112.61561584472656,
+              2902.26171875,
+              424.1595153808594,
+              3398.638916015625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.7835036859968741
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.8825060938261606
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 8,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.6795759201049805,
+            "xyxy": [
+              1979.2562255859375,
+              2290.823974609375,
+              2110.016357421875,
+              2839.43701171875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 8,
+            "kind": "background_or_localization",
+            "gt_index": 11,
+            "best_iou": 0.2571297592231652
+          },
+          "overlapping_b_index": 5,
+          "prediction_pair_iou": 0.26713898471736064,
+          "b_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 11,
+            "best_iou": 0.8630803483439193
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 9,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.5669532418251038,
+            "xyxy": [
+              0.0,
+              2888.828857421875,
+              154.40272521972656,
+              3350.622314453125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 9,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8772927501020268
+          },
+          "overlapping_b_index": 9,
+          "prediction_pair_iou": 0.5313340450758528,
+          "b_match": {
+            "prediction_index": 9,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.49098319298371895
+          },
+          "lost_previously_matched_gt": true
+        },
+        {
+          "a_index": 10,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.47888559103012085,
+            "xyxy": [
+              682.7010498046875,
+              2900.248779296875,
+              934.565673828125,
+              3421.694580078125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 10,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.7821697535072221
+          },
+          "overlapping_b_index": 7,
+          "prediction_pair_iou": 0.8068506995270197,
+          "b_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8283191884612011
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "lost_gt_indices": [
+        0
+      ],
+      "gained_gt_indices": [
+        7
+      ],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20181218_171800.jpg",
+      "truth": [
+        5,
+        0,
+        1,
+        1,
+        0
+      ],
+      "a_counts": [
+        5,
+        0,
+        1,
+        2,
+        3
+      ],
+      "b_counts": [
+        5,
+        0,
+        1,
+        1,
+        0
+      ],
+      "a_sum_absolute_error": 4,
+      "b_sum_absolute_error": 0,
+      "count_error_delta": -4,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.995600700378418,
+            "xyxy": [
+              3258.54736328125,
+              1423.3134765625,
+              3628.361572265625,
+              2417.972412109375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.9071901106833031
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.9609242081642151,
+            "xyxy": [
+              509.1968994140625,
+              514.8056030273438,
+              817.1201171875,
+              1151.031982421875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.7876048602001094
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.7976876497268677,
+            "xyxy": [
+              3597.96484375,
+              1438.94677734375,
+              3924.678466796875,
+              2412.95654296875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.8487669460418583
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.8466408580374519,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.9229922852271584
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.6467972993850708,
+            "xyxy": [
+              1604.76806640625,
+              553.8970336914062,
+              1964.6258544921875,
+              1213.466552734375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8235390752383427
+          },
+          "overlapping_b_index": 4,
+          "prediction_pair_iou": 0.8532037497109758,
+          "b_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8242354045115196
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.4683135151863098,
+            "xyxy": [
+              1255.3817138671875,
+              550.4771118164062,
+              1556.1014404296875,
+              1205.84326171875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8330106301610735
+          },
+          "overlapping_b_index": 2,
+          "prediction_pair_iou": 0.9052653263989018,
+          "b_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8639151737771212
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.4636387228965759,
+            "xyxy": [
+              1975.8017578125,
+              503.9786682128906,
+              2313.043212890625,
+              1222.9896240234375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "wrong_class_candidate",
+            "gt_index": 4,
+            "best_iou": 0.855116727867408
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.3379572033882141,
+            "xyxy": [
+              3265.35693359375,
+              1388.807373046875,
+              3639.41162109375,
+              2366.542236328125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "wrong_class_candidate",
+            "gt_index": 5,
+            "best_iou": 0.8950562244414776
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.06584390605765779,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.9229922852271584
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 7,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.3317437469959259,
+            "xyxy": [
+              1977.647216796875,
+              499.8833923339844,
+              2307.97705078125,
+              1218.8511962890625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.8551771584360954
+          },
+          "overlapping_b_index": 3,
+          "prediction_pair_iou": 0.9128816173607109,
+          "b_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.9252083449336322
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 8,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.32727500796318054,
+            "xyxy": [
+              3568.5390625,
+              696.4022216796875,
+              3830.286865234375,
+              1289.466796875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 8,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 9,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.31207922101020813,
+            "xyxy": [
+              841.1089477539062,
+              540.53857421875,
+              1224.94970703125,
+              1201.0933837890625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 9,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.8065341460520413
+          },
+          "overlapping_b_index": 6,
+          "prediction_pair_iou": 0.8859737543674541,
+          "b_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.7388114046318216
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 10,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.29375049471855164,
+            "xyxy": [
+              1602.6636962890625,
+              560.7406005859375,
+              1949.2252197265625,
+              1212.7520751953125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 10,
+            "kind": "wrong_class_candidate",
+            "gt_index": 3,
+            "best_iou": 0.8543763157743223
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20181218_171802.jpg",
+      "truth": [
+        5,
+        0,
+        1,
+        0,
+        0
+      ],
+      "a_counts": [
+        2,
+        0,
+        1,
+        1,
+        0
+      ],
+      "b_counts": [
+        5,
+        0,
+        1,
+        0,
+        0
+      ],
+      "a_sum_absolute_error": 4,
+      "b_sum_absolute_error": 0,
+      "count_error_delta": -4,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.9962677359580994,
+            "xyxy": [
+              4149.998046875,
+              1543.5570068359375,
+              4604.4345703125,
+              2508.763671875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.8238178698374302
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.6586559414863586,
+            "xyxy": [
+              4169.51708984375,
+              1531.8319091796875,
+              4601.96337890625,
+              2506.318115234375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "wrong_class_candidate",
+            "gt_index": 5,
+            "best_iou": 0.7938752159099295
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.3435616195201874,
+            "xyxy": [
+              3015.696044921875,
+              600.1384887695312,
+              3374.418701171875,
+              1384.9979248046875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.8419606917957303
+          },
+          "overlapping_b_index": 5,
+          "prediction_pair_iou": 0.776798941318295,
+          "b_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.8473891177965551
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.18322411179542542,
+            "xyxy": [
+              1855.04248046875,
+              662.791015625,
+              2215.34130859375,
+              1350.044677734375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.8839272676641315
+          },
+          "overlapping_b_index": 3,
+          "prediction_pair_iou": 0.9270104097650785,
+          "b_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.8855316475101659
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [
+        0,
+        2,
+        3
+      ],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20181218_171805.jpg",
+      "truth": [
+        0,
+        3,
+        0,
+        0,
+        2
+      ],
+      "a_counts": [
+        1,
+        3,
+        0,
+        0,
+        3
+      ],
+      "b_counts": [
+        0,
+        3,
+        0,
+        0,
+        2
+      ],
+      "a_sum_absolute_error": 2,
+      "b_sum_absolute_error": 0,
+      "count_error_delta": -2,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.9268293976783752,
+            "xyxy": [
+              3527.09765625,
+              2517.46826171875,
+              3882.22900390625,
+              3178.838623046875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.816513552339899
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8376256138716759
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.8944747447967529,
+            "xyxy": [
+              1765.2069091796875,
+              1905.241455078125,
+              2041.3387451171875,
+              2508.65478515625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8235984141703678
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8457082057211839
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.8586797118186951,
+            "xyxy": [
+              3169.66015625,
+              2516.23681640625,
+              3504.77197265625,
+              3194.363037109375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.9039122852318863
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.915025510885828,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8376256138716759
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.7607624530792236,
+            "xyxy": [
+              3441.746826171875,
+              152.06040954589844,
+              3661.49560546875,
+              744.7308349609375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.7777981392823404
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.7640141247208754,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8457082057211839
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.5018713474273682,
+            "xyxy": [
+              2878.86962890625,
+              140.71533203125,
+              3071.638916015625,
+              724.4395751953125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.8638360690878233
+          },
+          "overlapping_b_index": 4,
+          "prediction_pair_iou": 0.7784179646247782,
+          "b_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.8369826737802574
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.4407421350479126,
+            "xyxy": [
+              3881.5732421875,
+              1810.89501953125,
+              4097.7421875,
+              2376.57470703125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8376256138716759
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.19106966257095337,
+            "xyxy": [
+              982.5511474609375,
+              2948.83447265625,
+              1300.7528076171875,
+              3363.0322265625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20190206_170714.jpg",
+      "truth": [
+        5,
+        0,
+        0,
+        4,
+        0
+      ],
+      "a_counts": [
+        2,
+        0,
+        2,
+        3,
+        0
+      ],
+      "b_counts": [
+        2,
+        0,
+        4,
+        5,
+        0
+      ],
+      "a_sum_absolute_error": 6,
+      "b_sum_absolute_error": 8,
+      "count_error_delta": 2,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.8750449419021606,
+            "xyxy": [
+              2097.3046875,
+              561.8759765625,
+              2349.316162109375,
+              1298.7867431640625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.8819468464034541
+          },
+          "overlapping_b_index": 2,
+          "prediction_pair_iou": 0.9082041137787475,
+          "b_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.8967973442983903
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.6203204393386841,
+            "xyxy": [
+              1844.4453125,
+              612.2009887695312,
+              2086.387939453125,
+              1287.904541015625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.8863517480229122
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.8871444903225618,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.8235217981897928
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.5622903108596802,
+            "xyxy": [
+              1591.5078125,
+              593.57568359375,
+              1840.4691162109375,
+              1289.231689453125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "wrong_class_candidate",
+            "gt_index": 6,
+            "best_iou": 0.7788787237205894
+          },
+          "overlapping_b_index": 4,
+          "prediction_pair_iou": 0.0,
+          "b_match": {
+            "prediction_index": 4,
+            "kind": "background_or_localization",
+            "gt_index": 5,
+            "best_iou": 0.03353034571918699
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.5129870772361755,
+            "xyxy": [
+              1160.136474609375,
+              1705.0489501953125,
+              1393.7896728515625,
+              2215.670654296875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.7006545472077539
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": true
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.5052240490913391,
+            "xyxy": [
+              1115.5462646484375,
+              595.5059814453125,
+              1386.7608642578125,
+              1294.4312744140625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "background_or_localization",
+            "gt_index": 5,
+            "best_iou": 0.03354959174956073
+          },
+          "overlapping_b_index": 4,
+          "prediction_pair_iou": 0.87550729119345,
+          "b_match": {
+            "prediction_index": 4,
+            "kind": "background_or_localization",
+            "gt_index": 5,
+            "best_iou": 0.03353034571918699
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.3514321446418762,
+            "xyxy": [
+              951.8857421875,
+              1720.374267578125,
+              1149.0455322265625,
+              2213.182373046875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.7258175799556714
+          },
+          "overlapping_b_index": 9,
+          "prediction_pair_iou": 0.8901141856088005,
+          "b_match": {
+            "prediction_index": 9,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.7911034907676419
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.31946858763694763,
+            "xyxy": [
+              1596.4586181640625,
+              598.514892578125,
+              1840.3072509765625,
+              1280.635498046875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.8070274730816379
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.8201202924943273,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.9042934725601046
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "lost_gt_indices": [
+        1
+      ],
+      "gained_gt_indices": [
+        5
+      ],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20190206_170716.jpg",
+      "truth": [
+        5,
+        0,
+        0,
+        4,
+        0
+      ],
+      "a_counts": [
+        5,
+        0,
+        2,
+        4,
+        1
+      ],
+      "b_counts": [
+        5,
+        0,
+        2,
+        5,
+        0
+      ],
+      "a_sum_absolute_error": 3,
+      "b_sum_absolute_error": 3,
+      "count_error_delta": 0,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.934594988822937,
+            "xyxy": [
+              2163.328369140625,
+              443.2388916015625,
+              2419.48828125,
+              1104.3267822265625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.8652811802121496
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.9127224087715149,
+            "xyxy": [
+              1915.496337890625,
+              523.4971923828125,
+              2150.849853515625,
+              1147.044677734375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.8596733246481008
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8171389698982239,
+            "xyxy": [
+              1248.83203125,
+              1599.6844482421875,
+              1484.6146240234375,
+              2074.317626953125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.6866115263127405
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.7416096925735474,
+            "xyxy": [
+              1035.6463623046875,
+              1586.4371337890625,
+              1243.4598388671875,
+              2073.69091796875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.6868328394309443
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.7206358313560486,
+            "xyxy": [
+              1688.125244140625,
+              513.691650390625,
+              1933.1695556640625,
+              1147.2325439453125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.8460808494852495
+          },
+          "overlapping_b_index": 2,
+          "prediction_pair_iou": 0.9395111305813865,
+          "b_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.8656560550764469
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.5212781429290771,
+            "xyxy": [
+              1925.16162109375,
+              1527.4776611328125,
+              2177.42529296875,
+              2068.818359375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "wrong_class_candidate",
+            "gt_index": 4,
+            "best_iou": 0.7674761624574303
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.48677706718444824,
+            "xyxy": [
+              1507.3927001953125,
+              504.6752014160156,
+              1746.3980712890625,
+              1137.253662109375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.5367488780632632
+          },
+          "overlapping_b_index": 5,
+          "prediction_pair_iou": 0.6440478903893841,
+          "b_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.8552890480519222
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 7,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.38194265961647034,
+            "xyxy": [
+              1222.986083984375,
+              506.5335388183594,
+              1444.0419921875,
+              1143.52294921875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 7,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "overlapping_b_index": 7,
+          "prediction_pair_iou": 0.8967278906609122,
+          "b_match": {
+            "prediction_index": 7,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 8,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.3233880400657654,
+            "xyxy": [
+              1471.318115234375,
+              1631.12646484375,
+              1666.69189453125,
+              2075.151611328125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 8,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8300508964754397
+          },
+          "overlapping_b_index": 9,
+          "prediction_pair_iou": 0.007640391267928011,
+          "b_match": {
+            "prediction_index": 9,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.7653351437956051
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 9,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.3034546673297882,
+            "xyxy": [
+              1080.6243896484375,
+              502.3636779785156,
+              1365.9285888671875,
+              1133.4381103515625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 9,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "overlapping_b_index": 8,
+          "prediction_pair_iou": 0.7631406384383254,
+          "b_match": {
+            "prediction_index": 8,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 10,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.24605271220207214,
+            "xyxy": [
+              1921.536865234375,
+              1530.3675537109375,
+              2182.94287109375,
+              2067.889892578125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 10,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.7391256644352014
+          },
+          "overlapping_b_index": 3,
+          "prediction_pair_iou": 0.8010995847190614,
+          "b_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.7460869587277618
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 11,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.22994142770767212,
+            "xyxy": [
+              1532.8592529296875,
+              1634.375732421875,
+              1752.2705078125,
+              2080.456298828125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 11,
+            "kind": "background_or_localization",
+            "gt_index": 2,
+            "best_iou": 0.44994606857804936
+          },
+          "overlapping_b_index": 11,
+          "prediction_pair_iou": 0.528920338167385,
+          "b_match": {
+            "prediction_index": 11,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8233266929786376
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [
+        3
+      ],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [
+        3
+      ],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20190206_174852.jpg",
+      "truth": [
+        3,
+        1,
+        1,
+        1,
+        2
+      ],
+      "a_counts": [
+        4,
+        1,
+        1,
+        1,
+        2
+      ],
+      "b_counts": [
+        4,
+        1,
+        1,
+        1,
+        2
+      ],
+      "a_sum_absolute_error": 1,
+      "b_sum_absolute_error": 1,
+      "count_error_delta": 0,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.9828022122383118,
+            "xyxy": [
+              2238.924072265625,
+              2205.494384765625,
+              2467.4111328125,
+              2642.166015625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.7744887681002222
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.9772945642471313,
+            "xyxy": [
+              1161.2750244140625,
+              1775.1497802734375,
+              1360.1763916015625,
+              2121.8056640625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8656796685124493
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8826094269752502,
+            "xyxy": [
+              1378.281005859375,
+              2709.384033203125,
+              1584.222412109375,
+              3115.450439453125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8205006626750613
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.866489589214325,
+            "xyxy": [
+              727.0482177734375,
+              2735.76513671875,
+              942.9747314453125,
+              3159.62646484375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8764664925078306
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.8250855803489685,
+            "xyxy": [
+              2189.540771484375,
+              3220.49169921875,
+              2410.1787109375,
+              3746.396484375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.9000844441069886
+          },
+          "overlapping_b_index": 4,
+          "prediction_pair_iou": 0.9133530182406987,
+          "b_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.8308726588951346
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.7983896136283875,
+            "xyxy": [
+              2033.1912841796875,
+              2205.41259765625,
+              2235.55419921875,
+              2632.482666015625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.8153282198108134
+          },
+          "overlapping_b_index": 2,
+          "prediction_pair_iou": 0.911240286315714,
+          "b_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.8507540080295847
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.7879804372787476,
+            "xyxy": [
+              963.1582641601562,
+              2731.35302734375,
+              1155.307861328125,
+              3141.20556640625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.927251320625874
+          },
+          "overlapping_b_index": 5,
+          "prediction_pair_iou": 0.8783391635927997,
+          "b_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.8810833377291986
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 7,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.7102359533309937,
+            "xyxy": [
+              2383.918212890625,
+              3213.4912109375,
+              2600.784423828125,
+              3760.47265625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.8816172715961033
+          },
+          "overlapping_b_index": 6,
+          "prediction_pair_iou": 0.9088824129077313,
+          "b_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.8240252114141915
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 8,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.5508208870887756,
+            "xyxy": [
+              1159.209716796875,
+              2729.225830078125,
+              1365.6038818359375,
+              3126.78759765625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 8,
+            "kind": "background_or_localization",
+            "gt_index": 1,
+            "best_iou": 0.0018996879284447746
+          },
+          "overlapping_b_index": 5,
+          "prediction_pair_iou": 0.02701083992271802,
+          "b_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.8810833377291986
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20190206_174855.jpg",
+      "truth": [
+        4,
+        1,
+        1,
+        1,
+        2
+      ],
+      "a_counts": [
+        5,
+        1,
+        1,
+        1,
+        2
+      ],
+      "b_counts": [
+        5,
+        1,
+        1,
+        1,
+        2
+      ],
+      "a_sum_absolute_error": 1,
+      "b_sum_absolute_error": 1,
+      "count_error_delta": 0,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.9792460203170776,
+            "xyxy": [
+              2246.14892578125,
+              2175.645751953125,
+              2502.57373046875,
+              2678.443359375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.8777080414774039
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.9587650895118713,
+            "xyxy": [
+              2744.624267578125,
+              3502.06591796875,
+              3032.744384765625,
+              4251.86328125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.9050909199963354
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.906726062297821,
+            "xyxy": [
+              2469.0478515625,
+              3487.31494140625,
+              2762.814453125,
+              4216.0029296875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.9658592390006999
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.906302273273468,
+            "xyxy": [
+              1501.2952880859375,
+              2739.197265625,
+              1742.687744140625,
+              3223.80078125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8989260709775071
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8518837094306946,
+            "xyxy": [
+              808.037353515625,
+              2741.82080078125,
+              1037.406005859375,
+              3172.76611328125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.8168884740878481
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.8370701670646667,
+            "xyxy": [
+              2508.141357421875,
+              2136.83544921875,
+              2771.6435546875,
+              2675.5791015625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 8,
+            "best_iou": 0.911650204760799
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.005816578999468804,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.8528856816019328
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.791080117225647,
+            "xyxy": [
+              592.9879150390625,
+              2725.19677734375,
+              811.0287475585938,
+              3151.6728515625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.7772299341494436
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 7,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.7845702767372131,
+            "xyxy": [
+              1208.824951171875,
+              1648.8935546875,
+              1448.9759521484375,
+              2036.4981689453125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.893737221308811
+          },
+          "overlapping_b_index": 2,
+          "prediction_pair_iou": 0.9020539393720252,
+          "b_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.8312199117756462
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 8,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.751913845539093,
+            "xyxy": [
+              1059.62646484375,
+              2737.876220703125,
+              1246.4058837890625,
+              3178.587646484375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 8,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.7221260363450689
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 9,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.5311986804008484,
+            "xyxy": [
+              1254.2322998046875,
+              2745.642333984375,
+              1502.43505859375,
+              3191.150146484375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 9,
+            "kind": "background_or_localization",
+            "gt_index": 2,
+            "best_iou": 0.05387041049295314
+          },
+          "overlapping_b_index": 5,
+          "prediction_pair_iou": 0.018095433018798852,
+          "b_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8118261649033304
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20190402_110254.jpg",
+      "truth": [
+        4,
+        1,
+        1,
+        1,
+        1
+      ],
+      "a_counts": [
+        1,
+        1,
+        1,
+        0,
+        2
+      ],
+      "b_counts": [
+        4,
+        1,
+        1,
+        2,
+        2
+      ],
+      "a_sum_absolute_error": 5,
+      "b_sum_absolute_error": 2,
+      "count_error_delta": -3,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.733608067035675,
+            "xyxy": [
+              2156.893798828125,
+              3674.046875,
+              2360.39306640625,
+              4156.044921875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.8744081213142084
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.9275736621817277,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.921957156189177
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.7138940691947937,
+            "xyxy": [
+              2197.1552734375,
+              2808.63232421875,
+              2399.656982421875,
+              3153.648681640625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.6190713047981262,
+            "xyxy": [
+              1997.294189453125,
+              2799.695556640625,
+              2196.50537109375,
+              3154.176025390625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.858108323335737
+          },
+          "overlapping_b_index": 3,
+          "prediction_pair_iou": 0.9557904164927258,
+          "b_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.8529582114628917
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.5464954376220703,
+            "xyxy": [
+              934.2373046875,
+              3170.5771484375,
+              1105.898681640625,
+              3503.968017578125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.8666870947687595
+          },
+          "overlapping_b_index": 2,
+          "prediction_pair_iou": 0.8612821044763599,
+          "b_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.8355541941295923
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.4083573818206787,
+            "xyxy": [
+              1298.7401123046875,
+              2364.794189453125,
+              1460.679931640625,
+              2693.799560546875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.857712651335956
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.7897282035998454,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.785671613584351
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [
+        2,
+        3,
+        6
+      ],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20190430_111818.jpg",
+      "truth": [
+        3,
+        1,
+        1,
+        1,
+        2
+      ],
+      "a_counts": [
+        4,
+        1,
+        1,
+        1,
+        2
+      ],
+      "b_counts": [
+        4,
+        1,
+        1,
+        1,
+        2
+      ],
+      "a_sum_absolute_error": 1,
+      "b_sum_absolute_error": 1,
+      "count_error_delta": 0,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.9635065793991089,
+            "xyxy": [
+              2196.155517578125,
+              2207.65771484375,
+              2376.21435546875,
+              2557.544189453125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 7,
+            "best_iou": 0.8862348150673158
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.9559578895568848,
+            "xyxy": [
+              1260.81298828125,
+              1860.879150390625,
+              1430.1339111328125,
+              2149.505859375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.7465148491128588
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.926737368106842,
+            "xyxy": [
+              2012.7655029296875,
+              2208.10009765625,
+              2201.942138671875,
+              2565.833740234375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.852567539329939
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.9159380793571472,
+            "xyxy": [
+              2148.878662109375,
+              3075.501220703125,
+              2343.6513671875,
+              3528.078857421875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.9083248495417393
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.8656173944473267,
+            "xyxy": [
+              2307.488525390625,
+              3072.92822265625,
+              2515.76025390625,
+              3535.792724609375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.7670979543084075
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.7695289254188538,
+            "xyxy": [
+              1460.3643798828125,
+              2640.928466796875,
+              1635.826171875,
+              2994.80908203125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.7958997333721233
+          },
+          "overlapping_b_index": 0,
+          "prediction_pair_iou": 0.8928642992477832,
+          "b_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.7379509183676001
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.7334434390068054,
+            "xyxy": [
+              898.1369018554688,
+              2671.78466796875,
+              1088.4051513671875,
+              3028.514404296875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8188873617778226
+          },
+          "overlapping_b_index": 6,
+          "prediction_pair_iou": 0.8994065538953101,
+          "b_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8926012240318109
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 7,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.6848548650741577,
+            "xyxy": [
+              1061.7203369140625,
+              2671.24853515625,
+              1242.422119140625,
+              2996.032958984375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.568373601904138
+          },
+          "overlapping_b_index": 3,
+          "prediction_pair_iou": 0.8215292779376028,
+          "b_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.6840214093870826
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 8,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.5145053863525391,
+            "xyxy": [
+              956.4435424804688,
+              2667.359375,
+              1158.9532470703125,
+              3013.717529296875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 8,
+            "kind": "duplicate_candidate",
+            "gt_index": 0,
+            "best_iou": 0.5259868410842653
+          },
+          "overlapping_b_index": 6,
+          "prediction_pair_iou": 0.4804163824550556,
+          "b_match": {
+            "prediction_index": 6,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.8926012240318109
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "lost_gt_indices": [],
+      "gained_gt_indices": [],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [],
+      "raw_predictions_unchanged": false
+    },
+    {
+      "image": "IMG_20190430_111949.jpg",
+      "truth": [
+        3,
+        1,
+        0,
+        1,
+        2
+      ],
+      "a_counts": [
+        5,
+        1,
+        1,
+        1,
+        3
+      ],
+      "b_counts": [
+        4,
+        1,
+        0,
+        0,
+        3
+      ],
+      "a_sum_absolute_error": 4,
+      "b_sum_absolute_error": 3,
+      "count_error_delta": -1,
+      "kept_indices": [],
+      "removed": [
+        {
+          "a_index": 0,
+          "prediction": {
+            "class_id": 1,
+            "confidence": 0.9624083042144775,
+            "xyxy": [
+              1284.6514892578125,
+              1751.138427734375,
+              1469.715087890625,
+              2124.594482421875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 0,
+            "kind": "tp",
+            "gt_index": 3,
+            "best_iou": 0.8307024751737484
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 1,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.8665197491645813,
+            "xyxy": [
+              2156.669921875,
+              2227.992919921875,
+              2359.536865234375,
+              2639.790283203125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.8271550805259421
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.9001350274924621,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.7963519261908982
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 2,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8664529919624329,
+            "xyxy": [
+              1067.0128173828125,
+              2725.6044921875,
+              1208.911376953125,
+              3121.700927734375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 2,
+            "kind": "background_or_localization",
+            "gt_index": 1,
+            "best_iou": 0.4384804478183319
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 3,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.8643500804901123,
+            "xyxy": [
+              857.7894897460938,
+              2725.33935546875,
+              1088.1998291015625,
+              3133.629638671875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 0,
+            "best_iou": 0.7874724455879184
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 4,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.8530037999153137,
+            "xyxy": [
+              2351.436279296875,
+              2220.171142578125,
+              2591.16845703125,
+              2638.745849609375
+            ]
+          },
+          "a_match": {
+            "prediction_index": 4,
+            "kind": "tp",
+            "gt_index": 6,
+            "best_iou": 0.6939955459181446
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.031070727641035134,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.7963519261908982
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 5,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.7811028957366943,
+            "xyxy": [
+              1511.4482421875,
+              2730.868408203125,
+              1708.3411865234375,
+              3129.469970703125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 5,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8929885073448288
+          },
+          "overlapping_b_index": 2,
+          "prediction_pair_iou": 0.8551654031410694,
+          "b_match": {
+            "prediction_index": 2,
+            "kind": "tp",
+            "gt_index": 2,
+            "best_iou": 0.8622004816726807
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 6,
+          "prediction": {
+            "class_id": 4,
+            "confidence": 0.7109047770500183,
+            "xyxy": [
+              2291.617919921875,
+              2226.44775390625,
+              2433.69482421875,
+              2641.356689453125
+            ]
+          },
+          "a_match": {
+            "prediction_index": 6,
+            "kind": "background_or_localization",
+            "gt_index": 5,
+            "best_iou": 0.31612785195562537
+          },
+          "overlapping_b_index": 1,
+          "prediction_pair_iou": 0.2524517830256846,
+          "b_match": {
+            "prediction_index": 1,
+            "kind": "tp",
+            "gt_index": 5,
+            "best_iou": 0.7963519261908982
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 7,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.5557522177696228,
+            "xyxy": [
+              1100.25,
+              2722.997802734375,
+              1283.62451171875,
+              3118.01171875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 7,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.7597492287000108
+          },
+          "overlapping_b_index": 3,
+          "prediction_pair_iou": 0.8908732778444516,
+          "b_match": {
+            "prediction_index": 3,
+            "kind": "tp",
+            "gt_index": 1,
+            "best_iou": 0.6911485756466225
+          },
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 8,
+          "prediction": {
+            "class_id": 3,
+            "confidence": 0.377498984336853,
+            "xyxy": [
+              2527.37109375,
+              3242.0458984375,
+              2748.8017578125,
+              3773.78515625
+            ]
+          },
+          "a_match": {
+            "prediction_index": 8,
+            "kind": "tp",
+            "gt_index": 4,
+            "best_iou": 0.9221059937203865
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": true
+        },
+        {
+          "a_index": 9,
+          "prediction": {
+            "class_id": 2,
+            "confidence": 0.3486080765724182,
+            "xyxy": [
+              2319.31640625,
+              3246.839111328125,
+              2546.51708984375,
+              3776.9921875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 9,
+            "kind": "background_or_localization",
+            "gt_index": 4,
+            "best_iou": 0.0376159263727927
+          },
+          "overlapping_b_index": null,
+          "prediction_pair_iou": null,
+          "b_match": null,
+          "lost_previously_matched_gt": false
+        },
+        {
+          "a_index": 10,
+          "prediction": {
+            "class_id": 0,
+            "confidence": 0.20400533080101013,
+            "xyxy": [
+              1280.6060791015625,
+              2728.9111328125,
+              1490.400146484375,
+              3128.10888671875
+            ]
+          },
+          "a_match": {
+            "prediction_index": 10,
+            "kind": "background_or_localization",
+            "gt_index": 0,
+            "best_iou": 0.0
+          },
+          "overlapping_b_index": 7,
+          "prediction_pair_iou": 0.8868005027859291,
+          "b_match": {
+            "prediction_index": 7,
+            "kind": "background_or_localization",
+            "gt_index": 2,
+            "best_iou": 0.001990730092935671
+          },
+          "lost_previously_matched_gt": false
+        }
+      ],
+      "added_b_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "lost_gt_indices": [
+        4
+      ],
+      "gained_gt_indices": [],
+      "correct_vector_became_incorrect": false,
+      "correct_class_counts_became_incorrect": [
+        3
+      ],
+      "raw_predictions_unchanged": false
+    }
+  ],
+  "cohorts": {
+    "crowded_30plus_source_objects": {
+      "images": [
+        "DSC01657.png",
+        "DSC01658.png",
+        "DSC01659.png",
+        "IMG_20181218_170238.jpg",
+        "IMG_20181218_171555.jpg",
+        "IMG_20181218_171607.jpg",
+        "IMG_20181218_171749.jpg",
+        "IMG_20181218_171753.jpg",
+        "IMG_20181218_171755.jpg",
+        "IMG_20190206_174852.jpg",
+        "IMG_20190206_174855.jpg",
+        "IMG_20190402_110254.jpg",
+        "IMG_20190430_111818.jpg",
+        "IMG_20190430_111949.jpg"
+      ],
+      "A": {
+        "per_class_mae": [
+          1.4285714285714286,
+          0.42857142857142855,
+          0.14285714285714285,
+          0.07142857142857142,
+          0.21428571428571427
+        ],
+        "overall_cell_mae": 0.45714285714285713,
+        "total_count_mae": 1.7142857142857142,
+        "mean_sum_absolute_class_errors": 2.2857142857142856,
+        "exact_five_class_accuracy": 0.14285714285714285,
+        "per_class_bias": [
+          1.0,
+          -0.42857142857142855,
+          0.14285714285714285,
+          -0.07142857142857142,
+          0.21428571428571427
+        ]
+      },
+      "B": {
+        "per_class_mae": [
+          0.8571428571428571,
+          0.21428571428571427,
+          0.07142857142857142,
+          0.35714285714285715,
+          0.21428571428571427
+        ],
+        "overall_cell_mae": 0.34285714285714286,
+        "total_count_mae": 1.1428571428571428,
+        "mean_sum_absolute_class_errors": 1.7142857142857142,
+        "exact_five_class_accuracy": 0.21428571428571427,
+        "per_class_bias": [
+          0.8571428571428571,
+          -0.21428571428571427,
+          0.07142857142857142,
+          0.21428571428571427,
+          0.21428571428571427
+        ]
+      }
+    },
+    "multi_instance_2plus": {
+      "images": [
+        "DSC01657.png",
+        "DSC01658.png",
+        "DSC01659.png",
+        "IMG_20181218_165646.jpg",
+        "IMG_20181218_165652.jpg",
+        "IMG_20181218_170238.jpg",
+        "IMG_20181218_170243.jpg",
+        "IMG_20181218_170247.jpg",
+        "IMG_20181218_171555.jpg",
+        "IMG_20181218_171604.jpg",
+        "IMG_20181218_171607.jpg",
+        "IMG_20181218_171749.jpg",
+        "IMG_20181218_171753.jpg",
+        "IMG_20181218_171755.jpg",
+        "IMG_20181218_171800.jpg",
+        "IMG_20181218_171802.jpg",
+        "IMG_20181218_171805.jpg",
+        "IMG_20190206_170714.jpg",
+        "IMG_20190206_170716.jpg",
+        "IMG_20190206_174852.jpg",
+        "IMG_20190206_174855.jpg",
+        "IMG_20190402_110254.jpg",
+        "IMG_20190430_111818.jpg",
+        "IMG_20190430_111949.jpg"
+      ],
+      "A": {
+        "per_class_mae": [
+          1.4583333333333333,
+          0.25,
+          0.4583333333333333,
+          0.4583333333333333,
+          0.375
+        ],
+        "overall_cell_mae": 0.6,
+        "total_count_mae": 2.25,
+        "mean_sum_absolute_class_errors": 3.0,
+        "exact_five_class_accuracy": 0.16666666666666666,
+        "per_class_bias": [
+          0.041666666666666664,
+          -0.25,
+          0.125,
+          -0.20833333333333334,
+          0.375
+        ]
+      },
+      "B": {
+        "per_class_mae": [
+          0.9583333333333334,
+          0.125,
+          0.5,
+          0.5833333333333334,
+          0.125
+        ],
+        "overall_cell_mae": 0.4583333333333333,
+        "total_count_mae": 1.0416666666666667,
+        "mean_sum_absolute_class_errors": 2.2916666666666665,
+        "exact_five_class_accuracy": 0.375,
+        "per_class_bias": [
+          0.041666666666666664,
+          -0.125,
+          0.5,
+          0.5,
+          0.125
+        ]
+      }
+    },
+    "zero_predictions_with_targets_at_320": {
+      "images": []
+    },
+    "zero_true_positives_with_targets_at_320": {
+      "images": [
+        "IMG_20181218_165652.jpg"
+      ],
+      "A": {
+        "per_class_mae": [
+          6.0,
+          0.0,
+          2.0,
+          4.0,
+          1.0
+        ],
+        "overall_cell_mae": 2.6,
+        "total_count_mae": 11.0,
+        "mean_sum_absolute_class_errors": 13.0,
+        "exact_five_class_accuracy": 0.0,
+        "per_class_bias": [
+          -6.0,
+          0.0,
+          -2.0,
+          -4.0,
+          1.0
+        ]
+      },
+      "B": {
+        "per_class_mae": [
+          4.0,
+          0.0,
+          1.0,
+          4.0,
+          0.0
+        ],
+        "overall_cell_mae": 1.8,
+        "total_count_mae": 1.0,
+        "mean_sum_absolute_class_errors": 9.0,
+        "exact_five_class_accuracy": 0.0,
+        "per_class_bias": [
+          -4.0,
+          0.0,
+          1.0,
+          4.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "identity_errors": {
+    "A": {
+      "wrong_class_candidates": 8,
+      "valser_confusions": 4,
+      "regular_on_light": 7
+    },
+    "B": {
+      "wrong_class_candidates": 16,
+      "valser_confusions": 4,
+      "regular_on_light": 7
+    }
+  },
+  "small_targets": {
+    "A": {
+      "targets": 174,
+      "matched": 149,
+      "recall": 0.8563218390804598
+    },
+    "B": {
+      "targets": 174,
+      "matched": 157,
+      "recall": 0.9022988505747126
+    }
+  },
+  "improved": 12,
+  "unchanged": 10,
+  "worsened": 4,
+  "lost_gt_matches": 6,
+  "gained_gt_matches": 21,
+  "correct_vectors_became_incorrect": []
+}

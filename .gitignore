@@ -1,0 +1,34 @@
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+data/*
+!data/README.md
+!data/.gitkeep
+reports/visuals/
+runs/
+*.pt
+*.onnx
+Ultralytics/
+
+# Local secrets, caches and temporary/build outputs
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+*.egg-info/
+build/
+dist/
+*.tmp
+*.temp
+*.zip
+*.tar
+*.tar.gz
+outputs/
+tmp/
+# Keep small experiment JSON/CSV/log evidence; rendered images stay local.

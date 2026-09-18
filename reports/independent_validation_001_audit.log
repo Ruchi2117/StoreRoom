@@ -1,0 +1,146 @@
+{
+  "status": "blocked_no_verified_independent_groups",
+  "inference_performed": false,
+  "selection_frozen": false,
+  "selected_group_ids": [],
+  "selected_images": [],
+  "selected_annotations": 0,
+  "selected_class_counts": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "class_names": [
+    "Red Bull (source class)",
+    "Knoppers (source class)",
+    "Valser Classic (source class)",
+    "Valser Still (source class)",
+    "Capri-Sun Multivitamin (source class)"
+  ],
+  "source_images": 277,
+  "source_xml_files": 295,
+  "archive_image_inventory_matches": true,
+  "source_image_hashes_match": true,
+  "verified_group_count": 33,
+  "split_group_ids": {
+    "val": [
+      "machine_a9608332afdb",
+      "machine_009154991598",
+      "machine_bb3e4ae22b1d",
+      "machine_bf445d25f803",
+      "machine_4456752f715b"
+    ],
+    "test": [
+      "machine_89a4eeedccc7",
+      "machine_7a18e7d150bd",
+      "machine_3e8d6eb2ede6",
+      "machine_f37708d55f06",
+      "machine_28f06f073c6a"
+    ],
+    "train": [
+      "machine_b9dd5ca784c4",
+      "machine_0afdf2e120a1",
+      "machine_65d0be958c17",
+      "machine_39b4eccd47a2",
+      "machine_0808846669be",
+      "machine_555048df54d8",
+      "machine_cad58c8878fc",
+      "machine_c6004947c1d2",
+      "machine_6102f9410102",
+      "machine_4d293f534e70",
+      "machine_e1be96cf78b1",
+      "machine_e1e2930ccd46",
+      "machine_643b0aa1da5e",
+      "machine_c8f4eb3df42d",
+      "machine_a41778b7de32",
+      "machine_ef9ec98a5e0d",
+      "machine_f75228c14f5f",
+      "machine_934574a6522d",
+      "machine_2d60d7ebba2a",
+      "machine_897e4fa6ce47",
+      "machine_82d607ddcaca",
+      "machine_2d99255acb57",
+      "machine_7520467cbe23"
+    ]
+  },
+  "split_image_counts": {
+    "val": 26,
+    "test": 26,
+    "train": 123
+  },
+  "unused_verified_group_ids": [],
+  "unresolved_component_ids": [
+    "unresolved_000",
+    "unresolved_042",
+    "unresolved_058",
+    "unresolved_063",
+    "unresolved_064",
+    "unresolved_074",
+    "unresolved_146",
+    "unresolved_149",
+    "unresolved_175",
+    "unresolved_216",
+    "unresolved_218",
+    "unresolved_220",
+    "unresolved_223",
+    "unresolved_225",
+    "unresolved_227",
+    "unresolved_230",
+    "unresolved_232",
+    "unresolved_235",
+    "unresolved_238",
+    "unresolved_245",
+    "unresolved_256",
+    "unresolved_259",
+    "unresolved_260",
+    "unresolved_261",
+    "unresolved_274"
+  ],
+  "unresolved_component_images": 102,
+  "quarantined_images": 102,
+  "explicit_exclusions": {
+    "20190125_114246.jpg": "Quarantine: XML 1960x4032 versus decoded 1959x4031. Preserve raw data; do not silently rescale boxes.",
+    "IMG_20190306_104622.jpg": "Product icons on a vending-machine screen, not physical packages.",
+    "IMG_20190430_111230.jpg": "Product icons on a vending-machine screen, not physical packages.",
+    "IMG_20190430_111456.jpg": "Product icons on a vending-machine screen, not physical packages."
+  },
+  "unresolved_only_images": 98,
+  "quarantine_annotation_count_all_classes": 2862,
+  "quarantine_selected_class_counts": [
+    252,
+    90,
+    145,
+    98,
+    44
+  ],
+  "models": {
+    "A": "C:\\Users\\Lenovo\\Documents\\ChatGPT\\StoreRoom\\runs\\baseline_002\\weights\\best.pt",
+    "B": "C:\\Users\\Lenovo\\Documents\\ChatGPT\\StoreRoom\\runs\\augmentation_001\\weights\\best.pt"
+  },
+  "model_hashes": {
+    "A": "7e048d48a3b80cf5cab1aafb30dfb63f7f20c94e12b26ded8aac35de5ecd0cbd",
+    "B": "099b96ecd3cb440991b56c69cd243770ca499b8e246fee994ced3e24b93ec1c4"
+  },
+  "common_arguments": {
+    "imgsz": 320,
+    "device": "cpu",
+    "max_det": 300,
+    "agnostic_nms": false,
+    "augment": false,
+    "verbose": false,
+    "rect": true,
+    "batch": 1,
+    "iou": 0.5
+  },
+  "class_thresholds": [
+    0.15,
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ],
+  "protected_artifacts": 921,
+  "reason": "All 33 supported groups are assigned to train/val/test. Remaining components lack verified cross-visit identity; test groups cannot be repurposed."
+}

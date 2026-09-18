@@ -1,0 +1,6 @@
+product_id,source_label,positive_images,instances,scene_groups,images_with_2plus
+hs_redbull_regular,redbull___33__90162909,152,597,33,150
+hs_knoppers,knoppers_riegel____4035800488808,138,268,28,66
+hs_valser_classic,valser_classic__50__76404160,133,150,32,17
+hs_valser_still,valser_still__50__7610335002575,117,165,32,19
+hs_caprisun_multivitamin,caprisun_multivitamin__20__4000177605004,151,300,29,147

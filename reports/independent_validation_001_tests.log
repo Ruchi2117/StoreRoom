@@ -1,0 +1,41 @@
+test_fixed_validation_and_protected_artifacts (test_augmentation.AugmentationChecks.test_fixed_validation_and_protected_artifacts) ... ok
+test_only_augmentation_training_changes (test_augmentation.AugmentationChecks.test_only_augmentation_training_changes) ... ok
+test_only_epoch_budget_changed_and_old_artifacts_preserved (test_baseline_002.ControlledBudgetTests.test_only_epoch_budget_changed_and_old_artifacts_preserved) ... ok
+test_same_effective_training_settings_and_initial_weights (test_baseline_002.ControlledBudgetTests.test_same_effective_training_settings_and_initial_weights) ... ok
+test_test_evaluation_is_rejected_before_inference (test_baseline_002.ControlledBudgetTests.test_test_evaluation_is_rejected_before_inference) ... ok
+test_validation_membership_threshold_and_counting (test_baseline_002.ControlledBudgetTests.test_validation_membership_threshold_and_counting) ... ok
+test_test_is_absent_or_bound_to_a_frozen_baseline (test_baseline_evaluation.BaselineEvaluationTests.test_test_is_absent_or_bound_to_a_frozen_baseline) ... ok
+test_validation_predictions_counts_and_membership (test_baseline_evaluation.BaselineEvaluationTests.test_validation_predictions_counts_and_membership) ... ok
+test_frozen_validation_protocol_and_metrics (test_class_confidence_experiment.ClassConfidenceChecks.test_frozen_validation_protocol_and_metrics) ... ok
+test_pre_nms_gate_sanity (test_class_confidence_experiment.ClassConfidenceChecks.test_pre_nms_gate_sanity) ... ok
+test_frozen_validation_protocol_and_metrics (test_confidence_experiment.ConfidenceChecks.test_frozen_validation_protocol_and_metrics) ... ok
+test_class_errors_do_not_cancel_in_cell_mae (test_counting.CountingTests.test_class_errors_do_not_cancel_in_cell_mae) ... ok
+test_counts_empty_and_repeated_instances (test_counting.CountingTests.test_counts_empty_and_repeated_instances) ... ok
+test_exact_vectors_and_zero_baseline (test_counting.CountingTests.test_exact_vectors_and_zero_baseline) ... ok
+test_all_frozen_images_and_machine_memberships (test_full_export.FullExportTests.test_all_frozen_images_and_machine_memberships) ... ok
+test_duplicate_and_wrong_class_do_not_become_true_positives (test_nms_experiment.NmsChecks.test_duplicate_and_wrong_class_do_not_become_true_positives) ... ok
+test_real_runs_preserve_inputs_and_validation_only (test_nms_experiment.NmsChecks.test_real_runs_preserve_inputs_and_validation_only) ... ok
+test_replacement_box_is_not_automatically_a_lost_neighbor (test_nms_experiment.NmsChecks.test_replacement_box_is_not_automatically_a_lost_neighbor) ... ok
+test_archive_paths_cannot_escape_destination (test_preflight.PreflightChecks.test_archive_paths_cannot_escape_destination) ... ok
+test_boxes_at_image_edge_are_not_silently_clipped (test_preflight.PreflightChecks.test_boxes_at_image_edge_are_not_silently_clipped) ... ok
+test_gtin_keeps_leading_zero_and_ignores_pack_size (test_preflight.PreflightChecks.test_gtin_keeps_leading_zero_and_ignores_pack_size) ... ok
+test_frozen_validation_protocol_and_metrics (test_resolution_experiment.ResolutionChecks.test_frozen_validation_protocol_and_metrics) ... ok
+test_cpu_prediction_output_structure_and_frozen_inputs (test_runtime_artifacts.RuntimeArtifacts.test_cpu_prediction_output_structure_and_frozen_inputs) ... ok
+test_real_conversion_preserves_counts_coordinates_and_splits (test_runtime_artifacts.RuntimeArtifacts.test_real_conversion_preserves_counts_coordinates_and_splits) ... ok
+test_yaml_has_exact_names_and_frozen_split_paths (test_runtime_artifacts.RuntimeArtifacts.test_yaml_has_exact_names_and_frozen_split_paths) ... ok
+test_bad_input_invalidates_previous_success (test_scene_preflight.SceneChecks.test_bad_input_invalidates_previous_success) ... ok
+test_many_instances_in_one_scene_do_not_pass_scene_gate (test_scene_preflight.SceneChecks.test_many_instances_in_one_scene_do_not_pass_scene_gate) ... ok
+test_real_split_preserves_groups_and_excludes_quarantine (test_scene_preflight.SceneChecks.test_real_split_preserves_groups_and_excludes_quarantine) ... ok
+test_revisited_scene_links_are_transitive (test_scene_preflight.SceneChecks.test_revisited_scene_links_are_transitive) ... ok
+test_count_mapping_and_coordinate_changes_are_rejected (test_yolo_checks.YoloValidationChecks.test_count_mapping_and_coordinate_changes_are_rejected) ... ok
+test_dimension_mismatch_is_rejected (test_yolo_checks.YoloValidationChecks.test_dimension_mismatch_is_rejected) ... ok
+test_empty_label_is_valid_only_for_a_negative_image (test_yolo_checks.YoloValidationChecks.test_empty_label_is_valid_only_for_a_negative_image) ... ok
+test_five_decimal_edge_rounding_has_a_strict_bound (test_yolo_checks.YoloValidationChecks.test_five_decimal_edge_rounding_has_a_strict_bound) ... ok
+test_independent_pixel_round_trip (test_yolo_checks.YoloValidationChecks.test_independent_pixel_round_trip) ... ok
+test_malformed_coordinates_and_ids_are_rejected (test_yolo_checks.YoloValidationChecks.test_malformed_coordinates_and_ids_are_rejected) ... ok
+test_missing_label_and_image_are_rejected (test_yolo_checks.YoloValidationChecks.test_missing_label_and_image_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 50.114s
+
+OK

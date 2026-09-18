@@ -1,0 +1,288 @@
+{
+  "gate": "pass",
+  "eligible_images": 175,
+  "quarantined_images": 102,
+  "eligible_machine_groups": 33,
+  "decoded_sticker_images": 104,
+  "distinct_sticker_payloads": 33,
+  "selected_support": {
+    "hs_redbull_regular": {
+      "positive_images": 152,
+      "instances": 597,
+      "scene_groups": 33,
+      "images_with_2plus": 150,
+      "count_histogram": {
+        "0": 23,
+        "1": 2,
+        "2": 8,
+        "3": 45,
+        "4": 47,
+        "5": 44,
+        "6": 6
+      }
+    },
+    "hs_knoppers": {
+      "positive_images": 138,
+      "instances": 268,
+      "scene_groups": 28,
+      "images_with_2plus": 66,
+      "count_histogram": {
+        "0": 37,
+        "1": 72,
+        "2": 2,
+        "3": 64
+      }
+    },
+    "hs_valser_classic": {
+      "positive_images": 133,
+      "instances": 150,
+      "scene_groups": 32,
+      "images_with_2plus": 17,
+      "count_histogram": {
+        "0": 42,
+        "1": 116,
+        "2": 17
+      }
+    },
+    "hs_valser_still": {
+      "positive_images": 117,
+      "instances": 165,
+      "scene_groups": 32,
+      "images_with_2plus": 19,
+      "count_histogram": {
+        "0": 58,
+        "1": 98,
+        "3": 9,
+        "4": 10
+      }
+    },
+    "hs_caprisun_multivitamin": {
+      "positive_images": 151,
+      "instances": 300,
+      "scene_groups": 29,
+      "images_with_2plus": 147,
+      "count_histogram": {
+        "0": 24,
+        "1": 4,
+        "2": 145,
+        "3": 2
+      }
+    }
+  },
+  "near_duplicate_review": {
+    "same_machine_keep_together": 6,
+    "unresolved_image_quarantined": 8,
+    "different_readable_machine_stickers_similar_shelf_layout": 16
+  },
+  "interpretation": "The sticker is a stable photographed identifier, not externally verified machine metadata. The benchmark measures held-out sticker/machine groups within a shared vending-machine domain, not independent stores or Indian shelf generalization.",
+  "input_sha256": {
+    "reports/image_manifest.json": "ea91495961ada0e90461076ee2cd8007fedb1e0ce32f6462de7896fc25da2a69",
+    "reports/machine_codes.json": "356601ec1e0fa1f7b03429cdbe230cabcbcd81a616221c2c0853021ccb55251a",
+    "reports/near_duplicate_candidates.json": "c0448c31878da9a181e981e796099217e94e9690a05834a01d0a7bc7ff9e04b1",
+    "configs/scene_review.json": "4cfff65bbeba4ab427e7755f16057a74cbf9682a7a79eb588c923c55eaf86e42",
+    "configs/exclusions.json": "30ebc7282be8b7ede37d413b29380077f92d5e44a198b5c1fe59b42cc42363e8",
+    "configs/candidate_classes.json": "2703958a427ee4bec8346d0bb222dddefdbc6cce4969253cbec964fcb00e3009",
+    "configs/preflight_policy.json": "c271e91c5356b53a1ba3d5cd696c441dfaadd5fdc1479c6d083a57e6fb64e2e0"
+  },
+  "training_performed": false,
+  "splits": {
+    "val": {
+      "images": 26,
+      "groups": 5,
+      "negative_images": 2,
+      "support": {
+        "hs_redbull_regular": {
+          "positive_images": 20,
+          "instances": 84,
+          "scene_groups": 5,
+          "images_with_2plus": 20,
+          "count_histogram": {
+            "0": 6,
+            "2": 2,
+            "3": 4,
+            "4": 3,
+            "5": 10,
+            "6": 1
+          }
+        },
+        "hs_knoppers": {
+          "positive_images": 16,
+          "instances": 38,
+          "scene_groups": 4,
+          "images_with_2plus": 11,
+          "count_histogram": {
+            "0": 10,
+            "1": 5,
+            "3": 11
+          }
+        },
+        "hs_valser_classic": {
+          "positive_images": 17,
+          "instances": 19,
+          "scene_groups": 5,
+          "images_with_2plus": 2,
+          "count_histogram": {
+            "0": 9,
+            "1": 15,
+            "2": 2
+          }
+        },
+        "hs_valser_still": {
+          "positive_images": 19,
+          "instances": 31,
+          "scene_groups": 5,
+          "images_with_2plus": 4,
+          "count_histogram": {
+            "0": 7,
+            "1": 15,
+            "4": 4
+          }
+        },
+        "hs_caprisun_multivitamin": {
+          "positive_images": 17,
+          "instances": 33,
+          "scene_groups": 4,
+          "images_with_2plus": 16,
+          "count_histogram": {
+            "0": 9,
+            "1": 1,
+            "2": 16
+          }
+        }
+      }
+    },
+    "test": {
+      "images": 26,
+      "groups": 5,
+      "negative_images": 1,
+      "support": {
+        "hs_redbull_regular": {
+          "positive_images": 22,
+          "instances": 86,
+          "scene_groups": 5,
+          "images_with_2plus": 22,
+          "count_histogram": {
+            "0": 4,
+            "2": 2,
+            "3": 7,
+            "4": 7,
+            "5": 3,
+            "6": 3
+          }
+        },
+        "hs_knoppers": {
+          "positive_images": 18,
+          "instances": 38,
+          "scene_groups": 4,
+          "images_with_2plus": 10,
+          "count_histogram": {
+            "0": 8,
+            "1": 8,
+            "3": 10
+          }
+        },
+        "hs_valser_classic": {
+          "positive_images": 21,
+          "instances": 25,
+          "scene_groups": 5,
+          "images_with_2plus": 4,
+          "count_histogram": {
+            "0": 5,
+            "1": 17,
+            "2": 4
+          }
+        },
+        "hs_valser_still": {
+          "positive_images": 21,
+          "instances": 33,
+          "scene_groups": 5,
+          "images_with_2plus": 4,
+          "count_histogram": {
+            "0": 5,
+            "1": 17,
+            "4": 4
+          }
+        },
+        "hs_caprisun_multivitamin": {
+          "positive_images": 19,
+          "instances": 38,
+          "scene_groups": 4,
+          "images_with_2plus": 19,
+          "count_histogram": {
+            "0": 7,
+            "2": 19
+          }
+        }
+      }
+    },
+    "train": {
+      "images": 123,
+      "groups": 23,
+      "negative_images": 0,
+      "support": {
+        "hs_redbull_regular": {
+          "positive_images": 110,
+          "instances": 427,
+          "scene_groups": 23,
+          "images_with_2plus": 108,
+          "count_histogram": {
+            "0": 13,
+            "1": 2,
+            "2": 4,
+            "3": 34,
+            "4": 37,
+            "5": 31,
+            "6": 2
+          }
+        },
+        "hs_knoppers": {
+          "positive_images": 104,
+          "instances": 192,
+          "scene_groups": 20,
+          "images_with_2plus": 45,
+          "count_histogram": {
+            "0": 19,
+            "1": 59,
+            "2": 2,
+            "3": 43
+          }
+        },
+        "hs_valser_classic": {
+          "positive_images": 95,
+          "instances": 106,
+          "scene_groups": 22,
+          "images_with_2plus": 11,
+          "count_histogram": {
+            "0": 28,
+            "1": 84,
+            "2": 11
+          }
+        },
+        "hs_valser_still": {
+          "positive_images": 77,
+          "instances": 101,
+          "scene_groups": 22,
+          "images_with_2plus": 11,
+          "count_histogram": {
+            "0": 46,
+            "1": 66,
+            "3": 9,
+            "4": 2
+          }
+        },
+        "hs_caprisun_multivitamin": {
+          "positive_images": 115,
+          "instances": 229,
+          "scene_groups": 21,
+          "images_with_2plus": 112,
+          "count_histogram": {
+            "0": 8,
+            "1": 3,
+            "2": 110,
+            "3": 2
+          }
+        }
+      }
+    }
+  }
+}

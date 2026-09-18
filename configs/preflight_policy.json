@@ -1,0 +1,13 @@
+{
+  "purpose": "Minimum support for a small prototype, not a guarantee of statistical reliability",
+  "target_classes": 5,
+  "minimum_scene_groups": {"train": 3, "val": 2, "test": 2},
+  "minimum_instances": {"train": 20, "val": 10, "test": 10},
+  "minimum_multi_instance_images_per_class_per_split": 1,
+  "near_duplicate_dhash_distance": 8,
+  "require_unique_gtin_label": true,
+  "require_valid_gtin_checksum": true,
+  "require_valid_selected_boxes": true,
+  "grouping_rule": "Keep repeated views of the same machine, scene, or capture session together; merge unresolved same-machine candidates conservatively. Date alone is not machine identity.",
+  "if_gate_fails": "Do not freeze model classes or export a training split. Report the evidence and outstanding data work."
+}

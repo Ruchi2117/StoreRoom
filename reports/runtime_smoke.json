@@ -1,0 +1,400 @@
+{
+  "purpose": "COCO CPU inference only; not product recognition or accuracy measurement",
+  "python": "3.14.4",
+  "os": "Windows-11-10.0.26200-SP0",
+  "device": "cpu",
+  "cuda_available": false,
+  "torch_cuda_build": null,
+  "torchvision": "0.29.0+cpu",
+  "packages": {
+    "Jinja2": "3.1.6",
+    "MarkupSafe": "3.0.3",
+    "PyYAML": "6.0.3",
+    "anyio": "4.15.1",
+    "av": "18.1.0",
+    "certifi": "2026.7.22",
+    "charset-normalizer": "3.5.1",
+    "cloudpickle": "3.1.2",
+    "colorama": "0.4.6",
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "defusedxml": "0.7.1",
+    "filelock": "3.32.3",
+    "fonttools": "4.65.0",
+    "fsspec": "2026.7.0",
+    "h11": "0.16.0",
+    "httpcore": "1.0.9",
+    "httpx": "0.28.1",
+    "idna": "3.19",
+    "kiwisolver": "1.5.1",
+    "matplotlib": "3.11.2",
+    "mpmath": "1.3.0",
+    "networkx": "3.6.1",
+    "numpy": "2.5.2",
+    "nvidia-ml-py": "13.610.43",
+    "opencv-python": "5.0.0.93",
+    "packaging": "26.3",
+    "pillow": "12.3.0",
+    "pip": "26.0.1",
+    "polars": "1.44.2",
+    "polars-runtime-32": "1.44.2",
+    "psutil": "7.2.2",
+    "pyDeprecate": "0.11.0",
+    "pyparsing": "3.3.2",
+    "python-dateutil": "2.9.0.post0",
+    "requests": "2.34.2",
+    "scipy": "1.18.1",
+    "setuptools": "78.1.0",
+    "six": "1.17.0",
+    "supervision": "0.30.3",
+    "sympy": "1.14.0",
+    "torch": "2.14.0+cpu",
+    "torchvision": "0.29.0+cpu",
+    "tqdm": "4.70.1",
+    "typing_extensions": "4.16.0",
+    "ultralytics": "8.4.154",
+    "ultralytics-platform": "0.1.46",
+    "ultralytics-thop": "2.1.6",
+    "urllib3": "2.8.0",
+    "zxing-cpp": "3.1.1"
+  },
+  "dataset": {
+    "doi": "10.17632/gz39ggf35n.1",
+    "version": 1,
+    "archive_sha256": "4492e5f544a035cf4884626187ebf39ab5e703f71a3ff05733b6c11baf926afb"
+  },
+  "selected_classes": [
+    {
+      "class_id": 0,
+      "product_id": "hs_redbull_regular",
+      "name": "Red Bull (source class)",
+      "source_label": "redbull___33__90162909",
+      "source_gtin": "90162909"
+    },
+    {
+      "class_id": 1,
+      "product_id": "hs_knoppers",
+      "name": "Knoppers (source class)",
+      "source_label": "knoppers_riegel____4035800488808",
+      "source_gtin": "4035800488808"
+    },
+    {
+      "class_id": 2,
+      "product_id": "hs_valser_classic",
+      "name": "Valser Classic (source class)",
+      "source_label": "valser_classic__50__76404160",
+      "source_gtin": "76404160"
+    },
+    {
+      "class_id": 3,
+      "product_id": "hs_valser_still",
+      "name": "Valser Still (source class)",
+      "source_label": "valser_still__50__7610335002575",
+      "source_gtin": "7610335002575"
+    },
+    {
+      "class_id": 4,
+      "product_id": "hs_caprisun_multivitamin",
+      "name": "Capri-Sun Multivitamin (source class)",
+      "source_label": "caprisun_multivitamin__20__4000177605004",
+      "source_gtin": "4000177605004"
+    }
+  ],
+  "conversion_method": "supervision.DetectionDataset.from_pascal_voc -> as_yolo",
+  "frozen_config_sha256": {
+    "configs/class_map.json": "dc83ed0a042dafdce5106fd2cddbce49736bee1bf0bb81f693722707a5cd0c9a",
+    "configs/splits.json": "6fc011ea9084c0d1aeb5cc91927ac44d83d43e2e7cd029b27efe1ae359396336"
+  },
+  "model": {
+    "filename": "yolo11n.pt",
+    "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+    "class_names": {
+      "0": "person",
+      "1": "bicycle",
+      "2": "car",
+      "3": "motorcycle",
+      "4": "airplane",
+      "5": "bus",
+      "6": "train",
+      "7": "truck",
+      "8": "boat",
+      "9": "traffic light",
+      "10": "fire hydrant",
+      "11": "stop sign",
+      "12": "parking meter",
+      "13": "bench",
+      "14": "bird",
+      "15": "cat",
+      "16": "dog",
+      "17": "horse",
+      "18": "sheep",
+      "19": "cow",
+      "20": "elephant",
+      "21": "bear",
+      "22": "zebra",
+      "23": "giraffe",
+      "24": "backpack",
+      "25": "umbrella",
+      "26": "handbag",
+      "27": "tie",
+      "28": "suitcase",
+      "29": "frisbee",
+      "30": "skis",
+      "31": "snowboard",
+      "32": "sports ball",
+      "33": "kite",
+      "34": "baseball bat",
+      "35": "baseball glove",
+      "36": "skateboard",
+      "37": "surfboard",
+      "38": "tennis racket",
+      "39": "bottle",
+      "40": "wine glass",
+      "41": "cup",
+      "42": "fork",
+      "43": "knife",
+      "44": "spoon",
+      "45": "bowl",
+      "46": "banana",
+      "47": "apple",
+      "48": "sandwich",
+      "49": "orange",
+      "50": "broccoli",
+      "51": "carrot",
+      "52": "hot dog",
+      "53": "pizza",
+      "54": "donut",
+      "55": "cake",
+      "56": "chair",
+      "57": "couch",
+      "58": "potted plant",
+      "59": "bed",
+      "60": "dining table",
+      "61": "toilet",
+      "62": "tv",
+      "63": "laptop",
+      "64": "mouse",
+      "65": "remote",
+      "66": "keyboard",
+      "67": "cell phone",
+      "68": "microwave",
+      "69": "oven",
+      "70": "toaster",
+      "71": "sink",
+      "72": "refrigerator",
+      "73": "book",
+      "74": "clock",
+      "75": "vase",
+      "76": "scissors",
+      "77": "teddy bear",
+      "78": "hair drier",
+      "79": "toothbrush"
+    },
+    "device": "cpu",
+    "source_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo11n.pt"
+  },
+  "results": [
+    {
+      "image": "IMG_20181218_175259.jpg",
+      "original_shape_hw": [
+        4640,
+        3480
+      ],
+      "box_shape": [
+        3,
+        4
+      ],
+      "detections": [
+        {
+          "coco_class_id": 72,
+          "coco_name": "refrigerator",
+          "confidence": 0.8331348299980164,
+          "xyxy": [
+            242.33139038085938,
+            12.62200927734375,
+            3430.60400390625,
+            4542.58349609375
+          ]
+        },
+        {
+          "coco_class_id": 39,
+          "coco_name": "bottle",
+          "confidence": 0.29508110880851746,
+          "xyxy": [
+            1491.936767578125,
+            3558.801513671875,
+            1695.5111083984375,
+            4082.0419921875
+          ]
+        },
+        {
+          "coco_class_id": 39,
+          "coco_name": "bottle",
+          "confidence": 0.2500945031642914,
+          "xyxy": [
+            1078.9205322265625,
+            2418.811767578125,
+            1291.31005859375,
+            2863.26953125
+          ]
+        }
+      ],
+      "speed_ms": {
+        "preprocess": 24.905400001443923,
+        "inference": 276.8459999933839,
+        "postprocess": 15.025899992906488
+      }
+    },
+    {
+      "image": "IMG_20190206_170222.jpg",
+      "original_shape_hw": [
+        4608,
+        3456
+      ],
+      "box_shape": [
+        12,
+        4
+      ],
+      "detections": [
+        {
+          "coco_class_id": 72,
+          "coco_name": "refrigerator",
+          "confidence": 0.7093495726585388,
+          "xyxy": [
+            257.548095703125,
+            11.394140243530273,
+            3004.441162109375,
+            4557.041015625
+          ]
+        },
+        {
+          "coco_class_id": 39,
+          "coco_name": "bottle",
+          "confidence": 0.552952766418457,
+          "xyxy": [
+            1193.7872314453125,
+            2102.0556640625,
+            1448.85595703125,
+            2590.7392578125
+          ]
+        },
+        {
+          "coco_class_id": 39,
+          "coco_name": "bottle",
+          "confidence": 0.5283408761024475,
+          "xyxy": [
+            1457.40185546875,
+            1877.74658203125,
+            1716.920166015625,
+            2589.121337890625
+          ]
+        },
+        {
+          "coco_class_id": 39,
+          "coco_name": "bottle",
+          "confidence": 0.48721376061439514,
+          "xyxy": [
+            2449.58984375,
+            2637.138916015625,
+            2754.308349609375,
+            3424.897216796875
+          ]
+        },
+        {
+          "coco_class_id": 39,
+          "coco_name": "bottle",
+          "confidence": 0.465643972158432,
+          "xyxy": [
+            1195.8582763671875,
+            2696.68994140625,
+            1464.658935546875,
+            3433.900634765625
+          ]
+        },
+        {
+          "coco_class_id": 39,
+          "coco_name": "bottle",
+          "confidence": 0.4481125473976135,
+          "xyxy": [
+            1472.4688720703125,
+            2693.10009765625,
+            1743.417236328125,
+            3412.055419921875
+          ]
+        },
+        {
+          "coco_class_id": 39,
+          "coco_name": "bottle",
+          "confidence": 0.4258498251438141,
+          "xyxy": [
+            2194.059814453125,
+            2712.194091796875,
+            2470.141845703125,
+            3415.959228515625
+          ]
+        },
+        {
+          "coco_class_id": 39,
+          "coco_name": "bottle",
+          "confidence": 0.3861384689807892,
+          "xyxy": [
+            1957.909912109375,
+            2699.758056640625,
+            2219.559326171875,
+            3412.72119140625
+          ]
+        },
+        {
+          "coco_class_id": 39,
+          "coco_name": "bottle",
+          "confidence": 0.3372823894023895,
+          "xyxy": [
+            2227.087646484375,
+            1279.65673828125,
+            2454.169921875,
+            1723.1787109375
+          ]
+        },
+        {
+          "coco_class_id": 39,
+          "coco_name": "bottle",
+          "confidence": 0.29550641775131226,
+          "xyxy": [
+            965.537109375,
+            2703.09326171875,
+            1246.716796875,
+            3423.078125
+          ]
+        },
+        {
+          "coco_class_id": 39,
+          "coco_name": "bottle",
+          "confidence": 0.29314693808555603,
+          "xyxy": [
+            2205.12353515625,
+            3525.64990234375,
+            2485.554931640625,
+            4188.48193359375
+          ]
+        },
+        {
+          "coco_class_id": 39,
+          "coco_name": "bottle",
+          "confidence": 0.2712215185165405,
+          "xyxy": [
+            1712.021240234375,
+            1874.1031494140625,
+            1941.491455078125,
+            2588.406494140625
+          ]
+        }
+      ],
+      "speed_ms": {
+        "preprocess": 5.7006999995792285,
+        "inference": 118.57289999898057,
+        "postprocess": 3.43879999127239
+      }
+    }
+  ],
+  "trained": false
+}

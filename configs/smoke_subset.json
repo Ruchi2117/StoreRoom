@@ -1,0 +1,15 @@
+{
+  "purpose": "Conversion/runtime checks only; these memberships are inherited from configs/splits.json",
+  "images": {
+    "train": ["IMG_20181218_175259.jpg", "IMG_20190206_170222.jpg"],
+    "val": ["IMG_20181218_171755.jpg", "IMG_20181218_165652.jpg", "IMG_20181218_165648.jpg"],
+    "test": ["IMG_20181218_172433.jpg", "DSC01642.png", "DSC01643.png"]
+  },
+  "review_notes": {
+    "IMG_20181218_175259.jpg": "All five selected classes have multiple instances; crowded machine.",
+    "IMG_20190206_170222.jpg": "Source has a C+Swiss label without a GTIN; that class is intentionally not selected. Check filtering does not change selected labels.",
+    "IMG_20181218_165652.jpg": "Regular Red Bull includes different can sizes under one source class; conversion must preserve this known limitation, not invent sizes.",
+    "IMG_20181218_165648.jpg": "Zero selected targets: require an explicit empty YOLO label file.",
+    "DSC01643.png": "Zero selected targets; PNG and landscape dimension coverage."
+  }
+}

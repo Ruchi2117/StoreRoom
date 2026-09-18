@@ -1,0 +1,53 @@
+{
+  "status": "selected_for_public_dataset_baseline",
+  "input_sha256": {
+    "reports/image_manifest.json": "ea91495961ada0e90461076ee2cd8007fedb1e0ce32f6462de7896fc25da2a69",
+    "reports/machine_codes.json": "356601ec1e0fa1f7b03429cdbe230cabcbcd81a616221c2c0853021ccb55251a",
+    "reports/near_duplicate_candidates.json": "c0448c31878da9a181e981e796099217e94e9690a05834a01d0a7bc7ff9e04b1",
+    "configs/scene_review.json": "4cfff65bbeba4ab427e7755f16057a74cbf9682a7a79eb588c923c55eaf86e42",
+    "configs/exclusions.json": "30ebc7282be8b7ede37d413b29380077f92d5e44a198b5c1fe59b42cc42363e8",
+    "configs/candidate_classes.json": "2703958a427ee4bec8346d0bb222dddefdbc6cce4969253cbec964fcb00e3009",
+    "configs/preflight_policy.json": "c271e91c5356b53a1ba3d5cd696c441dfaadd5fdc1479c6d083a57e6fb64e2e0"
+  },
+  "identity_note": "Source product classes, not verified catalog SKUs. GTINs are retained as unverified source metadata. Red Bull mixes can sizes; do not use these classes directly for price, ingredients, stock sales, or pack-size claims.",
+  "identity_level": "source_product_class",
+  "catalog_sku_verified": false,
+  "evaluation_ground_truth": "source_annotated_visible_front_packages",
+  "classes": [
+    {
+      "class_id": 0,
+      "product_id": "hs_redbull_regular",
+      "name": "Red Bull (source class)",
+      "source_label": "redbull___33__90162909",
+      "source_gtin": "90162909"
+    },
+    {
+      "class_id": 1,
+      "product_id": "hs_knoppers",
+      "name": "Knoppers (source class)",
+      "source_label": "knoppers_riegel____4035800488808",
+      "source_gtin": "4035800488808"
+    },
+    {
+      "class_id": 2,
+      "product_id": "hs_valser_classic",
+      "name": "Valser Classic (source class)",
+      "source_label": "valser_classic__50__76404160",
+      "source_gtin": "76404160"
+    },
+    {
+      "class_id": 3,
+      "product_id": "hs_valser_still",
+      "name": "Valser Still (source class)",
+      "source_label": "valser_still__50__7610335002575",
+      "source_gtin": "7610335002575"
+    },
+    {
+      "class_id": 4,
+      "product_id": "hs_caprisun_multivitamin",
+      "name": "Capri-Sun Multivitamin (source class)",
+      "source_label": "caprisun_multivitamin__20__4000177605004",
+      "source_gtin": "4000177605004"
+    }
+  ]
+}

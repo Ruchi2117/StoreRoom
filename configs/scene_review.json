@@ -1,0 +1,18 @@
+{
+  "review_date": "2026-09-16",
+  "image_manifest_sha256": "ea91495961ada0e90461076ee2cd8007fedb1e0ce32f6462de7896fc25da2a69",
+  "review_basis": "All 277 images reviewed in reports/visuals/all_01.jpg through all_08.jpg. Ranges below are zero-based review_index values from the frozen image manifest, inclusive, showing the same machine in an adjacent capture burst. Distinct decoded machine-sticker payloads separate otherwise very similar planograms; shared payloads merge visits across dates.",
+  "reviewed_same_scene_ranges": [
+    [0, 30], [31, 36], [37, 41], [43, 47], [48, 51], [52, 54], [55, 57], [58, 60], [61, 62], [65, 67],
+    [68, 71], [72, 73], [74, 77], [78, 81], [82, 85], [86, 88], [89, 92], [93, 95], [96, 100],
+    [101, 107], [108, 110], [111, 113], [114, 119], [120, 125], [126, 134], [135, 139], [140, 145],
+    [146, 148], [149, 153], [154, 158], [159, 161], [162, 165], [166, 170], [171, 174],
+    [176, 177], [178, 179], [182, 183], [184, 185], [188, 189], [191, 192], [193, 194], [195, 196],
+    [197, 198], [199, 201], [202, 203], [204, 207], [208, 209], [210, 212], [213, 215],
+    [218, 219], [220, 222], [223, 224], [225, 226], [227, 229], [230, 231], [232, 234], [235, 237],
+    [238, 240], [241, 242], [246, 247], [248, 249], [250, 251], [253, 254], [261, 262], [272, 273], [274, 275]
+  ],
+  "conservative_possible_revisit_merges": [[0, 31, 37, 68, 171, 217]],
+  "unresolved_policy": "Quarantine every component without a readable machine QR sticker. Do not treat a new filename, date, or unmatched hash as an independent machine.",
+  "limitation": "The sticker is a stable photographed identifier, not externally verified machine metadata. The benchmark measures held-out sticker/machine groups within a shared vending-machine domain, not independent stores or Indian shelf generalization."
+}

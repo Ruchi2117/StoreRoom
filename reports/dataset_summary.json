@@ -1,0 +1,97 @@
+{
+  "image_files": 277,
+  "xml_files": 295,
+  "paired_images": 277,
+  "all_xml_instances": 10036,
+  "paired_instances": 9486,
+  "all_xml_classes": 115,
+  "paired_classes": 115,
+  "orphan_annotations": [
+    "DSC01632.xml",
+    "DSC01633.xml",
+    "DSC01634.xml",
+    "DSC01635.xml",
+    "DSC01655.xml",
+    "DSC01656.xml",
+    "DSC01662.xml",
+    "DSC01663.xml",
+    "DSC01664.xml",
+    "DSC01667.xml",
+    "DSC01669.xml",
+    "DSC01670.xml",
+    "DSC01671.xml",
+    "DSC01672.xml",
+    "DSC01674.xml",
+    "DSC01675.xml",
+    "DSC01678.xml",
+    "DSC01679.xml"
+  ],
+  "unannotated_images": [],
+  "ambiguous_image_stems": {},
+  "issues_by_type": {
+    "dimension_mismatch": 1
+  },
+  "duplicate_groups": [
+    {
+      "method": "sha256",
+      "groups": []
+    },
+    {
+      "method": "pixel_sha256",
+      "groups": []
+    }
+  ],
+  "near_duplicate_candidate_pairs": 30,
+  "near_duplicate_method": "64-bit dHash Hamming distance <= 8; candidates only, not proof of same/different machine",
+  "filename_dates": {
+    "20181218": 103,
+    "20190103": 1,
+    "20190111": 30,
+    "20190125": 10,
+    "20190206": 41,
+    "20190306": 25,
+    "20190307": 2,
+    "20190402": 1,
+    "20190409": 2,
+    "20190430": 21,
+    "20190502": 10,
+    "unknown": 31
+  },
+  "gtin_label_collisions": {
+    "7610046000259": [
+      "kagi___50__7610046000259",
+      "kagi_specialedition__50__7610046000259"
+    ],
+    "5000159461122": [
+      "snickers___50__5000159461122",
+      "snickers_weiß__50__5000159461122"
+    ],
+    "5449000235947": [
+      "fuse_lemon__50__5449000235947",
+      "fuse_lemon_dose_33__5449000235947"
+    ],
+    "5449000236623": [
+      "fuse_peach__50__5449000236623",
+      "fuse_peach_dose_33__5449000236623"
+    ],
+    "7610057001078": [
+      "ramseier_jusdepomme__50__7610057001078",
+      "ramseier_jusdepomme_tetrapak_33__7610057001078"
+    ],
+    "54491472": [
+      "coke___50__54491472",
+      "coke__dose_33__54491472",
+      "coke__flasche_50__54491472"
+    ],
+    "7613100037253": [
+      "comella_schokodrink__33__7613100037253",
+      "comella_schokodrink_flasche_50__7613100037253"
+    ],
+    "7610235000442": [
+      "henniez_blau__33__7610235000442",
+      "henniez_gruen__33__7610235000442",
+      "henniez_rot__33__7610235000442"
+    ]
+  },
+  "scene_status": "Requires visual review; capture date and hashes alone do not establish independent machines/scenes."
+}

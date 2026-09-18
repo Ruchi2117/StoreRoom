@@ -1,0 +1,822 @@
+[
+  {
+    "scene_group": "unresolved_000",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "20190103_103704.jpg",
+      "20190111_111600_HoloLens.jpg",
+      "20190111_111611_HoloLens.jpg",
+      "20190111_111616_HoloLens.jpg",
+      "20190111_111623_HoloLens.jpg",
+      "20190111_111631_HoloLens.jpg",
+      "20190111_111641_HoloLens.jpg",
+      "20190111_111648_HoloLens.jpg",
+      "20190111_111656_HoloLens.jpg",
+      "20190111_111703_HoloLens.jpg",
+      "20190111_111715_HoloLens.jpg",
+      "20190111_111725_HoloLens.jpg",
+      "20190111_111731_HoloLens.jpg",
+      "20190111_115003_HoloLens.jpg",
+      "20190111_115010_HoloLens.jpg",
+      "20190111_115017_HoloLens.jpg",
+      "20190111_115028_HoloLens.jpg",
+      "20190111_115042_HoloLens.jpg",
+      "20190111_115050_HoloLens.jpg",
+      "20190111_115057_HoloLens.jpg",
+      "20190111_115106_HoloLens.jpg",
+      "20190111_115116_HoloLens.jpg",
+      "20190111_115122_HoloLens.jpg",
+      "20190111_115129_HoloLens.jpg",
+      "20190111_115136_HoloLens.jpg",
+      "20190111_115143_HoloLens.jpg",
+      "20190111_115150_HoloLens.jpg",
+      "20190111_115157_HoloLens.jpg",
+      "20190111_115203_HoloLens.jpg",
+      "20190111_115218_HoloLens.jpg",
+      "20190111_115234_HoloLens.jpg",
+      "20190125_113909.jpg",
+      "20190125_113923.jpg",
+      "20190125_113928.jpg",
+      "20190125_113931.jpg",
+      "20190125_114244.jpg",
+      "20190125_114246.jpg",
+      "DSC01627.png",
+      "DSC01628.png",
+      "DSC01629.png",
+      "DSC01630.png",
+      "DSC01631.png",
+      "IMG_20181218_125954.jpg",
+      "IMG_20181218_130002.jpg",
+      "IMG_20181218_130005.jpg",
+      "IMG_20181218_130011.jpg",
+      "IMG_20190125_113823.jpg",
+      "IMG_20190125_113830.jpg",
+      "IMG_20190125_113835.jpg",
+      "IMG_20190125_133951.jpg",
+      "IMG_20190306_110658.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_042",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "DSC01638.png"
+    ]
+  },
+  {
+    "scene_group": "machine_3e8d6eb2ede6",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "DSC01639.png",
+      "DSC01640.png",
+      "DSC01641.png",
+      "DSC01642.png"
+    ],
+    "images": [
+      "DSC01639.png",
+      "DSC01640.png",
+      "DSC01641.png",
+      "DSC01642.png",
+      "DSC01643.png"
+    ]
+  },
+  {
+    "scene_group": "machine_28f06f073c6a",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "DSC01644.png",
+      "DSC01645.png",
+      "DSC01646.png",
+      "IMG_20181218_165753.jpg",
+      "IMG_20190206_170619.jpg"
+    ],
+    "images": [
+      "DSC01644.png",
+      "DSC01645.png",
+      "DSC01646.png",
+      "DSC01647.png",
+      "IMG_20181218_165753.jpg",
+      "IMG_20181218_165757.jpg",
+      "IMG_20181218_165800.jpg",
+      "IMG_20181218_165804.jpg",
+      "IMG_20190206_170619.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_0afdf2e120a1",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "DSC01651.png",
+      "IMG_20181218_170040.jpg",
+      "IMG_20181218_170046.jpg",
+      "IMG_20190206_175853.jpg",
+      "IMG_20190206_175857.jpg",
+      "IMG_20190206_175859.jpg"
+    ],
+    "images": [
+      "DSC01651.png",
+      "DSC01652.png",
+      "DSC01653.png",
+      "IMG_20181218_170040.jpg",
+      "IMG_20181218_170043.jpg",
+      "IMG_20181218_170046.jpg",
+      "IMG_20181218_170049.jpg",
+      "IMG_20190206_175853.jpg",
+      "IMG_20190206_175857.jpg",
+      "IMG_20190206_175859.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_4456752f715b",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "DSC01657.png",
+      "DSC01658.png",
+      "IMG_20181218_170238.jpg",
+      "IMG_20181218_170243.jpg",
+      "IMG_20190402_110254.jpg"
+    ],
+    "images": [
+      "DSC01657.png",
+      "DSC01658.png",
+      "DSC01659.png",
+      "IMG_20181218_170238.jpg",
+      "IMG_20181218_170243.jpg",
+      "IMG_20181218_170247.jpg",
+      "IMG_20190402_110254.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_058",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "DSC01660.png",
+      "DSC01661.png",
+      "DSC01665.png"
+    ]
+  },
+  {
+    "scene_group": "machine_65d0be958c17",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "DSC01666.png",
+      "IMG_20181218_170649.jpg",
+      "IMG_20190206_170434.jpg",
+      "IMG_20190206_170436.jpg",
+      "IMG_20190430_105808.jpg"
+    ],
+    "images": [
+      "DSC01666.png",
+      "DSC01668.png",
+      "IMG_20181218_170633.jpg",
+      "IMG_20181218_170635.jpg",
+      "IMG_20181218_170645.jpg",
+      "IMG_20181218_170648.jpg",
+      "IMG_20181218_170649.jpg",
+      "IMG_20181218_170655.jpg",
+      "IMG_20181218_170657.jpg",
+      "IMG_20190206_170434.jpg",
+      "IMG_20190206_170436.jpg",
+      "IMG_20190430_105805.jpg",
+      "IMG_20190430_105808.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_063",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "DSC01673.png"
+    ]
+  },
+  {
+    "scene_group": "unresolved_064",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "DSC01676.png"
+    ]
+  },
+  {
+    "scene_group": "machine_c8f4eb3df42d",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "DSC01677.png",
+      "IMG_20181218_173657.jpg",
+      "IMG_20181218_173705.jpg",
+      "IMG_20190206_174446.jpg",
+      "IMG_20190206_175511.jpg"
+    ],
+    "images": [
+      "DSC01677.png",
+      "DSC01680.png",
+      "DSC01681.png",
+      "IMG_20181218_173652.jpg",
+      "IMG_20181218_173655.jpg",
+      "IMG_20181218_173657.jpg",
+      "IMG_20181218_173700.jpg",
+      "IMG_20181218_173702.jpg",
+      "IMG_20181218_173705.jpg",
+      "IMG_20190206_174446.jpg",
+      "IMG_20190206_175511.jpg",
+      "IMG_20190206_175516.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_e1be96cf78b1",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20181218_164608.jpg"
+    ],
+    "images": [
+      "IMG_20181218_164606.jpg",
+      "IMG_20181218_164608.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_074",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20181218_165501.jpg",
+      "IMG_20181218_165504.jpg",
+      "IMG_20181218_165508.jpg",
+      "IMG_20181218_165513.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_009154991598",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20181218_165652.jpg",
+      "IMG_20190206_170714.jpg"
+    ],
+    "images": [
+      "IMG_20181218_165646.jpg",
+      "IMG_20181218_165648.jpg",
+      "IMG_20181218_165652.jpg",
+      "IMG_20181218_165657.jpg",
+      "IMG_20190206_170714.jpg",
+      "IMG_20190206_170716.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_c6004947c1d2",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20181218_165922.jpg",
+      "IMG_20181218_165931.jpg",
+      "IMG_20190206_170606.jpg",
+      "IMG_20190430_105959.jpg"
+    ],
+    "images": [
+      "IMG_20181218_165922.jpg",
+      "IMG_20181218_165931.jpg",
+      "IMG_20181218_165934.jpg",
+      "IMG_20190206_170606.jpg",
+      "IMG_20190430_105959.jpg",
+      "IMG_20190430_110010.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_7520467cbe23",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20181218_170459.jpg",
+      "IMG_20181218_170508.jpg",
+      "IMG_20190206_170446.jpg",
+      "IMG_20190206_170448.jpg",
+      "IMG_20190430_105750.jpg",
+      "IMG_20190430_105754.jpg",
+      "IMG_20190502_180150.jpg"
+    ],
+    "images": [
+      "IMG_20181218_170459.jpg",
+      "IMG_20181218_170502.jpg",
+      "IMG_20181218_170508.jpg",
+      "IMG_20181218_170510.jpg",
+      "IMG_20181218_170513.jpg",
+      "IMG_20190206_170446.jpg",
+      "IMG_20190206_170448.jpg",
+      "IMG_20190430_105750.jpg",
+      "IMG_20190430_105754.jpg",
+      "IMG_20190502_180150.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_bb3e4ae22b1d",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20181218_171555.jpg",
+      "IMG_20181218_171604.jpg",
+      "IMG_20190430_111818.jpg"
+    ],
+    "images": [
+      "IMG_20181218_171555.jpg",
+      "IMG_20181218_171604.jpg",
+      "IMG_20181218_171607.jpg",
+      "IMG_20190430_111818.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_cad58c8878fc",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20181218_171737.jpg",
+      "IMG_20181218_171740.jpg",
+      "IMG_20190430_111942.jpg"
+    ],
+    "images": [
+      "IMG_20181218_171737.jpg",
+      "IMG_20181218_171740.jpg",
+      "IMG_20181218_171743.jpg",
+      "IMG_20190430_111942.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_a9608332afdb",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20181218_171755.jpg",
+      "IMG_20190430_111949.jpg"
+    ],
+    "images": [
+      "IMG_20181218_171749.jpg",
+      "IMG_20181218_171753.jpg",
+      "IMG_20181218_171755.jpg",
+      "IMG_20181218_171800.jpg",
+      "IMG_20181218_171802.jpg",
+      "IMG_20181218_171805.jpg",
+      "IMG_20190430_111949.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_7a18e7d150bd",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20181218_172430.jpg",
+      "IMG_20181218_172438.jpg",
+      "IMG_20190502_093212.jpg"
+    ],
+    "images": [
+      "IMG_20181218_172430.jpg",
+      "IMG_20181218_172432.jpg",
+      "IMG_20181218_172433.jpg",
+      "IMG_20181218_172438.jpg",
+      "IMG_20181218_172440.jpg",
+      "IMG_20181218_172442.jpg",
+      "IMG_20190502_093212.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_0808846669be",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20181218_172839.jpg",
+      "IMG_20181218_172844.jpg",
+      "IMG_20181218_172854.jpg",
+      "IMG_20181218_172856.jpg",
+      "IMG_20181218_172857.jpg",
+      "IMG_20190502_093643.jpg"
+    ],
+    "images": [
+      "IMG_20181218_172839.jpg",
+      "IMG_20181218_172841.jpg",
+      "IMG_20181218_172844.jpg",
+      "IMG_20181218_172846.jpg",
+      "IMG_20181218_172849.jpg",
+      "IMG_20181218_172854.jpg",
+      "IMG_20181218_172856.jpg",
+      "IMG_20181218_172857.jpg",
+      "IMG_20181218_172859.jpg",
+      "IMG_20190502_093643.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_934574a6522d",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20181218_173033.jpg",
+      "IMG_20181218_173035.jpg",
+      "IMG_20190206_175717.jpg",
+      "IMG_20190206_175720.jpg",
+      "IMG_20190206_175724.jpg",
+      "IMG_20190502_093957.jpg"
+    ],
+    "images": [
+      "IMG_20181218_173028.jpg",
+      "IMG_20181218_173031.jpg",
+      "IMG_20181218_173033.jpg",
+      "IMG_20181218_173035.jpg",
+      "IMG_20181218_173039.jpg",
+      "IMG_20190206_175715.jpg",
+      "IMG_20190206_175717.jpg",
+      "IMG_20190206_175720.jpg",
+      "IMG_20190206_175724.jpg",
+      "IMG_20190502_093957.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_146",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20181218_174501.jpg",
+      "IMG_20181218_174507.jpg",
+      "IMG_20181218_174511.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_149",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20181218_174557.jpg",
+      "IMG_20181218_174559.jpg",
+      "IMG_20181218_174601.jpg",
+      "IMG_20181218_174603.jpg",
+      "IMG_20181218_174605.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_2d99255acb57",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20181218_175301.jpg",
+      "IMG_20181218_175311.jpg"
+    ],
+    "images": [
+      "IMG_20181218_175259.jpg",
+      "IMG_20181218_175301.jpg",
+      "IMG_20181218_175304.jpg",
+      "IMG_20181218_175308.jpg",
+      "IMG_20181218_175311.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_6102f9410102",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20181218_175338.jpg",
+      "IMG_20190430_111611.jpg"
+    ],
+    "images": [
+      "IMG_20181218_175334.jpg",
+      "IMG_20181218_175338.jpg",
+      "IMG_20181218_175340.jpg",
+      "IMG_20190430_111611.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_4d293f534e70",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20181218_175416.jpg",
+      "IMG_20181218_175423.jpg"
+    ],
+    "images": [
+      "IMG_20181218_175416.jpg",
+      "IMG_20181218_175420.jpg",
+      "IMG_20181218_175423.jpg",
+      "IMG_20181218_175425.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_f75228c14f5f",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20181218_175457.jpg"
+    ],
+    "images": [
+      "IMG_20181218_175457.jpg",
+      "IMG_20181218_175501.jpg",
+      "IMG_20181218_175503.jpg",
+      "IMG_20181218_175504.jpg",
+      "IMG_20181218_175507.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_175",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190206_120945.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_82d607ddcaca",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20190206_170138.jpg",
+      "IMG_20190206_170142.jpg"
+    ],
+    "images": [
+      "IMG_20190206_170138.jpg",
+      "IMG_20190206_170142.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_555048df54d8",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20190206_170217.jpg"
+    ],
+    "images": [
+      "IMG_20190206_170217.jpg",
+      "IMG_20190206_170222.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_e1e2930ccd46",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20190206_170257.jpg"
+    ],
+    "images": [
+      "IMG_20190206_170257.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_a41778b7de32",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20190206_170337.jpg"
+    ],
+    "images": [
+      "IMG_20190206_170337.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_89a4eeedccc7",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20190206_174702.jpg",
+      "IMG_20190206_174705.jpg"
+    ],
+    "images": [
+      "IMG_20190206_174702.jpg",
+      "IMG_20190206_174705.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_b9dd5ca784c4",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20190206_174757.jpg",
+      "IMG_20190206_174800.jpg",
+      "IMG_20190430_110329.jpg"
+    ],
+    "images": [
+      "IMG_20190206_174757.jpg",
+      "IMG_20190206_174800.jpg",
+      "IMG_20190430_110329.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_2d60d7ebba2a",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20190206_174819.jpg",
+      "IMG_20190206_174822.jpg",
+      "IMG_20190430_110417.jpg"
+    ],
+    "images": [
+      "IMG_20190206_174819.jpg",
+      "IMG_20190206_174822.jpg",
+      "IMG_20190430_110417.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_bf445d25f803",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20190206_174855.jpg"
+    ],
+    "images": [
+      "IMG_20190206_174852.jpg",
+      "IMG_20190206_174855.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_f37708d55f06",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20190206_175054.jpg"
+    ],
+    "images": [
+      "IMG_20190206_175054.jpg",
+      "IMG_20190206_175058.jpg",
+      "IMG_20190206_175100.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_ef9ec98a5e0d",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20190206_175751.jpg",
+      "IMG_20190206_175755.jpg",
+      "IMG_20190430_110149.jpg",
+      "IMG_20190430_110153.jpg",
+      "IMG_20190502_093933.jpg"
+    ],
+    "images": [
+      "IMG_20190206_175751.jpg",
+      "IMG_20190206_175755.jpg",
+      "IMG_20190430_110149.jpg",
+      "IMG_20190430_110153.jpg",
+      "IMG_20190502_093933.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_643b0aa1da5e",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20190206_175758.jpg",
+      "IMG_20190206_175803.jpg",
+      "IMG_20190409_112103.jpg",
+      "IMG_20190430_110145.jpg",
+      "IMG_20190430_110157.jpg",
+      "IMG_20190502_093929.jpg"
+    ],
+    "images": [
+      "IMG_20190206_175758.jpg",
+      "IMG_20190206_175803.jpg",
+      "IMG_20190206_175805.jpg",
+      "IMG_20190409_112103.jpg",
+      "IMG_20190430_110145.jpg",
+      "IMG_20190430_110157.jpg",
+      "IMG_20190502_093929.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_216",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190306_104622.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_218",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190306_164958.jpg",
+      "IMG_20190306_165020.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_220",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190306_170619.jpg",
+      "IMG_20190306_170622.jpg",
+      "IMG_20190306_170625.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_223",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190306_171253.jpg",
+      "IMG_20190306_171256.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_225",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190306_171808.jpg",
+      "IMG_20190306_171814.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_227",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190306_171957.jpg",
+      "IMG_20190306_172001.jpg",
+      "IMG_20190306_172008.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_230",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190306_172403.jpg",
+      "IMG_20190306_172410.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_232",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190306_172745.jpg",
+      "IMG_20190306_172748.jpg",
+      "IMG_20190306_172751.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_235",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190306_173145.jpg",
+      "IMG_20190306_173147.jpg",
+      "IMG_20190306_173149.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_238",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190306_173403.jpg",
+      "IMG_20190306_173405.jpg",
+      "IMG_20190306_173408.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_897e4fa6ce47",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20190307_152732.jpg",
+      "IMG_20190307_152734.jpg"
+    ],
+    "images": [
+      "IMG_20190307_152732.jpg",
+      "IMG_20190307_152734.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_245",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190409_121733.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_256",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190430_110231.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_259",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190430_111230.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_260",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190430_111456.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_261",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190430_111521.jpg",
+      "IMG_20190430_111555.jpg"
+    ]
+  },
+  {
+    "scene_group": "machine_39b4eccd47a2",
+    "status": "sticker_supported",
+    "readable_sticker_images": [
+      "IMG_20190502_094330.jpg",
+      "IMG_20190502_094333.jpg"
+    ],
+    "images": [
+      "IMG_20190502_094330.jpg",
+      "IMG_20190502_094333.jpg"
+    ]
+  },
+  {
+    "scene_group": "unresolved_274",
+    "status": "unresolved",
+    "readable_sticker_images": [],
+    "images": [
+      "IMG_20190502_171330.jpg",
+      "IMG_20190502_171332.jpg"
+    ]
+  }
+]

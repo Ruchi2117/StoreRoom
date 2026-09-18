@@ -1,0 +1,65 @@
+Ultralytics 8.4.154  Python-3.14.4 torch-2.14.0+cpu CPU (Intel Core i5-10210U 1.60GHz)
+YOLO11n summary (fused): 100 layers, 2,583,127 parameters, 0 gradients, 6.4 GFLOPs
+[34m[1mval: [0mFast image access  (ping: 0.10.0 ms, read: 549.724.7 MB/s, size: 10008.3 KB)
+
+[K[34m[1mval: [0mScanning C:\Users\Lenovo\Documents\ChatGPT\StoreRoom\data\yolo_v01\labels\val.cache... 26 images, 2 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 26/26 2.3Mit/s 0.0s
+
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 14% ━╸────────── 1/7 3.2s/it 1.0s<19.3s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 28% ━━━───────── 2/7 1.7s/it 1.8s<8.3s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 42% ━━━━━─────── 3/7 1.3s/it 2.6s<5.2s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 57% ━━━━━━╸───── 4/7 1.1s/it 3.4s<3.3s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 71% ━━━━━━━━╸─── 5/7 1.0it/s 4.2s<2.0s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 85% ━━━━━━━━━━── 6/7 1.1s/it 5.5s<1.1s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 7/7 1.0it/s 6.9s
+                   all         26        205      0.772      0.795      0.838      0.552
+Speed: 0.5ms preprocess, 35.7ms inference, 0.0ms loss, 3.7ms postprocess per image
+{
+  "split": "val",
+  "detection": {
+    "metrics/precision(B)": 0.7721487636605985,
+    "metrics/recall(B)": 0.7950385450307582,
+    "metrics/mAP50(B)": 0.8377063214133841,
+    "metrics/mAP50-95(B)": 0.5516727564338305,
+    "fitness": 0.5516727564338305
+  },
+  "counting": {
+    "per_class_mae": [
+      1.5384615384615385,
+      0.23076923076923078,
+      0.5,
+      0.5,
+      0.46153846153846156
+    ],
+    "overall_cell_mae": 0.6461538461538462,
+    "total_count_mae": 2.076923076923077,
+    "mean_sum_absolute_class_errors": 3.230769230769231,
+    "exact_five_class_accuracy": 0.23076923076923078,
+    "per_class_bias": [
+      -0.38461538461538464,
+      -0.23076923076923078,
+      0.19230769230769232,
+      -0.11538461538461539,
+      0.46153846153846156
+    ]
+  },
+  "zero_baseline": {
+    "per_class_mae": [
+      3.230769230769231,
+      1.4615384615384615,
+      0.7307692307692307,
+      1.1923076923076923,
+      1.2692307692307692
+    ],
+    "overall_cell_mae": 1.5769230769230769,
+    "total_count_mae": 7.884615384615385,
+    "mean_sum_absolute_class_errors": 7.884615384615385,
+    "exact_five_class_accuracy": 0.07692307692307693,
+    "per_class_bias": [
+      -3.230769230769231,
+      -1.4615384615384615,
+      -0.7307692307692307,
+      -1.1923076923076923,
+      -1.2692307692307692
+    ]
+  }
+}

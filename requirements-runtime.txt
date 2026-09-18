@@ -1,0 +1,4 @@
+# Install requirements-cpu.txt first. Preserve the preflight dependencies.
+-r requirements.txt
+ultralytics==8.4.154
+supervision==0.30.3

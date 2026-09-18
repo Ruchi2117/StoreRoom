@@ -1,0 +1,3 @@
+# Preserve exact historical bytes required by SHA-256 manifests.
+# Treat existing Windows line endings as valid whitespace without conversion.
+* -text whitespace=cr-at-eol

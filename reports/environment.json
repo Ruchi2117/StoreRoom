@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-09-17T10:28:44.7190450Z",
+  "python": {
+    "executable": "C:\\Users\\Lenovo\\Documents\\ChatGPT\\StoreRoom\\.venv\\Scripts\\python.exe",
+    "version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "pillow": "12.3.0",
+      "pip": "26.0.1",
+      "zxing-cpp": "3.1.1"
+    }
+  },
+  "pip": [
+    "pip 26.0.1 from C:\\Users\\Lenovo\\Documents\\ChatGPT\\StoreRoom\\.venv\\Lib\\site-packages\\pip (python 3.14)",
+    ""
+  ],
+  "venv_available": "True",
+  "git": "git version 2.54.0.windows.1",
+  "gpus": [
+    {
+      "Name": "Intel(R) UHD Graphics",
+      "AdapterRAM": 1073741824,
+      "DriverVersion": "30.0.100.9864"
+    }
+  ],
+  "cuda_tools": [],
+  "memory_bytes": 8415662080,
+  "disk": {
+    "Name": "C",
+    "Used": 166677315584,
+    "Free": 41751277568
+  },
+  "training_packages_installed": false
+}

@@ -1,0 +1,151 @@
+{
+  "status": "passed",
+  "supervision_version": "0.30.3",
+  "method": "DetectionDataset.from_pascal_voc -> filter/remap Detections -> as_yolo",
+  "coordinate_convention": "Supervision subtracts 1 from all four VOC endpoints; independent checker does the same explicitly. YOLO writes five decimal places.",
+  "tolerance_px": 0.1,
+  "frozen_config_sha256": {
+    "configs/class_map.json": "dc83ed0a042dafdce5106fd2cddbce49736bee1bf0bb81f693722707a5cd0c9a",
+    "configs/splits.json": "6fc011ea9084c0d1aeb5cc91927ac44d83d43e2e7cd029b27efe1ae359396336"
+  },
+  "images": [
+    {
+      "split": "train",
+      "image": "IMG_20181218_175259.jpg",
+      "width": 3480,
+      "height": 4640,
+      "source_selected_boxes": 15,
+      "yolo_boxes": 15,
+      "counts": [
+        5,
+        3,
+        2,
+        3,
+        2
+      ],
+      "max_coordinate_error_px": 0.03040000000009968
+    },
+    {
+      "split": "train",
+      "image": "IMG_20190206_170222.jpg",
+      "width": 3456,
+      "height": 4608,
+      "source_selected_boxes": 13,
+      "yolo_boxes": 13,
+      "counts": [
+        5,
+        0,
+        2,
+        3,
+        3
+      ],
+      "max_coordinate_error_px": 0.032000000000152795
+    },
+    {
+      "split": "val",
+      "image": "IMG_20181218_171755.jpg",
+      "width": 3480,
+      "height": 4640,
+      "source_selected_boxes": 12,
+      "yolo_boxes": 12,
+      "counts": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "max_coordinate_error_px": 0.026400000000194268
+    },
+    {
+      "split": "val",
+      "image": "IMG_20181218_165652.jpg",
+      "width": 4640,
+      "height": 3480,
+      "source_selected_boxes": 12,
+      "yolo_boxes": 12,
+      "counts": [
+        6,
+        0,
+        2,
+        4,
+        0
+      ],
+      "max_coordinate_error_px": 0.03120000000035361
+    },
+    {
+      "split": "val",
+      "image": "IMG_20181218_165648.jpg",
+      "width": 3480,
+      "height": 4640,
+      "source_selected_boxes": 0,
+      "yolo_boxes": 0,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_coordinate_error_px": 0.0
+    },
+    {
+      "split": "test",
+      "image": "IMG_20181218_172433.jpg",
+      "width": 3480,
+      "height": 4640,
+      "source_selected_boxes": 12,
+      "yolo_boxes": 12,
+      "counts": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "max_coordinate_error_px": 0.02639999999973952
+    },
+    {
+      "split": "test",
+      "image": "DSC01642.png",
+      "width": 6000,
+      "height": 4000,
+      "source_selected_boxes": 12,
+      "yolo_boxes": 12,
+      "counts": [
+        6,
+        0,
+        2,
+        4,
+        0
+      ],
+      "max_coordinate_error_px": 0.03000000000020009
+    },
+    {
+      "split": "test",
+      "image": "DSC01643.png",
+      "width": 6000,
+      "height": 4000,
+      "source_selected_boxes": 0,
+      "yolo_boxes": 0,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_coordinate_error_px": 0.0
+    }
+  ],
+  "total_boxes": 76,
+  "counts_by_class": [
+    32,
+    9,
+    10,
+    16,
+    9
+  ],
+  "full_export_completed": false,
+  "augmentation": false
+}

@@ -1,0 +1,4 @@
+# Minimal data-preflight dependencies; runtime pins are in requirements-runtime.txt.
+Pillow==12.3.0
+# Read machine QR stickers to investigate repeated scenes; no URLs are opened.
+zxing-cpp==3.1.1

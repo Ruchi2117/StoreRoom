@@ -1,0 +1,53 @@
+{
+  "a_reproduces_baseline_002": true,
+  "categories": {
+    "duplicate_removed_without_lost_gt": [
+      "IMG_20181218_170247.jpg",
+      "IMG_20181218_171755.jpg",
+      "IMG_20181218_171805.jpg",
+      "IMG_20190206_170716.jpg",
+      "IMG_20190206_174852.jpg"
+    ],
+    "lost_gt_matches": [],
+    "unchanged_predictions": [
+      "DSC01658.png",
+      "DSC01659.png",
+      "IMG_20181218_165646.jpg",
+      "IMG_20181218_165648.jpg",
+      "IMG_20181218_165652.jpg",
+      "IMG_20181218_165657.jpg",
+      "IMG_20181218_170238.jpg",
+      "IMG_20181218_170243.jpg",
+      "IMG_20181218_171555.jpg",
+      "IMG_20181218_171604.jpg",
+      "IMG_20181218_171607.jpg",
+      "IMG_20181218_171749.jpg",
+      "IMG_20181218_171753.jpg",
+      "IMG_20181218_171800.jpg",
+      "IMG_20181218_171802.jpg",
+      "IMG_20190206_170714.jpg",
+      "IMG_20190206_174855.jpg",
+      "IMG_20190402_110254.jpg",
+      "IMG_20190430_111818.jpg"
+    ],
+    "wrong_class_removed": [],
+    "correct_vector_became_incorrect": [],
+    "correct_class_count_became_incorrect": []
+  },
+  "identity_errors": {
+    "A": {
+      "wrong_class_candidates": 8,
+      "valser_classic_still_candidates": 4,
+      "regular_on_light_candidates": 6
+    },
+    "B": {
+      "wrong_class_candidates": 8,
+      "valser_classic_still_candidates": 4,
+      "regular_on_light_candidates": 6
+    }
+  },
+  "removed_boxes": 10,
+  "added_boxes": 1,
+  "improved_images": 6,
+  "worsened_images": 0
+}

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "baseline_matches_stock": true,
+  "baseline_boxes": 2,
+  "alternative_boxes": 3,
+  "checks": [
+    "Red Bull-only admission",
+    "other classes rejected before NMS",
+    "no runner-up relabeling",
+    "strict threshold boundaries",
+    "same-class duplicate suppression",
+    "input unchanged"
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "status": "completed",
+  "run": "A",
+  "imgsz": 320,
+  "confidence": 0.25,
+  "nms_iou": 0.5,
+  "checkpoint_sha256": "7e048d48a3b80cf5cab1aafb30dfb63f7f20c94e12b26ded8aac35de5ecd0cbd",
+  "duration_seconds": 8.116447099979268,
+  "detection": {
+    "tp": [
+      58,
+      31,
+      15,
+      23,
+      33
+    ],
+    "fp": [
+      14,
+      1,
+      7,
+      3,
+      9
+    ],
+    "fn": [
+      26,
+      7,
+      4,
+      8,
+      0
+    ],
+    "precision_per_class": [
+      0.8055555555555556,
+      0.96875,
+      0.6818181818181818,
+      0.8846153846153846,
+      0.7857142857142857
+    ],
+    "recall_per_class": [
+      0.6904761904761905,
+      0.8157894736842105,
+      0.7894736842105263,
+      0.7419354838709677,
+      1.0
+    ],
+    "micro_precision": 0.8247422680412371,
+    "micro_recall": 0.7804878048780488,
+    "duplicate_candidates": 1
+  },
+  "counting": {
+    "per_class_mae": [
+      1.4615384615384615,
+      0.23076923076923078,
+      0.4230769230769231,
+      0.4230769230769231,
+      0.34615384615384615
+    ],
+    "overall_cell_mae": 0.5769230769230769,
+    "total_count_mae": 1.9615384615384615,
+    "mean_sum_absolute_class_errors": 2.8846153846153846,
+    "exact_five_class_accuracy": 0.23076923076923078,
+    "per_class_bias": [
+      -0.46153846153846156,
+      -0.23076923076923078,
+      0.11538461538461539,
+      -0.19230769230769232,
+      0.34615384615384615
+    ]
+  },
+  "zero_baseline": {
+    "per_class_mae": [
+      3.230769230769231,
+      1.4615384615384615,
+      0.7307692307692307,
+      1.1923076923076923,
+      1.2692307692307692
+    ],
+    "overall_cell_mae": 1.5769230769230769,
+    "total_count_mae": 7.884615384615385,
+    "mean_sum_absolute_class_errors": 7.884615384615385,
+    "exact_five_class_accuracy": 0.07692307692307693,
+    "per_class_bias": [
+      -3.230769230769231,
+      -1.4615384615384615,
+      -0.7307692307692307,
+      -1.1923076923076923,
+      -1.2692307692307692
+    ]
+  },
+  "total_predicted_instances": 194,
+  "predicted_per_class": [
+    72,
+    32,
+    22,
+    26,
+    42
+  ],
+  "overcount_items_per_class": [
+    13,
+    0,
+    7,
+    3,
+    9
+  ],
+  "undercount_items_per_class": [
+    25,
+    6,
+    4,
+    8,
+    0
+  ],
+  "overcount_items": 32,
+  "undercount_items": 43,
+  "images_with_overcount": 17,
+  "images_with_undercount": 11
+}
+{
+  "status": "completed",
+  "run": "B",
+  "imgsz": 640,
+  "confidence": 0.25,
+  "nms_iou": 0.5,
+  "checkpoint_sha256": "7e048d48a3b80cf5cab1aafb30dfb63f7f20c94e12b26ded8aac35de5ecd0cbd",
+  "duration_seconds": 7.423757700016722,
+  "detection": {
+    "tp": [
+      36,
+      18,
+      11,
+      10,
+      22
+    ],
+    "fp": [
+      32,
+      0,
+      19,
+      10,
+      20
+    ],
+    "fn": [
+      48,
+      20,
+      8,
+      21,
+      11
+    ],
+    "precision_per_class": [
+      0.5294117647058824,
+      1.0,
+      0.36666666666666664,
+      0.5,
+      0.5238095238095238
+    ],
+    "recall_per_class": [
+      0.42857142857142855,
+      0.47368421052631576,
+      0.5789473684210527,
+      0.3225806451612903,
+      0.6666666666666666
+    ],
+    "micro_precision": 0.5449438202247191,
+    "micro_recall": 0.47317073170731705,
+    "duplicate_candidates": 1
+  },
+  "counting": {
+    "per_class_mae": [
+      2.4615384615384617,
+      0.7692307692307693,
+      0.6538461538461539,
+      0.8846153846153846,
+      0.8076923076923077
+    ],
+    "overall_cell_mae": 1.1153846153846154,
+    "total_count_mae": 3.6538461538461537,
+    "mean_sum_absolute_class_errors": 5.576923076923077,
+    "exact_five_class_accuracy": 0.038461538461538464,
+    "per_class_bias": [
+      -0.6153846153846154,
+      -0.7692307692307693,
+      0.4230769230769231,
+      -0.4230769230769231,
+      0.34615384615384615
+    ]
+  },
+  "zero_baseline": {
+    "per_class_mae": [
+      3.230769230769231,
+      1.4615384615384615,
+      0.7307692307692307,
+      1.1923076923076923,
+      1.2692307692307692
+    ],
+    "overall_cell_mae": 1.5769230769230769,
+    "total_count_mae": 7.884615384615385,
+    "mean_sum_absolute_class_errors": 7.884615384615385,
+    "exact_five_class_accuracy": 0.07692307692307693,
+    "per_class_bias": [
+      -3.230769230769231,
+      -1.4615384615384615,
+      -0.7307692307692307,
+      -1.1923076923076923,
+      -1.2692307692307692
+    ]
+  },
+  "total_predicted_instances": 178,
+  "predicted_per_class": [
+    68,
+    18,
+    30,
+    20,
+    42
+  ],
+  "overcount_items_per_class": [
+    24,
+    0,
+    14,
+    6,
+    15
+  ],
+  "undercount_items_per_class": [
+    40,
+    20,
+    3,
+    17,
+    6
+  ],
+  "overcount_items": 59,
+  "undercount_items": 86,
+  "images_with_overcount": 21,
+  "images_with_undercount": 18
+}

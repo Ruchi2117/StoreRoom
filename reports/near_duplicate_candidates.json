@@ -1,0 +1,152 @@
+[
+  {
+    "a": "IMG_20190206_175857.jpg",
+    "b": "IMG_20190206_175859.jpg",
+    "dhash_distance": 1
+  },
+  {
+    "a": "IMG_20190430_110145.jpg",
+    "b": "IMG_20190430_111521.jpg",
+    "dhash_distance": 4
+  },
+  {
+    "a": "IMG_20181218_164606.jpg",
+    "b": "IMG_20181218_170508.jpg",
+    "dhash_distance": 6
+  },
+  {
+    "a": "IMG_20181218_164606.jpg",
+    "b": "IMG_20181218_174507.jpg",
+    "dhash_distance": 6
+  },
+  {
+    "a": "IMG_20181218_170046.jpg",
+    "b": "IMG_20181218_174507.jpg",
+    "dhash_distance": 6
+  },
+  {
+    "a": "IMG_20181218_170049.jpg",
+    "b": "IMG_20181218_175425.jpg",
+    "dhash_distance": 7
+  },
+  {
+    "a": "IMG_20181218_175334.jpg",
+    "b": "IMG_20181218_175457.jpg",
+    "dhash_distance": 7
+  },
+  {
+    "a": "IMG_20181218_175423.jpg",
+    "b": "IMG_20190206_170448.jpg",
+    "dhash_distance": 7
+  },
+  {
+    "a": "IMG_20190206_170434.jpg",
+    "b": "IMG_20190206_174446.jpg",
+    "dhash_distance": 7
+  },
+  {
+    "a": "IMG_20190206_170434.jpg",
+    "b": "IMG_20190430_111611.jpg",
+    "dhash_distance": 7
+  },
+  {
+    "a": "IMG_20190206_170446.jpg",
+    "b": "IMG_20190206_170448.jpg",
+    "dhash_distance": 7
+  },
+  {
+    "a": "IMG_20190430_110145.jpg",
+    "b": "IMG_20190430_111555.jpg",
+    "dhash_distance": 7
+  },
+  {
+    "a": "20190111_111731_HoloLens.jpg",
+    "b": "20190111_115143_HoloLens.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "DSC01629.png",
+    "b": "IMG_20181218_170508.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "DSC01629.png",
+    "b": "IMG_20190206_170448.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "DSC01645.png",
+    "b": "DSC01653.png",
+    "dhash_distance": 8
+  },
+  {
+    "a": "DSC01658.png",
+    "b": "IMG_20181218_174557.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "IMG_20181218_165922.jpg",
+    "b": "IMG_20190430_105754.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "IMG_20181218_170049.jpg",
+    "b": "IMG_20181218_170513.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "IMG_20181218_170459.jpg",
+    "b": "IMG_20181218_175259.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "IMG_20181218_170508.jpg",
+    "b": "IMG_20181218_174507.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "IMG_20181218_170508.jpg",
+    "b": "IMG_20190206_170448.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "IMG_20181218_175334.jpg",
+    "b": "IMG_20181218_175423.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "IMG_20181218_175334.jpg",
+    "b": "IMG_20190206_170446.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "IMG_20181218_175338.jpg",
+    "b": "IMG_20181218_175423.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "IMG_20181218_175457.jpg",
+    "b": "IMG_20190206_170448.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "IMG_20190206_170434.jpg",
+    "b": "IMG_20190206_174757.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "IMG_20190206_174702.jpg",
+    "b": "IMG_20190206_175853.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "IMG_20190206_175751.jpg",
+    "b": "IMG_20190430_110149.jpg",
+    "dhash_distance": 8
+  },
+  {
+    "a": "IMG_20190206_175853.jpg",
+    "b": "IMG_20190206_175857.jpg",
+    "dhash_distance": 8
+  }
+]

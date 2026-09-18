@@ -1,0 +1,990 @@
+{
+  "split": "val",
+  "baseline_001": {
+    "tp": [
+      44,
+      26,
+      1,
+      9,
+      2
+    ],
+    "fp": [
+      18,
+      1,
+      0,
+      1,
+      0
+    ],
+    "fn": [
+      40,
+      12,
+      18,
+      22,
+      31
+    ],
+    "duplicate_prediction_overlaps": [
+      {
+        "image": "DSC01659.png",
+        "class_id": 0,
+        "maximum_same_class_prediction_iou": 0.6804664253559644
+      }
+    ],
+    "flag_counts": {
+      "unmatched_prediction_localization_or_background": 18,
+      "duplicate_candidate": 1,
+      "class_confusion_candidate": 1
+    },
+    "excluded_label_overlaps": {
+      "redbull_light__33__90162800": 8,
+      "oreo___66__84100733": 1
+    },
+    "regular_on_light_candidates": 8,
+    "valser_confusion_candidates": 1,
+    "zero_predictions": [
+      "IMG_20181218_165648.jpg",
+      "IMG_20181218_165652.jpg",
+      "IMG_20181218_165657.jpg",
+      "IMG_20181218_171802.jpg",
+      "IMG_20190206_170714.jpg",
+      "IMG_20190402_110254.jpg"
+    ],
+    "positive_zero_predictions": [
+      "IMG_20181218_165652.jpg",
+      "IMG_20181218_171802.jpg",
+      "IMG_20190206_170714.jpg",
+      "IMG_20190402_110254.jpg"
+    ],
+    "exact_positive_images": []
+  },
+  "baseline_002": {
+    "tp": [
+      58,
+      31,
+      15,
+      23,
+      33
+    ],
+    "fp": [
+      16,
+      1,
+      9,
+      5,
+      12
+    ],
+    "fn": [
+      26,
+      7,
+      4,
+      8,
+      0
+    ],
+    "duplicate_prediction_overlaps": [
+      {
+        "image": "IMG_20181218_170247.jpg",
+        "class_id": 3,
+        "maximum_same_class_prediction_iou": 0.6537006528491623
+      },
+      {
+        "image": "IMG_20181218_170247.jpg",
+        "class_id": 2,
+        "maximum_same_class_prediction_iou": 0.557711024980938
+      },
+      {
+        "image": "IMG_20181218_170247.jpg",
+        "class_id": 2,
+        "maximum_same_class_prediction_iou": 0.6138109540698071
+      },
+      {
+        "image": "IMG_20181218_171755.jpg",
+        "class_id": 4,
+        "maximum_same_class_prediction_iou": 0.6376059539725862
+      },
+      {
+        "image": "IMG_20181218_171755.jpg",
+        "class_id": 0,
+        "maximum_same_class_prediction_iou": 0.6307309495061107
+      },
+      {
+        "image": "IMG_20181218_171805.jpg",
+        "class_id": 4,
+        "maximum_same_class_prediction_iou": 0.6558940927285953
+      },
+      {
+        "image": "IMG_20190206_170716.jpg",
+        "class_id": 3,
+        "maximum_same_class_prediction_iou": 0.5076457858870665
+      },
+      {
+        "image": "IMG_20190206_174852.jpg",
+        "class_id": 4,
+        "maximum_same_class_prediction_iou": 0.5570412976125018
+      },
+      {
+        "image": "IMG_20190430_111818.jpg",
+        "class_id": 0,
+        "maximum_same_class_prediction_iou": 0.48574062527115147
+      }
+    ],
+    "flag_counts": {
+      "unmatched_prediction_localization_or_background": 26,
+      "class_confusion_candidate": 8,
+      "duplicate_candidate": 9
+    },
+    "excluded_label_overlaps": {
+      "redbull_light__33__90162800": 6,
+      "volvic_pinapple__50__305764335648": 3,
+      "caferoyal_classicmacchiato__33__7617014164487": 1,
+      "henniez_gruen__33__7610235000442": 1
+    },
+    "regular_on_light_candidates": 6,
+    "valser_confusion_candidates": 4,
+    "zero_predictions": [
+      "IMG_20181218_165648.jpg",
+      "IMG_20181218_165657.jpg"
+    ],
+    "positive_zero_predictions": [],
+    "exact_positive_images": [
+      "IMG_20181218_170243.jpg",
+      "IMG_20181218_171555.jpg",
+      "IMG_20181218_171604.jpg",
+      "IMG_20181218_171607.jpg"
+    ]
+  },
+  "image_changes": [
+    {
+      "image": "DSC01657.png",
+      "truth": [
+        2,
+        3,
+        1,
+        1,
+        2
+      ],
+      "baseline_001": [
+        2,
+        3,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "old_sum_absolute_error": 4,
+      "new_sum_absolute_error": 3,
+      "error_delta": -1
+    },
+    {
+      "image": "DSC01658.png",
+      "truth": [
+        0,
+        3,
+        1,
+        1,
+        2
+      ],
+      "baseline_001": [
+        3,
+        3,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        3,
+        3,
+        1,
+        1,
+        2
+      ],
+      "old_sum_absolute_error": 7,
+      "new_sum_absolute_error": 3,
+      "error_delta": -4
+    },
+    {
+      "image": "DSC01659.png",
+      "truth": [
+        2,
+        3,
+        0,
+        0,
+        2
+      ],
+      "baseline_001": [
+        5,
+        4,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        4,
+        1,
+        1,
+        0,
+        2
+      ],
+      "old_sum_absolute_error": 6,
+      "new_sum_absolute_error": 5,
+      "error_delta": -1
+    },
+    {
+      "image": "IMG_20181218_165646.jpg",
+      "truth": [
+        5,
+        0,
+        2,
+        4,
+        0
+      ],
+      "baseline_001": [
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "baseline_002": [
+        2,
+        0,
+        0,
+        2,
+        0
+      ],
+      "old_sum_absolute_error": 9,
+      "new_sum_absolute_error": 7,
+      "error_delta": -2
+    },
+    {
+      "image": "IMG_20181218_165648.jpg",
+      "truth": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "baseline_001": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "old_sum_absolute_error": 0,
+      "new_sum_absolute_error": 0,
+      "error_delta": 0
+    },
+    {
+      "image": "IMG_20181218_165652.jpg",
+      "truth": [
+        6,
+        0,
+        2,
+        4,
+        0
+      ],
+      "baseline_001": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "old_sum_absolute_error": 12,
+      "new_sum_absolute_error": 13,
+      "error_delta": 1
+    },
+    {
+      "image": "IMG_20181218_165657.jpg",
+      "truth": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "baseline_001": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "old_sum_absolute_error": 0,
+      "new_sum_absolute_error": 0,
+      "error_delta": 0
+    },
+    {
+      "image": "IMG_20181218_170238.jpg",
+      "truth": [
+        3,
+        3,
+        1,
+        1,
+        2
+      ],
+      "baseline_001": [
+        5,
+        2,
+        0,
+        1,
+        1
+      ],
+      "baseline_002": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "old_sum_absolute_error": 5,
+      "new_sum_absolute_error": 2,
+      "error_delta": -3
+    },
+    {
+      "image": "IMG_20181218_170243.jpg",
+      "truth": [
+        0,
+        3,
+        0,
+        0,
+        2
+      ],
+      "baseline_001": [
+        0,
+        3,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        0,
+        3,
+        0,
+        0,
+        2
+      ],
+      "old_sum_absolute_error": 2,
+      "new_sum_absolute_error": 0,
+      "error_delta": -2
+    },
+    {
+      "image": "IMG_20181218_170247.jpg",
+      "truth": [
+        4,
+        0,
+        1,
+        1,
+        0
+      ],
+      "baseline_001": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "baseline_002": [
+        0,
+        0,
+        4,
+        3,
+        0
+      ],
+      "old_sum_absolute_error": 5,
+      "new_sum_absolute_error": 9,
+      "error_delta": 4
+    },
+    {
+      "image": "IMG_20181218_171555.jpg",
+      "truth": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "baseline_001": [
+        5,
+        3,
+        0,
+        1,
+        0
+      ],
+      "baseline_002": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "old_sum_absolute_error": 3,
+      "new_sum_absolute_error": 0,
+      "error_delta": -3
+    },
+    {
+      "image": "IMG_20181218_171604.jpg",
+      "truth": [
+        0,
+        3,
+        0,
+        0,
+        2
+      ],
+      "baseline_001": [
+        0,
+        3,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        0,
+        3,
+        0,
+        0,
+        2
+      ],
+      "old_sum_absolute_error": 2,
+      "new_sum_absolute_error": 0,
+      "error_delta": -2
+    },
+    {
+      "image": "IMG_20181218_171607.jpg",
+      "truth": [
+        5,
+        0,
+        1,
+        1,
+        2
+      ],
+      "baseline_001": [
+        7,
+        0,
+        1,
+        2,
+        0
+      ],
+      "baseline_002": [
+        5,
+        0,
+        1,
+        1,
+        2
+      ],
+      "old_sum_absolute_error": 5,
+      "new_sum_absolute_error": 0,
+      "error_delta": -5
+    },
+    {
+      "image": "IMG_20181218_171749.jpg",
+      "truth": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "baseline_001": [
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        5,
+        2,
+        1,
+        1,
+        2
+      ],
+      "old_sum_absolute_error": 6,
+      "new_sum_absolute_error": 1,
+      "error_delta": -5
+    },
+    {
+      "image": "IMG_20181218_171753.jpg",
+      "truth": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "baseline_001": [
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        5,
+        2,
+        1,
+        1,
+        2
+      ],
+      "old_sum_absolute_error": 6,
+      "new_sum_absolute_error": 1,
+      "error_delta": -5
+    },
+    {
+      "image": "IMG_20181218_171755.jpg",
+      "truth": [
+        5,
+        3,
+        1,
+        1,
+        2
+      ],
+      "baseline_001": [
+        4,
+        0,
+        0,
+        1,
+        0
+      ],
+      "baseline_002": [
+        6,
+        1,
+        1,
+        1,
+        4
+      ],
+      "old_sum_absolute_error": 7,
+      "new_sum_absolute_error": 5,
+      "error_delta": -2
+    },
+    {
+      "image": "IMG_20181218_171800.jpg",
+      "truth": [
+        5,
+        0,
+        1,
+        1,
+        0
+      ],
+      "baseline_001": [
+        3,
+        0,
+        0,
+        1,
+        0
+      ],
+      "baseline_002": [
+        5,
+        0,
+        1,
+        2,
+        3
+      ],
+      "old_sum_absolute_error": 3,
+      "new_sum_absolute_error": 4,
+      "error_delta": 1
+    },
+    {
+      "image": "IMG_20181218_171802.jpg",
+      "truth": [
+        5,
+        0,
+        1,
+        0,
+        0
+      ],
+      "baseline_001": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "old_sum_absolute_error": 6,
+      "new_sum_absolute_error": 5,
+      "error_delta": -1
+    },
+    {
+      "image": "IMG_20181218_171805.jpg",
+      "truth": [
+        0,
+        3,
+        0,
+        0,
+        2
+      ],
+      "baseline_001": [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        0,
+        3,
+        0,
+        0,
+        4
+      ],
+      "old_sum_absolute_error": 4,
+      "new_sum_absolute_error": 2,
+      "error_delta": -2
+    },
+    {
+      "image": "IMG_20190206_170714.jpg",
+      "truth": [
+        5,
+        0,
+        0,
+        4,
+        0
+      ],
+      "baseline_001": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        2,
+        0,
+        2,
+        3,
+        0
+      ],
+      "old_sum_absolute_error": 9,
+      "new_sum_absolute_error": 6,
+      "error_delta": -3
+    },
+    {
+      "image": "IMG_20190206_170716.jpg",
+      "truth": [
+        5,
+        0,
+        0,
+        4,
+        0
+      ],
+      "baseline_001": [
+        3,
+        0,
+        0,
+        1,
+        0
+      ],
+      "baseline_002": [
+        3,
+        0,
+        2,
+        5,
+        1
+      ],
+      "old_sum_absolute_error": 5,
+      "new_sum_absolute_error": 6,
+      "error_delta": 1
+    },
+    {
+      "image": "IMG_20190206_174852.jpg",
+      "truth": [
+        3,
+        1,
+        1,
+        1,
+        2
+      ],
+      "baseline_001": [
+        3,
+        1,
+        0,
+        1,
+        1
+      ],
+      "baseline_002": [
+        4,
+        1,
+        1,
+        1,
+        3
+      ],
+      "old_sum_absolute_error": 2,
+      "new_sum_absolute_error": 2,
+      "error_delta": 0
+    },
+    {
+      "image": "IMG_20190206_174855.jpg",
+      "truth": [
+        4,
+        1,
+        1,
+        1,
+        2
+      ],
+      "baseline_001": [
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        5,
+        1,
+        1,
+        1,
+        2
+      ],
+      "old_sum_absolute_error": 4,
+      "new_sum_absolute_error": 1,
+      "error_delta": -3
+    },
+    {
+      "image": "IMG_20190402_110254.jpg",
+      "truth": [
+        4,
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseline_001": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        1,
+        1,
+        1,
+        0,
+        2
+      ],
+      "old_sum_absolute_error": 8,
+      "new_sum_absolute_error": 5,
+      "error_delta": -3
+    },
+    {
+      "image": "IMG_20190430_111818.jpg",
+      "truth": [
+        3,
+        1,
+        1,
+        1,
+        2
+      ],
+      "baseline_001": [
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        4,
+        1,
+        1,
+        1,
+        2
+      ],
+      "old_sum_absolute_error": 6,
+      "new_sum_absolute_error": 1,
+      "error_delta": -5
+    },
+    {
+      "image": "IMG_20190430_111949.jpg",
+      "truth": [
+        3,
+        1,
+        0,
+        1,
+        2
+      ],
+      "baseline_001": [
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      "baseline_002": [
+        4,
+        1,
+        1,
+        1,
+        3
+      ],
+      "old_sum_absolute_error": 3,
+      "new_sum_absolute_error": 3,
+      "error_delta": 0
+    }
+  ],
+  "improved_images": 18,
+  "worsened_images": 4,
+  "unchanged_images": 4,
+  "cohorts": {
+    "crowded_30plus_source_objects": {
+      "images": [
+        "DSC01657.png",
+        "DSC01658.png",
+        "DSC01659.png",
+        "IMG_20181218_170238.jpg",
+        "IMG_20181218_171555.jpg",
+        "IMG_20181218_171607.jpg",
+        "IMG_20181218_171749.jpg",
+        "IMG_20181218_171753.jpg",
+        "IMG_20181218_171755.jpg",
+        "IMG_20190206_174852.jpg",
+        "IMG_20190206_174855.jpg",
+        "IMG_20190402_110254.jpg",
+        "IMG_20190430_111818.jpg",
+        "IMG_20190430_111949.jpg"
+      ],
+      "size": 14,
+      "baseline_001": {
+        "per_class_mae": [
+          1.1428571428571428,
+          0.7857142857142857,
+          0.7857142857142857,
+          0.6428571428571429,
+          1.7857142857142858
+        ],
+        "overall_cell_mae": 1.0285714285714285,
+        "total_count_mae": 3.7142857142857144,
+        "mean_sum_absolute_class_errors": 5.142857142857143,
+        "exact_five_class_accuracy": 0.0,
+        "per_class_bias": [
+          0.42857142857142855,
+          -0.6428571428571429,
+          -0.7857142857142857,
+          -0.5,
+          -1.7857142857142858
+        ]
+      },
+      "baseline_002": {
+        "per_class_mae": [
+          1.2857142857142858,
+          0.42857142857142855,
+          0.14285714285714285,
+          0.07142857142857142,
+          0.35714285714285715
+        ],
+        "overall_cell_mae": 0.45714285714285713,
+        "total_count_mae": 1.5714285714285714,
+        "mean_sum_absolute_class_errors": 2.2857142857142856,
+        "exact_five_class_accuracy": 0.14285714285714285,
+        "per_class_bias": [
+          0.8571428571428571,
+          -0.42857142857142855,
+          0.14285714285714285,
+          -0.07142857142857142,
+          0.35714285714285715
+        ]
+      }
+    },
+    "multi_instance_any_class_2plus": {
+      "images": [
+        "DSC01657.png",
+        "DSC01658.png",
+        "DSC01659.png",
+        "IMG_20181218_165646.jpg",
+        "IMG_20181218_165652.jpg",
+        "IMG_20181218_170238.jpg",
+        "IMG_20181218_170243.jpg",
+        "IMG_20181218_170247.jpg",
+        "IMG_20181218_171555.jpg",
+        "IMG_20181218_171604.jpg",
+        "IMG_20181218_171607.jpg",
+        "IMG_20181218_171749.jpg",
+        "IMG_20181218_171753.jpg",
+        "IMG_20181218_171755.jpg",
+        "IMG_20181218_171800.jpg",
+        "IMG_20181218_171802.jpg",
+        "IMG_20181218_171805.jpg",
+        "IMG_20190206_170714.jpg",
+        "IMG_20190206_170716.jpg",
+        "IMG_20190206_174852.jpg",
+        "IMG_20190206_174855.jpg",
+        "IMG_20190402_110254.jpg",
+        "IMG_20190430_111818.jpg",
+        "IMG_20190430_111949.jpg"
+      ],
+      "size": 24,
+      "baseline_001": {
+        "per_class_mae": [
+          1.8333333333333333,
+          0.5416666666666666,
+          0.75,
+          0.9583333333333334,
+          1.2916666666666667
+        ],
+        "overall_cell_mae": 1.075,
+        "total_count_mae": 4.541666666666667,
+        "mean_sum_absolute_class_errors": 5.375,
+        "exact_five_class_accuracy": 0.0,
+        "per_class_bias": [
+          -0.9166666666666666,
+          -0.4583333333333333,
+          -0.75,
+          -0.875,
+          -1.2916666666666667
+        ]
+      },
+      "baseline_002": {
+        "per_class_mae": [
+          1.6666666666666667,
+          0.25,
+          0.5416666666666666,
+          0.5416666666666666,
+          0.5
+        ],
+        "overall_cell_mae": 0.7,
+        "total_count_mae": 2.25,
+        "mean_sum_absolute_class_errors": 3.5,
+        "exact_five_class_accuracy": 0.16666666666666666,
+        "per_class_bias": [
+          -0.4166666666666667,
+          -0.25,
+          0.20833333333333334,
+          -0.125,
+          0.5
+        ]
+      }
+    }
+  }
+}
