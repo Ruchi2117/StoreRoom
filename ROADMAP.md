@@ -1,6 +1,6 @@
 # StoreRoom product roadmap
 
-Status: future product direction, recorded 2026-09-16. Only v0.1 is the current implementation milestone. The [v0.1 scope](V0_1_SCOPE.md) and [reuse audit](REUSE_AUDIT.md) govern the first build.
+Status: v0.1 CV experimentation is complete; independent-scene generalization remains unverified. The next engineering milestone is a reusable product-detection inference pipeline/API, not another model experiment. The [v0.1 scope](V0_1_SCOPE.md) and [reuse audit](REUSE_AUDIT.md) govern the first build.
 
 The future customer experience connects a recognized product to its catalog record, the customer's explicit preferences, and alternatives with current offers from nearby participating shops.
 
@@ -63,4 +63,4 @@ These are future evaluation requirements, not implemented features or current sa
 
 ## Current engineering commitment
 
-Complete the five-class detection/counting baseline first. Preserve stable identity mapping, per-instance evidence and the explicit `visible_items` count meaning so later work has a useful foundation. Catalog enrichment, customer profiles, recommendation code and marketplace integration are outside v0.1.
+The five-class experimentation phase is closed; see [v0.1 results](reports/V0_1_RESULTS.md). Next, reuse the tested class-confidence gate and counting functions in an image-to-structured-result component before adding a thin API. Preserve stable identity mapping, per-instance evidence and the explicit `visible_items` count meaning so later work has a useful foundation. Catalog enrichment, customer profiles, recommendation code and marketplace integration are outside v0.1.

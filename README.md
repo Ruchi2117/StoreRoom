@@ -1,62 +1,67 @@
 # StoreRoom
 
-v0.1: detect and count **visible instances of five known products** in one shelf
-image. This checkout contains a **frozen dataset and a first trained CPU baseline**.
-Product recommendations and marketplace features remain in
-[ROADMAP.md](ROADMAP.md).
+Detect and count **visible instances of five source product classes** in shelf images.
+The v0.1 CV experimentation phase is complete. The **provisional v0.1 model** is
+augmented YOLO11n from AUGMENTATION_001, trained for 30 epochs.
 
-**Preflight result:** 175 usable images across 33 sticker-supported machine groups;
-123 train / 26 validation / 26 test images. Selected classes: Red Bull, Knoppers,
-Valser Classic, Valser Still, and Capri-Sun Multivitamin. Read
-[PREFLIGHT_REPORT.md](reports/PREFLIGHT_REPORT.md) before interpreting the counts:
-the labels primarily describe front packages, and do not establish exact pack sizes.
+| Current configuration | Value |
+| --- | --- |
+| Local checkpoint | `runs/augmentation_001/weights/best.pt` |
+| Inference | CPU, 320px, class-aware NMS IoU 0.50 |
+| Confidence | Red Bull 0.15; Knoppers, Valser Classic, Valser Still, Capri-Sun 0.25 |
+| Validation | Precision 0.791, recall 0.888, counting MAE 0.423, exact counts 11/26 |
 
-**Baseline result:** all 175 images and 1,480 boxes were exported and validated.
-`yolo11n.pt` completed 10 CPU epochs at 320 pixels in 7.59 minutes. Standalone
-validation mAP50 is 0.667646; counting MAE is 0.992308 items per image/class.
-After freezing the checkpoint and thresholds, one final test evaluation gave
-mAP50 0.648399 and counting MAE 1.030769. Counting still misses many products.
-Read [measured results](reports/BASELINE_001_RESULTS.md) and
-[failure review / next experiment](reports/BASELINE_001_REVIEW.md).
+Class-specific confidence filtering occurs **before NMS**, using the original
+best-scoring class without relabeling. These results are measured on the existing
+26-image validation set; **independent-scene generalization remains unverified**.
+There are no eligible unused verified scene groups in the current dataset.
+Both Valser classes have worse counting MAE than the preceding model.
 
-The immutable dataset manifest is [dataset_v01_manifest.json](reports/dataset_v01_manifest.json).
-The full YAML is [yolo_v01.yaml](configs/yolo_v01.yaml). Model weights live at
-`runs/baseline_001/weights/best.pt`; dataset files and weights are excluded from Git.
-Configuration, protocol, raw metric snapshots, and JSON reports are retained.
+Read the [v0.1 results summary](reports/V0_1_RESULTS.md),
+[detailed augmentation comparison](reports/AUGMENTATION_001_RESULTS.md), and
+[independent-scene audit](reports/INDEPENDENT_VALIDATION_001_RESULTS.md).
+This model is not production-ready and does not estimate hidden stock, prices,
+verified pack sizes, ingredients or availability.
 
-On the completed checkout, verify without retraining or reopening the test set:
+The frozen HoloSelecta export contains 175 images across 33 machine groups:
+123 training / 26 validation / 26 test, with 1,480 target boxes. The test set was
+not used for model selection. One historical BASELINE_001 evaluation was performed
+after freezing that baseline; later experiments never re-evaluated the test set.
+Do not use it for independent validation or further tuning.
+
+## Verification and reproducibility
+
+On the existing artifact-complete checkout:
 
 ```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
-.\.venv\Scripts\python.exe -c "from src.train_baseline import verify_dataset; print(verify_dataset())"
+.\.venv\Scripts\python.exe -c "from src.independent_validation_001_audit import verify_protected; print(verify_protected())"
 ```
 
-Expect 23 passing tests and manifest SHA-256
-`878424031a9ab66bb64a89ac4dfbb5bebc889d67ef5e295d5e3ee494edae5513`.
+Expected: 36 passing tests and 921 protected files verified, plus frozen dataset
+hash checks. These commands perform no new model inference or training.
+A fresh Git clone lacks the ignored dataset, checkpoints, run files and rendered
+visuals; full artifact tests require restoring them. Read
+[reproducibility and artifact policy](docs/REPRODUCIBILITY.md) before rebuilding.
+Historical scripts contain guarded training/test commands; they are not the next
+step and should not be rerun on this frozen checkout.
 
-Commands used for this completed milestone (export/training/evaluation refuse to
-overwrite the frozen version or repeat an already-recorded experiment):
+## Next milestone
 
-```powershell
-.\.venv\Scripts\python.exe -m src.convert_smoke --full
-.\.venv\Scripts\python.exe -m src.train_baseline
-.\.venv\Scripts\python.exe -m src.evaluate_baseline --split val
-.\.venv\Scripts\python.exe -m src.review_baseline
-# This checks the fixed validation gate and freezes the checkpoint BEFORE test inference.
-.\.venv\Scripts\python.exe -m src.evaluate_baseline --split test
-.\.venv\Scripts\python.exe -m src.report_baseline
-```
+Prepare a reusable product-detection inference component, followed by a thin API.
+The inference component/API is **not implemented in this milestone**. Keep the
+existing evaluator, class mapping and confidence/NMS semantics stable. No frontend,
+marketplace services or deployment infrastructure is included.
 
-Training settings are in `configs/baseline_001.yaml`; the experiment protocol
-defines confidence 0.25, NMS IoU 0.70, counting metrics, and the test gate. AP uses
-a 0.001 confidence floor. The next recommended experiment is documented, not run.
+The remaining sections document the earlier data/runtime milestones. Their rebuild
+commands are historical, not instructions to reopen model experimentation.
 
 ## Earlier runtime milestone (historical)
 
 **Runtime result:** Python 3.14.4 works with the installed CPU PyTorch stack.
 Supervision converted eight representative images with all 76 target boxes
 preserved. Visual review passed; official `yolo11n.pt` ran inference on two images.
-No training or augmentation has run. See [RUNTIME_CHECK.md](reports/RUNTIME_CHECK.md)
+At that historical milestone, training and augmentation had not yet run. See [RUNTIME_CHECK.md](reports/RUNTIME_CHECK.md)
 for versions, exact reproduction commands, coordinate conventions, and limitations.
 
 On this existing checkout, run:
@@ -65,7 +70,7 @@ On this existing checkout, run:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-The runtime milestone had 17 tests; the current suite has 23. To regenerate only the smoke export and visual checks:
+The runtime milestone had 17 tests; the current suite has 36. To regenerate only the smoke export and visual checks:
 
 ```powershell
 .\.venv\Scripts\python.exe -m src.convert_smoke
@@ -142,7 +147,7 @@ On the existing checkout, the quick verification command is:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-The original seven preflight checks are included in the expanded 23-test suite.
+The original seven preflight checks are included in the expanded 36-test suite.
 Do not rerun full downloads simply to inspect the result.
 
 ## Annotation format
