@@ -1,3 +1,4 @@
+from pathlib import Path
 import copy
 import tempfile
 import unittest
@@ -12,7 +13,7 @@ class ReviewTests(unittest.TestCase):
         directory = self.enterContext(tempfile.TemporaryDirectory())
         self.detector = FixtureDetector(output_dir=directory)
         self.client = self.enterContext(TestClient(create_app(
-            detector_factory=lambda **_: self.detector, output_dir=directory)))
+            detector_factory=lambda **_: self.detector, output_dir=directory, database_path=Path(directory)/"test.db")))
         self.payload = {'items': [{'class_id': 0, 'class_name': 'Red Bull',
                                  'predicted_count': 2, 'confirmed_count': 1}]}
 
@@ -22,7 +23,8 @@ class ReviewTests(unittest.TestCase):
         result = response.json()
         self.assertEqual(result['items'], self.payload['items'])
         self.assertEqual(result['status'], 'confirmed')
-        self.assertFalse(result['persisted'])
+        self.assertTrue(result['persisted'])
+        self.assertEqual(self.client.get('/inventory/scans/' + result['scan_id']).json(), result)
         self.assertEqual(result['count_meaning'], 'visible_items')
         self.assertIsNotNone(datetime.fromisoformat(result['confirmed_at']).tzinfo)
         self.assertEqual(self.detector.calls, 0)

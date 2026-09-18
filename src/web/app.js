@@ -9,11 +9,12 @@ function error(message = "") {
   $("error").hidden = !message;
 }
 function screen(name) {
-  for (const key of ["scan", "review", "confirmed"]) {
+  for (const key of ["scan", "review", "confirmed", "history", "saved-scan"]) {
     $(key).hidden = key !== name;
-    $("step-" + key).removeAttribute("aria-current");
+    $("step-" + key)?.removeAttribute("aria-current");
   }
-  $("step-" + name).setAttribute("aria-current", "step");
+  $("step-" + name)?.setAttribute("aria-current", "step");
+  document.querySelector(".steps").hidden = ["history", "saved-scan"].includes(name);
   $(name + "-title").focus();
 }
 function setBusy(value, stage) {
@@ -24,6 +25,7 @@ function setBusy(value, stage) {
   $("cancel").hidden = !(value && stage === "scan");
   $("confirming").hidden = !(value && stage === "review");
   $("confirm").disabled = value;
+  document.querySelectorAll(".browse-history, #refresh-history").forEach(button => { button.disabled = value; });
   $("upload-form").setAttribute("aria-busy", String(value && stage === "scan"));
   $("review").setAttribute("aria-busy", String(value && stage === "review"));
   for (const control of document.querySelectorAll("#products button, #products input, #missed-products button")) {
@@ -41,6 +43,8 @@ function reset() {
   $("products").replaceChildren(); $("confirmed-items").replaceChildren();
   $("missed-products").replaceChildren(); $("missed").open = false;
   $("review-total").textContent = "0";
+  $("history-list").replaceChildren(); $("saved-items").replaceChildren();
+  $("history-loading").hidden = true; $("saved-loading").hidden = true;
   error(); setBusy(false); screen("scan");
 }
 $("file").addEventListener("change", () => {
@@ -174,22 +178,76 @@ $("confirm").addEventListener("click", async () => {
     const result = await responseJSON(response, "Couldn’t confirm these counts. Please check them and try again.");
     if (current !== generation) return;
     confirmed = result;
-    $("confirmed-items").replaceChildren();
-    for (const item of confirmed.items) {
-      const row = node("div", "receipt-row"), info = node("div");
-      info.append(node("b", "", item.class_name), node("p", "", `AI detected ${item.predicted_count} → You confirmed ${item.confirmed_count}`));
-      row.append(info, node("strong", "", String(item.confirmed_count))); $("confirmed-items").append(row);
-    }
-    if (!confirmed.items.length) $("confirmed-items").append(node("p", "", "No supported products confirmed in this photo."));
+    renderReceipt(confirmed, "confirmed-items");
     $("confirmed-total").textContent = `${confirmed.items.reduce((sum, item) => sum + item.confirmed_count, 0)} packages`;
     $("confirmed-time").textContent = `Reviewed ${new Date(confirmed.confirmed_at).toLocaleString()}`;
     screen("confirmed");
   } catch (e) {
     if (current === generation && e.name !== "AbortError") error(e instanceof TypeError
-      ? "Couldn’t reach StoreRoom. Your edits are still here. Try confirming again." : e.message);
+      ? "Couldn’t verify the save. Your edits are still here. Check Scan History before confirming again." : e.message);
   } finally {
     if (current === generation) { request = null; setBusy(false); }
   }
 });
 $("cancel").addEventListener("click", reset);
 document.querySelectorAll(".new-scan").forEach(button => button.addEventListener("click", reset));
+
+function renderReceipt(result, target) {
+  $(target).replaceChildren();
+  for (const item of result.items) {
+    const row = node("div", "receipt-row"), info = node("div");
+    info.append(node("b", "", item.class_name), node("p", "", `AI detected ${item.predicted_count} → You confirmed ${item.confirmed_count}`));
+    row.append(info, node("strong", "", String(item.confirmed_count))); $(target).append(row);
+  }
+  if (!result.items.length) $(target).append(node("p", "", "No supported products confirmed in this photo."));
+}
+async function openHistory() {
+  const current = ++generation;
+  request?.abort(); request = new AbortController();
+  error(); screen("history"); setBusy(true, "history");
+  $("history-loading").hidden = false; $("history-empty").hidden = true;
+  $("history-list").replaceChildren();
+  try {
+    const response = await fetch("/inventory/scans?limit=20", {signal: request.signal, cache: "no-store"});
+    const data = await responseJSON(response, "Couldn’t load saved scans. Try refreshing history.");
+    if (current !== generation) return;
+    $("history-empty").hidden = data.scans.length !== 0;
+    for (const scan of data.scans) {
+      const row = node("div", "history-row"), info = node("div");
+      info.append(node("b", "", new Date(scan.created_at).toLocaleString()),
+        node("p", "muted", `${scan.item_count} product ${scan.item_count === 1 ? "class" : "classes"}`));
+      const open = node("button", "secondary", "Open scan"); open.type = "button";
+      open.addEventListener("click", () => openSaved(scan.scan_id));
+      row.append(info, open); row.dataset.scanId = scan.scan_id; $("history-list").append(row);
+    }
+  } catch (e) {
+    if (current === generation && e.name !== "AbortError") error("Couldn’t load saved scans. Check the local server, then refresh history.");
+  } finally {
+    if (current === generation) { request = null; $("history-loading").hidden = true; setBusy(false); }
+  }
+}
+async function openSaved(id) {
+  const current = ++generation;
+  request?.abort(); request = new AbortController();
+  error(); screen("saved-scan"); $("saved-items").replaceChildren();
+  $("saved-receipt").hidden = true; $("saved-loading").hidden = false;
+  try {
+    const response = await fetch(`/inventory/scans/${encodeURIComponent(id)}`, {signal: request.signal, cache: "no-store"});
+    const data = await responseJSON(response, "Couldn’t open this scan. Return to Scan History and try again.");
+    if (current !== generation) return;
+    renderReceipt(data, "saved-items");
+    $("saved-time").textContent = `Confirmed ${new Date(data.created_at).toLocaleString()}`;
+    $("saved-receipt").hidden = false;
+  } catch (e) {
+    if (current === generation && e.name !== "AbortError") error(e instanceof TypeError
+      ? "Couldn’t reach StoreRoom. Return to Scan History and try again." : e.message);
+  } finally {
+    if (current === generation) { request = null; $("saved-loading").hidden = true; }
+  }
+}
+document.querySelectorAll(".browse-history").forEach(button => button.addEventListener("click", openHistory));
+$("refresh-history").addEventListener("click", openHistory);
+$("return-current").addEventListener("click", () => {
+  generation++; request?.abort(); request = null; error(); setBusy(false);
+  screen(confirmed ? "confirmed" : prediction ? "review" : "scan");
+});

@@ -39,7 +39,7 @@ run `python -m playwright install chromium` in the virtual environment first):
 .\.venv\Scripts\python.exe -c "from src.independent_validation_001_audit import verify_protected; print(verify_protected())"
 ```
 
-Expected: 62 passing tests and 921 protected files verified, plus frozen dataset
+Expected: 73 passing tests and 921 protected files verified, plus frozen dataset
 hash checks. These commands perform no new model inference or training.
 A fresh Git clone lacks the ignored dataset, checkpoints, run files and rendered
 visuals; full artifact tests require restoring them. Read
@@ -77,6 +77,7 @@ StoreRoom is an **AI-assisted retail shelf inventory** project:
 - **v0.1:** reproducible CV model pipeline.
 - **v0.2:** reusable inference API.
 - **v0.3:** photo upload → review → count correction → confirmation.
+- **v0.4:** durable local scan history.
 
 Run the same backend command above, then open [StoreRoom](http://127.0.0.1:8000/).
 The mobile-friendly interface previews the photo, shows annotated detections,
@@ -84,13 +85,30 @@ keeps **AI detected** counts separate from editable **Your count** values, and
 returns a confirmed review. Missed products from the five supported classes can
 be added manually. No frontend build or separate server is required.
 
-Confirmation describes visible packages in this photo only. **It is not persisted**;
-refreshing or starting a new scan clears it. Hidden stock remains unknown.
+Confirmation describes visible packages in this photo only. V0.3 introduced temporary
+reviews; v0.4 now saves confirmed counts locally. Hidden stock remains unknown.
 See the [workflow and setup guide](docs/V0_3_SHOPKEEPER_WORKFLOW.md) and
 [v0.3 results](reports/V0_3_RESULTS.md).
 
-Next product milestone: durable scan-and-review history with original predictions,
-human corrections, photo/model references and timestamps. It is not implemented yet.
+## V0.4: durable scan history
+
+Confirmed scans now survive refresh and restart. Open **Scan History**, refresh the
+recent list, or open a previous scan to see predicted and confirmed counts.
+Historical reviews are read-only and never added together as shop inventory.
+
+SQLite + SQLAlchemy store each scan and its items in one transaction. On startup,
+the app creates the schema at `data/storeroom.db` (ignored by Git). Set
+`STOREROOM_DB_PATH` before starting the same backend to use another local path.
+No separate database server or frontend build is needed.
+
+History stores timestamps and counts, **not historical photos**. This is local v0.4
+persistence, not production infrastructure. Keep the database file to retain history;
+there is no automated backup, multi-shop support, or inventory synchronization.
+See [database setup and API contracts](docs/V0_4_SCAN_HISTORY.md) and
+[v0.4 results](reports/V0_4_RESULTS.md).
+
+Next product milestone: traceable scan evidence linking retained photos and
+server-side prediction records to human reviews. This has not been implemented.
 
 The remaining sections document the earlier data/runtime milestones. Their rebuild
 commands are historical, not instructions to reopen model experimentation.
@@ -109,7 +127,7 @@ On this existing checkout, run:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-The runtime milestone had 17 tests; the current suite has 62. To regenerate only the smoke export and visual checks:
+The runtime milestone had 17 tests; the current suite has 73. To regenerate only the smoke export and visual checks:
 
 ```powershell
 .\.venv\Scripts\python.exe -m src.convert_smoke

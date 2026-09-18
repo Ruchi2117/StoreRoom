@@ -1,5 +1,6 @@
-"""Validate a human review without storing it or invoking inference."""
-from datetime import datetime, timezone
+"""Validate human review data; inference remains separate."""
+from datetime import datetime
+from uuid import UUID
 from typing import Annotated, Literal
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 from src.inference.config import load_config
@@ -37,5 +38,17 @@ class ReviewRequest(BaseModel):
 class ConfirmedReview(ReviewRequest):
     status: Literal['confirmed'] = 'confirmed'
     count_meaning: Literal['visible_items'] = 'visible_items'
-    persisted: Literal[False] = False
-    confirmed_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    persisted: Literal[True] = True
+    scan_id: UUID
+    created_at: datetime
+    confirmed_at: datetime  # Compatibility with v0.3 clients; same as created_at.
+
+
+class ScanSummary(BaseModel):
+    scan_id: UUID
+    created_at: datetime
+    item_count: int  # Number of represented classes, not packages.
+
+
+class ScanHistory(BaseModel):
+    scans: list[ScanSummary]

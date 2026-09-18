@@ -1,0 +1,74 @@
+{
+  "purpose": "product persistence smoke, not accuracy evaluation",
+  "image": "data/yolo_v01/images/val/IMG_20181218_170247.jpg",
+  "split": "val",
+  "database": "data/v0_4_smoke_830a898aeeed4ddf912b716502386ce2.db",
+  "first_scan": {
+    "items": [
+      {
+        "class_id": 0,
+        "class_name": "Red Bull",
+        "predicted_count": 4,
+        "confirmed_count": 3
+      },
+      {
+        "class_id": 2,
+        "class_name": "Valser Classic",
+        "predicted_count": 1,
+        "confirmed_count": 1
+      },
+      {
+        "class_id": 3,
+        "class_name": "Valser Still",
+        "predicted_count": 1,
+        "confirmed_count": 1
+      }
+    ],
+    "status": "confirmed",
+    "count_meaning": "visible_items",
+    "persisted": true,
+    "scan_id": "e2c1886a-1d83-4894-ae63-3f5d57afa63e",
+    "created_at": "2026-09-18T20:58:16.292846Z",
+    "confirmed_at": "2026-09-18T20:58:16.292846Z"
+  },
+  "second_scan": {
+    "items": [
+      {
+        "class_id": 0,
+        "class_name": "Red Bull",
+        "predicted_count": 4,
+        "confirmed_count": 4
+      },
+      {
+        "class_id": 2,
+        "class_name": "Valser Classic",
+        "predicted_count": 1,
+        "confirmed_count": 1
+      },
+      {
+        "class_id": 3,
+        "class_name": "Valser Still",
+        "predicted_count": 1,
+        "confirmed_count": 1
+      }
+    ],
+    "status": "confirmed",
+    "count_meaning": "visible_items",
+    "persisted": true,
+    "scan_id": "7b5e551f-78a3-4bbd-ad08-580f49bef0c3",
+    "created_at": "2026-09-18T20:58:17.976207Z",
+    "confirmed_at": "2026-09-18T20:58:17.976207Z"
+  },
+  "predict_requests": 2,
+  "survived_frontend_refresh": true,
+  "survived_backend_restart": true,
+  "history_ids_newest_first": [
+    "7b5e551f-78a3-4bbd-ad08-580f49bef0c3",
+    "e2c1886a-1d83-4894-ae63-3f5d57afa63e"
+  ],
+  "both_scans_retrievable": true,
+  "browser_errors": [],
+  "servers_stopped_cleanly": true,
+  "no_retraining": true,
+  "no_test_set_evaluation": true
+}

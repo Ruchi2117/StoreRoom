@@ -3,29 +3,36 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 import re
 from typing import Annotated
-from fastapi import FastAPI, File, UploadFile, HTTPException, Request
-from fastapi.responses import FileResponse
+from uuid import UUID
+from fastapi import FastAPI, File, UploadFile, HTTPException, Request, Query
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.concurrency import run_in_threadpool
 from src.inference import Detector
 from src.inference.config import ROOT
 from src.inference.images import ImageInputError, MAX_BYTES
 from src.inference.results import Prediction
-from src.review import ReviewRequest, ConfirmedReview
+from src.review import ReviewRequest, ConfirmedReview, ScanHistory
+from src.storage import ScanStore
+from sqlalchemy.exc import SQLAlchemyError
 
 
-def create_app(*, detector_factory=Detector, output_dir=None):
+def create_app(*, detector_factory=Detector, output_dir=None, database_path=None):
     directory = Path(output_dir) if output_dir is not None else ROOT / 'outputs/annotations'
 
     @asynccontextmanager
     async def lifespan(app):
         app.state.detector = await run_in_threadpool(detector_factory, output_dir=directory)
+        store = ScanStore(database_path)
         try:
+            await run_in_threadpool(store.initialize)
+            app.state.store = store
             yield
         finally:
+            await run_in_threadpool(store.close)
             del app.state.detector
 
-    app = FastAPI(title='StoreRoom', version='0.3', lifespan=lifespan)
+    app = FastAPI(title='StoreRoom', version='0.4', lifespan=lifespan)
     app.mount('/static', StaticFiles(directory=ROOT / 'src/web'), name='static')
 
     @app.get('/', include_in_schema=False)
@@ -33,9 +40,25 @@ def create_app(*, detector_factory=Detector, output_dir=None):
         return FileResponse(ROOT / 'src/web/index.html', headers={'Cache-Control': 'no-cache'})
 
     @app.post('/inventory/confirm', response_model=ConfirmedReview)
-    def confirm(review: ReviewRequest):
-        # Stateless acknowledgement, not a stock update or verified prediction record.
-        return ConfirmedReview(items=review.items)
+    def confirm(review: ReviewRequest, request: Request):
+        return request.app.state.store.confirm(review)
+
+    @app.get('/inventory/scans', response_model=ScanHistory)
+    def history(request: Request, limit: Annotated[int, Query(ge=1, le=100)] = 20):
+        return ScanHistory(scans=request.app.state.store.recent(limit))
+
+    @app.get('/inventory/scans/{scan_id}', response_model=ConfirmedReview)
+    def scan(scan_id: UUID, request: Request):
+        result = request.app.state.store.get(scan_id)
+        if result is None:
+            raise HTTPException(404, 'Scan not found')
+        return result
+
+    @app.exception_handler(SQLAlchemyError)
+    async def storage_error(request, error):
+        # Never expose SQL statements, local database paths or driver messages.
+        return JSONResponse(status_code=503, content={'detail':
+            'Scan storage is unavailable. If saving was interrupted, check Scan History before confirming again.'})
 
     @app.get('/health')
     def health():

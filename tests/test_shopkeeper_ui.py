@@ -1,4 +1,5 @@
 """Real browser + real HTTP, with deterministic inference instead of trained weights."""
+from pathlib import Path
 import tempfile
 import unittest
 from playwright.sync_api import sync_playwright, expect
@@ -12,7 +13,7 @@ class ShopkeeperBrowserTests(unittest.TestCase):
         cls.temp = tempfile.TemporaryDirectory()
         cls.addClassCleanup(cls.temp.cleanup)
         cls.detector = FixtureDetector(output_dir=cls.temp.name)
-        cls.server = local_server(create_app(detector_factory=lambda **_: cls.detector, output_dir=cls.temp.name))
+        cls.server = local_server(create_app(detector_factory=lambda **_: cls.detector, output_dir=cls.temp.name, database_path=Path(cls.temp.name)/"test.db"))
         cls.url = cls.server.__enter__()
         cls.addClassCleanup(cls.server.__exit__, None, None, None)
         cls.playwright = sync_playwright().start()
@@ -63,7 +64,7 @@ class ShopkeeperBrowserTests(unittest.TestCase):
         self.assertEqual(event.value.json()['items'][0]['confirmed_count'], 1)
         expect(self.page.locator('#confirmed')).to_be_visible()
         expect(self.page.locator('#confirmed-items')).to_contain_text('AI detected 2 → You confirmed 1')
-        expect(self.page.locator('#confirmed')).to_contain_text('Not saved permanently')
+        expect(self.page.locator('#confirmed')).to_contain_text('Saved on this device')
         self.page.locator('#confirmed .new-scan').click()
         expect(self.page.locator('#scan')).to_be_visible()
         expect(self.page.locator('#preview')).to_be_hidden()
@@ -132,3 +133,54 @@ class ShopkeeperBrowserTests(unittest.TestCase):
     def test_mobile_has_no_horizontal_overflow(self):
         self.review()
         self.assertTrue(self.page.evaluate('document.documentElement.scrollWidth <= innerWidth'))
+
+    def test_saved_history_survives_refresh_and_opens_read_only(self):
+        self.review()
+        self.page.get_by_role('button', name='Decrease Red Bull', exact=True).click()
+        with self.page.expect_response('**/inventory/confirm') as response:
+            self.page.get_by_role('button', name='Confirm Inventory').click()
+        first = response.value.json()['scan_id']
+        self.page.reload()
+        self.page.get_by_role('button', name='Scan History', exact=True).click()
+        row = self.page.locator(f'[data-scan-id="{first}"]')
+        expect(row).to_be_visible()
+        expect(row).to_contain_text('2 product classes')
+        self.page.get_by_role('button', name='Refresh history').click()
+        row.get_by_role('button', name='Open scan').click()
+        expect(self.page.locator('#saved-items')).to_contain_text('AI detected 2 → You confirmed 1')
+        expect(self.page.locator('#saved-scan input')).to_have_count(0)
+        self.assertTrue(self.page.evaluate('document.documentElement.scrollWidth <= innerWidth'))
+        self.page.locator('#saved-scan .new-scan').click()
+        self.review()
+        with self.page.expect_response('**/inventory/confirm') as response:
+            self.page.get_by_role('button', name='Confirm Inventory').click()
+        second = response.value.json()['scan_id']
+        self.page.get_by_role('button', name='View Scan History', exact=True).click()
+        expect(self.page.locator(f'[data-scan-id="{first}"]')).to_be_visible()
+        expect(self.page.locator(f'[data-scan-id="{second}"]')).to_be_visible()
+
+    def test_history_failure_retry_and_return_preserves_current_edits(self):
+        self.review()
+        self.page.get_by_role('button', name='Increase Red Bull', exact=True).click()
+        self.page.route('**/inventory/scans?limit=20', lambda route: route.abort())
+        self.page.get_by_role('button', name='Scan History', exact=True).click()
+        expect(self.page.locator('#error')).to_contain_text('Couldn’t load saved scans')
+        self.page.unroute('**/inventory/scans?limit=20')
+        self.page.get_by_role('button', name='Refresh history').click()
+        expect(self.page.locator('#history-loading')).to_be_hidden()
+        self.page.get_by_role('button', name='Back to current scan').click()
+        expect(self.page.get_by_label('Red Bull confirmed count')).to_have_value('3')
+
+    def test_history_empty_and_missing_scan_messages(self):
+        self.page.route('**/inventory/scans?limit=20', lambda route: route.fulfill(json={'scans': []}))
+        self.page.get_by_role('button', name='Scan History', exact=True).click()
+        expect(self.page.locator('#history-empty')).to_contain_text('No saved scans yet')
+        self.page.unroute('**/inventory/scans?limit=20')
+        self.page.locator('#history .new-scan').click()
+        self.review()
+        self.page.get_by_role('button', name='Confirm Inventory').click()
+        self.page.get_by_role('button', name='View Scan History', exact=True).click()
+        self.page.route('**/inventory/scans/*', lambda route: route.fulfill(status=404, json={'detail':'Scan not found'}))
+        self.page.locator('#history-list .history-row').first.get_by_role('button', name='Open scan').click()
+        expect(self.page.locator('#error')).to_have_text('Scan not found')
+        expect(self.page.locator('#saved-receipt')).to_be_hidden()

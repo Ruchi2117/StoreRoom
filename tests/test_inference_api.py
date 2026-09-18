@@ -131,7 +131,7 @@ class InferenceTests(unittest.TestCase):
     def test_http_uses_same_detector_and_schema(self):
         detector=self.detector(); factory=Mock(return_value=detector)
         expected=detector.predict(image_bytes()).model_dump(mode='json')
-        with TestClient(create_app(detector_factory=factory,output_dir=detector.output_dir)) as client:
+        with TestClient(create_app(detector_factory=factory,output_dir=detector.output_dir,database_path=self.directory/"test.db")) as client:
             self.assertEqual(client.get('/health').json(),{'status':'ok'})
             response=client.post('/predict?annotate=false',files={'file':('shelf.png',image_bytes(),'image/png')})
             self.assertEqual(response.status_code,200,response.text)
@@ -149,7 +149,7 @@ class InferenceTests(unittest.TestCase):
 
     def test_http_invalid_and_multiple_uploads(self):
         detector=self.detector()
-        with TestClient(create_app(detector_factory=lambda **_:detector)) as client:
+        with TestClient(create_app(detector_factory=lambda **_:detector,database_path=self.directory/"test.db")) as client:
             self.assertEqual(client.post('/predict').status_code,422)
             for data,code in [(b'',400),(b'no image',422),(image_bytes()[:25],422),(image_bytes('GIF'),415)]:
                 response=client.post('/predict',files={'file':('input.png',data,'image/png')})

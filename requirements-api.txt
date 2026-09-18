@@ -11,3 +11,4 @@ annotated-doc==0.0.5
 typing-inspection==0.4.4
 click==8.5.0
 httpx==0.28.1
+SQLAlchemy==2.0.54

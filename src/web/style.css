@@ -529,3 +529,20 @@ footer span {
     transition:background .15s,opacity .15s;
   }
 }
+/* Saved scans are read-only observations, never combined inventory totals. */
+.history-list { padding: 0 24px; }
+.history-row { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--border); }
+.history-row:last-child { border-bottom: 0; }
+.history-row p { margin: 6px 0 0; }
+.history-actions { display: flex; gap: 16px; margin-top: 24px; }
+.history-actions .primary { width: auto; }
+#saved-scan { max-width: 760px; margin: auto; }
+#history .secondary { margin-bottom: 10px; }
+@media (max-width: 760px) {
+  .top .secondary { font-size: 12px; padding: 10px; }
+  .history-list { padding: 0 18px; }
+  .history-row { align-items: flex-start; }
+  .history-row b { font-size: 14px; }
+  .history-row button { white-space: nowrap; padding: 10px; }
+  .history-actions { flex-direction: column; }
+}

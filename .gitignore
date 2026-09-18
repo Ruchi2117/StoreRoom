@@ -32,3 +32,11 @@ dist/
 outputs/
 tmp/
 # Keep small experiment JSON/CSV/log evidence; rendered images stay local.
+
+# Local scan history and SQLite journal/sidecar files
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*

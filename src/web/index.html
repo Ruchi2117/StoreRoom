@@ -7,7 +7,7 @@
   <script src="/static/app.js" defer></script>
 </head>
 <body>
-  <header class="top"><a class="brand" href="/" aria-label="StoreRoom home"><span class="mark">▤</span> StoreRoom</a><span class="local">Your shelf, reviewed by you</span></header>
+  <header class="top"><a class="brand" href="/" aria-label="StoreRoom home"><span class="mark">▤</span> StoreRoom</a><button class="secondary browse-history" type="button">Scan History</button></header>
   <main>
     <nav aria-label="Scan progress"><ol class="steps"><li id="step-scan" aria-current="step"><span>1</span> Scan</li><li id="step-review"><span>2</span> Review</li><li id="step-confirmed"><span>3</span> Confirm</li></ol></nav>
     <div id="error" class="error" role="alert" hidden></div>
@@ -44,8 +44,24 @@
     </section>
     <section id="confirmed" aria-labelledby="confirmed-title" hidden>
       <div class="success-icon" aria-hidden="true">✓</div><p class="eyebrow">Reviewed by you</p><h1 id="confirmed-title" tabindex="-1">This photo’s counts are confirmed.</h1><p>Visible packages only. Hidden stock is still unknown.</p>
-      <div class="card receipt"><div class="list-heading"><h2>Confirmed counts</h2><span id="confirmed-total" class="pill"></span></div><div id="confirmed-items"></div><p id="confirmed-time" class="muted"></p><p class="notice">Not saved permanently. This result is kept on this screen only and is cleared when you refresh or start a new scan.</p></div>
+      <div class="card receipt"><div class="list-heading"><h2>Confirmed counts</h2><span id="confirmed-total" class="pill"></span></div><div id="confirmed-items"></div><p id="confirmed-time" class="muted"></p><p class="notice">Saved on this device. You can find these counts in Scan History after refreshing or restarting StoreRoom. Photos are not saved in history.</p></div>
+      <button class="secondary browse-history" type="button">View Scan History</button>
       <button class="primary new-scan" type="button">Start a new scan <span aria-hidden="true">→</span></button>
+    </section>
+    <section id="history" aria-labelledby="history-title" hidden>
+      <div class="section-heading"><div><p class="eyebrow">Your reviewed photos</p><h1 id="history-title" tabindex="-1">Scan History</h1><p>Recent counts saved on this device. Each scan is a separate observation.</p></div><button id="refresh-history" class="secondary" type="button">Refresh history</button></div>
+      <p id="history-loading" role="status" hidden>Loading saved scans…</p>
+      <p id="history-empty" class="notice" hidden>No saved scans yet. Confirm a shelf photo to start your history.</p>
+      <div id="history-list" class="card history-list"></div>
+      <p class="muted">Showing up to 20 recent scans. Product classes are counted separately from packages.</p>
+      <button id="return-current" class="secondary" type="button">Back to current scan</button>
+      <button class="secondary new-scan" type="button">Start a new scan</button>
+    </section>
+    <section id="saved-scan" aria-labelledby="saved-scan-title" hidden>
+      <p class="eyebrow">Saved review · read only</p><h1 id="saved-scan-title" tabindex="-1">Confirmed scan</h1>
+      <p id="saved-loading" role="status" hidden>Opening saved scan…</p>
+      <div id="saved-receipt" class="card receipt"><p id="saved-time"></p><div id="saved-items"></div><p class="notice">These are confirmed visible-package counts for one photo, not your shop’s complete stock. Historical photos are not stored.</p></div>
+      <div class="history-actions"><button class="secondary browse-history" type="button">Back to Scan History</button><button class="primary new-scan" type="button">Start a new scan</button></div>
     </section>
     <footer>AI-assisted counts. Human-reviewed results.<span>Counts refer only to visible packages in your photo.</span></footer>
   </main>
