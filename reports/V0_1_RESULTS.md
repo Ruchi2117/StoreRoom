@@ -81,3 +81,10 @@ reusing the test set.
 
 See [reproducibility](../docs/REPRODUCIBILITY.md) for hashes, runtime, artifact
 restoration requirements and limitations of a fresh clone.
+
+## Repository closure verification
+
+All 36 existing tests passed after the documentation/profile changes. All 921
+protected files and frozen dataset hashes remain unchanged, including both model
+checkpoints. No training, model inference or test-set evaluation ran in this task.
+See [test log](v0_1_closure_tests.log) and [integrity record](v0_1_closure_verification.json).

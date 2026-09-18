@@ -49,6 +49,8 @@ step and should not be rerun on this frozen checkout.
 ## Next milestone
 
 Prepare a reusable product-detection inference component, followed by a thin API.
+See the [inference handoff](docs/INFERENCE_PIPELINE.md) and
+[provisional model profile](configs/inference_v01.json).
 The inference component/API is **not implemented in this milestone**. Keep the
 existing evaluator, class mapping and confidence/NMS semantics stable. No frontend,
 marketplace services or deployment infrastructure is included.

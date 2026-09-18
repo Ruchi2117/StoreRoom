@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "model_id": "storeroom-holoselecta-five-v0.1-augmentation-001",
+  "status": "provisional_validation_best",
+  "independent_validation": "not_verified_no_eligible_unused_scene_groups",
+  "checkpoint": "runs/augmentation_001/weights/best.pt",
+  "checkpoint_sha256": "099b96ecd3cb440991b56c69cd243770ca499b8e246fee994ced3e24b93ec1c4",
+  "class_map": "configs/class_map.json",
+  "identity_level": "source_product_class",
+  "count_meaning": "visible_items",
+  "class_confidence": [
+    0.15,
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ],
+  "threshold_application": "original_best_class_score_strictly_greater_before_nms",
+  "prediction_arguments": {
+    "imgsz": 320,
+    "device": "cpu",
+    "max_det": 300,
+    "agnostic_nms": false,
+    "augment": false,
+    "verbose": false,
+    "rect": true,
+    "batch": 1,
+    "iou": 0.5
+  },
+  "inference_candidate_floor": 0.15,
+  "usage": "Handoff configuration for a future reusable module; not yet consumed by an API."
+}

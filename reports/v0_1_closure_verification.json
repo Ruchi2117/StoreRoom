@@ -1,0 +1,15 @@
+{
+  "protected_files_verified": 921,
+  "protected_git_files_exact_bytes_verified": 168,
+  "frozen_dataset_hashes_unchanged": true,
+  "baseline_002_unchanged": true,
+  "augmentation_001_unchanged": true,
+  "profile_matches_recorded_inference": true,
+  "training_performed": false,
+  "inference_experiments_performed": false,
+  "test_set_inference_performed": false,
+  "previous_head": null,
+  "initial_branch": "master",
+  "remote_configured": false,
+  "artifact_policy": "Data, weights, runs and rendered previews remain local; small reports/logs are versioned."
+}
