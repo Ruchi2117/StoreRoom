@@ -28,5 +28,5 @@
     "iou": 0.5
   },
   "inference_candidate_floor": 0.15,
-  "usage": "Handoff configuration for a future reusable module; not yet consumed by an API."
+  "usage": "Frozen profile consumed by src.inference.Detector and the shared FastAPI adapter."
 }

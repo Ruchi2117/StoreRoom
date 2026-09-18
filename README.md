@@ -38,7 +38,7 @@ On the existing artifact-complete checkout:
 .\.venv\Scripts\python.exe -c "from src.independent_validation_001_audit import verify_protected; print(verify_protected())"
 ```
 
-Expected: 36 passing tests and 921 protected files verified, plus frozen dataset
+Expected: 48 passing tests and 921 protected files verified, plus frozen dataset
 hash checks. These commands perform no new model inference or training.
 A fresh Git clone lacks the ignored dataset, checkpoints, run files and rendered
 visuals; full artifact tests require restoring them. Read
@@ -46,14 +46,28 @@ visuals; full artifact tests require restoring them. Read
 Historical scripts contain guarded training/test commands; they are not the next
 step and should not be rerun on this frozen checkout.
 
-## Next milestone
+## V0.2: reusable inference and local API
 
-Prepare a reusable product-detection inference component, followed by a thin API.
-See the [inference handoff](docs/INFERENCE_PIPELINE.md) and
-[provisional model profile](configs/inference_v01.json).
-The inference component/API is **not implemented in this milestone**. Keep the
-existing evaluator, class mapping and confidence/NMS semantics stable. No frontend,
-marketplace services or deployment infrastructure is included.
+V0.2 adds `Detector.predict(image)` and a FastAPI adapter using the same frozen
+model, pre-NMS class thresholds, and counting implementation. Upload a JPEG/PNG
+and receive all five counts, pixel boxes, confidence scores, and an optional
+annotated image. The model loads once at startup and its SHA-256 is checked.
+
+On the existing checkout with its local checkpoint restored:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-api.txt
+.\.venv\Scripts\python.exe -m uvicorn src.api:app --host 127.0.0.1 --port 8000
+```
+
+Open http://127.0.0.1:8000/docs for the upload form, or use `POST /predict`
+with multipart field `file`. `GET /health` returns `{"status":"ok"}`.
+See [setup, Python usage and HTTP examples](docs/INFERENCE_PIPELINE.md) and
+[v0.2 implementation and verification](reports/V0_2_RESULTS.md).
+
+This remains a local demonstration with a provisional five-class model;
+independent-scene generalization remains unverified. Next product milestone:
+a shopkeeper scan-and-review interface for inspecting and correcting visible counts.
 
 The remaining sections document the earlier data/runtime milestones. Their rebuild
 commands are historical, not instructions to reopen model experimentation.
@@ -72,7 +86,7 @@ On this existing checkout, run:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-The runtime milestone had 17 tests; the current suite has 36. To regenerate only the smoke export and visual checks:
+The runtime milestone had 17 tests; the current suite has 48. To regenerate only the smoke export and visual checks:
 
 ```powershell
 .\.venv\Scripts\python.exe -m src.convert_smoke

@@ -1,0 +1,120 @@
+{
+  "purpose": "single-image runtime smoke only, no accuracy evaluation",
+  "image": "data/yolo_v01/images/val/IMG_20181218_170247.jpg",
+  "split": "val",
+  "health_status": 200,
+  "predict_status": 200,
+  "annotation_status": 200,
+  "invalid_upload_status": 422,
+  "prediction": {
+    "model_id": "storeroom-holoselecta-five-v0.1-augmentation-001",
+    "checkpoint_sha256": "099b96ecd3cb440991b56c69cd243770ca499b8e246fee994ced3e24b93ec1c4",
+    "image_width": 4640,
+    "image_height": 3480,
+    "count_meaning": "visible_items",
+    "identity_level": "source_product_class",
+    "products": [
+      {
+        "class_id": 0,
+        "class_name": "Red Bull",
+        "product_id": "hs_redbull_regular",
+        "count": 4,
+        "detections": [
+          {
+            "confidence": 0.942768931388855,
+            "bbox": [
+              1471.7723388671875,
+              725.8348388671875,
+              1867.5467529296875,
+              1494.883056640625
+            ]
+          },
+          {
+            "confidence": 0.9409889578819275,
+            "bbox": [
+              1010.0280151367188,
+              693.8047485351562,
+              1394.596435546875,
+              1491.0750732421875
+            ]
+          },
+          {
+            "confidence": 0.8785901069641113,
+            "bbox": [
+              1885.50048828125,
+              624.4577026367188,
+              2346.177734375,
+              1500.5439453125
+            ]
+          },
+          {
+            "confidence": 0.2983280420303345,
+            "bbox": [
+              120.47502136230469,
+              661.5510864257812,
+              460.93927001953125,
+              1462.2822265625
+            ]
+          }
+        ]
+      },
+      {
+        "class_id": 1,
+        "class_name": "Knoppers",
+        "product_id": "hs_knoppers",
+        "count": 0,
+        "detections": []
+      },
+      {
+        "class_id": 2,
+        "class_name": "Valser Classic",
+        "product_id": "hs_valser_classic",
+        "count": 1,
+        "detections": [
+          {
+            "confidence": 0.864520788192749,
+            "bbox": [
+              3453.5341796875,
+              1769.1717529296875,
+              3961.513916015625,
+              2859.82763671875
+            ]
+          }
+        ]
+      },
+      {
+        "class_id": 3,
+        "class_name": "Valser Still",
+        "product_id": "hs_valser_still",
+        "count": 1,
+        "detections": [
+          {
+            "confidence": 0.6275692582130432,
+            "bbox": [
+              3890.59228515625,
+              1756.749267578125,
+              4349.1015625,
+              2868.171142578125
+            ]
+          }
+        ]
+      },
+      {
+        "class_id": 4,
+        "class_name": "Capri-Sun Multivitamin",
+        "product_id": "hs_caprisun_multivitamin",
+        "count": 0,
+        "detections": []
+      }
+    ],
+    "total_count": 6,
+    "annotated_image": "/annotations/d41a1d5decdf4904ab78ddc50e0718a2.jpg"
+  },
+  "retraining": false,
+  "test_set_evaluation": false,
+  "server_stopped_cleanly": true,
+  "annotation_visual_review": {
+    "final_render": "outputs/annotations/e89cf551bc2649599b0e681e69f41bcf.jpg",
+    "method": "Re-rendered the same saved detections with scaled labels; no additional model inference."
+  }
+}

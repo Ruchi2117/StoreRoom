@@ -1,0 +1,8 @@
+{
+  "protected_files_verified": 921,
+  "frozen_dataset_hashes_verified": true,
+  "checkpoint_sha256": "099b96ecd3cb440991b56c69cd243770ca499b8e246fee994ced3e24b93ec1c4",
+  "baseline_002_checkpoint_sha256": "7e048d48a3b80cf5cab1aafb30dfb63f7f20c94e12b26ded8aac35de5ecd0cbd",
+  "no_retraining": true,
+  "no_test_set_evaluation": true
+}
