@@ -13,6 +13,7 @@ from src.review import StoredDetection
 from src.inference.results import Prediction, Product, Detection
 from src.evidence import EvidenceFiles, EvidenceError
 from src.migrations import initialize_schema
+from src.data_lock import data_lock
 
 
 class Base(DeclarativeBase):
@@ -93,7 +94,8 @@ class ScanStore:
 
     def initialize(self):
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        initialize_schema(self.engine, Base.metadata)
+        with data_lock(self.path, self.evidence.root):
+            initialize_schema(self.engine, Base.metadata)
 
     def close(self):
         self.engine.dispose()
@@ -122,7 +124,7 @@ class ScanStore:
 
     def confirm(self, review: ReviewRequest):
         # Serialize promotion/retries within the supported single-process deployment.
-        with self._confirmation_lock:
+        with self._confirmation_lock, data_lock(self.path, self.evidence.root):
             with Session(self.engine) as session:
                 previous = session.scalar(select(Scan).where(Scan.prediction_id == str(review.prediction_id)))
                 if previous:

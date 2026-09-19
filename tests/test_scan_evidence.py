@@ -59,6 +59,7 @@ class EvidenceTests(unittest.TestCase):
 
     def test_evidence_reopens_through_new_app_without_overwriting_prediction(self):
         saved = self.confirm()
+        self.client.__exit__(None, None, None)  # Stop the first app before reopening its data.
         with TestClient(self.app()) as client:
             for _ in range(2):
                 self.assertEqual(client.get('/inventory/scans/'+saved['scan_id']).json(), saved)

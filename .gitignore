@@ -43,3 +43,12 @@ tmp/
 
 # Retained scan photos and pending prediction evidence are local user data.
 data/scans/
+
+# Local backups, cooperative locks and restore recovery state
+backups/
+data/backups/
+*.storeroom-*.lock
+*.restore-in-progress
+*.rollback-*
+*.staged-*
+.storeroom-*/

@@ -39,7 +39,7 @@ run `python -m playwright install chromium` in the virtual environment first):
 .\.venv\Scripts\python.exe -c "from src.independent_validation_001_audit import verify_protected; print(verify_protected())"
 ```
 
-Expected: 85 passing tests and 921 protected files verified, plus frozen dataset
+Expected: 103 passing tests and 921 protected files verified, plus frozen dataset
 hash checks. These commands perform no new model inference or training.
 A fresh Git clone lacks the ignored dataset, checkpoints, run files and rendered
 visuals; full artifact tests require restoring them. Read
@@ -79,6 +79,7 @@ StoreRoom is an **AI-assisted retail shelf inventory** project:
 - **v0.3:** photo upload → review → count correction → confirmation.
 - **v0.4:** durable local scan history.
 - **v0.5:** scan evidence and original prediction history.
+- **v0.6:** local backup and restore of confirmed history and evidence.
 
 Run the same backend command above, then open [StoreRoom](http://127.0.0.1:8000/).
 The mobile-friendly interface previews the photo, shows annotated detections,
@@ -127,7 +128,28 @@ potential future evidence, **not automatically used for training**.
 See [evidence setup, contracts and cleanup limits](docs/V0_5_SCAN_EVIDENCE.md) and
 [v0.5 results](reports/V0_5_RESULTS.md).
 
-Next single milestone: local backup and restore of complete scan evidence.
+## V0.6: local backup and restore
+
+Create a portable ZIP containing SQLite, referenced original/annotated photos and
+a manifest with SHA-256 checksums. Backups briefly block confirmation writes;
+restore requires the backend to be stopped and validates everything before replacing
+the data pair. Previous data is retained for rollback. No database schema change.
+
+```powershell
+.\.venv\Scripts\python.exe -m src.data_cli backup --output ./backups
+.\.venv\Scripts\python.exe -m src.data_cli validate ./backups/<backup-filename>.zip
+# Stop the backend first; restore replaces all configured history and photos.
+.\.venv\Scripts\python.exe -m src.data_cli restore ./backups/<backup-filename>.zip
+```
+
+Use the printed archive filename in place of `<backup-filename>`. This is **local
+backup**, not cloud backup. Pending reviews, temporary annotations, model weights
+and datasets are excluded. The original AI prediction and confirmed counts remain
+separate after restore. See [commands, safety and recovery](docs/V0_6_BACKUP_RESTORE.md)
+and [v0.6 results](reports/V0_6_RESULTS.md).
+
+Next single milestone: independent-scene field validation with newly collected,
+consented shelf photos.
 
 The remaining sections document the earlier data/runtime milestones. Their rebuild
 commands are historical, not instructions to reopen model experimentation.
@@ -146,7 +168,7 @@ On this existing checkout, run:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-The runtime milestone had 17 tests; the current suite has 85. To regenerate only the smoke export and visual checks:
+The runtime milestone had 17 tests; the current suite has 103. To regenerate only the smoke export and visual checks:
 
 ```powershell
 .\.venv\Scripts\python.exe -m src.convert_smoke

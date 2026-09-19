@@ -17,6 +17,7 @@ from src.evidence import EvidenceError
 from src.inference.images import decode_image
 from src.inference.annotation import save_annotation
 from sqlalchemy.exc import SQLAlchemyError
+from src.data_lock import data_lock, DataBusyError
 
 
 def create_app(*, detector_factory=Detector, output_dir=None, database_path=None, scan_storage_dir=None):
@@ -24,17 +25,19 @@ def create_app(*, detector_factory=Detector, output_dir=None, database_path=None
 
     @asynccontextmanager
     async def lifespan(app):
-        app.state.detector = await run_in_threadpool(detector_factory, output_dir=directory)
         store = ScanStore(database_path, scan_storage_dir)
-        try:
-            await run_in_threadpool(store.initialize)
-            app.state.store = store
-            yield
-        finally:
-            await run_in_threadpool(store.close)
-            del app.state.detector
+        with data_lock(store.path, store.evidence.root, 'runtime'):
+            try:
+                await run_in_threadpool(store.initialize)
+                app.state.detector = await run_in_threadpool(detector_factory, output_dir=directory)
+                app.state.store = store
+                yield
+            finally:
+                await run_in_threadpool(store.close)
+                if hasattr(app.state, 'detector'):
+                    del app.state.detector
 
-    app = FastAPI(title='StoreRoom', version='0.5', lifespan=lifespan)
+    app = FastAPI(title='StoreRoom', version='0.6', lifespan=lifespan)
     app.mount('/static', StaticFiles(directory=ROOT / 'src/web'), name='static')
 
     @app.get('/', include_in_schema=False)
@@ -77,6 +80,10 @@ def create_app(*, detector_factory=Detector, output_dir=None, database_path=None
     @app.exception_handler(OSError)
     async def image_storage_error(request, error):
         return JSONResponse(status_code=503, content={'detail': 'Image storage is unavailable. Your scan was not completed; check history before retrying.'})
+
+    @app.exception_handler(DataBusyError)
+    async def data_busy(request, error):
+        return JSONResponse(status_code=503, content={'detail': str(error)})
 
     @app.exception_handler(SQLAlchemyError)
     async def storage_error(request, error):
