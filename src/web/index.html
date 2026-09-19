@@ -44,7 +44,7 @@
     </section>
     <section id="confirmed" aria-labelledby="confirmed-title" hidden>
       <div class="success-icon" aria-hidden="true">✓</div><p class="eyebrow">Reviewed by you</p><h1 id="confirmed-title" tabindex="-1">This photo’s counts are confirmed.</h1><p>Visible packages only. Hidden stock is still unknown.</p>
-      <div class="card receipt"><div class="list-heading"><h2>Confirmed counts</h2><span id="confirmed-total" class="pill"></span></div><div id="confirmed-items"></div><p id="confirmed-time" class="muted"></p><p class="notice">Saved on this device. You can find these counts in Scan History after refreshing or restarting StoreRoom. Photos are not saved in history.</p></div>
+      <div class="card receipt"><div class="list-heading"><h2>Confirmed counts</h2><span id="confirmed-total" class="pill"></span></div><div id="confirmed-items"></div><p id="confirmed-time" class="muted"></p><p class="notice">Saved on this device with your original photo and AI prediction. Find this review in Scan History after refreshing or restarting StoreRoom.</p></div>
       <button class="secondary browse-history" type="button">View Scan History</button>
       <button class="primary new-scan" type="button">Start a new scan <span aria-hidden="true">→</span></button>
     </section>
@@ -60,7 +60,18 @@
     <section id="saved-scan" aria-labelledby="saved-scan-title" hidden>
       <p class="eyebrow">Saved review · read only</p><h1 id="saved-scan-title" tabindex="-1">Confirmed scan</h1>
       <p id="saved-loading" role="status" hidden>Opening saved scan…</p>
-      <div id="saved-receipt" class="card receipt"><p id="saved-time"></p><div id="saved-items"></div><p class="notice">These are confirmed visible-package counts for one photo, not your shop’s complete stock. Historical photos are not stored.</p></div>
+      <div id="saved-receipt">
+        <p id="saved-time"></p>
+        <p id="legacy-evidence" class="notice" hidden>This older scan retained counts only. No original photo or AI detection evidence is available.</p>
+        <div id="saved-evidence" hidden>
+          <div class="evidence-images">
+            <figure class="card image-card"><img id="saved-original" alt="Original shelf photo"><p id="original-missing" class="notice" hidden>The original photo is unavailable on this device.</p><figcaption>Original shelf photo · exactly as uploaded</figcaption></figure>
+            <figure class="card image-card"><img id="saved-annotated" alt="Original AI detections on shelf photo"><p id="annotated-missing" class="notice" hidden>The annotated photo is unavailable on this device.</p><figcaption>Original AI prediction · unchanged by corrections</figcaption></figure>
+          </div>
+          <div class="card receipt"><h2>Original AI prediction</h2><div id="saved-ai-counts"></div></div>
+        </div>
+        <div class="card receipt"><h2>Shopkeeper-confirmed counts</h2><div id="saved-items"></div><p class="notice">Visible packages for this photo only. Hidden stock is unknown. An unchanged count means it was left as predicted, not that the AI was verified correct.</p></div>
+      </div>
       <div class="history-actions"><button class="secondary browse-history" type="button">Back to Scan History</button><button class="primary new-scan" type="button">Start a new scan</button></div>
     </section>
     <footer>AI-assisted counts. Human-reviewed results.<span>Counts refer only to visible packages in your photo.</span></footer>

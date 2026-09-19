@@ -5,7 +5,7 @@ import unittest
 from datetime import datetime
 from fastapi.testclient import TestClient
 from src.api import create_app
-from ui_support import FixtureDetector
+from ui_support import FixtureDetector, staged_review
 
 
 class ReviewTests(unittest.TestCase):
@@ -13,9 +13,10 @@ class ReviewTests(unittest.TestCase):
         directory = self.enterContext(tempfile.TemporaryDirectory())
         self.detector = FixtureDetector(output_dir=directory)
         self.client = self.enterContext(TestClient(create_app(
-            detector_factory=lambda **_: self.detector, output_dir=directory, database_path=Path(directory)/"test.db")))
+            detector_factory=lambda **_: self.detector, output_dir=directory, database_path=Path(directory)/"test.db", scan_storage_dir=Path(directory)/"scans")))
         self.payload = {'items': [{'class_id': 0, 'class_name': 'Red Bull',
                                  'predicted_count': 2, 'confirmed_count': 1}]}
+        self.payload = staged_review(self.client.app.state.store, self.payload['items'])
 
     def test_valid_confirmation_preserves_prediction_and_does_not_infer(self):
         response = self.client.post('/inventory/confirm', json=self.payload)
@@ -49,12 +50,13 @@ class ReviewTests(unittest.TestCase):
         for body in [{}, {'items': None}, {'items': [{}]}, {'items': self.payload['items'] * 2},
                      {**self.payload, 'price': 10}, {'items': [{**self.payload['items'][0], 'sku': 'invented'}]}]:
             with self.subTest(body=body):
+                body = {'prediction_id': self.payload['prediction_id'], **body}
                 self.assertEqual(self.client.post('/inventory/confirm', json=body).status_code, 422)
         self.assertEqual(self.client.post('/inventory/confirm', content='invalid',
             headers={'Content-Type': 'application/json'}).status_code, 422)
 
     def test_empty_and_corrected_to_zero_reviews_are_explicitly_allowed(self):
-        self.assertEqual(self.client.post('/inventory/confirm', json={'items': []}).json()['items'], [])
+        self.assertEqual(self.client.post('/inventory/confirm', json=staged_review(self.client.app.state.store, [])).json()['items'], [])
         self.payload['items'][0]['confirmed_count'] = 0
         self.assertEqual(self.client.post('/inventory/confirm', json=self.payload).status_code, 200)
 

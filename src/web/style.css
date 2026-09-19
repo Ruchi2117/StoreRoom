@@ -536,6 +536,9 @@ footer span {
 .history-row p { margin: 6px 0 0; }
 .history-actions { display: flex; gap: 16px; margin-top: 24px; }
 .history-actions .primary { width: auto; }
+.evidence-images { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.correction { color: #8a4b10 !important; font-weight: 650; }
+#saved-ai-counts { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; font-size: 14px; }
 #saved-scan { max-width: 760px; margin: auto; }
 #history .secondary { margin-bottom: 10px; }
 @media (max-width: 760px) {
@@ -545,4 +548,5 @@ footer span {
   .history-row b { font-size: 14px; }
   .history-row button { white-space: nowrap; padding: 10px; }
   .history-actions { flex-direction: column; }
+  .evidence-images { grid-template-columns: 1fr; }
 }

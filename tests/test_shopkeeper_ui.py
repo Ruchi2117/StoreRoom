@@ -13,7 +13,7 @@ class ShopkeeperBrowserTests(unittest.TestCase):
         cls.temp = tempfile.TemporaryDirectory()
         cls.addClassCleanup(cls.temp.cleanup)
         cls.detector = FixtureDetector(output_dir=cls.temp.name)
-        cls.server = local_server(create_app(detector_factory=lambda **_: cls.detector, output_dir=cls.temp.name, database_path=Path(cls.temp.name)/"test.db"))
+        cls.server = local_server(create_app(detector_factory=lambda **_: cls.detector, output_dir=cls.temp.name, database_path=Path(cls.temp.name)/"test.db", scan_storage_dir=Path(cls.temp.name)/"scans"))
         cls.url = cls.server.__enter__()
         cls.addClassCleanup(cls.server.__exit__, None, None, None)
         cls.playwright = sync_playwright().start()
@@ -184,3 +184,20 @@ class ShopkeeperBrowserTests(unittest.TestCase):
         self.page.locator('#history-list .history-row').first.get_by_role('button', name='Open scan').click()
         expect(self.page.locator('#error')).to_have_text('Scan not found')
         expect(self.page.locator('#saved-receipt')).to_be_hidden()
+
+    def test_historical_evidence_and_correction_are_visible_after_refresh(self):
+        self.review()
+        self.page.get_by_role('button', name='Decrease Red Bull', exact=True).click()
+        with self.page.expect_response('**/inventory/confirm') as response:
+            self.page.get_by_role('button', name='Confirm Inventory').click()
+        id = response.value.json()['scan_id']
+        self.page.reload()
+        self.page.get_by_role('button', name='Scan History', exact=True).click()
+        self.page.locator(f'[data-scan-id="{id}"]').get_by_role('button', name='Open scan').click()
+        expect(self.page.locator('#saved-evidence')).to_be_visible()
+        for image in ['saved-original', 'saved-annotated']:
+            self.page.locator('#'+image).evaluate('(img) => img.decode()')
+            expect(self.page.locator('#'+image)).to_be_visible()
+        expect(self.page.locator('#saved-ai-counts')).to_contain_text('Red Bull: 2')
+        expect(self.page.locator('#saved-items')).to_contain_text('AI detected 2 → You confirmed 1')
+        expect(self.page.locator('#saved-items .correction')).to_have_count(1)

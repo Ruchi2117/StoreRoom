@@ -11,19 +11,21 @@ from starlette.concurrency import run_in_threadpool
 from src.inference import Detector
 from src.inference.config import ROOT
 from src.inference.images import ImageInputError, MAX_BYTES
-from src.inference.results import Prediction
-from src.review import ReviewRequest, ConfirmedReview, ScanHistory
+from src.review import ReviewRequest, ConfirmedReview, ScanHistory, EvidencePrediction
 from src.storage import ScanStore
+from src.evidence import EvidenceError
+from src.inference.images import decode_image
+from src.inference.annotation import save_annotation
 from sqlalchemy.exc import SQLAlchemyError
 
 
-def create_app(*, detector_factory=Detector, output_dir=None, database_path=None):
+def create_app(*, detector_factory=Detector, output_dir=None, database_path=None, scan_storage_dir=None):
     directory = Path(output_dir) if output_dir is not None else ROOT / 'outputs/annotations'
 
     @asynccontextmanager
     async def lifespan(app):
         app.state.detector = await run_in_threadpool(detector_factory, output_dir=directory)
-        store = ScanStore(database_path)
+        store = ScanStore(database_path, scan_storage_dir)
         try:
             await run_in_threadpool(store.initialize)
             app.state.store = store
@@ -32,7 +34,7 @@ def create_app(*, detector_factory=Detector, output_dir=None, database_path=None
             await run_in_threadpool(store.close)
             del app.state.detector
 
-    app = FastAPI(title='StoreRoom', version='0.4', lifespan=lifespan)
+    app = FastAPI(title='StoreRoom', version='0.5', lifespan=lifespan)
     app.mount('/static', StaticFiles(directory=ROOT / 'src/web'), name='static')
 
     @app.get('/', include_in_schema=False)
@@ -54,6 +56,28 @@ def create_app(*, detector_factory=Detector, output_dir=None, database_path=None
             raise HTTPException(404, 'Scan not found')
         return result
 
+    @app.get('/inventory/scans/{scan_id}/original')
+    def original_image(scan_id: UUID, request: Request):
+        path = request.app.state.store.image(scan_id, 'original')
+        if path is None:
+            raise HTTPException(404, 'Original image not found')
+        return FileResponse(path, media_type='image/png' if path.suffix == '.png' else 'image/jpeg')
+
+    @app.get('/inventory/scans/{scan_id}/annotated')
+    def annotated_image(scan_id: UUID, request: Request):
+        path = request.app.state.store.image(scan_id, 'annotated')
+        if path is None:
+            raise HTTPException(404, 'Annotated image not found')
+        return FileResponse(path, media_type='image/jpeg')
+
+    @app.exception_handler(EvidenceError)
+    async def evidence_error(request, error):
+        return JSONResponse(status_code=error.status_code, content={'detail': str(error)})
+
+    @app.exception_handler(OSError)
+    async def image_storage_error(request, error):
+        return JSONResponse(status_code=503, content={'detail': 'Image storage is unavailable. Your scan was not completed; check history before retrying.'})
+
     @app.exception_handler(SQLAlchemyError)
     async def storage_error(request, error):
         # Never expose SQL statements, local database paths or driver messages.
@@ -64,7 +88,7 @@ def create_app(*, detector_factory=Detector, output_dir=None, database_path=None
     def health():
         return {'status': 'ok'}
 
-    @app.post('/predict', response_model=Prediction)
+    @app.post('/predict', response_model=EvidencePrediction)
     async def predict(request: Request, file: Annotated[UploadFile, File()], annotate: bool = True):
         try:
             form = await request.form()
@@ -74,9 +98,15 @@ def create_app(*, detector_factory=Detector, output_dir=None, database_path=None
                 raise HTTPException(400, 'Image filename is missing')
             data = await file.read(MAX_BYTES + 1)
             result = await run_in_threadpool(request.app.state.detector.predict, data, annotate=annotate)
+            # Rendering from saved detections is allowed; never run the model twice.
+            name = result.annotated_image
+            if name is None:
+                name = await run_in_threadpool(save_annotation, decode_image(data), result, directory)
+            annotated_bytes = await run_in_threadpool((directory / name).read_bytes)
+            prediction_id = await run_in_threadpool(request.app.state.store.evidence.stage, data, annotated_bytes, result)
             if result.annotated_image:
                 result = result.model_copy(update={'annotated_image': '/annotations/' + result.annotated_image})
-            return result
+            return EvidencePrediction(**result.model_dump(), prediction_id=prediction_id)
         except ImageInputError as e:
             raise HTTPException(e.status_code, str(e)) from e
         finally:

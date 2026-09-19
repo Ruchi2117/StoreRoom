@@ -13,28 +13,29 @@ from src.api import create_app
 from src.review import ReviewRequest
 from src.storage import ScanStore, Scan, ScanItem, database_path
 from src.inference.config import ROOT
-from ui_support import FixtureDetector
+from ui_support import FixtureDetector, staged_review
 
 
 class ScanHistoryTests(unittest.TestCase):
     def setUp(self):
         self.directory = Path(self.enterContext(tempfile.TemporaryDirectory()))
         self.path = self.directory / 'nested/history.db'
-        self.store = ScanStore(self.path)
+        self.store = ScanStore(self.path, self.directory/"scans")
         self.addCleanup(self.store.close)
         self.store.initialize()
         self.body = {'items': [
             {'class_id': 0, 'class_name': 'Red Bull', 'predicted_count': 4, 'confirmed_count': 3},
             {'class_id': 2, 'class_name': 'Valser Classic', 'predicted_count': 1, 'confirmed_count': 0}]}
+        self.body = staged_review(self.store, self.body['items'])
         self.review = ReviewRequest.model_validate(self.body)
 
     def app(self):
-        return create_app(detector_factory=FixtureDetector, output_dir=self.directory/'images', database_path=self.path)
+        return create_app(detector_factory=FixtureDetector, output_dir=self.directory/'images', database_path=self.path, scan_storage_dir=self.directory/"scans")
 
     def test_initialize_idempotently_and_configure_path(self):
         self.store.initialize()
         self.assertTrue(self.path.is_file())
-        self.assertEqual(set(inspect(self.store.engine).get_table_names()), {'scans', 'scan_items'})
+        self.assertEqual(set(inspect(self.store.engine).get_table_names()), {'scans', 'scan_items', 'scan_detections'})
         with patch.dict('os.environ', {'STOREROOM_DB_PATH': 'data/custom.db'}):
             self.assertEqual(database_path(), ROOT/'data/custom.db')
         self.assertEqual(database_path(self.path), self.path)
@@ -43,13 +44,14 @@ class ScanHistoryTests(unittest.TestCase):
         result = self.store.confirm(self.review)
         with Session(self.store.engine) as session:
             scan = session.get(Scan, str(result.scan_id))
-            self.assertEqual(len(scan.items), 2)
+            self.assertEqual(len(scan.items), 5)
+            self.assertEqual(sum(i.reviewed for i in scan.items), 2)
             self.assertEqual(scan.items[0].scan, scan)
             self.assertEqual(scan.items[0].predicted_count, 4)
             self.assertEqual(scan.items[0].confirmed_count, 3)
             self.assertIsNotNone(scan.created_at)
         self.store.close()
-        reopened = ScanStore(self.path)
+        reopened = ScanStore(self.path, self.directory/"scans")
         try:
             reopened.initialize()
             self.assertEqual(reopened.get(result.scan_id), result)
@@ -69,7 +71,7 @@ class ScanHistoryTests(unittest.TestCase):
                 self.store.confirm(self.review)
         finally:
             event.remove(ScanItem, 'before_insert', fail_second)
-        self.assertEqual(seen, [0, 2])
+        self.assertEqual(seen, [0, 1, 2, 3, 4])
         with Session(self.store.engine) as session:
             self.assertEqual(session.scalar(select(func.count()).select_from(Scan)), 0)
             self.assertEqual(session.scalar(select(func.count()).select_from(ScanItem)), 0)
@@ -89,13 +91,13 @@ class ScanHistoryTests(unittest.TestCase):
 
     def test_history_order_limit_and_empty_scan(self):
         self.assertEqual(self.store.recent(), [])
-        ids = [str(self.store.confirm(self.review).scan_id) for _ in range(3)]
+        ids = [str(self.store.confirm(ReviewRequest.model_validate(staged_review(self.store, self.body['items']))).scan_id) for _ in range(3)]
         with Session(self.store.engine) as session, session.begin():
             for index, id in enumerate(ids):
                 session.get(Scan, id).created_at = datetime(2026, 1, 1) + timedelta(days=index)
         self.assertEqual([str(row.scan_id) for row in self.store.recent(2)], ids[::-1][:2])
         self.assertEqual(self.store.recent(1)[0].item_count, 2)
-        empty = self.store.confirm(ReviewRequest(items=[]))
+        empty = self.store.confirm(ReviewRequest.model_validate(staged_review(self.store, [])))
         self.assertEqual(self.store.recent(1)[0].item_count, 0)
         self.assertEqual(self.store.get(empty.scan_id).items, [])
 
@@ -124,7 +126,7 @@ class ScanHistoryTests(unittest.TestCase):
             self.assertEqual(client.get('/inventory/scans/'+str(uuid4())).status_code, 404)
             self.assertEqual(client.post('/inventory/confirm', json={'items':[{}]}).status_code, 422)
             self.assertEqual(client.get('/inventory/scans').json()['scans'], [])
-            for _ in range(3): client.post('/inventory/confirm', json=self.body)
+            for _ in range(3): client.post('/inventory/confirm', json=staged_review(self.store, self.body['items']))
             self.assertEqual(len(client.get('/inventory/scans?limit=2').json()['scans']), 2)
 
     def test_storage_errors_are_generic_and_no_partial_scan_is_exposed(self):

@@ -13,6 +13,23 @@ from src.inference.images import decode_image
 from src.inference.results import Prediction, Product, Detection
 
 
+def staged_review(store, items):
+    """Known synthetic server prediction; no image-model inference."""
+    config = load_config()
+    by_id = {i['class_id']: i for i in items}
+    products = []
+    for i, name in enumerate(config.names):
+        count = by_id.get(i, {}).get('predicted_count', 0)
+        products.append(Product(class_id=i, class_name=name, product_id=config.product_ids[i],
+            count=count, detections=[Detection(confidence=.8125, bbox=(1.5, 2.5, 20.5, 30.5)) for _ in range(count)]))
+    prediction = Prediction(model_id=config.model_id, checkpoint_sha256=config.checkpoint_sha256,
+        image_width=320, image_height=240, products=products, total_count=sum(p.count for p in products))
+    jpeg = BytesIO()
+    Image.new('RGB', (320, 240), '#edf0e5').save(jpeg, format='JPEG')
+    id = store.evidence.stage(photo_bytes(), jpeg.getvalue(), prediction)
+    return {'prediction_id': str(id), 'items': items}
+
+
 def photo_bytes():
     stream = BytesIO()
     Image.new('RGB', (320, 240), '#edf0e5').save(stream, format='PNG')

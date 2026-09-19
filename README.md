@@ -39,7 +39,7 @@ run `python -m playwright install chromium` in the virtual environment first):
 .\.venv\Scripts\python.exe -c "from src.independent_validation_001_audit import verify_protected; print(verify_protected())"
 ```
 
-Expected: 73 passing tests and 921 protected files verified, plus frozen dataset
+Expected: 85 passing tests and 921 protected files verified, plus frozen dataset
 hash checks. These commands perform no new model inference or training.
 A fresh Git clone lacks the ignored dataset, checkpoints, run files and rendered
 visuals; full artifact tests require restoring them. Read
@@ -78,6 +78,7 @@ StoreRoom is an **AI-assisted retail shelf inventory** project:
 - **v0.2:** reusable inference API.
 - **v0.3:** photo upload → review → count correction → confirmation.
 - **v0.4:** durable local scan history.
+- **v0.5:** scan evidence and original prediction history.
 
 Run the same backend command above, then open [StoreRoom](http://127.0.0.1:8000/).
 The mobile-friendly interface previews the photo, shows annotated detections,
@@ -101,14 +102,32 @@ the app creates the schema at `data/storeroom.db` (ignored by Git). Set
 `STOREROOM_DB_PATH` before starting the same backend to use another local path.
 No separate database server or frontend build is needed.
 
-History stores timestamps and counts, **not historical photos**. This is local v0.4
-persistence, not production infrastructure. Keep the database file to retain history;
+V0.4 introduced timestamps and counts without photos; v0.5 adds evidence below.
+This is local persistence, not production infrastructure. Keep the database file to retain history;
 there is no automated backup, multi-shop support, or inventory synchronization.
 See [database setup and API contracts](docs/V0_4_SCAN_HISTORY.md) and
 [v0.4 results](reports/V0_4_RESULTS.md).
 
-Next product milestone: traceable scan evidence linking retained photos and
-server-side prediction records to human reviews. This has not been implemented.
+## V0.5: scan evidence and prediction history
+
+Historical scans now show the **original uploaded photo**, original AI detections,
+annotated prediction and shopkeeper-confirmed counts. **AI prediction ≠ confirmed
+inventory**: correcting 8 to 7 leaves the stored prediction and its eight boxes intact.
+Corrections are visibly labelled; an unchanged count is not proof of model accuracy.
+
+The server links confirmation to a `prediction_id` returned by `/predict`, checks
+original counts against its own evidence, and stores detections in relational rows.
+Photos live under `data/scans/<scan_id>/`, configurable with `SCAN_STORAGE_DIR`.
+SQLite stores managed relative references rather than image blobs. Keep both the
+database and image tree; older count-only scans remain readable after migration.
+
+No historical scans are automatically deleted. Abandoned drafts also consume local
+storage; deletion/retention management is not implemented. Retained corrections are
+potential future evidence, **not automatically used for training**.
+See [evidence setup, contracts and cleanup limits](docs/V0_5_SCAN_EVIDENCE.md) and
+[v0.5 results](reports/V0_5_RESULTS.md).
+
+Next single milestone: local backup and restore of complete scan evidence.
 
 The remaining sections document the earlier data/runtime milestones. Their rebuild
 commands are historical, not instructions to reopen model experimentation.
@@ -127,7 +146,7 @@ On this existing checkout, run:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-The runtime milestone had 17 tests; the current suite has 73. To regenerate only the smoke export and visual checks:
+The runtime milestone had 17 tests; the current suite has 85. To regenerate only the smoke export and visual checks:
 
 ```powershell
 .\.venv\Scripts\python.exe -m src.convert_smoke

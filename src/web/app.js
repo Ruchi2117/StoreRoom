@@ -174,7 +174,7 @@ $("confirm").addEventListener("click", async () => {
   request = new AbortController(); error(); setBusy(true, "review");
   try {
     const response = await fetch("/inventory/confirm", {method: "POST", signal: request.signal,
-      headers: {"Content-Type": "application/json"}, body: JSON.stringify({items})});
+      headers: {"Content-Type": "application/json"}, body: JSON.stringify({items, prediction_id: prediction.prediction_id})});
     const result = await responseJSON(response, "Couldn’t confirm these counts. Please check them and try again.");
     if (current !== generation) return;
     confirmed = result;
@@ -197,6 +197,7 @@ function renderReceipt(result, target) {
   for (const item of result.items) {
     const row = node("div", "receipt-row"), info = node("div");
     info.append(node("b", "", item.class_name), node("p", "", `AI detected ${item.predicted_count} → You confirmed ${item.confirmed_count}`));
+    if (item.predicted_count !== item.confirmed_count) info.append(node("p", "correction", "Corrected by shopkeeper"));
     row.append(info, node("strong", "", String(item.confirmed_count))); $(target).append(row);
   }
   if (!result.items.length) $(target).append(node("p", "", "No supported products confirmed in this photo."));
@@ -236,6 +237,18 @@ async function openSaved(id) {
     const data = await responseJSON(response, "Couldn’t open this scan. Return to Scan History and try again.");
     if (current !== generation) return;
     renderReceipt(data, "saved-items");
+    $("saved-evidence").hidden = !data.original_prediction;
+    $("legacy-evidence").hidden = Boolean(data.original_prediction);
+    $("saved-ai-counts").replaceChildren();
+    if (data.original_prediction) {
+      $("saved-original").src = data.original_image_url;
+      $("saved-annotated").src = data.annotated_image_url;
+      $("original-missing").hidden = true; $("annotated-missing").hidden = true;
+      $("saved-original").hidden = false; $("saved-annotated").hidden = false;
+      for (const product of data.original_prediction.products) {
+        $("saved-ai-counts").append(node("p", "", `${product.class_name}: ${product.count}`));
+      }
+    }
     $("saved-time").textContent = `Confirmed ${new Date(data.created_at).toLocaleString()}`;
     $("saved-receipt").hidden = false;
   } catch (e) {
@@ -251,3 +264,6 @@ $("return-current").addEventListener("click", () => {
   generation++; request?.abort(); request = null; error(); setBusy(false);
   screen(confirmed ? "confirmed" : prediction ? "review" : "scan");
 });
+for (const [image, message] of [["saved-original", "original-missing"], ["saved-annotated", "annotated-missing"]]) {
+  $(image).addEventListener("error", () => { $(image).hidden = true; $(message).hidden = false; });
+}
