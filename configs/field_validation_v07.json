@@ -1,0 +1,118 @@
+{
+  "protocol_version": "field-counts-v1",
+  "created_at": "2026-09-19T13:47:08.998138+00:00",
+  "model_id": "storeroom-holoselecta-five-v0.1-augmentation-001",
+  "checkpoint": "runs/augmentation_001/weights/best.pt",
+  "checkpoint_sha256": "099b96ecd3cb440991b56c69cd243770ca499b8e246fee994ced3e24b93ec1c4",
+  "inference_config": {
+    "schema_version": 1,
+    "model_id": "storeroom-holoselecta-five-v0.1-augmentation-001",
+    "status": "provisional_validation_best",
+    "independent_validation": "not_verified_no_eligible_unused_scene_groups",
+    "checkpoint": "runs/augmentation_001/weights/best.pt",
+    "checkpoint_sha256": "099b96ecd3cb440991b56c69cd243770ca499b8e246fee994ced3e24b93ec1c4",
+    "class_map": "configs/class_map.json",
+    "identity_level": "source_product_class",
+    "count_meaning": "visible_items",
+    "class_confidence": [
+      0.15,
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "threshold_application": "original_best_class_score_strictly_greater_before_nms",
+    "prediction_arguments": {
+      "imgsz": 320,
+      "device": "cpu",
+      "max_det": 300,
+      "agnostic_nms": false,
+      "augment": false,
+      "verbose": false,
+      "rect": true,
+      "batch": 1,
+      "iou": 0.5
+    },
+    "inference_candidate_floor": 0.15,
+    "usage": "Frozen profile consumed by src.inference.Detector and the shared FastAPI adapter."
+  },
+  "inference_config_sha256": "718e69212b0bba986ee0b8ddf60eb347600f339916ac26662b4e7b6325c24ad9",
+  "class_mapping": [
+    {
+      "class_id": 0,
+      "product_id": "hs_redbull_regular",
+      "name": "Red Bull (source class)",
+      "source_label": "redbull___33__90162909",
+      "source_gtin": "90162909"
+    },
+    {
+      "class_id": 1,
+      "product_id": "hs_knoppers",
+      "name": "Knoppers (source class)",
+      "source_label": "knoppers_riegel____4035800488808",
+      "source_gtin": "4035800488808"
+    },
+    {
+      "class_id": 2,
+      "product_id": "hs_valser_classic",
+      "name": "Valser Classic (source class)",
+      "source_label": "valser_classic__50__76404160",
+      "source_gtin": "76404160"
+    },
+    {
+      "class_id": 3,
+      "product_id": "hs_valser_still",
+      "name": "Valser Still (source class)",
+      "source_label": "valser_still__50__7610335002575",
+      "source_gtin": "7610335002575"
+    },
+    {
+      "class_id": 4,
+      "product_id": "hs_caprisun_multivitamin",
+      "name": "Capri-Sun Multivitamin (source class)",
+      "source_label": "caprisun_multivitamin__20__4000177605004",
+      "source_gtin": "4000177605004"
+    }
+  ],
+  "count_keys": [
+    "red_bull",
+    "knoppers",
+    "valser_classic",
+    "valser_still",
+    "capri_sun_multivitamin"
+  ],
+  "files": {
+    "configs/class_map.json": "dc83ed0a042dafdce5106fd2cddbce49736bee1bf0bb81f693722707a5cd0c9a",
+    "configs/inference_v01.json": "718e69212b0bba986ee0b8ddf60eb347600f339916ac26662b4e7b6325c24ad9",
+    "reports/image_manifest.json": "ea91495961ada0e90461076ee2cd8007fedb1e0ce32f6462de7896fc25da2a69",
+    "src/class_confidence_predictor.py": "ace0c4b0fd8a0d5d9e69a25ca1eb9f3f21ae5067c5cdc375fbaacb9e521fc0b3",
+    "src/counting.py": "1f70996c414e12e43ee0716eeca6cf7a437cc244d9a31e8b10033259f23a63e7",
+    "src/field_cli.py": "24f7927a966a4e840f464c2ea4a5996ed74734840270f66122f4e8805b77bedf",
+    "src/field_cohort.py": "8a4e3a9e8955657be6ac58450b66f801f7a7e429117993ee704805bbb0bcdfe3",
+    "src/field_evaluation.py": "531beb12d22abf5b3f0f016409da907b64cf764070ddcc56add8fdce90726fed",
+    "src/field_metrics.py": "9d34c4cd7c320dfbeac3aac54d54bf9c8d11f72c672cce532c5d1d061a7422b9",
+    "src/inference/__init__.py": "83d61205b978448154a8e24e56e6c966d72afbffbdcb56a6d9ab7887704843fc",
+    "src/inference/annotation.py": "ddf747eb65a8e2fe871094145fe750b90bb7916459a8a132ba4c3fdf60c382d1",
+    "src/inference/config.py": "916fb51531406c1dee7b6d6bdac0586369cdcb7b36edeb4f442ae1288c133632",
+    "src/inference/detector.py": "67fae207e0035e0d54b80e477b5dfa0dcb2be25184a1394ce0f6647c97fd67cd",
+    "src/inference/images.py": "96d5d3fcf863d9970a8d210f6872fd9a8aad41cc7999210689682db089fc83fd",
+    "src/inference/results.py": "c4ee92b35b18a66a041d1077da1af55f9bf0c0170b8bd4b0eb379c72d65e1fbc",
+    "src/train_baseline.py": "670dccd21240d8b7b86149e9a1d01b1ea009536247d59fed94647c7e434247c2"
+  },
+  "runtime": {
+    "python": "3.14.4",
+    "packages": {
+      "ultralytics": "8.4.154",
+      "torch": "2.14.0+cpu",
+      "opencv-python": "5.0.0.93",
+      "numpy": "2.5.2",
+      "Pillow": "12.3.0",
+      "pydantic": "2.13.5"
+    }
+  },
+  "target_images": 30,
+  "target_scenes": 5,
+  "identity_policy": "existing source product classes, not generic brands or verified SKUs",
+  "metric": "absolute image-by-class error / (number of images * 5)",
+  "evaluation_only": true
+}

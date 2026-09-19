@@ -52,3 +52,7 @@ data/backups/
 *.rollback-*
 *.staged-*
 .storeroom-*/
+
+# Independent field cohorts, consent/annotation records and private visual reports
+data/field_v07/
+outputs/field_v07/

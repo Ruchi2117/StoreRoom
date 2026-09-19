@@ -39,7 +39,7 @@ run `python -m playwright install chromium` in the virtual environment first):
 .\.venv\Scripts\python.exe -c "from src.independent_validation_001_audit import verify_protected; print(verify_protected())"
 ```
 
-Expected: 103 passing tests and 921 protected files verified, plus frozen dataset
+Expected: 121 passing tests and 921 protected files verified, plus frozen dataset
 hash checks. These commands perform no new model inference or training.
 A fresh Git clone lacks the ignored dataset, checkpoints, run files and rendered
 visuals; full artifact tests require restoring them. Read
@@ -80,6 +80,7 @@ StoreRoom is an **AI-assisted retail shelf inventory** project:
 - **v0.4:** durable local scan history.
 - **v0.5:** scan evidence and original prediction history.
 - **v0.6:** local backup and restore of confirmed history and evidence.
+- **v0.7:** frozen independent field-validation workflow; real cohort collection pending.
 
 Run the same backend command above, then open [StoreRoom](http://127.0.0.1:8000/).
 The mobile-friendly interface previews the photo, shows annotated detections,
@@ -148,8 +149,24 @@ and datasets are excluded. The original AI prediction and confirmed counts remai
 separate after restore. See [commands, safety and recovery](docs/V0_6_BACKUP_RESTORE.md)
 and [v0.6 results](reports/V0_6_RESULTS.md).
 
-Next single milestone: independent-scene field validation with newly collected,
-consented shelf photos.
+## V0.7: independent field validation
+
+The evaluation-only workflow freezes consented field photos, human count labels,
+scene groups and model/configuration hashes before running the unchanged detector.
+It reports count MAE, exact counts, over/under-counts and per-class/per-scene results.
+There is **no real field cohort yet**, so no field performance or generalization
+claim is made. Synthetic unit fixtures are never reported as field evidence.
+
+```powershell
+.\.venv\Scripts\python.exe -m src.field_cli init
+# Collect new consented images and complete collection.json / ground_truth.json first.
+.\.venv\Scripts\python.exe -m src.field_cli validate
+```
+
+Read the [collection, blind annotation, freeze and evaluation instructions](docs/V0_7_FIELD_VALIDATION.md)
+and [v0.7 status report](reports/V0_7_FIELD_VALIDATION_RESULTS.md). No thresholds,
+NMS, resolution, checkpoint or prior experiments changed. Next milestone: collect
+and independently annotate the first real field cohort, then run this frozen protocol.
 
 The remaining sections document the earlier data/runtime milestones. Their rebuild
 commands are historical, not instructions to reopen model experimentation.
@@ -168,7 +185,7 @@ On this existing checkout, run:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-The runtime milestone had 17 tests; the current suite has 103. To regenerate only the smoke export and visual checks:
+The runtime milestone had 17 tests; the current suite has 121. To regenerate only the smoke export and visual checks:
 
 ```powershell
 .\.venv\Scripts\python.exe -m src.convert_smoke

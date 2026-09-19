@@ -1,0 +1,15 @@
+{
+  "protected_files_verified": 921,
+  "existing_tracked_files_unchanged": 245,
+  "comparison_commit": "96ee105",
+  "frozen_dataset_hashes_verified": true,
+  "checkpoint_sha256": "099b96ecd3cb440991b56c69cd243770ca499b8e246fee994ced3e24b93ec1c4",
+  "protocol_sha256": "4d59789dbc368ac7a9b73f58556108c567a8a87eedbbd40b2bf685029953083d",
+  "inference_config_sha256": "718e69212b0bba986ee0b8ddf60eb347600f339916ac26662b4e7b6325c24ad9",
+  "old_tests_and_fixtures_unchanged": true,
+  "no_retraining": true,
+  "no_real_field_inference": true,
+  "no_test_set_evaluation": true,
+  "field_images_available": 0,
+  "independent_field_groups_available": 0
+}
