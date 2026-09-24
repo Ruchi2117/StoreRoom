@@ -93,6 +93,7 @@ class ScanStore:
             cursor.close()
 
     def initialize(self):
+        from src import catalog  # Register additive tables before creating/migrating metadata.
         self.path.parent.mkdir(parents=True, exist_ok=True)
         with data_lock(self.path, self.evidence.root):
             initialize_schema(self.engine, Base.metadata)
@@ -162,6 +163,9 @@ class ScanStore:
                             scan.detections.append(ScanDetection(class_id=product.class_id,
                                 class_name=product.class_name, confidence=d.confidence,
                                 x1=d.bbox[0], y1=d.bbox[1], x2=d.bbox[2], y2=d.bbox[3]))
+                    session.flush()
+                    from src.catalog import apply_review
+                    apply_review(session, scan)
                     session.flush()
                     result = self.result(scan)
             except Exception:

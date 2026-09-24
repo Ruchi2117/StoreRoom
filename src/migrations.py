@@ -1,8 +1,9 @@
-"""One additive v0.4 -> v0.5 SQLite migration; never rebuild or erase old rows."""
+"""Additive SQLite migrations; never rebuild or erase old scan rows."""
 from sqlalchemy import inspect
 
 
 def initialize_schema(engine, metadata):
+    from src.catalog import seed_catalog
     additions = {
         'scans': {'source_image_path': 'TEXT', 'annotated_image_path': 'TEXT',
                   'prediction_id': 'TEXT', 'model_id': 'TEXT', 'checkpoint_sha256': 'TEXT',
@@ -13,7 +14,7 @@ def initialize_schema(engine, metadata):
         # Explicit SQLite transaction also makes the additive DDL atomic in legacy driver mode.
         connection.exec_driver_sql('BEGIN IMMEDIATE')
         version = connection.exec_driver_sql('PRAGMA user_version').scalar()
-        if version > 1:
+        if version > 2:
             raise RuntimeError('Database schema is newer than this application')
         inspector = inspect(connection)
         for table, columns in additions.items():
@@ -25,4 +26,5 @@ def initialize_schema(engine, metadata):
                         connection.exec_driver_sql(f'ALTER TABLE {table} ADD COLUMN {name} {sql_type}')
         metadata.create_all(connection)
         connection.exec_driver_sql('CREATE UNIQUE INDEX IF NOT EXISTS ix_scan_prediction ON scans (prediction_id)')
-        connection.exec_driver_sql('PRAGMA user_version=1')
+        seed_catalog(connection)
+        connection.exec_driver_sql('PRAGMA user_version=2')

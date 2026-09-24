@@ -1,21 +1,23 @@
 # StoreRoom product roadmap
 
-Status: v0.1 CV experimentation is complete; independent-scene generalization remains unverified. The next engineering milestone is a reusable product-detection inference pipeline/API, not another model experiment. The [v0.1 scope](V0_1_SCOPE.md) and [reuse audit](REUSE_AUDIT.md) govern the first build.
+Status: v0.8 product catalog and inventory bridge is complete. Independent-scene generalization remains unverified; the v0.7 workflow is frozen and awaits real field collection. The model and original experiment history remain unchanged. Current product behavior is documented in [v0.8](docs/V0_8_PRODUCT_CATALOG_INVENTORY.md).
 
 The future customer experience connects a recognized product to its catalog record, the customer's explicit preferences, and alternatives with current offers from nearby participating shops.
 
 ## Milestones
 
-| Version | Scope | Evidence needed to move forward |
+| Version | Delivered scope | Status |
 | --- | --- | --- |
-| v0.1 | Detect, identify and count visible instances of five products in one image | Annotated images, JSON output, detection/counting measurements on separate scenes and documented errors |
-| v0.2 | Small product catalog | Stable product IDs; verified variant/pack identity; sourced product attributes with unknown values represented explicitly |
-| v0.3 | Inventory synchronization | Shop-specific observations and inventory records, timestamps, corrections and reconciliation; repeated scans do not create duplicate stock |
-| v0.4 | Preference-based alternatives | Explicit eligibility rules, explainable ranking, and evaluation using the catalog and inventory foundation from v0.2/v0.3 |
-| v0.5 | Marketplace and local availability | Customer-facing alternatives linked to actual nearby shop offers, current prices and availability checks |
-| v1 | Limited shopkeeper/customer pilot | Measure inventory discrepancies, correction effort, successful substitutions and purchase fulfillment in real shops |
+| v0.1 | Reproducible five-class CV pipeline | Complete; provisional model, generalization unverified |
+| v0.2 | Reusable inference API | Complete |
+| v0.3 | Shopkeeper scan/review/correction | Complete |
+| v0.4 | Durable scan history | Complete |
+| v0.5 | Original photos, predictions and detections as evidence | Complete |
+| v0.6 | Local backup and restore | Complete; schema-2 compatibility added in v0.8 |
+| v0.7 | Independent field-validation workflow | Implemented/frozen; real cohort collection and evaluation pending |
+| v0.8 | Source-product catalog, latest reviewed quantities, search and freshness UI | Complete; one local demo shop, no live availability guarantee |
 
-v0.4 can be developed with clearly marked test inventory. The claim "available nearby" requires actual participating-shop data; a demonstration fixture must not be presented as a live offer.
+The next milestone is a supervised single-shop pilot measuring correction effort, staleness and gaps between visible observations and shop availability. Independent-scene collection/evaluation remains required for broader model claims. The claim "available nearby" requires actual participating-shop/location data; demo quantities must not be presented as live offers.
 
 These milestones define capabilities, not separate services. Add infrastructure only when implementation needs justify it.
 
@@ -50,17 +52,17 @@ The product can surface ingredient/nutrition information and apply explicit rest
 
 Use explanations such as "Excluded because your profile says to avoid ingredient X" or "Matches the recorded ingredient rules; source and verification date shown." Do not present a filter match as medical clearance, including for allergies. Vegetarian, vegan or religious-dietary claims also require appropriate product evidence; uncertain status stays unknown.
 
-## Example acceptance scenarios for v0.4
+## Future preference/alternatives acceptance scenarios
 
 - A known conflicting ingredient excludes a candidate, even if it is the closest or cheapest option.
 - Missing or contradictory required ingredient data yields unknown and excludes the candidate from verified matches.
 - With a hard INR 40 price limit, an INR 42 offer is excluded; without that cap, it may remain eligible.
 - A matching product with stale availability is not counted in "2 alternatives available nearby."
 - An unresolved pack/variant identity does not borrow attributes from another product of the same brand.
-- A scan count is treated as an observation. It does not overwrite reconciled inventory without the v0.3 reconciliation rules.
+- A scan count is treated as an observation. V0.8 replaces only the explicitly reviewed product quantities; multi-shelf reconciliation and sales-adjusted stock remain future work.
 
 These are future evaluation requirements, not implemented features or current safety guarantees.
 
 ## Current engineering commitment
 
-The five-class experimentation phase is closed; see [v0.1 results](reports/V0_1_RESULTS.md). Next, reuse the tested class-confidence gate and counting functions in an image-to-structured-result component before adding a thin API. Preserve stable identity mapping, per-instance evidence and the explicit `visible_items` count meaning so later work has a useful foundation. Catalog enrichment, customer profiles, recommendation code and marketplace integration are outside v0.1.
+The five-class experimentation phase remains closed; see [v0.1 results](reports/V0_1_RESULTS.md). V0.8 adds a small product layer while retaining `visible_items` semantics, immutable AI evidence and the frozen v0.7 protocol. No model tuning, verified SKU/ingredient enrichment, customer profiles, recommendations, marketplace orders or distributed infrastructure were added. Later capabilities need independently collected evidence and an explicit product requirement.

@@ -1,0 +1,34 @@
+{
+  "purpose": "v0.8 product/inventory persistence smoke, not model evaluation",
+  "smoke_root": "data/v0_8_smoke_f3228bd85c33420e8c40261609b61936",
+  "image": "data/yolo_v01/images/val/IMG_20181218_170247.jpg",
+  "predict_requests": 1,
+  "scan_id": "35c57f47-4ed1-4406-a3c7-4d8b428f31a0",
+  "red_bull_predicted": 4,
+  "red_bull_confirmed": 3,
+  "inventory_quantity": 3,
+  "catalog_products": 5,
+  "shop_inventory_rows": 5,
+  "remaining_demo_rows": 2,
+  "source_prediction_unchanged": true,
+  "search_and_selection": true,
+  "timestamps_visible": true,
+  "fresh_status_verified": true,
+  "stale_status_verified": true,
+  "freshness_only_changed_for_restart": {
+    "before_seconds": 3600,
+    "after_seconds": 1
+  },
+  "backup_schema": 2,
+  "reset_restore_inventory_preserved": true,
+  "history_and_evidence_preserved": true,
+  "browser_errors": [],
+  "no_retraining": true,
+  "no_test_set_evaluation": true,
+  "cli_output": {
+    "seed": "Demo quantities seeded only where missing. These are examples, not observed availability.\n",
+    "backup": "Creating and validating consistent backup...\nBackup created successfully: .\\data\\v0_8_smoke_f3228bd85c33420e8c40261609b61936\\backups\\storeroom-backup-20260919T140735Z-a44c782f.zip\nScans: 1\nImages: 2\nSchema: 2\n",
+    "validate": "Validating archive, checksums, database and referenced images...\nBackup validated successfully.\nScans: 1\nImages: 2\nSchema: 2\n",
+    "restore": "Validating and restoring full application data (app must be stopped)...\nRestore completed successfully.\nScans: 1\nImages: 2\nSchema: 2\n"
+  }
+}

@@ -39,7 +39,7 @@ run `python -m playwright install chromium` in the virtual environment first):
 .\.venv\Scripts\python.exe -c "from src.independent_validation_001_audit import verify_protected; print(verify_protected())"
 ```
 
-Expected: 121 passing tests and 921 protected files verified, plus frozen dataset
+Expected: 136 passing tests and 921 protected files verified, plus frozen dataset
 hash checks. These commands perform no new model inference or training.
 A fresh Git clone lacks the ignored dataset, checkpoints, run files and rendered
 visuals; full artifact tests require restoring them. Read
@@ -81,6 +81,7 @@ StoreRoom is an **AI-assisted retail shelf inventory** project:
 - **v0.5:** scan evidence and original prediction history.
 - **v0.6:** local backup and restore of confirmed history and evidence.
 - **v0.7:** frozen independent field-validation workflow; real cohort collection pending.
+- **v0.8:** source-class catalog, confirmed inventory bridge and customer search prototype.
 
 Run the same backend command above, then open [StoreRoom](http://127.0.0.1:8000/).
 The mobile-friendly interface previews the photo, shows annotated detections,
@@ -168,6 +169,32 @@ and [v0.7 status report](reports/V0_7_FIELD_VALIDATION_RESULTS.md). No threshold
 NMS, resolution, checkpoint or prior experiments changed. Next milestone: collect
 and independently annotate the first real field cohort, then run this frozen protocol.
 
+## V0.8: product catalog and inventory
+
+New confirmations update the demo shop's latest **reviewed visible count** per
+product while preserving original AI evidence. Stable catalog IDs are separate
+from quantities; package sizes remain unverified/null. This is not total shop
+stock, sales-adjusted stock or guaranteed availability.
+
+Run the existing backend, then open [customer search](http://127.0.0.1:8000/customer).
+Search by product/brand and select a product to see its quantity, last-confirmed
+time and fresh/stale status. The default freshness window is one hour, configured
+by `INVENTORY_FRESHNESS_SECONDS`. To demonstrate quantities without a new scan:
+
+```powershell
+.\.venv\Scripts\python.exe -m src.catalog_cli seed-demo
+```
+
+The optional seed uses clearly labelled example quantities and never overwrites
+confirmed data. Startup seeds metadata only. New APIs: `GET /products/search?q=`,
+`GET /inventory` and `GET /inventory/{product_id}` with shop/availability filters.
+An additive schema-2 migration and updated backup reader preserve previous history
+and support schema-1 backups. The frozen v0.7 workflow is unchanged.
+
+See [catalog, quantity semantics, API and demo setup](docs/V0_8_PRODUCT_CATALOG_INVENTORY.md)
+and [v0.8 verification](reports/V0_8_RESULTS.md). Next: a supervised single-shop
+pilot; real independent field validation remains pending before broader ML claims.
+
 The remaining sections document the earlier data/runtime milestones. Their rebuild
 commands are historical, not instructions to reopen model experimentation.
 
@@ -185,7 +212,7 @@ On this existing checkout, run:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-The runtime milestone had 17 tests; the current suite has 121. To regenerate only the smoke export and visual checks:
+The runtime milestone had 17 tests; the current suite has 136. To regenerate only the smoke export and visual checks:
 
 ```powershell
 .\.venv\Scripts\python.exe -m src.convert_smoke

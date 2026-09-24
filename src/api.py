@@ -2,7 +2,7 @@
 from contextlib import asynccontextmanager
 from pathlib import Path
 import re
-from typing import Annotated
+from typing import Annotated, Literal
 from uuid import UUID
 from fastapi import FastAPI, File, UploadFile, HTTPException, Request, Query
 from fastapi.responses import FileResponse, JSONResponse
@@ -18,9 +18,10 @@ from src.inference.images import decode_image
 from src.inference.annotation import save_annotation
 from sqlalchemy.exc import SQLAlchemyError
 from src.data_lock import data_lock, DataBusyError
+from src.catalog import CatalogStore
 
 
-def create_app(*, detector_factory=Detector, output_dir=None, database_path=None, scan_storage_dir=None):
+def create_app(*, detector_factory=Detector, output_dir=None, database_path=None, scan_storage_dir=None, freshness_seconds=None):
     directory = Path(output_dir) if output_dir is not None else ROOT / 'outputs/annotations'
 
     @asynccontextmanager
@@ -31,18 +32,27 @@ def create_app(*, detector_factory=Detector, output_dir=None, database_path=None
                 await run_in_threadpool(store.initialize)
                 app.state.detector = await run_in_threadpool(detector_factory, output_dir=directory)
                 app.state.store = store
+                app.state.catalog = CatalogStore(store,freshness_seconds)
                 yield
             finally:
                 await run_in_threadpool(store.close)
                 if hasattr(app.state, 'detector'):
                     del app.state.detector
 
-    app = FastAPI(title='StoreRoom', version='0.6', lifespan=lifespan)
+    app = FastAPI(title='StoreRoom', version='0.8', lifespan=lifespan)
     app.mount('/static', StaticFiles(directory=ROOT / 'src/web'), name='static')
 
     @app.get('/', include_in_schema=False)
     def shopkeeper():
         return FileResponse(ROOT / 'src/web/index.html', headers={'Cache-Control': 'no-cache'})
+
+    @app.get('/customer', include_in_schema=False)
+    def customer():
+        return FileResponse(ROOT/'src/web/customer.html',headers={'Cache-Control':'no-cache'})
+
+    @app.get('/products/search')
+    def products(request: Request, q: Annotated[str,Query(max_length=100)]=''):
+        return {'products':request.app.state.catalog.search(q)}
 
     @app.post('/inventory/confirm', response_model=ConfirmedReview)
     def confirm(review: ReviewRequest, request: Request):
@@ -72,6 +82,22 @@ def create_app(*, detector_factory=Detector, output_dir=None, database_path=None
         if path is None:
             raise HTTPException(404, 'Annotated image not found')
         return FileResponse(path, media_type='image/jpeg')
+
+    @app.get('/inventory')
+    def inventory(request: Request, product_id: Annotated[str | None,Query(max_length=100)]=None,
+                  shop_id: Annotated[str | None,Query(max_length=100)]=None,
+                  availability: Literal['available','unavailable','stale','demo'] | None=None):
+        return {'inventory':request.app.state.catalog.inventory(product_id,shop_id,availability)}
+
+    # Register after existing /inventory/scans routes to preserve their contracts.
+    @app.get('/inventory/{product_id}')
+    def product_inventory(product_id: str, request: Request, shop_id: Annotated[str | None,Query(max_length=100)]=None,
+                          availability: Literal['available','unavailable','stale','demo'] | None=None):
+        catalog = request.app.state.catalog
+        product = catalog.product(product_id)
+        if product is None:
+            raise HTTPException(404,'Product not found')
+        return {'product':product,'inventory':catalog.inventory(product_id,shop_id,availability)}
 
     @app.exception_handler(EvidenceError)
     async def evidence_error(request, error):

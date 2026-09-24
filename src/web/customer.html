@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StoreRoom · Find a product</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/customer.css">
+  <script src="/static/customer.js" defer></script>
+</head>
+<body>
+  <header class="top"><a class="brand" href="/customer"><span class="mark">▤</span> StoreRoom</a><a class="secondary customer-link" href="/">Shopkeeper scan</a></header>
+  <main class="customer-main">
+    <div class="intro"><p class="eyebrow">A first look at the local shelf</p><h1>Find a product.<br>Check its latest count.</h1><p>Browse five supported products and see what was last confirmed at the demo shop.</p></div>
+    <p class="notice">Local prototype · Counts cover visible packages in a reviewed photo. They are not a guarantee of current availability. There are no orders or reservations here.</p>
+    <form id="search-form" class="card search-form"><label for="query">Search by product or brand</label><div class="search-controls"><input id="query" name="q" type="search" maxlength="100" placeholder="Try Red Bull or Valser" autocomplete="off"><button class="primary" type="submit">Search</button></div></form>
+    <div id="customer-error" class="error" role="alert" hidden></div>
+    <p id="search-status" class="muted" role="status"></p>
+    <section aria-label="Matching products"><div id="product-results" class="product-results"></div></section>
+    <section id="product-detail" class="card product-detail" aria-labelledby="detail-title" hidden>
+      <div class="section-heading"><div><p class="eyebrow">Latest recorded quantities</p><h2 id="detail-title" tabindex="-1"></h2><p id="product-meta" class="muted"></p></div><button id="refresh-inventory" class="secondary" type="button">Refresh counts</button></div>
+      <div id="inventory-results" aria-live="polite"></div>
+      <p class="muted">A stale count needs another shopkeeper check. Hidden stock and sales since the photo are unknown.</p>
+    </section>
+    <footer>Five supported product classes · Local demo only<span>Human-confirmed observations, not live stock.</span></footer>
+  </main>
+</body>
+</html>
