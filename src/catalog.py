@@ -3,8 +3,8 @@ from datetime import datetime, timezone
 import os
 import re
 import unicodedata
-from sqlalchemy import Boolean, CheckConstraint, DateTime, ForeignKey, Integer, String, select
-from sqlalchemy.orm import Mapped, Session, mapped_column
+from sqlalchemy import Boolean, CheckConstraint, DateTime, ForeignKey, Integer, String, JSON, select
+from sqlalchemy.orm import Mapped, Session, mapped_column, object_session
 from src.storage import Base
 from src.inference.config import load_config
 from src.evidence import EvidenceError
@@ -43,6 +43,29 @@ class Shop(Base):
     is_demo: Mapped[bool] = mapped_column(Boolean, default=True)
     created_at: Mapped[datetime] = mapped_column(DateTime)
     updated_at: Mapped[datetime] = mapped_column(DateTime)
+
+
+class ProductMetadata(Base):
+    """Optional sourced declarations; no row means all additional facts are unknown."""
+    __tablename__ = 'product_metadata'
+    product_id: Mapped[str] = mapped_column(ForeignKey('products.product_id', ondelete='RESTRICT'), primary_key=True)
+    facts: Mapped[dict] = mapped_column(JSON)
+    source: Mapped[str] = mapped_column(String)
+    updated_at: Mapped[datetime] = mapped_column(DateTime)
+
+
+class ProductAlternative(Base):
+    __tablename__ = 'product_alternatives'
+    __table_args__ = (CheckConstraint('source_id <> target_id'),
+        CheckConstraint("typeof(priority) = 'integer' AND priority >= 0"),
+        CheckConstraint("relationship_type IN ('related_variant', 'substitute')"),)
+    source_id: Mapped[str] = mapped_column(ForeignKey('products.product_id', ondelete='RESTRICT'), primary_key=True)
+    target_id: Mapped[str] = mapped_column(ForeignKey('products.product_id', ondelete='RESTRICT'), primary_key=True)
+    relationship_type: Mapped[str] = mapped_column(String)
+    priority: Mapped[int] = mapped_column(Integer)
+    reason: Mapped[str] = mapped_column(String)
+    is_demo: Mapped[bool] = mapped_column(Boolean, default=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime)
 
 
 class ShopInventory(Base):
@@ -106,10 +129,12 @@ def iso(value):
 
 
 def product_json(product):
+    from src.alternatives import metadata
+    _, information = metadata(object_session(product), product.product_id)
     return {key:getattr(product,key) for key in ('product_id','class_id','name','normalized_name','brand',
         'category','variant','package_size','unit','image_reference','metadata_source')} | {
         'created_at':iso(product.created_at),'updated_at':iso(product.updated_at),
-        'identity_level':'source_product_class','catalog_sku_verified':False}
+        'identity_level':'source_product_class','catalog_sku_verified':False, 'metadata':information}
 
 
 def freshness_seconds():

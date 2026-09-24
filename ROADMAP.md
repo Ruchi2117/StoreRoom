@@ -1,6 +1,6 @@
 # StoreRoom product roadmap
 
-Status: v0.8 product catalog and inventory bridge is complete. Independent-scene generalization remains unverified; the v0.7 workflow is frozen and awaits real field collection. The model and original experiment history remain unchanged. Current product behavior is documented in [v0.8](docs/V0_8_PRODUCT_CATALOG_INVENTORY.md).
+Status: v0.9 deterministic alternatives and customer discovery is complete. Independent-scene generalization remains unverified; the v0.7 workflow is frozen and awaits real field collection. The model and original experiment history remain unchanged. Current discovery behavior is documented in [v0.9](docs/V0_9_ALTERNATIVES.md).
 
 The future customer experience connects a recognized product to its catalog record, the customer's explicit preferences, and alternatives with current offers from nearby participating shops.
 
@@ -16,8 +16,9 @@ The future customer experience connects a recognized product to its catalog reco
 | v0.6 | Local backup and restore | Complete; schema-2 compatibility added in v0.8 |
 | v0.7 | Independent field-validation workflow | Implemented/frozen; real cohort collection and evaluation pending |
 | v0.8 | Source-product catalog, latest reviewed quantities, search and freshness UI | Complete; one local demo shop, no live availability guarantee |
+| v0.9 | Explicit relationships, request-level preference filters and inventory-aware discovery | Complete; opt-in demo Valser pair, no verified ingredient enrichment; schema-1/2/3 backup compatibility |
 
-The next milestone is a supervised single-shop pilot measuring correction effort, staleness and gaps between visible observations and shop availability. Independent-scene collection/evaluation remains required for broader model claims. The claim "available nearby" requires actual participating-shop/location data; demo quantities must not be presented as live offers.
+The next milestone is a basic order-request flow: product and quantity request, followed by shopkeeper confirmation of current availability before acceptance. Keep the initial MVP local and supervised; pause further recommendation intelligence. A single-shop pilot should measure correction effort, staleness and gaps between visible observations and shop availability. Independent-scene collection/evaluation remains required for broader model claims. The claim "available nearby" requires actual participating-shop/location data; demo quantities must not be presented as live offers.
 
 These milestones define capabilities, not separate services. Add infrastructure only when implementation needs justify it.
 
@@ -61,8 +62,8 @@ Use explanations such as "Excluded because your profile says to avoid ingredient
 - An unresolved pack/variant identity does not borrow attributes from another product of the same brand.
 - A scan count is treated as an observation. V0.8 replaces only the explicitly reviewed product quantities; multi-shelf reconciliation and sales-adjusted stock remain future work.
 
-These are future evaluation requirements, not implemented features or current safety guarantees.
+V0.9 implements explicit relationships, conservative request-level filters and freshness-aware ordering. Prices, distance, exact SKU verification and complete ingredient interpretation remain future requirements, not current guarantees.
 
 ## Current engineering commitment
 
-The five-class experimentation phase remains closed; see [v0.1 results](reports/V0_1_RESULTS.md). V0.8 adds a small product layer while retaining `visible_items` semantics, immutable AI evidence and the frozen v0.7 protocol. No model tuning, verified SKU/ingredient enrichment, customer profiles, recommendations, marketplace orders or distributed infrastructure were added. Later capabilities need independently collected evidence and an explicit product requirement.
+The five-class experimentation phase remains closed; see [v0.1 results](reports/V0_1_RESULTS.md). V0.9 adds explicit catalog alternatives while retaining `visible_items` semantics, immutable AI evidence and the frozen v0.7 protocol. No model tuning, verified SKU/ingredient enrichment, persisted customer profiles, learned recommendations, marketplace orders or distributed infrastructure were added. Later capabilities need independently collected evidence and an explicit product requirement.

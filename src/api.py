@@ -19,6 +19,7 @@ from src.inference.annotation import save_annotation
 from sqlalchemy.exc import SQLAlchemyError
 from src.data_lock import data_lock, DataBusyError
 from src.catalog import CatalogStore
+from src.alternatives import AlternativeStore, Preferences
 
 
 def create_app(*, detector_factory=Detector, output_dir=None, database_path=None, scan_storage_dir=None, freshness_seconds=None):
@@ -39,7 +40,7 @@ def create_app(*, detector_factory=Detector, output_dir=None, database_path=None
                 if hasattr(app.state, 'detector'):
                     del app.state.detector
 
-    app = FastAPI(title='StoreRoom', version='0.8', lifespan=lifespan)
+    app = FastAPI(title='StoreRoom', version='0.9', lifespan=lifespan)
     app.mount('/static', StaticFiles(directory=ROOT / 'src/web'), name='static')
 
     @app.get('/', include_in_schema=False)
@@ -53,6 +54,18 @@ def create_app(*, detector_factory=Detector, output_dir=None, database_path=None
     @app.get('/products/search')
     def products(request: Request, q: Annotated[str,Query(max_length=100)]=''):
         return {'products':request.app.state.catalog.search(q)}
+
+    @app.get('/products/{product_id}/alternatives')
+    def alternatives(product_id: str, request: Request):
+        return preferred_alternatives(product_id, Preferences(), request)
+
+    @app.post('/products/{product_id}/alternatives')
+    def preferred_alternatives(product_id: str, preferences: Preferences, request: Request):
+        result = AlternativeStore(request.app.state.catalog).find(product_id, preferences)
+        if result is None:
+            raise HTTPException(404, 'Product not found')
+        # Preference bodies are transient; do not cache them or place them in URLs.
+        return JSONResponse(result, headers={'Cache-Control': 'no-store'})
 
     @app.post('/inventory/confirm', response_model=ConfirmedReview)
     def confirm(review: ReviewRequest, request: Request):

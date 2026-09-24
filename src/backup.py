@@ -39,14 +39,16 @@ def inventory(database, scans):
     try:
         with closing(connect_readonly(database)) as connection:
             schema = connection.execute('PRAGMA user_version').fetchone()[0]
-            if schema not in (1,2):
-                raise BackupError('Only migrated schema versions 1 and 2 are supported')
+            if schema not in (1,2,3):
+                raise BackupError('Only migrated schema versions 1, 2 and 3 are supported')
             if connection.execute('PRAGMA integrity_check').fetchall() != [('ok',)]:
                 raise BackupError('Database integrity check failed')
             if connection.execute('PRAGMA foreign_key_check').fetchall():
                 raise BackupError('Database has orphaned records')
             objects = connection.execute("SELECT name,type FROM sqlite_master WHERE name NOT LIKE 'sqlite_%'").fetchall()
             tables = {'scans','scan_items','scan_detections'} if schema==1 else set(Base.metadata.tables)
+            if schema==2:
+                tables -= {'product_metadata','product_alternatives'}
             if {n for n, t in objects if t == 'table'} != tables or any(t in {'view', 'trigger'} for _, t in objects):
                 raise BackupError('Unexpected database schema')
             for name, table in Base.metadata.tables.items():
@@ -56,7 +58,7 @@ def inventory(database, scans):
                 if columns != {c.name for c in table.columns}:
                     raise BackupError('Incompatible database columns: ' + name)
             rows = connection.execute('SELECT id,prediction_id,source_image_path,annotated_image_path FROM scans ORDER BY id').fetchall()
-            if schema==2:
+            if schema>=2:
                 invalid = connection.execute('''SELECT i.product_id FROM shop_inventory i
                     LEFT JOIN scan_items s ON s.scan_id=i.source_scan_id AND s.product_id=i.product_id
                     WHERE i.is_demo=0 AND (s.id IS NULL OR s.reviewed<>1 OR s.confirmed_count<>i.quantity)''').fetchall()
@@ -124,7 +126,7 @@ def unpack_validated(archive, target):
             if zipped.getinfo('manifest.json').file_size > 32 * 1024**2:
                 raise BackupError('Manifest is too large')
             manifest = json.loads(zipped.read('manifest.json'))
-            if manifest['format_version'] != 1 or manifest['schema_version'] not in (1,2):
+            if manifest['format_version'] != 1 or manifest['schema_version'] not in (1,2,3):
                 raise BackupError('Unsupported backup or database version')
             datetime.fromisoformat(manifest['created_at'])
             files = manifest['files']
@@ -196,7 +198,7 @@ class BackupService:
             payload = {'database.sqlite': stage/'database.sqlite', **{name: stage/name for name in images}}
             with closing(connect_readonly(stage/'database.sqlite')) as connection:
                 schema = connection.execute('PRAGMA user_version').fetchone()[0]
-            manifest = {'format_version': 1, 'application_version': '0.8', 'schema_version': schema,
+            manifest = {'format_version': 1, 'application_version': '0.9', 'schema_version': schema,
                 'created_at': datetime.now(timezone.utc).isoformat(), 'scan_count': count,
                 'image_count': len(images), 'files': {name: {'sha256': checksum(path), 'size': path.stat().st_size}
                 for name, path in payload.items()}}

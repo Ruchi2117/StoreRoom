@@ -14,7 +14,7 @@ def initialize_schema(engine, metadata):
         # Explicit SQLite transaction also makes the additive DDL atomic in legacy driver mode.
         connection.exec_driver_sql('BEGIN IMMEDIATE')
         version = connection.exec_driver_sql('PRAGMA user_version').scalar()
-        if version > 2:
+        if version > 3:
             raise RuntimeError('Database schema is newer than this application')
         inspector = inspect(connection)
         for table, columns in additions.items():
@@ -27,4 +27,4 @@ def initialize_schema(engine, metadata):
         metadata.create_all(connection)
         connection.exec_driver_sql('CREATE UNIQUE INDEX IF NOT EXISTS ix_scan_prediction ON scans (prediction_id)')
         seed_catalog(connection)
-        connection.exec_driver_sql('PRAGMA user_version=2')
+        connection.exec_driver_sql('PRAGMA user_version=3')

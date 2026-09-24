@@ -20,6 +20,20 @@
       <div class="section-heading"><div><p class="eyebrow">Latest recorded quantities</p><h2 id="detail-title" tabindex="-1"></h2><p id="product-meta" class="muted"></p></div><button id="refresh-inventory" class="secondary" type="button">Refresh counts</button></div>
       <div id="inventory-results" aria-live="polite"></div>
       <p class="muted">A stale count needs another shopkeeper check. Hidden stock and sales since the photo are unknown.</p>
+      <section id="alternatives-panel" aria-labelledby="alternatives-title" hidden>
+        <h2 id="alternatives-title">Explore related products</h2>
+        <p>No recent positive count for your selection. Related products may differ in type or ingredients.</p>
+        <form id="preferences-form" class="preferences">
+          <label for="diet">Dietary preference<select id="diet"><option value="">No dietary filter</option><option value="vegetarian">Vegetarian</option><option value="vegan">Vegan</option></select></label>
+          <label for="avoid-allergens">Avoid allergens (comma separated)<input id="avoid-allergens" maxlength="300" placeholder="e.g. milk" autocomplete="off"></label>
+          <label for="avoid-ingredients">Avoid ingredients (comma separated)<input id="avoid-ingredients" maxlength="300" placeholder="e.g. caffeine" autocomplete="off"></label>
+          <label><input id="same-category" type="checkbox"> Same known category</label>
+          <label><input id="same-variant" type="checkbox"> Same named variant</label>
+          <button class="secondary" type="submit">Apply preferences</button>
+        </form>
+        <p class="muted">Filters use explicit catalog declarations. Missing information excludes a suggestion. Exact names only; synonyms and medical suitability are not assessed. Preferences stay in this page and are not saved.</p>
+        <div id="alternatives-results" aria-live="polite"></div>
+      </section>
     </section>
     <footer>Five supported product classes · Local demo only<span>Human-confirmed observations, not live stock.</span></footer>
   </main>

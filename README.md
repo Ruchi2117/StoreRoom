@@ -82,6 +82,26 @@ StoreRoom is an **AI-assisted retail shelf inventory** project:
 - **v0.6:** local backup and restore of confirmed history and evidence.
 - **v0.7:** frozen independent field-validation workflow; real cohort collection pending.
 - **v0.8:** source-class catalog, confirmed inventory bridge and customer search prototype.
+- **v0.9:** explicit product alternatives, transient preferences and freshness-aware discovery.
+
+## V0.9: product alternatives
+
+The customer page now shows explicitly related products when the selected product
+has no recent positive count. Unknown metadata cannot pass restrictive preference
+filters. The only opt-in demo relationships are Valser Classic ↔ Valser Still;
+other products honestly return no alternatives. No ingredients or dietary claims
+were invented, and demo relationships do not imply equivalent products.
+
+```powershell
+.\.venv\Scripts\python.exe -m src.catalog_cli seed-alternatives-demo
+```
+
+Use the existing server and `/customer`. See the [V0.9 guide](docs/V0_9_ALTERNATIVES.md)
+for matching rules, API examples and schema-1/2/3 backup compatibility, and the
+[verification report](reports/V0_9_RESULTS.md) for test evidence.
+Next: a basic order-request flow with shopkeeper availability confirmation.
+
+### Existing shopkeeper workflow
 
 Run the same backend command above, then open [StoreRoom](http://127.0.0.1:8000/).
 The mobile-friendly interface previews the photo, shows annotated detections,

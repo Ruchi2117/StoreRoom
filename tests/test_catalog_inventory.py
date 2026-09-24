@@ -181,12 +181,12 @@ class CatalogInventoryTests(unittest.TestCase):
             self.assertEqual(client.get('/inventory/scans/'+str(saved.scan_id)).status_code,200)
             self.assertEqual(len(client.get('/inventory/scans').json()['scans']),1)
 
-    def test_schema_two_backup_roundtrip_preserves_catalog_inventory_evidence(self):
+    def test_current_schema_backup_roundtrip_preserves_catalog_inventory_evidence(self):
         self.catalog.seed_demo()
         saved = self.confirm()
         before = self.catalog.inventory(now=saved.created_at)
         archive = self.root/'backup.zip'
-        self.assertEqual(BackupService(self.store.path,self.store.evidence.root).create_backup(archive)['schema_version'],2)
+        self.assertEqual(BackupService(self.store.path,self.store.evidence.root).create_backup(archive)['schema_version'],3)
         self.store.close()
         RestoreService(self.store.path,self.store.evidence.root).restore_backup(archive)
         self.store.initialize()
@@ -198,7 +198,7 @@ class CatalogInventoryTests(unittest.TestCase):
         self.store.close()
         # A temporary fixture representing the previous three-table schema.
         with closing(sqlite3.connect(self.store.path)) as connection:
-            for name in ('shop_inventory','products','shops'):
+            for name in ('product_alternatives','product_metadata','shop_inventory','products','shops'):
                 connection.execute('DROP TABLE '+name)
             connection.execute('PRAGMA user_version=1')
             connection.commit()

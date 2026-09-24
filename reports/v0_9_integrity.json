@@ -1,0 +1,12 @@
+{
+  "protected_files_verified": 921,
+  "prior_tracked_artifacts_unchanged": 165,
+  "comparison_commit": "ec7a3dd",
+  "frozen_dataset_hashes_verified": true,
+  "checkpoint_sha256": "099b96ecd3cb440991b56c69cd243770ca499b8e246fee994ced3e24b93ec1c4",
+  "v0_7_protocol_sha256": "4d59789dbc368ac7a9b73f58556108c567a8a87eedbbd40b2bf685029953083d",
+  "v0_7_workflow_and_fixtures_unchanged": true,
+  "inference_configuration_unchanged": true,
+  "no_retraining": true,
+  "no_test_set_evaluation": true
+}

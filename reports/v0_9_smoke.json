@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "browser": "Chromium",
+  "data": "temporary synthetic reviewed counts; demo Valser relationships",
+  "checks": [
+    "search",
+    "fresh count",
+    "stale requested product",
+    "related variant reason",
+    "demo label",
+    "fresh alternative timestamp",
+    "conflicting variant excluded",
+    "unknown vegan metadata excluded",
+    "stale alternative label",
+    "mobile overflow",
+    "no Red Bull alternatives",
+    "no JavaScript errors"
+  ],
+  "model_inference": false
+}

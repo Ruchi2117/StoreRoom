@@ -22,3 +22,11 @@
 .status-badge.demo { background: #eee8f6; color: #58436d; }
 @media(max-width:760px) { .product-results { grid-template-columns: 1fr 1fr; } .product-choice { padding: 18px; } .product-detail { padding: 20px; } .search-form { padding: 18px; } }
 @media(max-width:400px) { .product-results { grid-template-columns: 1fr; } .search-controls { flex-direction: column; } }
+.preferences { display:grid; gap:12px; margin:20px 0; }
+.preferences label { display:grid; gap:6px; }
+.preferences label:has(input[type="checkbox"]) { display:flex; align-items:center; }
+.preferences input:not([type="checkbox"]), .preferences select { width:100%; min-width:0; padding:10px; border:1px solid #cbd5d1; border-radius:8px; background:white; color:#193b30; }
+.preferences input[type="checkbox"] { width:18px; height:18px; }
+.alternative-card { border-top:1px solid #cbd5d1; padding:20px 0; overflow-wrap:anywhere; }
+.alternative-inventory { background:#f4f7f5; padding:14px; margin:12px 0; border-radius:8px; }
+#alternatives-panel { border-top:2px solid #dbe5df; margin-top:24px; padding-top:18px; }
