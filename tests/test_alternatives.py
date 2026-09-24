@@ -144,13 +144,13 @@ class AlternativeTests(unittest.TestCase):
                 self.assertEqual(client.post(path,json=bad).status_code,422)
             self.assertIsNone(client.get('/products/search?q=valser').json()['products'][0]['metadata']['facts']['ingredients'])
 
-    def test_schema_three_backup_preserves_relationships_and_metadata(self):
+    def test_current_schema_backup_preserves_relationships_and_metadata(self):
         self.alts.seed_demo()
         self.facts(self.still,{'ingredients':['fixture only']})
         self.confirm(3,2)
         before=self.alts.find(self.classic)['alternatives'][0]
         archive=self.root/'snapshot.zip'
-        self.assertEqual(BackupService(self.store.path,self.store.evidence.root).create_backup(archive)['schema_version'],3)
+        self.assertEqual(BackupService(self.store.path,self.store.evidence.root).create_backup(archive)['schema_version'],4)
         self.store.close()
         RestoreService(self.store.path,self.store.evidence.root).restore_backup(archive)
         self.store.initialize()
@@ -164,6 +164,8 @@ class AlternativeTests(unittest.TestCase):
         before=self.catalog.search()
         self.store.close()
         with closing(sqlite3.connect(self.store.path)) as connection:
+            for name in ('order_items','orders','demo_customers'):
+                connection.execute('DROP TABLE '+name)
             connection.execute('DROP TABLE product_alternatives')
             connection.execute('DROP TABLE product_metadata')
             connection.execute('PRAGMA user_version=2')

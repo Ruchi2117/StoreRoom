@@ -180,16 +180,22 @@ class CatalogStore:
             query = query.order_by(CatalogProduct.normalized_name, Shop.shop_id)
             result = []
             for row, product, shop in session.execute(query):
+                from src.orders import reserved_quantity
+                reserved = reserved_quantity(session,shop.shop_id,product.product_id)
+                available_quantity = max(0,row.quantity-reserved)
                 age = (now-row.last_confirmed_at.replace(tzinfo=timezone.utc)).total_seconds() if row.last_confirmed_at else None
                 fresh = age is not None and 0 <= age <= self.fresh_seconds
                 status = 'DEMO' if row.is_demo else ('FRESH' if fresh else 'STALE')
-                available = not row.is_demo and fresh and row.quantity > 0
-                match = {'available':available,'unavailable':not row.is_demo and fresh and row.quantity==0,
+                available = not row.is_demo and fresh and available_quantity > 0
+                match = {'available':available,'unavailable':not row.is_demo and fresh and available_quantity==0,
                          'stale':status=='STALE','demo':row.is_demo}
                 if availability and not match[availability]:
                     continue
                 result.append({'shop_id':row.shop_id,'shop_name':shop.name,'shop_is_demo':shop.is_demo,
                     'product':product_json(product),'product_id':row.product_id,'quantity':row.quantity,
+                    'reserved_quantity':reserved,'available_quantity':available_quantity,
+                    'reservation_shortfall':max(0,reserved-row.quantity),
+                    'availability_meaning':'reviewed_visible_packages_minus_accepted_reservations',
                     'quantity_meaning':'latest_reviewed_visible_packages','last_confirmed_at':iso(row.last_confirmed_at),
                     'source_scan_id':row.source_scan_id,'updated_at':iso(row.updated_at),'is_demo':row.is_demo,
                     'freshness':status,'freshness_seconds':self.fresh_seconds,'age_seconds':age,

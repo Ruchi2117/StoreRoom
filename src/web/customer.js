@@ -1,6 +1,7 @@
 "use strict";
 const el = id => document.getElementById(id);
 let searchVersion = 0, detailVersion = 0, selected = null;
+let requestBusy = false;
 function node(tag, className, text) {
   const result = document.createElement(tag);
   if (className) result.className = className;
@@ -41,6 +42,7 @@ async function search(event) {
   }
 }
 async function openProduct(id, focus=false) {
+  if (requestBusy) return;
   selected = id;
   const version = ++detailVersion;
   showError();
@@ -62,7 +64,7 @@ async function openProduct(id, focus=false) {
       const row = node("article", "inventory-row"); row.dataset.freshness = item.freshness;
       row.append(node("h3", "", item.shop_name+(item.shop_is_demo ? " · local demo" : "")));
       let label = item.is_demo ? "Demo quantities — examples only" : item.freshness === "STALE" ? "Stale inventory — please recheck" :
-        item.quantity > 0 ? "Recently confirmed — check with the shop" : "Zero visible units last confirmed";
+        item.available_quantity > 0 ? "Recently confirmed — check with the shop" : "No unreserved units recorded";
       row.append(node("span", "status-badge "+(item.is_demo ? "demo" : item.freshness.toLowerCase()), label));
       const quantity = node("p", "quantity", String(item.quantity)+" ");
       quantity.append(node("small", "", item.is_demo ? "example units" : "visible units confirmed")); row.append(quantity);
@@ -70,6 +72,10 @@ async function openProduct(id, focus=false) {
       if (item.last_confirmed_at) time.dateTime = item.last_confirmed_at;
       row.append(time);
       row.append(node("p", "muted", item.is_demo ? "Not observed shop stock." : `Freshness window: ${item.freshness_seconds} seconds. Current availability is not guaranteed.`));
+      if (!item.is_demo) row.append(node("p", "available-count", `${item.available_quantity} unreserved units · ${item.reserved_quantity} reserved for accepted requests`));
+      if (item.reservation_shortfall) row.append(node("p", "notice", "Accepted reservations exceed this observation. The shop must reconcile its counts before taking more requests."));
+      if (item.recently_confirmed_positive) row.append(requestForm(item));
+      else row.append(node("p", "muted", "Ordering requires a fresh reviewed count with unreserved units."));
       el("inventory-results").append(row);
     }
     if (focus) el("detail-title").focus();
@@ -113,13 +119,14 @@ async function loadAlternatives(id, version) {
       if (item.metadata.source) card.append(node("p", "muted", "Metadata source: "+item.metadata.source));
       if (!item.inventory.length) card.append(node("p", "notice", "No recorded local inventory. Availability unknown."));
       for (const row of item.inventory) {
-        const label = row.is_demo ? "Demo quantities — examples only" : row.freshness==="STALE" ? "Stale inventory — please recheck" : row.quantity>0 ? "Recently confirmed — check with the shop" : "Zero visible units last confirmed";
+        const label = row.is_demo ? "Demo quantities — examples only" : row.freshness==="STALE" ? "Stale inventory — please recheck" : row.available_quantity>0 ? "Recently confirmed — check with the shop" : "No unreserved units recorded";
         const detail = node("div", "alternative-inventory"); detail.dataset.freshness = row.freshness;
         detail.append(node("strong", "", row.shop_name+(row.shop_is_demo ? " · local demo" : "")), node("p", "", label),
           node("p", "", `${row.quantity} ${row.is_demo ? "example" : "confirmed visible"} units`));
         const time = node("time", "", row.last_confirmed_at ? "Last confirmed: "+new Date(row.last_confirmed_at).toLocaleString() : "Not confirmed — seeded demonstration data");
         if (row.last_confirmed_at) time.dateTime = row.last_confirmed_at;
         detail.append(time, node("p", "muted", "Current availability is not guaranteed.")); card.append(detail);
+        if (!row.is_demo) detail.append(node("p", "", `${row.available_quantity} unreserved units · ${row.reserved_quantity} reserved`));
       }
       const button = node("button", "secondary", "View product counts"); button.type="button";
       button.addEventListener("click", () => openProduct(item.product.product_id, true)); card.append(button);
@@ -129,8 +136,32 @@ async function loadAlternatives(id, version) {
     if (version===detailVersion) el("alternatives-results").replaceChildren(node("p", "error", error.message));
   }
 }
+function requestForm(item) {
+  const form=node("form", "request-order");
+  const label=node("label", "", "Requested quantity"), quantity=node("input");
+  quantity.type="number"; quantity.min="1"; quantity.max="100"; quantity.step="1"; quantity.value="1"; quantity.required=true;
+  label.append(quantity);
+  const submit=node("button", "primary", "Request order from "+item.shop_name); submit.type="submit";
+  form.append(label, node("p", "muted", "Shared Demo Customer · A request does not reserve stock. Quantities above the recorded count need another shop review."), submit);
+  const requestId=crypto.randomUUID();
+  form.addEventListener("submit", async event => {
+    event.preventDefault(); if(requestBusy || !form.reportValidity()) return;
+    requestBusy=true; submit.disabled=true; showError();
+    try {
+      const response=await fetch("/orders",{method:"POST",headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({request_id:requestId,shop_id:item.shop_id,items:[{product_id:item.product_id,quantity:Number(quantity.value)}]})});
+      const data=await response.json();
+      if(!response.ok) throw new Error(typeof data.detail==="string" ? data.detail : "Order request was invalid. Check the quantity.");
+      const link=node("a", "", "View your order requests"); link.href="/customer/orders";
+      el("order-feedback").replaceChildren(node("p", "", `Order #${data.order_id} · ${data.status==="PENDING" ? "Pending shop confirmation" : data.status}. No payment or delivery arranged.`),link);
+      el("order-feedback").hidden=false; submit.textContent="Request sent"; quantity.disabled=true;
+    } catch(error) { showError(error.message+" Check Your requests before retrying after a connection error."); submit.disabled=false; }
+    finally { requestBusy=false; }
+  });
+  return form;
+}
 el("preferences-form").addEventListener("submit", event => { event.preventDefault(); if (selected) openProduct(selected); });
 el("search-form").addEventListener("submit", search);
 el("refresh-inventory").addEventListener("click", () => selected && openProduct(selected));
-setInterval(() => { if (selected && !document.hidden) openProduct(selected); }, 30000);
+setInterval(() => { if (selected && !document.hidden && !document.activeElement?.closest(".request-order")) openProduct(selected); }, 30000);
 search();

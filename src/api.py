@@ -20,6 +20,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from src.data_lock import data_lock, DataBusyError
 from src.catalog import CatalogStore
 from src.alternatives import AlternativeStore, Preferences
+from src.orders import OrderStore, OrderRequest, AcceptRequest, RejectRequest, OrderError
 
 
 def create_app(*, detector_factory=Detector, output_dir=None, database_path=None, scan_storage_dir=None, freshness_seconds=None):
@@ -34,13 +35,14 @@ def create_app(*, detector_factory=Detector, output_dir=None, database_path=None
                 app.state.detector = await run_in_threadpool(detector_factory, output_dir=directory)
                 app.state.store = store
                 app.state.catalog = CatalogStore(store,freshness_seconds)
+                app.state.orders = OrderStore(app.state.catalog)
                 yield
             finally:
                 await run_in_threadpool(store.close)
                 if hasattr(app.state, 'detector'):
                     del app.state.detector
 
-    app = FastAPI(title='StoreRoom', version='0.9', lifespan=lifespan)
+    app = FastAPI(title='StoreRoom', version='1.0', lifespan=lifespan)
     app.mount('/static', StaticFiles(directory=ROOT / 'src/web'), name='static')
 
     @app.get('/', include_in_schema=False)
@@ -50,6 +52,44 @@ def create_app(*, detector_factory=Detector, output_dir=None, database_path=None
     @app.get('/customer', include_in_schema=False)
     def customer():
         return FileResponse(ROOT/'src/web/customer.html',headers={'Cache-Control':'no-cache'})
+
+    @app.get('/customer/orders', include_in_schema=False)
+    @app.get('/shopkeeper/orders', include_in_schema=False)
+    def order_page():
+        return FileResponse(ROOT/'src/web/orders.html',headers={'Cache-Control':'no-cache'})
+
+    @app.post('/orders')
+    def create_order(body: OrderRequest, request: Request):
+        return JSONResponse(request.app.state.orders.create(body),headers={'Cache-Control':'no-store'})
+
+    @app.get('/orders')
+    def order_history(request: Request, shop_id: Annotated[str | None,Query(max_length=100)]=None,
+                      status: Literal['PENDING','ACCEPTED','REJECTED','CANCELLED'] | None=None,
+                      limit: Annotated[int,Query(ge=1,le=100)]=50, offset: Annotated[int,Query(ge=0)]=0):
+        return JSONResponse({'orders':request.app.state.orders.history(shop_id,status,limit,offset)},headers={'Cache-Control':'no-store'})
+
+    @app.get('/orders/{order_id}')
+    def order_detail(order_id: UUID, request: Request):
+        result = request.app.state.orders.get(order_id)
+        if result is None:
+            raise OrderError('Order not found',404)
+        return JSONResponse(result,headers={'Cache-Control':'no-store'})
+
+    @app.post('/orders/{order_id}/accept')
+    def accept_order(order_id: UUID, body: AcceptRequest, request: Request):
+        return JSONResponse(request.app.state.orders.transition(order_id,'ACCEPTED',confirmed=body.availability_confirmed),headers={'Cache-Control':'no-store'})
+
+    @app.post('/orders/{order_id}/reject')
+    def reject_order(order_id: UUID, body: RejectRequest, request: Request):
+        return JSONResponse(request.app.state.orders.transition(order_id,'REJECTED',reason=body.reason),headers={'Cache-Control':'no-store'})
+
+    @app.post('/orders/{order_id}/cancel')
+    def cancel_order(order_id: UUID, request: Request):
+        return JSONResponse(request.app.state.orders.transition(order_id,'CANCELLED'),headers={'Cache-Control':'no-store'})
+
+    @app.exception_handler(OrderError)
+    async def order_error(request, error):
+        return JSONResponse(status_code=error.status_code,content={'detail':str(error)},headers={'Cache-Control':'no-store'})
 
     @app.get('/products/search')
     def products(request: Request, q: Annotated[str,Query(max_length=100)]=''):

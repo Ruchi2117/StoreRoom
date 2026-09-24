@@ -1,6 +1,6 @@
 # StoreRoom product roadmap
 
-Status: v0.9 deterministic alternatives and customer discovery is complete. Independent-scene generalization remains unverified; the v0.7 workflow is frozen and awaits real field collection. The model and original experiment history remain unchanged. Current discovery behavior is documented in [v0.9](docs/V0_9_ALTERNATIVES.md).
+Status: v1.0 basic order requests, shopkeeper decisions and customer history are complete. Independent-scene generalization remains unverified; the v0.7 workflow is frozen and awaits real field collection. The model and original experiment history remain unchanged. Current commerce behavior is documented in [v1.0](docs/V1_0_ORDER_FLOW.md).
 
 The future customer experience connects a recognized product to its catalog record, the customer's explicit preferences, and alternatives with current offers from nearby participating shops.
 
@@ -17,8 +17,9 @@ The future customer experience connects a recognized product to its catalog reco
 | v0.7 | Independent field-validation workflow | Implemented/frozen; real cohort collection and evaluation pending |
 | v0.8 | Source-product catalog, latest reviewed quantities, search and freshness UI | Complete; one local demo shop, no live availability guarantee |
 | v0.9 | Explicit relationships, request-level preference filters and inventory-aware discovery | Complete; opt-in demo Valser pair, no verified ingredient enrichment; schema-1/2/3 backup compatibility |
+| v1.0 | Order requests, acceptance/reservations, rejection, pending cancellation and history | Complete local MVP; shared demo identity, no fulfillment/payment/delivery; schema-1/2/3/4 backups |
 
-The next milestone is a basic order-request flow: product and quantity request, followed by shopkeeper confirmation of current availability before acceptance. Keep the initial MVP local and supervised; pause further recommendation intelligence. A single-shop pilot should measure correction effort, staleness and gaps between visible observations and shop availability. Independent-scene collection/evaluation remains required for broader model claims. The claim "available nearby" requires actual participating-shop/location data; demo quantities must not be presented as live offers.
+The next action is to review the complete local MVP with the user before choosing more features. No further recommendation intelligence, marketplace features or infrastructure are committed. A supervised single-shop review should examine correction effort, staleness, reservation reconciliation and gaps between visible observations and shop availability. Independent-scene collection/evaluation remains required for broader model claims. The claim "available nearby" requires actual participating-shop/location data; demo quantities must not be presented as live offers.
 
 These milestones define capabilities, not separate services. Add infrastructure only when implementation needs justify it.
 
@@ -66,4 +67,4 @@ V0.9 implements explicit relationships, conservative request-level filters and f
 
 ## Current engineering commitment
 
-The five-class experimentation phase remains closed; see [v0.1 results](reports/V0_1_RESULTS.md). V0.9 adds explicit catalog alternatives while retaining `visible_items` semantics, immutable AI evidence and the frozen v0.7 protocol. No model tuning, verified SKU/ingredient enrichment, persisted customer profiles, learned recommendations, marketplace orders or distributed infrastructure were added. Later capabilities need independently collected evidence and an explicit product requirement.
+The five-class experimentation phase remains closed; see [v0.1 results](reports/V0_1_RESULTS.md). V1.0 adds local order requests and reservations while retaining `visible_items` observations, immutable AI evidence and the frozen v0.7 protocol. No model tuning, verified SKU/ingredient enrichment, personal customer profiles, learned recommendations, payments, delivery or distributed infrastructure were added. Accepted reservations remain active: fulfillment/release and count reconciliation require an explicit future decision before operational use.

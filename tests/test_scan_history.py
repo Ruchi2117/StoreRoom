@@ -35,7 +35,7 @@ class ScanHistoryTests(unittest.TestCase):
     def test_initialize_idempotently_and_configure_path(self):
         self.store.initialize()
         self.assertTrue(self.path.is_file())
-        self.assertEqual(set(inspect(self.store.engine).get_table_names()), {'scans', 'scan_items', 'scan_detections', 'products', 'shops', 'shop_inventory', 'product_metadata', 'product_alternatives'})
+        self.assertEqual(set(inspect(self.store.engine).get_table_names()), {'scans', 'scan_items', 'scan_detections', 'products', 'shops', 'shop_inventory', 'product_metadata', 'product_alternatives', 'orders', 'order_items', 'demo_customers'})
         with patch.dict('os.environ', {'STOREROOM_DB_PATH': 'data/custom.db'}):
             self.assertEqual(database_path(), ROOT/'data/custom.db')
         self.assertEqual(database_path(self.path), self.path)

@@ -39,7 +39,7 @@ run `python -m playwright install chromium` in the virtual environment first):
 .\.venv\Scripts\python.exe -c "from src.independent_validation_001_audit import verify_protected; print(verify_protected())"
 ```
 
-Expected: 136 passing tests and 921 protected files verified, plus frozen dataset
+Expected: 164 passing tests and 921 protected files verified, plus frozen dataset
 hash checks. These commands perform no new model inference or training.
 A fresh Git clone lacks the ignored dataset, checkpoints, run files and rendered
 visuals; full artifact tests require restoring them. Read
@@ -83,6 +83,25 @@ StoreRoom is an **AI-assisted retail shelf inventory** project:
 - **v0.7:** frozen independent field-validation workflow; real cohort collection pending.
 - **v0.8:** source-class catalog, confirmed inventory bridge and customer search prototype.
 - **v0.9:** explicit product alternatives, transient preferences and freshness-aware discovery.
+- **v1.0:** order requests, transactional acceptance/reservations, rejection/cancellation and history.
+
+## V1.0: request → shopkeeper decision → status
+
+Use the existing local backend, confirm a shelf observation at `/`, then open
+`/customer` to request a quantity from the demo shop. `/shopkeeper/orders` accepts
+or rejects pending requests; `/customer/orders` shows status/history and allows
+pending cancellation. Both roles deliberately share a labelled **Demo Customer**;
+there is no authentication, payment or delivery.
+
+Pending requests do not consume inventory. Acceptance requires a fresh reviewed
+count, explicit shopkeeper confirmation and sufficient unreserved units, in one
+SQLite write transaction. Accepted items reserve quantities without rewriting scan
+evidence. Reservations persist across later shelf observations and have no fulfillment
+or release workflow yet.
+
+See the [V1.0 order guide](docs/V1_0_ORDER_FLOW.md) and
+[verification report](reports/V1_0_RESULTS.md), including schema-1/2/3/4 backup support.
+Review this complete local MVP before selecting the next milestone.
 
 ## V0.9: product alternatives
 
@@ -99,7 +118,7 @@ were invented, and demo relationships do not imply equivalent products.
 Use the existing server and `/customer`. See the [V0.9 guide](docs/V0_9_ALTERNATIVES.md)
 for matching rules, API examples and schema-1/2/3 backup compatibility, and the
 [verification report](reports/V0_9_RESULTS.md) for test evidence.
-Next: a basic order-request flow with shopkeeper availability confirmation.
+The basic order-request flow is now implemented in V1.0 above.
 
 ### Existing shopkeeper workflow
 

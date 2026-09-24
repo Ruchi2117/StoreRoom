@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "browser": "Chromium",
+  "data": "temporary synthetic reviewed inventory; shared Demo Customer",
+  "checks": [
+    "search",
+    "shop quantity request 2",
+    "pending",
+    "shopkeeper inbox",
+    "accept",
+    "customer accepted",
+    "available 5 to 3",
+    "reject with reason",
+    "insufficient request remains pending",
+    "no extra reservation",
+    "cancel pending",
+    "history",
+    "mobile no overflow",
+    "no JavaScript errors"
+  ],
+  "model_inference": false
+}

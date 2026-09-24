@@ -4,6 +4,7 @@ from sqlalchemy import inspect
 
 def initialize_schema(engine, metadata):
     from src.catalog import seed_catalog
+    from src.orders import seed_customer
     additions = {
         'scans': {'source_image_path': 'TEXT', 'annotated_image_path': 'TEXT',
                   'prediction_id': 'TEXT', 'model_id': 'TEXT', 'checkpoint_sha256': 'TEXT',
@@ -14,7 +15,7 @@ def initialize_schema(engine, metadata):
         # Explicit SQLite transaction also makes the additive DDL atomic in legacy driver mode.
         connection.exec_driver_sql('BEGIN IMMEDIATE')
         version = connection.exec_driver_sql('PRAGMA user_version').scalar()
-        if version > 3:
+        if version > 4:
             raise RuntimeError('Database schema is newer than this application')
         inspector = inspect(connection)
         for table, columns in additions.items():
@@ -27,4 +28,5 @@ def initialize_schema(engine, metadata):
         metadata.create_all(connection)
         connection.exec_driver_sql('CREATE UNIQUE INDEX IF NOT EXISTS ix_scan_prediction ON scans (prediction_id)')
         seed_catalog(connection)
-        connection.exec_driver_sql('PRAGMA user_version=3')
+        seed_customer(connection)
+        connection.exec_driver_sql('PRAGMA user_version=4')

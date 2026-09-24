@@ -30,3 +30,13 @@
 .alternative-card { border-top:1px solid #cbd5d1; padding:20px 0; overflow-wrap:anywhere; }
 .alternative-inventory { background:#f4f7f5; padding:14px; margin:12px 0; border-radius:8px; }
 #alternatives-panel { border-top:2px solid #dbe5df; margin-top:24px; padding-top:18px; }
+.top { flex-wrap:wrap; gap:12px; }
+.order-nav { display:flex; gap:16px; flex-wrap:wrap; margin:20px 0; }
+.order-card { padding:24px; margin:20px 0; overflow-wrap:anywhere; }
+.order-card label, .request-order label { display:grid; gap:8px; margin:16px 0; }
+.order-card .confirm-availability { display:flex; align-items:center; }
+.order-card input:not([type="checkbox"]), .request-order input, #status-filter { padding:12px; border:1px solid var(--border); border-radius:8px; font:inherit; width:100%; min-width:0; }
+.order-card button { margin:10px 0; }
+.order-card ul { padding-left:20px; margin:16px 0; }
+.order-card h2 { font-size:22px; }
+.request-order { border-top:1px solid var(--border); margin-top:16px; padding-top:12px; }

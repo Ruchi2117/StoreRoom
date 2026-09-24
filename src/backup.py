@@ -36,17 +36,20 @@ def connect_readonly(path):
 def inventory(database, scans):
     """Validate current schema, relational data and exact managed image references."""
     from src import catalog  # Register v0.8 tables even in the standalone backup CLI.
+    from src import orders  # Register additive v1.0 order/reservation tables.
     try:
         with closing(connect_readonly(database)) as connection:
             schema = connection.execute('PRAGMA user_version').fetchone()[0]
-            if schema not in (1,2,3):
-                raise BackupError('Only migrated schema versions 1, 2 and 3 are supported')
+            if schema not in (1,2,3,4):
+                raise BackupError('Only migrated schema versions 1 through 4 are supported')
             if connection.execute('PRAGMA integrity_check').fetchall() != [('ok',)]:
                 raise BackupError('Database integrity check failed')
             if connection.execute('PRAGMA foreign_key_check').fetchall():
                 raise BackupError('Database has orphaned records')
             objects = connection.execute("SELECT name,type FROM sqlite_master WHERE name NOT LIKE 'sqlite_%'").fetchall()
             tables = {'scans','scan_items','scan_detections'} if schema==1 else set(Base.metadata.tables)
+            if schema<4:
+                tables -= {'orders','order_items','demo_customers'}
             if schema==2:
                 tables -= {'product_metadata','product_alternatives'}
             if {n for n, t in objects if t == 'table'} != tables or any(t in {'view', 'trigger'} for _, t in objects):
@@ -64,6 +67,10 @@ def inventory(database, scans):
                     WHERE i.is_demo=0 AND (s.id IS NULL OR s.reviewed<>1 OR s.confirmed_count<>i.quantity)''').fetchall()
                 if invalid:
                     raise BackupError('Inventory does not match its source confirmed scan')
+            if schema==4:
+                if connection.execute('SELECT order_id FROM orders WHERE NOT EXISTS '
+                                      '(SELECT 1 FROM order_items WHERE order_items.order_id=orders.order_id)').fetchone():
+                    raise BackupError('Order has no items')
         files = {}
         evidence = EvidenceFiles(scans)
         for id, prediction_id, original, annotated in rows:
@@ -126,7 +133,7 @@ def unpack_validated(archive, target):
             if zipped.getinfo('manifest.json').file_size > 32 * 1024**2:
                 raise BackupError('Manifest is too large')
             manifest = json.loads(zipped.read('manifest.json'))
-            if manifest['format_version'] != 1 or manifest['schema_version'] not in (1,2,3):
+            if manifest['format_version'] != 1 or manifest['schema_version'] not in (1,2,3,4):
                 raise BackupError('Unsupported backup or database version')
             datetime.fromisoformat(manifest['created_at'])
             files = manifest['files']
@@ -198,7 +205,7 @@ class BackupService:
             payload = {'database.sqlite': stage/'database.sqlite', **{name: stage/name for name in images}}
             with closing(connect_readonly(stage/'database.sqlite')) as connection:
                 schema = connection.execute('PRAGMA user_version').fetchone()[0]
-            manifest = {'format_version': 1, 'application_version': '0.9', 'schema_version': schema,
+            manifest = {'format_version': 1, 'application_version': '1.0', 'schema_version': schema,
                 'created_at': datetime.now(timezone.utc).isoformat(), 'scan_count': count,
                 'image_count': len(images), 'files': {name: {'sha256': checksum(path), 'size': path.stat().st_size}
                 for name, path in payload.items()}}
