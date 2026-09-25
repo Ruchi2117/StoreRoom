@@ -1,0 +1,23 @@
+{
+  "scope": "V1.1 dataset audit and proposed design only",
+  "verified_at": "2026-09-25T07:09:42.166147+00:00",
+  "comparison_commit": "3fd967003ec20746fc809522ed58c2464bafe8a2",
+  "prior_tracked_files_byte_identical": 284,
+  "protected_files_verified": 921,
+  "frozen_dataset_hashes_verified": true,
+  "checkpoint_sha256": "099b96ecd3cb440991b56c69cd243770ca499b8e246fee994ced3e24b93ec1c4",
+  "v0_7_protocol_sha256": "4d59789dbc368ac7a9b73f58556108c567a8a87eedbbd40b2bf685029953083d",
+  "tests": {
+    "command": ".\\.venv\\Scripts\\python.exe -m unittest discover -s tests -v",
+    "passed": 164,
+    "environment": {
+      "STOREROOM_DB_PATH": "outputs/v11_test_runtime/storeroom.db",
+      "SCAN_STORAGE_DIR": "outputs/v11_test_runtime/scans"
+    },
+    "first_attempt": "163 passed; one error because running demo holds default database lock"
+  },
+  "new_training": false,
+  "new_inference_or_test_set_evaluation": false,
+  "new_product_support": false,
+  "implementation_gate": "blocked by dataset access/provenance/group/identity gaps"
+}
