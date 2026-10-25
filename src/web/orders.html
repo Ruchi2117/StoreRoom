@@ -4,10 +4,12 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>StoreRoom · Order requests</title>
   <link rel="stylesheet" href="/static/style.css"><link rel="stylesheet" href="/static/customer.css">
+  <link rel="stylesheet" href="/static/presentation.css">
   <script src="/static/orders.js" defer></script>
 </head>
 <body>
-  <header class="top"><a class="brand" href="/customer"><span class="mark">▤</span> StoreRoom</a><a href="/">Scan shelf</a><a href="/customer">Find products</a></header>
+  <header class="top"><a class="brand" href="/static/overview.html"><span class="mark">▤</span> StoreRoom</a><nav class="app-nav" aria-label="Main navigation"><a href="/static/overview.html">Overview</a><a href="/">Scan inventory</a><a href="/customer">Discover</a><a href="/customer/orders">Customer orders</a><a href="/shopkeeper/orders">Shopkeeper orders</a></nav></header>
+  <div class="demo-strip">Order workspace · Pending requests need a shopkeeper decision · No payment or delivery</div>
   <main class="customer-main">
     <div class="intro"><p class="eyebrow">Local commerce prototype</p><h1 id="page-title">Your order requests</h1><p id="page-description"></p></div>
     <p class="notice">Shared Demo Customer · Prototype identity, no authentication. All requests on this local server are demo activity and visible to everyone using it. No payment or delivery is arranged.</p>

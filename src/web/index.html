@@ -4,15 +4,17 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>StoreRoom · Scan & review</title>
   <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/presentation.css">
   <script src="/static/app.js" defer></script>
 </head>
 <body>
-  <header class="top"><a class="brand" href="/" aria-label="StoreRoom home"><span class="mark">▤</span> StoreRoom</a><a href="/customer">Browse products</a><button class="secondary browse-history" type="button">Scan History</button></header>
+  <header class="top"><a class="brand" href="/static/overview.html" aria-label="StoreRoom home"><span class="mark">▤</span> StoreRoom</a><nav class="app-nav" aria-label="Main navigation"><a href="/static/overview.html">Overview</a><a href="/" aria-current="page">Scan inventory</a><a href="/customer">Discover</a><a href="/customer/orders">Customer orders</a><a href="/shopkeeper/orders">Shopkeeper orders</a><button class="browse-history" type="button">Scan History</button></nav></header>
+  <div class="demo-strip">Shopkeeper workspace · Local demo shop · AI predictions require your review</div>
   <main>
     <nav aria-label="Scan progress"><ol class="steps"><li id="step-scan" aria-current="step"><span>1</span> Scan</li><li id="step-review"><span>2</span> Review</li><li id="step-confirmed"><span>3</span> Confirm</li></ol></nav>
     <div id="error" class="error" role="alert" hidden></div>
     <section id="scan" aria-labelledby="scan-title">
-      <div class="intro"><p class="eyebrow">A little help with your shelf</p><h1 id="scan-title" tabindex="-1">Take a photo.<br>Make every count yours.</h1><p>See what AI finds, check the counts, and confirm what you can see.</p></div>
+      <div class="intro"><p class="eyebrow">Shopkeeper / inventory</p><h1 id="scan-title" tabindex="-1">From shelf photo to reviewed inventory.</h1><p>Upload a photo, check the AI’s counts, and confirm the visible products for customer discovery.</p></div>
       <div class="scan-grid">
         <form id="upload-form" class="card upload-card">
           <div class="upload-symbol" aria-hidden="true">＋</div>
@@ -46,6 +48,7 @@
       <div class="success-icon" aria-hidden="true">✓</div><p class="eyebrow">Reviewed by you</p><h1 id="confirmed-title" tabindex="-1">This photo’s counts are confirmed.</h1><p>Visible packages only. Hidden stock is still unknown.</p>
       <div class="card receipt"><div class="list-heading"><h2>Confirmed counts</h2><span id="confirmed-total" class="pill"></span></div><div id="confirmed-items"></div><p id="confirmed-time" class="muted"></p><p class="notice">Saved on this device with your original photo and AI prediction. Find this review in Scan History after refreshing or restarting StoreRoom.</p></div>
       <button class="secondary browse-history" type="button">View Scan History</button>
+      <p><a href="/customer">View inventory in customer discovery →</a></p>
       <button class="primary new-scan" type="button">Start a new scan <span aria-hidden="true">→</span></button>
     </section>
     <section id="history" aria-labelledby="history-title" hidden>

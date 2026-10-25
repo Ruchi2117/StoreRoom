@@ -1,6 +1,7 @@
 "use strict";
 const el = id => document.getElementById(id);
 const shopkeeper = location.pathname === "/shopkeeper/orders";
+document.querySelector(`.app-nav a[href="${location.pathname}"]`)?.setAttribute("aria-current", "page");
 const labels = {PENDING:"Pending shop confirmation",ACCEPTED:"Accepted — units reserved",REJECTED:"Rejected",CANCELLED:"Cancelled"};
 let generation=0, offset=0, busy=false;
 function node(tag, className, text) {

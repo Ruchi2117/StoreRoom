@@ -5,12 +5,14 @@
   <title>StoreRoom · Find a product</title>
   <link rel="stylesheet" href="/static/style.css">
   <link rel="stylesheet" href="/static/customer.css">
+  <link rel="stylesheet" href="/static/presentation.css">
   <script src="/static/customer.js" defer></script>
 </head>
 <body>
-  <header class="top"><a class="brand" href="/customer"><span class="mark">▤</span> StoreRoom</a><a href="/customer/orders">Your requests</a><a class="secondary customer-link" href="/shopkeeper/orders">Shopkeeper inbox</a></header>
+  <header class="top"><a class="brand" href="/static/overview.html"><span class="mark">▤</span> StoreRoom</a><nav class="app-nav" aria-label="Main navigation"><a href="/static/overview.html">Overview</a><a href="/">Scan inventory</a><a href="/customer" aria-current="page">Discover</a><a href="/customer/orders">Customer orders</a><a href="/shopkeeper/orders">Shopkeeper orders</a></nav></header>
+  <div class="demo-strip">Customer workspace · Shared Demo Customer · One participating demo shop</div>
   <main class="customer-main">
-    <div class="intro"><p class="eyebrow">A first look at the local shelf</p><h1>Find a product.<br>Check its latest count.</h1><p>Browse five supported products and see what was last confirmed at the demo shop.</p></div>
+    <div class="intro"><p class="eyebrow">Customer / discovery</p><h1>Find it on the local shelf.</h1><p>Search the five-product catalog, check the latest reviewed count, and send the shop an order request.</p></div>
     <p class="notice">Local prototype · Counts cover visible packages in a reviewed photo, minus accepted reservations. A request is pending until the shop confirms. Shared Demo Customer; no authentication, payment or delivery.</p>
     <form id="search-form" class="card search-form"><label for="query">Search by product or brand</label><div class="search-controls"><input id="query" name="q" type="search" maxlength="100" placeholder="Try Red Bull or Valser" autocomplete="off"><button class="primary" type="submit">Search</button></div></form>
     <div id="customer-error" class="error" role="alert" hidden></div>

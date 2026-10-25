@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>StoreRoom · Product overview</title>
+  <meta name="description" content="An end-to-end local retail prototype: shelf detection, human-reviewed inventory, product discovery and order requests.">
+  <link rel="stylesheet" href="/static/style.css"><link rel="stylesheet" href="/static/presentation.css">
+</head>
+<body>
+  <header class="top"><a class="brand" href="/static/overview.html"><span class="mark">▤</span> StoreRoom</a><nav class="app-nav" aria-label="Main navigation"><a href="/static/overview.html" aria-current="page">Overview</a><a href="/">Scan inventory</a><a href="/customer">Discover</a><a href="/customer/orders">Customer orders</a><a href="/shopkeeper/orders">Shopkeeper orders</a></nav></header>
+  <div class="demo-strip">Portfolio prototype · One demo shop · Five supported product classes · No live stock guarantee</div>
+  <main>
+    <section class="overview-hero">
+      <div><p class="eyebrow">From shelf to local discovery</p><h1>A clearer picture<br>of the local shelf.</h1><p class="lead">AI-powered hyperlocal retail inventory and ordering. Turn a shelf photo into reviewed counts, then let customers discover products and request them from the shop.</p><div class="cta-row"><a class="primary" href="/customer">Explore customer demo →</a><a class="secondary" href="/">Open shopkeeper demo</a></div><p class="muted">A working local MVP. Human review stays at the center.</p></div>
+      <div class="flow-card"><p class="eyebrow">One connected workflow</p><div class="flow-step"><b>01</b><div><h2>Scan the shelf</h2><p>The frozen model detects visible packages in a photo.</p></div></div><div class="flow-step"><b>02</b><div><h2>Confirm the count</h2><p>The shopkeeper reviews and corrects it. Original AI evidence is preserved.</p></div></div><div class="flow-step"><b>03</b><div><h2>Discover & request</h2><p>Customers see recorded availability. The shop accepts or rejects each request.</p></div></div></div>
+    </section>
+    <section class="overview-section"><p class="eyebrow">Built end to end</p><h2>More than a detection demo.</h2><div class="overview-grid"><article class="card"><h3>Reviewable inventory</h3><p>Original photos, predictions and human corrections remain separate. Counts include a confirmation time.</p></article><article class="card"><h3>Useful product discovery</h3><p>Search the catalog, check freshness and explore explicit related products when a recent count is missing.</p></article><article class="card"><h3>Orders with clear state</h3><p>Pending → accepted or rejected. Acceptance reserves units in a transaction; requests alone do not consume stock.</p></article></div></section>
+    <section class="overview-section"><div class="section-heading"><div><p class="eyebrow">Inside the application</p><h2>AI suggests. The shopkeeper confirms.</h2><p>Actual application capture using a public validation photo; demonstration only, not independent field evidence.</p></div><a href="/">Try a shelf scan →</a></div><img class="product-preview" src="/static/screenshots/02-review.png" alt="StoreRoom review screen showing original detection boxes beside editable human counts" loading="lazy"></section>
+    <section class="overview-section"><p class="eyebrow">Small, deliberate architecture</p><h2>One application. Clear responsibilities.</h2><div class="card architecture-line"><span>HTML · CSS · JavaScript</span> → <span>FastAPI · Python</span> → <span>SQLite + local evidence</span><span>YOLO · CPU inference</span></div><p class="muted">No frontend build server. Includes automated tests and a validated backup/restore CLI. <a href="https://github.com/Ruchi2117/StoreRoom">Read the code and engineering decisions ↗</a></p></section>
+    <section class="overview-section"><h2>Scope, honestly stated.</h2><p>The current model supports Red Bull, Knoppers Riegel, Valser Classic, Valser Still and Capri-Sun Multivitamin. Independent field generalization is unverified. Expanded Indian retail recognition is at the dataset-audit stage.</p><p class="muted">This local demo uses a shared customer identity. No authentication, payments, delivery or multi-shop location matching. Accepted reservations currently have no fulfillment/release workflow.</p></section>
+    <footer>StoreRoom · Full-stack retail prototype<span>AI-assisted counts. Human-reviewed results.</span></footer>
+  </main>
+</body>
+</html>

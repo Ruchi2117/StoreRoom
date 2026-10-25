@@ -1,357 +1,140 @@
 # StoreRoom
 
-Detect and count **visible instances of five source product classes** in shelf images.
-The v0.1 CV experimentation phase is complete. The **provisional v0.1 model** is
-augmented YOLO11n from AUGMENTATION_001, trained for 30 epochs.
+**AI-powered hyperlocal retail inventory and ordering platform.**
 
-| Current configuration | Value |
-| --- | --- |
-| Local checkpoint | `runs/augmentation_001/weights/best.pt` |
-| Inference | CPU, 320px, class-aware NMS IoU 0.50 |
-| Confidence | Red Bull 0.15; Knoppers, Valser Classic, Valser Still, Capri-Sun 0.25 |
-| Validation | Precision 0.791, recall 0.888, counting MAE 0.423, exact counts 11/26 |
+Turn a shelf photo into structured, human-reviewed inventory. Let customers discover products and send order requests to a participating local shop.
 
-Class-specific confidence filtering occurs **before NMS**, using the original
-best-scoring class without relabeling. These results are measured on the existing
-26-image validation set; **independent-scene generalization remains unverified**.
-There are no eligible unused verified scene groups in the current dataset.
-Both Valser classes have worse counting MAE than the preceding model.
+![Python](https://img.shields.io/badge/Python-3.14-3776AB?logo=python&logoColor=white) ![FastAPI](https://img.shields.io/badge/API-FastAPI-009688) ![SQLite](https://img.shields.io/badge/Database-SQLite-003B57) ![Frontend](https://img.shields.io/badge/Frontend-HTML%20%C2%B7%20CSS%20%C2%B7%20JavaScript-F7DF1E)
 
-Read the [v0.1 results summary](reports/V0_1_RESULTS.md),
-[detailed augmentation comparison](reports/AUGMENTATION_001_RESULTS.md), and
-[independent-scene audit](reports/INDEPENDENT_VALIDATION_001_RESULTS.md).
-This model is not production-ready and does not estimate hidden stock, prices,
-verified pack sizes, ingredients or availability.
+A personal full-stack project connecting computer vision, persistent evidence, inventory discovery and transactional order decisions. **Current scope: one local demo shop, five product classes, shared demo customer.** No real-world scale or live-stock claim.
 
-The frozen HoloSelecta export contains 175 images across 33 machine groups:
-123 training / 26 validation / 26 test, with 1,480 target boxes. The test set was
-not used for model selection. One historical BASELINE_001 evaluation was performed
-after freezing that baseline; later experiments never re-evaluated the test set.
-Do not use it for independent validation or further tuning.
+## Product Demo
 
-## Verification and reproducibility
+![StoreRoom product overview](src/web/screenshots/01-overview.png)
 
-On the existing artifact-complete checkout (install `requirements-ui-test.txt` and
-run `python -m playwright install chromium` in the virtual environment first):
+**Shopkeeper:** upload shelf → inspect AI detections → correct counts → confirm inventory.
 
-```powershell
-.\.venv\Scripts\python.exe -m unittest discover -s tests -v
-.\.venv\Scripts\python.exe -c "from src.independent_validation_001_audit import verify_protected; print(verify_protected())"
-```
+**Customer:** search product → check shop availability and freshness → request quantity → receive acceptance or rejection.
 
-Expected: 164 passing tests and 921 protected files verified, plus frozen dataset
-hash checks. These commands perform no new model inference or training.
-A fresh Git clone lacks the ignored dataset, checkpoints, run files and rendered
-visuals; full artifact tests require restoring them. Read
-[reproducibility and artifact policy](docs/REPRODUCIBILITY.md) before rebuilding.
-Historical scripts contain guarded training/test commands; they are not the next
-step and should not be rerun on this frozen checkout.
+| Review the shelf | Discover recorded availability |
+|---|---|
+| ![Real model detections and human count controls](src/web/screenshots/02-review.png) | ![Customer discovery and shop inventory](src/web/screenshots/04-discovery.png) |
 
-## V0.2: reusable inference and local API
+| Shopkeeper inbox | Customer order status |
+|---|---|
+| ![Pending request and explicit acceptance](src/web/screenshots/07-inbox.png) | ![Accepted order](src/web/screenshots/08-accepted.png) |
 
-V0.2 adds `Detector.predict(image)` and a FastAPI adapter using the same frozen
-model, pre-NMS class thresholds, and counting implementation. Upload a JPEG/PNG
-and receive all five counts, pixel boxes, confidence scores, and an optional
-annotated image. The model loads once at startup and its SHA-256 is checked.
+[Five-minute walkthrough](docs/PORTFOLIO_DEMO.md) · [All screenshots](src/web/screenshots/) · [Architecture](docs/ARCHITECTURE.md) · [Engineering decisions](docs/ENGINEERING_DECISIONS.md)
 
-On the existing checkout with its local checkpoint restored:
+Captures are from the actual app using an [attributed public validation photo](docs/demo/ATTRIBUTION.md). Orders are local demo interactions, not customer/business results. Screenshots are not an independent CV benchmark.
 
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements-api.txt
-.\.venv\Scripts\python.exe -m uvicorn src.api:app --host 127.0.0.1 --port 8000
-```
+## What I built
 
-Open http://127.0.0.1:8000/docs for the upload form, or use `POST /predict`
-with multipart field `file`. `GET /health` returns `{"status":"ok"}`.
-See [setup, Python usage and HTTP examples](docs/INFERENCE_PIPELINE.md) and
-[v0.2 implementation and verification](reports/V0_2_RESULTS.md).
+- Shelf-image detection with frozen YOLO11n and a reusable inference API.
+- Human-reviewed quantities, persistent scan history, original images and prediction evidence.
+- Stable product catalog IDs, inventory, customer search and fresh/stale/unknown states.
+- Explicit catalog alternatives with conservative handling of missing preference metadata.
+- Order requests, acceptance/rejection, customer status and pending cancellation.
+- Atomic inventory reservations, retry-safe requests and database constraints.
+- Validated local backup/restore for database and image evidence together.
+- Automated API, database, concurrency, backup, browser and frozen-artifact tests.
 
-This remains a local demonstration with a provisional five-class model;
-independent-scene generalization remains unverified. The scan-and-review workflow
-is now available in v0.3 below.
+## Quick Start
 
-## V0.3: shopkeeper scan and review
+**Artifact requirement:** a fresh Git clone does **not** include the trained checkpoint. Restore `runs/augmentation_001/weights/best.pt` from preserved project artifacts first; expected SHA-256: `099b96ecd3cb440991b56c69cd243770ca499b8e246fee994ced3e24b93ec1c4`. There is no public model-download service configured. Screenshots/docs are available without setup. See [artifact restoration](docs/REPRODUCIBILITY.md).
 
-StoreRoom is an **AI-assisted retail shelf inventory** project:
-
-- **v0.1:** reproducible CV model pipeline.
-- **v0.2:** reusable inference API.
-- **v0.3:** photo upload → review → count correction → confirmation.
-- **v0.4:** durable local scan history.
-- **v0.5:** scan evidence and original prediction history.
-- **v0.6:** local backup and restore of confirmed history and evidence.
-- **v0.7:** frozen independent field-validation workflow; real cohort collection pending.
-- **v0.8:** source-class catalog, confirmed inventory bridge and customer search prototype.
-- **v0.9:** explicit product alternatives, transient preferences and freshness-aware discovery.
-- **v1.0:** order requests, transactional acceptance/reservations, rejection/cancellation and history.
-
-## V1.0: request → shopkeeper decision → status
-
-Use the existing local backend, confirm a shelf observation at `/`, then open
-`/customer` to request a quantity from the demo shop. `/shopkeeper/orders` accepts
-or rejects pending requests; `/customer/orders` shows status/history and allows
-pending cancellation. Both roles deliberately share a labelled **Demo Customer**;
-there is no authentication, payment or delivery.
-
-Pending requests do not consume inventory. Acceptance requires a fresh reviewed
-count, explicit shopkeeper confirmation and sufficient unreserved units, in one
-SQLite write transaction. Accepted items reserve quantities without rewriting scan
-evidence. Reservations persist across later shelf observations and have no fulfillment
-or release workflow yet.
-
-See the [V1.0 order guide](docs/V1_0_ORDER_FLOW.md) and
-[verification report](reports/V1_0_RESULTS.md), including schema-1/2/3/4 backup support.
-Review this complete local MVP before selecting the next milestone.
-
-## V0.9: product alternatives
-
-The customer page now shows explicitly related products when the selected product
-has no recent positive count. Unknown metadata cannot pass restrictive preference
-filters. The only opt-in demo relationships are Valser Classic ↔ Valser Still;
-other products honestly return no alternatives. No ingredients or dietary claims
-were invented, and demo relationships do not imply equivalent products.
-
-```powershell
-.\.venv\Scripts\python.exe -m src.catalog_cli seed-alternatives-demo
-```
-
-Use the existing server and `/customer`. See the [V0.9 guide](docs/V0_9_ALTERNATIVES.md)
-for matching rules, API examples and schema-1/2/3 backup compatibility, and the
-[verification report](reports/V0_9_RESULTS.md) for test evidence.
-The basic order-request flow is now implemented in V1.0 above.
-
-### Existing shopkeeper workflow
-
-Run the same backend command above, then open [StoreRoom](http://127.0.0.1:8000/).
-The mobile-friendly interface previews the photo, shows annotated detections,
-keeps **AI detected** counts separate from editable **Your count** values, and
-returns a confirmed review. Missed products from the five supported classes can
-be added manually. No frontend build or separate server is required.
-
-Confirmation describes visible packages in this photo only. V0.3 introduced temporary
-reviews; v0.4 now saves confirmed counts locally. Hidden stock remains unknown.
-See the [workflow and setup guide](docs/V0_3_SHOPKEEPER_WORKFLOW.md) and
-[v0.3 results](reports/V0_3_RESULTS.md).
-
-## V0.4: durable scan history
-
-Confirmed scans now survive refresh and restart. Open **Scan History**, refresh the
-recent list, or open a previous scan to see predicted and confirmed counts.
-Historical reviews are read-only and never added together as shop inventory.
-
-SQLite + SQLAlchemy store each scan and its items in one transaction. On startup,
-the app creates the schema at `data/storeroom.db` (ignored by Git). Set
-`STOREROOM_DB_PATH` before starting the same backend to use another local path.
-No separate database server or frontend build is needed.
-
-V0.4 introduced timestamps and counts without photos; v0.5 adds evidence below.
-This is local persistence, not production infrastructure. Keep the database file to retain history;
-there is no automated backup, multi-shop support, or inventory synchronization.
-See [database setup and API contracts](docs/V0_4_SCAN_HISTORY.md) and
-[v0.4 results](reports/V0_4_RESULTS.md).
-
-## V0.5: scan evidence and prediction history
-
-Historical scans now show the **original uploaded photo**, original AI detections,
-annotated prediction and shopkeeper-confirmed counts. **AI prediction ≠ confirmed
-inventory**: correcting 8 to 7 leaves the stored prediction and its eight boxes intact.
-Corrections are visibly labelled; an unchanged count is not proof of model accuracy.
-
-The server links confirmation to a `prediction_id` returned by `/predict`, checks
-original counts against its own evidence, and stores detections in relational rows.
-Photos live under `data/scans/<scan_id>/`, configurable with `SCAN_STORAGE_DIR`.
-SQLite stores managed relative references rather than image blobs. Keep both the
-database and image tree; older count-only scans remain readable after migration.
-
-No historical scans are automatically deleted. Abandoned drafts also consume local
-storage; deletion/retention management is not implemented. Retained corrections are
-potential future evidence, **not automatically used for training**.
-See [evidence setup, contracts and cleanup limits](docs/V0_5_SCAN_EVIDENCE.md) and
-[v0.5 results](reports/V0_5_RESULTS.md).
-
-## V0.6: local backup and restore
-
-Create a portable ZIP containing SQLite, referenced original/annotated photos and
-a manifest with SHA-256 checksums. Backups briefly block confirmation writes;
-restore requires the backend to be stopped and validates everything before replacing
-the data pair. Previous data is retained for rollback. No database schema change.
-
-```powershell
-.\.venv\Scripts\python.exe -m src.data_cli backup --output ./backups
-.\.venv\Scripts\python.exe -m src.data_cli validate ./backups/<backup-filename>.zip
-# Stop the backend first; restore replaces all configured history and photos.
-.\.venv\Scripts\python.exe -m src.data_cli restore ./backups/<backup-filename>.zip
-```
-
-Use the printed archive filename in place of `<backup-filename>`. This is **local
-backup**, not cloud backup. Pending reviews, temporary annotations, model weights
-and datasets are excluded. The original AI prediction and confirmed counts remain
-separate after restore. See [commands, safety and recovery](docs/V0_6_BACKUP_RESTORE.md)
-and [v0.6 results](reports/V0_6_RESULTS.md).
-
-## V0.7: independent field validation
-
-The evaluation-only workflow freezes consented field photos, human count labels,
-scene groups and model/configuration hashes before running the unchanged detector.
-It reports count MAE, exact counts, over/under-counts and per-class/per-scene results.
-There is **no real field cohort yet**, so no field performance or generalization
-claim is made. Synthetic unit fixtures are never reported as field evidence.
-
-```powershell
-.\.venv\Scripts\python.exe -m src.field_cli init
-# Collect new consented images and complete collection.json / ground_truth.json first.
-.\.venv\Scripts\python.exe -m src.field_cli validate
-```
-
-Read the [collection, blind annotation, freeze and evaluation instructions](docs/V0_7_FIELD_VALIDATION.md)
-and [v0.7 status report](reports/V0_7_FIELD_VALIDATION_RESULTS.md). No thresholds,
-NMS, resolution, checkpoint or prior experiments changed. Next milestone: collect
-and independently annotate the first real field cohort, then run this frozen protocol.
-
-## V0.8: product catalog and inventory
-
-New confirmations update the demo shop's latest **reviewed visible count** per
-product while preserving original AI evidence. Stable catalog IDs are separate
-from quantities; package sizes remain unverified/null. This is not total shop
-stock, sales-adjusted stock or guaranteed availability.
-
-Run the existing backend, then open [customer search](http://127.0.0.1:8000/customer).
-Search by product/brand and select a product to see its quantity, last-confirmed
-time and fresh/stale status. The default freshness window is one hour, configured
-by `INVENTORY_FRESHNESS_SECONDS`. To demonstrate quantities without a new scan:
-
-```powershell
-.\.venv\Scripts\python.exe -m src.catalog_cli seed-demo
-```
-
-The optional seed uses clearly labelled example quantities and never overwrites
-confirmed data. Startup seeds metadata only. New APIs: `GET /products/search?q=`,
-`GET /inventory` and `GET /inventory/{product_id}` with shop/availability filters.
-An additive schema-2 migration and updated backup reader preserve previous history
-and support schema-1 backups. The frozen v0.7 workflow is unchanged.
-
-See [catalog, quantity semantics, API and demo setup](docs/V0_8_PRODUCT_CATALOG_INVENTORY.md)
-and [v0.8 verification](reports/V0_8_RESULTS.md). Next: a supervised single-shop
-pilot; real independent field validation remains pending before broader ML claims.
-
-The remaining sections document the earlier data/runtime milestones. Their rebuild
-commands are historical, not instructions to reopen model experimentation.
-
-## Earlier runtime milestone (historical)
-
-**Runtime result:** Python 3.14.4 works with the installed CPU PyTorch stack.
-Supervision converted eight representative images with all 76 target boxes
-preserved. Visual review passed; official `yolo11n.pt` ran inference on two images.
-At that historical milestone, training and augmentation had not yet run. See [RUNTIME_CHECK.md](reports/RUNTIME_CHECK.md)
-for versions, exact reproduction commands, coordinate conventions, and limitations.
-
-On this existing checkout, run:
-
-```powershell
-.\.venv\Scripts\python.exe -m unittest discover -s tests -v
-```
-
-The runtime milestone had 17 tests; the current suite has 136. To regenerate only the smoke export and visual checks:
-
-```powershell
-.\.venv\Scripts\python.exe -m src.convert_smoke
-.\.venv\Scripts\python.exe -m src.preview_yolo
-```
-
-Expected conversion summary: 8 images, 76 boxes, per-class counts
-`[32, 9, 10, 16, 9]`. Inspect `reports/visuals/yolo_smoke_contact.jpg`.
-`configs/yolo_smoke.yaml` describes this small diagnostic subset.
-The full export and first baseline described above now supersede the earlier
-pending-export state. Smoke regeneration does not modify the frozen full YAML.
-
-## Rebuild the original preflight on Windows / PowerShell
-
-These commands are for rebuilding the data audit, not for continuing the completed
-runtime check. Run them from the `StoreRoom` folder. Explicitly using the environment's
-Python avoids PowerShell activation-policy problems.
+Recorded environment: Windows, Python 3.14; CPU pins target that environment. From the repository root:
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-& .\scripts\check_environment.ps1
-& .\scripts\download_holoselecta.ps1
-.\.venv\Scripts\python.exe -m src.extract_data
-.\.venv\Scripts\python.exe -m src.preflight
-.\.venv\Scripts\python.exe -m src.audit_machine_codes
-.\.venv\Scripts\python.exe -m src.scene_preflight
-.\.venv\Scripts\python.exe -m src.preview_candidates
-.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe -m pip install -r requirements-cpu.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements-api.txt
+powershell -NoProfile -File scripts/run_demo.ps1
 ```
 
-The downloader obtains the original 2.12 GB detection ZIP and the dataset's small
-readme PDF. Allow about 5 GB free for the archive, extracted images, and inspection
-outputs. It resumes interrupted downloads and verifies the publisher's SHA-256;
-do not rename a `.part` download yourself. Extraction verifies the checksum again,
-rejects paths outside the destination, and skips bundled Python/pickle files.
+On an already configured checkout, only the last command is needed. It starts the existing backend and static frontend together, initializes separate demo storage and seeds labelled alternative relationships. It does not invent confirmed quantities or predictions. No secrets or `.env` are required.
 
-`requirements.txt` contains only Pillow and zxing-cpp. The audit reads XML with
-Python's standard library, inspects images with Pillow, and decodes photographed
-machine stickers with zxing-cpp to group repeat visits. No decoded links are opened.
-It does not implement a VOC-to-YOLO converter. The smoke conversion now uses
-Supervision; official Ultralytics training with `yolo11n.pt` remains a later step.
+| Browser | URL |
+|---|---|
+| Overview | http://127.0.0.1:8001/static/overview.html |
+| Shopkeeper scan/history | http://127.0.0.1:8001/ |
+| Discovery/inventory | http://127.0.0.1:8001/customer |
+| Shopkeeper inbox | http://127.0.0.1:8001/shopkeeper/orders |
+| Customer orders | http://127.0.0.1:8001/customer/orders |
+| API docs | http://127.0.0.1:8001/docs |
 
-Expected outputs:
+Upload `docs/demo/shelf.jpg`, review its actual predictions, then confirm before trying orders. Seeded example quantities alone cannot authorize orders. The [walkthrough](docs/PORTFOLIO_DEMO.md) produces pending, accepted and rejected requests through the real UI. Data persists under ignored `outputs/portfolio-demo/`; Ctrl+C stops the server.
 
-- `reports/environment.json`: Python, packages, Git, graphics hardware, and disk.
-- `reports/download_manifest.json`: source URLs, license, sizes, verified hashes.
-- `reports/dataset_summary.json`: actual pairs, classes, boxes, and missing files.
-- `reports/class_counts.csv`: all-XML versus usable-pair class counts and GTIN checks.
-- `reports/image_manifest.json`: source labels/boxes, dates, dimensions, image hashes.
-- `reports/annotation_issues.json`: concrete issues without modifying raw labels.
-- `reports/near_duplicate_candidates.json`: dHash distance <= 8 candidate pairs.
-- `reports/visuals/all_*.jpg`: numbered contact sheets for scene review.
-- `reports/scene_groups.json`: decoded sticker evidence and reviewed adjacent views.
-- `reports/quarantine.json`: 102 excluded image files and the reasons.
-- `reports/class_scene_counts.csv`: usable image/instance/group counts for all labels.
-- `reports/split_preflight.json`: per-class support and counting variation per split.
-- `configs/class_map.json`, `configs/splits.json`: five class IDs and frozen image assignments.
-
-Hashes find exact duplicates and suggest some near duplicates. They cannot prove
-that two photos show different machines. Scene review and an explicit grouped
-coverage check are required before selecting a training split.
-
-Those checks are complete for this archive. `scene_review.json` records the manual
-review and its manifest hash; changing the manifest requires reviewing the grouping
-again. Generated assignments include all relevant input hashes, and the tests reject
-stale assignments. The split search uses annotation coverage and image balance only;
-it has never seen model scores. Runtime packages and COCO weights are installed;
-the first baseline has since been fine-tuned using these unchanged assignments.
-
-On the existing checkout, the quick verification command is:
+For the original local database and port, in a separate shell:
 
 ```powershell
+.\.venv\Scripts\python.exe -m uvicorn src.api:app --host 127.0.0.1 --port 8000
+```
+
+There is **no frontend build**, npm install or second server. Optional settings: `STOREROOM_DB_PATH` (default `data/storeroom.db`), `SCAN_STORAGE_DIR` (default `data/scans`), `INVENTORY_FRESHNESS_SECONDS` (default 3600). Keep this unauthenticated demo on loopback. If a port is busy, use the running instance or stop it before starting another.
+
+## Technical stack
+
+| Layer | Actually used |
+|---|---|
+| Frontend | Semantic HTML, CSS, plain JavaScript, Fetch API |
+| Backend | Python, FastAPI, Pydantic, Uvicorn |
+| Persistence | SQLAlchemy, SQLite, local image evidence |
+| AI | Ultralytics YOLO11n, PyTorch CPU, OpenCV; Supervision for dataset conversion |
+| Engineering | Git, unittest, Playwright tests, checksummed artifacts, backup/restore CLI |
+
+No React/TypeScript, Docker, PostgreSQL, Redis or cloud deployment. The [architecture diagram](docs/ARCHITECTURE.md) maps current responsibilities to source files.
+
+## Engineering highlights
+
+**Prediction ≠ inventory.** Corrections preserve original photos, boxes and model counts. Only reviewed observations update inventory.
+
+**Acceptance is transactional.** Pending requests reserve nothing. A SQLite write transaction rechecks freshness and every item before acceptance. Accepted items reserve quantities without rewriting shelf evidence.
+
+**Freshness is explicit.** Timestamped observations are estimates, not real-time stock. Stale and seeded quantities cannot authorize acceptance.
+
+**Evidence survives recovery.** Backups include SQLite plus referenced photos, checksums and schema validation. Restore retains previous data for rollback.
+
+**Alternatives have evidence.** Explicit relationships and known metadata determine suggestions. Missing ingredients do not become a dietary guarantee.
+
+Read the [tradeoffs and failure cases](docs/ENGINEERING_DECISIONS.md): concurrent acceptance, idempotency, stale data and evaluation leakage.
+
+## Current AI limitations
+
+Five supported source classes: **Red Bull, Knoppers Riegel, Valser Classic, Valser Still, Capri-Sun Multivitamin**. This is not production-scale Indian retail recognition. Counts cover visible packages only; exact pack sizes, hidden stock and independent field generalization are unverified.
+
+Historical validation: precision **0.791**, recall **0.888**, counting MAE **0.423**, exact five-class counts **11/26 images**. These are existing validation results, not independent field metrics. Both Valser classes regressed against the preceding model. See [augmentation evidence](reports/AUGMENTATION_001_RESULTS.md), [independence audit](reports/INDEPENDENT_VALIDATION_001_RESULTS.md) and [V0.1 summary](reports/V0_1_RESULTS.md). No results were changed for this presentation.
+
+Commerce limits: one demo shop; shared identity; no authentication, geolocation, payments or delivery. Accepted reservations have no fulfillment/release workflow. The opt-in alternative pair is Valser Classic/Still, with unverified equivalence. No verified ingredient enrichment or medical recommendations.
+
+## Tests and recovery
+
+On the artifact-complete checkout:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-ui-test.txt
+.\.venv\Scripts\python.exe -m playwright install chromium
+$env:STOREROOM_DB_PATH = 'outputs/test-runtime/storeroom.db'
+$env:SCAN_STORAGE_DIR = 'outputs/test-runtime/scans'
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-The original seven preflight checks are included in the expanded 36-test suite.
-Do not rerun full downloads simply to inspect the result.
+Isolated paths avoid locking the demo database. Full tests require restored research artifacts; a source-only clone cannot pass them. No training or protected test-set inference is needed. The [presentation report](reports/PORTFOLIO_PRESENTATION_RESULTS.md) records the latest checks.
 
-## Annotation format
+See [backup/restore](docs/V0_6_BACKUP_RESTORE.md) and the [isolated recovery demo](docs/PORTFOLIO_DEMO.md#recovery-demonstration). Databases, private field photos, environments, backups and weights are Git-ignored.
 
-Pascal VOC provides one XML file per image, containing image width/height and an
-`object` entry for each labeled product instance. Each object has a product label
-and pixel coordinates `xmin, ymin, xmax, ymax` for its bounding box. The source
-labels often include a product name, pack size and GTIN separated by underscores.
-Keep GTINs as strings so leading zeros survive. Do not assume a class name is a
-clean catalog record or that every number is a valid identifier.
+## Roadmap
 
-The YOLO export uses one text row per instance:
+**Current:** end-to-end local MVP.
 
-```text
-class_id x_center/image_width y_center/image_height box_width/image_width box_height/image_height
-```
+**Next:** independent field validation, verified Indian product data, broader catalog and a supervised real-store pilot.
 
-Those four coordinates are normalized to the image; `class_id` is the fixed model
-mapping 0-4. Supervision imports VOC coordinates by subtracting 1 from all four
-endpoints, then exports normalized coordinates with five decimal places. An
-independent checker verifies the decoded boxes within 0.1 pixels. Counting these
-annotations describes labeled front packages; baseline prediction counts and
-metrics are now recorded in the experiment reports linked above.
+**Later:** marketplace/delivery and production infrastructure when justified.
 
-See [V0_1_SCOPE.md](V0_1_SCOPE.md), [REUSE_AUDIT.md](REUSE_AUDIT.md), and
-[data/README.md](data/README.md) for scope, reuse decisions, and attribution.
+V1.1 [dataset audit](reports/V1_1_DATASET_AUDIT.md) and [recognition design](docs/V1_1_INDIAN_RETAIL_RECOGNITION.md) are complete; implementation is blocked on data verification. [Detailed roadmap](ROADMAP.md).
+
+## Repository guide
+
+`src/` application and experiment code · `src/web/` browser UI · `tests/` automated checks · `configs/` frozen profiles · `docs/` setup/design · `reports/` evidence · `scripts/` local helpers.
+
+Historical V0.1–V1.0 reports remain unchanged. [Reproducibility](docs/REPRODUCIBILITY.md) records provenance and hashes. No project-wide license has been added; dependency, model and dataset terms apply separately. Demo-photo attribution accompanies the asset.
